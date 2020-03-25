@@ -1,0 +1,35 @@
+
+#nav-id {
+    background-color: rgba(0, 153, 255, 0.767);
+}
+
+.slide-img {
+    width: auto;
+    height: 350px;
+    max-height: 350px;
+    margin: 0 auto;
+}
+
+.card-img {
+    position: relative;
+    height: 230px;
+    max-height: 230px;
+}
+
+#foot {
+    background-color: rgba(105, 105, 105, 0.205);
+}
+
+.svg-icon {
+    width: 19px;
+    height: 19px;
+    display: inline-block;
+}
+
+#social-media-ul {
+    list-style-type: none;
+}
+
+#container-footer {
+    width: 70%;
+}
