@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <!-- Required meta tags -->
@@ -16,35 +16,7 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav id="nav-id" class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">curso</a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div id="navbarSite" class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Inicio2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Inicio3</a>
-          </li>
-        </ul>
-
-        <form class="form-inline" action="">
-          <input class="form-control mr-2" type="search" placeholder="Buscar...">
-          <button class="btn btn-dark" type="submit">ok</button>
-        </form>
-
-      </div>
-    </div>
-  </nav>
+  <div id="nav-placeholder"></div>
 
   <!-- slide de imagens -->
   <div id="carouselSite" class="carousel slide" data-ride="carousel">
@@ -111,8 +83,8 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center mt-3">
-        <h1 class="display-3">Lorem Ipsum</h1>
-        <p>Cras porta lorem purus, at lobortis felis eleifend consequat.</p>
+        <h1 class="display-4">Localização em Ambientes fechados</h1>
+        <p>Análises e códigos desenvolvidos durante o mestrado - ICOMP/UFAM</p>
       </div>
     </div>
   </div>
@@ -126,8 +98,9 @@
         <div class="card">
           <div class="card-body">
             <img class="card-img card-img-top" src="assets/imgs/6.png" alt="Projeto1">
-            <h4 class="card-title">Nam congue</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Pellentesque mollis viverra fermentum.</h6>
+            <h4 class="card-title">Os Beacons</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Configuração do ESP32 no modo beacon</h6>
+            <a href="./pages/beacons.html" class="stretched-link" target="_blank"></a>
           </div>
         </div>
       </div>
@@ -188,54 +161,20 @@
   </div>
 
   <!-- Footer -->
-  <footer id="foot" class="blog-footer">
-    <div id="container-footer"class="container">
-      <div class="row">
-
-        <div class="col-md-4 mb-1 mt-4">
-          <h4>Email:</h4>
-          <h6>pintojr@icomp.ufam.edu.br</h6>
-        </div>
-
-        <div class="col-md-4 mb-1 mt-4">
-          <ul id="social-media-ul">
-            <li>
-              <a href="https://github.com/joaodanil0">
-                <img class="svg-icon" src="assets/icons/github.svg" alt="github">
-                <span>joaodanil0</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://instagram.com/joaodanil0">
-                <img class="svg-icon" src="assets/icons/instagram.svg" alt="instagram">
-                <span class="username">joaodanil0</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://www.linkedin.com/in/joaodanil0">
-                <img class="svg-icon" src="assets/icons/linkedin.svg" alt="linkedin">
-                <span class="username">joaodanil0</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-md-4 mb-1 mt-4">
-          <p>Cras sit amet libero pharetra metus sodales auctor eu sed orci. Fusce purus lacus, sodales sit amet ligula
-            non, lacinia consectetur nisl.</p>
-        </div>
-        
-      </div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="/js/jquery.min.js"></script>
   <script src="/js/popper.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+
+  <script>    
+    $(function(){
+      $("#nav-placeholder").load("./pages/commom/navbar.html");
+      $("#footer-placeholder").load("./pages/commom/footer.html")
+    });
+  </script>
 </body>
 
 

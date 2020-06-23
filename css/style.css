@@ -10,6 +10,13 @@
     margin: 0 auto;
 }
 
+.post-img {
+    width: auto;
+    height: 350px;
+    max-height: 350px;
+    margin: 0 auto;
+}
+
 .card-img {
     position: relative;
     height: 230px;
