@@ -16,7 +16,7 @@
 <body>
 
   <!-- NAVBAR -->
-  <div id="nav-placeholder"></div>
+  <div class="nav-placeholder"></div>
 
   <!-- slide de imagens -->
   <div id="carouselSite" class="carousel slide" data-ride="carousel">
@@ -97,10 +97,10 @@
       <div class="col-md-4 mb-3">
         <div class="card">
           <div class="card-body">
-            <img class="card-img card-img-top" src="assets/imgs/6.png" alt="Projeto1">
+            <img class="card-img card-img-top" src="./assets/imgs/ESP32.jpg" alt="Projeto1">
             <h4 class="card-title">Os Beacons</h4>
             <h6 class="card-subtitle mb-2 text-muted">Configuração do ESP32 no modo beacon</h6>
-            <a href="./pages/beacons.html" class="stretched-link" target="_blank"></a>
+            <a href="./pages/beacons/beacons.html" class="stretched-link" target="_blank"></a>
           </div>
         </div>
       </div>
@@ -161,18 +161,17 @@
   </div>
 
   <!-- Footer -->
-  <div id="footer-placeholder"></div>
+  <div class="footer-placeholder"></div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/popper.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-
-  <script>    
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script>
     $(function(){
-      $("#nav-placeholder").load("./pages/commom/navbar.html");
-      $("#footer-placeholder").load("./pages/commom/footer.html")
+      $(".nav-placeholder").load("./pages/commom/navbar.html");
+      $(".footer-placeholder").load("./pages/commom/footer.html")
     });
   </script>
 </body>

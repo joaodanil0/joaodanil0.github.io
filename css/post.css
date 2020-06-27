@@ -1,0 +1,22 @@
+.post-main-img {
+  width: 800px;
+  height: 350px;
+  max-height: 350px;
+  margin: 50px auto;
+}
+
+.post-img {
+  width: 800px;
+}
+
+.post-body {
+  width: 800px;
+}
+
+.post-intro {
+  text-align: justify;
+}
+
+.post-content {
+  text-align: justify;
+}

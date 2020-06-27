@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./../../css/style.css">
+  <link rel="stylesheet" href="./../../css/post.css">
+  <link rel="stylesheet" href="./../../css/bootstrap.css">
+
+  <title>Os Beacons</title>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nav-placeholder"></div>
+
+  <div class="container">
+
+    <img src="./../../assets/imgs/ESP32.jpg" class="post-main-img img-fluid d-block" alt="Responsive image">
+
+    <div class="post-title col-12 text-center mt-3">
+      <h1 class="display-4">Os Beacons</h1>
+      <p>Configuração do ESP32 no modo beacon</p>
+    </div>
+
+
+    <div class="post-date">
+      <span>Data de postagem: 23/06/2020</span>
+    </div>
+    
+
+    <div class="d-flex justify-content-center">
+      <div class="post-body">
+        <div class="post-intro">
+          <p>Muitos modelos de beacons estão disponíveis no mercado, entre os mais conhecidos está o <a href="https://pt.wikipedia.org/wiki/IBeacon" target="_blank">IBeacon</a>. Infelizmente, não haviam IBeacons no laboratório, mas por sorte haviam muitos ESP32s. Eles possuem a mesma tecnologia utilizada pelos IBeacon, o <i>Bluetooth Low Energy</i> (BLE). O ESP32 pode ser programados utilizando a IDE do Arduino, mas a biblioteca não oferecia suporte ao que eu pretendia fazer. Foi necessário utilizar diretamente as APIs do ESP32, o que acabou gerando essa postagem.  
+          </p>
+        </div>
+
+        <div class="post-content">
+          <div class="post-topic">Criando um projeto</div>
+          <p>
+            Para fazer a programação do ESP32 eu utilizei o <a href="https://platformio.org/" target="_blank">PlatformIO</a>, que é uma plataforma que oferece suporte a programação de diversos dispositivos. Essa plataforma oferece suporte direto as APIs do ESP32 o que facilitou meu trabalho. Esse acesso direto a API tem o nome de <a href="https://github.com/espressif/esp-idf">ESP-IDF</a> que signifca <i>Espressif IoT Development Framework</i>, que é mantido pela fabricante do próprio ESP32 a <a href="https://www.espressif.com/">Espressif</a>. A criação do projeto deve seguir da seguinte forma: <img src="./assets/imgs/criando_projeto_beacon.png" class="post-img img-fluid d-block" alt="">
+          </p>
+        </div>
+        
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+  <!-- Footer -->
+  <div class="footer-placeholder"></div>
+
+  <script src="./../../js/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $(".nav-placeholder").load("./../commom/navbar.html");
+      $(".footer-placeholder").load("./../commom/footer.html")
+    });
+  </script>
+</body>
