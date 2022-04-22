@@ -1,0 +1,43 @@
+site_name: Jão's Blog
+
+plugins:
+  - git-revision-date
+
+theme:
+  name: material
+  icon:
+    logo: material/bird
+  palette:
+    - scheme: default
+      primary: purple
+      toggle:
+        icon: material/weather-night
+        name: Modo Noturno
+    - scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: modo Claro
+
+extra:
+  alternate:
+    - name: English
+      link: /English/ 
+      lang: en
+    - name: Brasil <3
+      link: /Portugues/
+      lang: pt-Br
+
+markdown_extensions:
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
