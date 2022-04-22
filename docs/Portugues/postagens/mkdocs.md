@@ -5,6 +5,9 @@
 Image by <a href="https://pixabay.com/users/wikiimages-1897/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">WikiImages</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">Pixabay</a>
 
 ## 1. Introdução
+
+> Essa postagem foi inspirado na [live de python #189](https://youtu.be/GW6nAJ1NHUQ). Se quiser mais informações sobre MKDocs da uma olhada no vídeo e deixa o like. :thumbsup:
+
 O [MKDocs](https://www.mkdocs.org/) é uma biblioteca focada em documentação, desenvolvida em python. Ela possui várias funcionalidades e algumas delas serão mostradas abaixo.
 
 Para instalar:
@@ -139,6 +142,9 @@ Cada uma dessas extensões serão mostradas a seguir.
 > - [X] checado.
 
 ### 3.2. Emoji
+
+Para mais emojis: [emojipedia](https://emojipedia.org/twitter/). Escolha um emoji e procure por `Shortcodes`.
+
 `pymdownx.emoji`
 
 ```
