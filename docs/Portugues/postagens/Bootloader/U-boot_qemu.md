@@ -62,7 +62,7 @@ Se tudo ocorrer corretamente o arquivo `u-boot.bin` será criado.
 
 ![qemu](../../../images/u-boot_qemu/bin_res_3.png)
 
-# 4. Carregando o U-boot com QEMU
+## 4. Carregando o U-boot com QEMU
 
 Para utilizar o QEMU para arquiteturas ARM64 é necessário instalar o pacote:
 
