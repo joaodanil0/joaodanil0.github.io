@@ -8,16 +8,17 @@ theme:
   icon:
     logo: material/bird
   palette:
-    - scheme: default
-      primary: purple
-      toggle:
-        icon: material/weather-night
-        name: Modo Noturno
+    # - scheme: default
+    #   primary: purple
+    #   toggle:
+    #     icon: material/weather-sunny
+    #     name: modo Claro
     - scheme: slate
       primary: deep purple
-      toggle:
-        icon: material/weather-sunny
-        name: modo Claro
+      # toggle:
+      #   icon: material/weather-night
+      #   name: Modo Noturno
+    
 
 extra:
   alternate:
