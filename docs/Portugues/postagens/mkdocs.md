@@ -16,7 +16,7 @@ Para instalar:
 pip install mkdocs
 ```
 
-Após a instalãção basta digitar:
+Após a instalação basta digitar:
 
 ```
 mkdocs new TESTE
@@ -109,7 +109,7 @@ Comandos disponíveis por padrão na biblioteca.
 > | Pedro | 34   |
 
 
-## 3. Markdown Extendido
+## 3. Markdown Estendido
 
 Para ter ainda mais funcionalidades, é necessário instalar a biblioteca [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/):
 
