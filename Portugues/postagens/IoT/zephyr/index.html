@@ -13,7 +13,7 @@
     
     
       
-        <title>Usando U-boot com qemu - Jão's Blog</title>
+        <title>Zephyr + Esp32 + Blinky = ❤️ - Jão's Blog</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#usando-u-boot-com-qemu" class="md-skip">
+        <a href="#zephyr-esp32-blinky" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Usando U-boot com qemu
+              Zephyr + Esp32 + Blinky = ❤️
             
           </span>
         </div>
@@ -315,14 +315,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_1" type="checkbox" id="__nav_3_2_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_1" type="checkbox" id="__nav_3_2_1" >
       
       
       
@@ -343,100 +341,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Usando U-boot com qemu
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Bootloader/U-boot_qemu/" class="md-nav__link">
         Usando U-boot com qemu
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-introducao" class="md-nav__link">
-    1. Introdução
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-baixando-o-u-boot-mainline" class="md-nav__link">
-    2. Baixando o U-Boot mainline
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-buildando-o-u-boot" class="md-nav__link">
-    3. Buildando o U-boot
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Buildando o U-boot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-instalando-dependencias" class="md-nav__link">
-    3.1. Instalando Dependências
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-definindo-a-arquitetura" class="md-nav__link">
-    3.2. Definindo a Arquitetura
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-gerando-o-binario" class="md-nav__link">
-    3.3 Gerando o Binário
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-carregando-o-u-boot-com-qemu" class="md-nav__link">
-    4. Carregando o U-boot com QEMU
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -500,12 +409,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_3" type="checkbox" id="__nav_3_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_3" type="checkbox" id="__nav_3_2_3" checked>
       
       
       
@@ -526,11 +437,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../IoT/zephyr/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Zephyr + Esp32 + Blinky = ❤️
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Zephyr + Esp32 + Blinky = ❤️
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    1. Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-instalando-dependencias" class="md-nav__link">
+    2. Instalando dependências
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-baixando-a-toolchain" class="md-nav__link">
+    3. Baixando a toolchain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-exemplo-blinky" class="md-nav__link">
+    4. Exemplo Blinky
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -590,49 +563,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-baixando-o-u-boot-mainline" class="md-nav__link">
-    2. Baixando o U-Boot mainline
+  <a href="#2-instalando-dependencias" class="md-nav__link">
+    2. Instalando dependências
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-buildando-o-u-boot" class="md-nav__link">
-    3. Buildando o U-boot
+  <a href="#3-baixando-a-toolchain" class="md-nav__link">
+    3. Baixando a toolchain
   </a>
-  
-    <nav class="md-nav" aria-label="3. Buildando o U-boot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-instalando-dependencias" class="md-nav__link">
-    3.1. Instalando Dependências
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-definindo-a-arquitetura" class="md-nav__link">
-    3.2. Definindo a Arquitetura
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-gerando-o-binario" class="md-nav__link">
-    3.3 Gerando o Binário
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-carregando-o-u-boot-com-qemu" class="md-nav__link">
-    4. Carregando o U-boot com QEMU
+  <a href="#4-exemplo-blinky" class="md-nav__link">
+    4. Exemplo Blinky
   </a>
   
 </li>
@@ -651,56 +597,126 @@
                 
 
 
-<h1 id="usando-u-boot-com-qemu">Usando U-boot com qemu</h1>
-<p><img alt="qemu" src="../../../../images/u-boot_qemu/u-boot_qemu.jpg" /></p>
-<p>Image by <a href="https://pixabay.com/users/publicdomainpictures-14/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=22098">PublicDomainPictures</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=22098">Pixabay</a></p>
+<h1 id="zephyr-esp32-blinky">Zephyr + Esp32 + Blinky = ❤️</h1>
+<p><img alt="imagems" src="../../../../images/Zephyr/Title.jpg" /></p>
+<p>Image by <a href="https://pixabay.com/users/methodshop-1460919/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3404892">methodshop</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3404892">Pixabay</a></p>
 <h2 id="1-introducao">1. Introdução</h2>
-<p>A fim de ter um ambiente de testes para aprender sobre o U-Boot, o mais recomendado é criar um ambiente virtual. Para isso, eu escolhi o QEMU, que é altamente configurável.</p>
-<p>Essa postagem tem como base a arquitetura <code>aarch64</code>, devido sua larga utilização em sistemas embarcados.</p>
-<h2 id="2-baixando-o-u-boot-mainline">2. Baixando o U-Boot mainline</h2>
-<p>Basta copiar e colar o código abaixo: </p>
-<div class="highlight"><pre><span></span><code>git clone https://source.denx.de/u-boot/u-boot.git
+<p>Recentemente voltei a pesquisar sobre <em>Internet of Things</em> (IoT) e durante uma conversas no trabalho fiquei sabendo do Zephyr. Por sorte, um <a href="https://youtu.be/UtLfhNw0lQg">Webnar</a> da <a href="https://www.embarcados.com.br/">Embarcados</a> aconteceu e pude me interar mais sobre essa plataforma. Só tenho uma palavra para definir: <strong>Sensacional</strong> 🤯</p>
+<h2 id="2-instalando-dependencias">2. Instalando dependências</h2>
+<p>Estou usando <code>Ubuntu 22.04</code>.</p>
+<div class="highlight"><pre><span></span><code>sudo apt install --no-install-recommends git cmake ninja-build gperf \
+  ccache dfu-util device-tree-compiler wget \
+  python3-dev python3-pip python3-setuptools python3-tk python3-wheel xz-utils file \
+  make gcc gcc-multilib g++-multilib libsdl2-dev
 </code></pre></div>
-<h2 id="3-buildando-o-u-boot">3. Buildando o U-boot</h2>
-<p>A seguir são definidos alguns passos para gerar o binário do U-boot, que será utilizado pelo QEMU.</p>
-<h3 id="31-instalando-dependencias">3.1. Instalando Dependências</h3>
-<p>Dependendo do sistema utilizado, alguns pacotes serão necessários para que o processo de build tenha sucesso. No meu ambiente (<code>ubuntu 22.04</code>), foram necessário os seguintes pacotes:</p>
-<div class="highlight"><pre><span></span><code>sudo apt install \
-    flex \
-    bison \
-    gcc-aarch64-linux-gnu \
+<p>O Zephyr usa o python para gerenciar os pacotes, algumas dependências também são necessárias</p>
+<p><div class="highlight"><pre><span></span><code>pip3 install west
 </code></pre></div>
-<h3 id="32-definindo-a-arquitetura">3.2. Definindo a Arquitetura</h3>
-<p>Para criar um sistema de build limpo, o parâmetro <code>O=</code> foi utilizado. Dentro da pasta do U-Boot, cole o código abaixo:</p>
-<div class="highlight"><pre><span></span><code>make O=../out qemu_arm64_defconfig -j16
+Após isso, é necessário definir o local onde os arquivos serão salvos. No exemplo vou usar o caminho <code>/home/jao/Documents/Workspace/IoT</code></p>
+<div class="highlight"><pre><span></span><code>west init /home/jao/Documents/Workspace/IoT/PASTA_DO_ZEPHYR
 </code></pre></div>
-<p>Se tudo ocorrer bem, a mensagem a seguir deve aparecer:</p>
-<p><img alt="qemu" src="../../../../images/u-boot_qemu/make_res_1.png" /></p>
-<p>Uma pasta <code>out</code> foi criada, adicionando todos os itens necessários para a build.</p>
-<p><img alt="qemu" src="../../../../images/u-boot_qemu/tree_res_2.png" /></p>
-<h3 id="33-gerando-o-binario">3.3 Gerando o Binário</h3>
-<p>Dentro da pasta <code>out</code>, cole o código abaixo:</p>
-<div class="highlight"><pre><span></span><code>make CROSS_COMPILE=aarch64-linux-gnu- -j16
+<p>Alguns arquivos serão baixados do <a href="https://github.com/zephyrproject-rtos">repositório</a>.</p>
+<p>Em seguida:</p>
+<p><mark>PS: Demora...</mark></p>
+<div class="highlight"><pre><span></span><code>cd /home/jao/Documents/Workspace/IoT/PASTA_DO_ZEPHYR
+west update
 </code></pre></div>
-<p>Se tudo ocorrer corretamente o arquivo <code>u-boot.bin</code> será criado.</p>
-<p><img alt="qemu" src="../../../../images/u-boot_qemu/bin_res_3.png" /></p>
-<h2 id="4-carregando-o-u-boot-com-qemu">4. Carregando o U-boot com QEMU</h2>
-<p>Para utilizar o QEMU para arquiteturas ARM64 é necessário instalar o pacote:</p>
-<div class="highlight"><pre><span></span><code>sudo apt install qemu-system-arm
+<p>Depois de terminar a atualização, é necessário exportar algumas variáveis de ambiente:</p>
+<div class="highlight"><pre><span></span><code>west zephyr-export
 </code></pre></div>
-<p>Dentro da pasta <code>out</code>, execute o seguinte comando:</p>
-<div class="highlight"><pre><span></span><code>qemu-system-aarch64 -M virt -nographic -cpu cortex-a57  -bios u-boot.bin
+<p>e então instalar as depêncencias restantes do python:</p>
+<div class="highlight"><pre><span></span><code>pip3 install -r /home/jao/Documents/Workspace/IoT/PASTA_DO_ZEPHYR/zephyr/scripts/requirements.txt
 </code></pre></div>
-<p>onde o parâmetro <code>-bios</code> é o binario que acabou de ser criado pela nossa build.</p>
-<p>Após executar o comando, o u-boot deverá iniciar normalmente:</p>
-<p><img alt="qemu" src="../../../../images/u-boot_qemu/final_res-4.png" /></p>
+<h2 id="3-baixando-a-toolchain">3. Baixando a toolchain</h2>
+<p>Como vamos utilizar o Esp32, a toolchain pode ser baixada <a href="https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-guides/tools/idf-tools.html#xtensa-esp32-elf">aqui</a>. No meu caso estou usando a plataforma <code>linux-amd64</code></p>
+<p>Após baixar a toolchain correto, extraia e adicione o caminho da pasta a variável de ambiente <code>ESPRESSIF_TOOLCHAIN_PATH</code></p>
+<div class="highlight"><pre><span></span><code>export ESPRESSIF_TOOLCHAIN_PATH=/home/jao/Documents/Workspace/IoT/xtensa-esp32-elf/xtensa-esp32-elf/
+</code></pre></div>
+<p>É necessário adicionar outra variável:</p>
+<div class="highlight"><pre><span></span><code>export ZEPHYR_TOOLCHAIN_VARIANT=&quot;espressif&quot;
+</code></pre></div>
+<p>Finalmente, podemos baixar os pacotes referentes ao Esp32 do Zephyr:</p>
+<p><mark>PS: O camando deve ser dado dentro da pasta do Zephyr, no caso: /home/jao/Documents/Workspace/IoT/PASTA_DO_ZEPHYR</mark></p>
+<div class="highlight"><pre><span></span><code>west espressif update
+</code></pre></div>
+<p>Após esse passo, o ambiente de configuração para o Esp32 estará finalizado.</p>
+<h2 id="4-exemplo-blinky">4. Exemplo Blinky</h2>
+<p>Na versão atual do Zephyr <code>3.0.0</code>, é necessário adicionar um módulo no <em>device driver</em> para que o led <em>built-in</em> sejá reconhecido. Para isso, é necessário criar um arquivo dentro do exemplo do Blincky do próprio Zephyr</p>
+<div class="highlight"><pre><span></span><code>touch /home/jao/Documents/Workspace/IoT/PASTA_DO_ZEPHYR/zephyr/samples/basic/blinky/esp32.overlay
+</code></pre></div>
+<p>o arquivo deve conter o seguinte conteúdo:</p>
+<div class="highlight"><pre><span></span><code>/ {
+    aliases {
+        led0 = &amp;led0;
+    };
+
+    leds {
+        compatible = &quot;gpio-leds&quot;;
+        led0: led_0 {
+            gpios = &lt;&amp;gpio0 2 GPIO_ACTIVE_HIGH&gt;;
+            label = &quot;LED 0&quot;;
+        };
+    };
+};
+</code></pre></div>
+<p>Na linha <code>gpios = &lt;&amp;gpio0 2 GPIO_ACTIVE_HIGH&gt;;</code>, o número 2 é referente ao gpio associado ao led <em>built-in</em>.</p>
+<p>Agora é só compilar:</p>
+<p><mark>PS: dentro da pasta: /home/jao/Documents/Workspace/IoT/PASTA_DO_ZEPHYR/</mark></p>
+<div class="highlight"><pre><span></span><code>west build -p auto -b esp32  zephyr/samples/basic/blinky
+</code></pre></div>
+<blockquote>
+<p>Muitas vezes o arquivo CMakeCache.txt, precisa ser deletado. Ele fica localizado em : /home/jao/Documents/Workspace/IoT/PASTA_DO_ZEPHYR/build/</p>
+</blockquote>
+<p>Se tudo ocorrer bem, a seguinte mensagem deve aparecer:</p>
+<div class="highlight"><pre><span></span><code>[103/103] Linking C executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+     mcuboot_hdr:          32 B         32 B    100.00%
+        metadata:          28 B         32 B     87.50%
+             ROM:       31172 B    4194240 B      0.74%
+     iram0_0_seg:       13004 B       128 KB      9.92%
+     irom0_0_seg:       13692 B    3342304 B      0.41%
+     dram0_0_seg:        1240 B     180736 B      0.69%
+     dram0_1_seg:         53 KB     110032 B     49.32%
+     drom0_0_seg:        3826 B    4194240 B      0.09%
+    rtc_iram_seg:          0 GB         8 KB      0.00%
+    rtc_slow_seg:          0 GB         4 KB      0.00%
+        IDT_LIST:          0 GB         8 KB      0.00%
+esptool.py v3.3-dev
+Creating esp32 image...
+Merged 6 ELF sections
+Successfully created esp32 image.
+</code></pre></div>
+<p>Para flashar no esp32, pasta digitar o seguinte comando:</p>
+<div class="highlight"><pre><span></span><code>west flash
+</code></pre></div>
+<p>O resultado deve ser algo semelhante:</p>
+<div class="highlight"><pre><span></span><code>Flash will be erased from 0x00010000 to 0x00033fff...
+Flash params set to 0x0220
+Wrote 32768 bytes at 0x00001000 in 0.7 seconds (390.4 kbit/s)...
+Hash of data verified.
+Wrote 16384 bytes at 0x00008000 in 0.3 seconds (515.8 kbit/s)...
+Hash of data verified.
+Wrote 147456 bytes at 0x00010000 in 2.0 seconds (594.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+</code></pre></div>
+<p>Se o seguinte erro acontecer:</p>
+<blockquote>
+<p>/dev/ttyS0 failed to connect: Failed to connect to Espressif device: No serial data received.
+For troubleshooting steps visit: https://docs.espressif.com/projects/esptool/en/latest/troubleshooting.html</p>
+<p>A fatal error occurred: Could not connect to an Espressif device on any of the 2 available serial ports.</p>
+</blockquote>
+<p>Talvel seja necessário ficar segurando o botão <code>boot</code> do Esp32.</p>
+<p>É isso, até a próxima.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-04-24
+      2022-05-01
     
   </small>
 </div>
@@ -717,7 +733,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Inicio" rel="prev">
+        <a href="../../Documenta%C3%A7%C3%A3o/mkdocs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Documentação com MKDOCS" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -726,26 +742,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Inicio
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../Documenta%C3%A7%C3%A3o/mkdocs/" class="md-footer__link md-footer__link--next" aria-label="Next: Documentação com MKDOCS" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
               Documentação com MKDOCS
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   
