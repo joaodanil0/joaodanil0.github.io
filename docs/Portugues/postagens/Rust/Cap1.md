@@ -116,9 +116,9 @@ cargo new hello_cargo
  cargo build
  ```
  
- dentro da pasta hello_cargo, a pasta `target/`será criada e o executável está em `hello_cargo/target/debug`, chamado de ==hello_cargo==.
- 
- ### 3.1 Comandos úteis
+ dentro da pasta hello_cargo, a pasta `target/`será criada e o executável está em `hello_cargo/target/debug`, chamado de ==hello_cargo==
+
+### 3.1 Comandos úteis
  
  - cargo run (para executar o programa)
  - cargo check (para fazer as checagens no código, sem compilar)
