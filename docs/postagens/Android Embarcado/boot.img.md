@@ -1,6 +1,6 @@
 # Boot.img
 
-![imagems](../../../images/boot.img.jpg)
+![imagems](../../images/boot.img.jpg)
 
 Image by <a href="https://pixabay.com/users/dexmac-12233086/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5925621">dexmac</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5925621">Pixabay</a>
 

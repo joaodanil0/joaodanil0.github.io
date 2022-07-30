@@ -20,14 +20,14 @@ theme:
       #   name: Modo Noturno
     
 
-extra:
-  alternate:
-    - name: English
-      link: /English/ 
-      lang: en
-    - name: Brasil <3
-      link: /Portugues/
-      lang: pt-Br
+# extra:
+#   alternate:
+#     - name: English
+#       link: /English/ 
+#       lang: en
+#     - name: Brasil <3
+#       link: /Portugues/
+#       lang: pt-Br
 
 markdown_extensions:
   - pymdownx.tasklist

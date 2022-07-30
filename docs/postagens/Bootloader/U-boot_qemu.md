@@ -1,6 +1,6 @@
 # Usando U-boot com qemu
 
-![qemu](../../../images/u-boot_qemu/u-boot_qemu.jpg)
+![qemu](../../images/u-boot_qemu/u-boot_qemu.jpg)
 
 Image by <a href="https://pixabay.com/users/publicdomainpictures-14/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=22098">PublicDomainPictures</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=22098">Pixabay</a>
 
@@ -44,11 +44,11 @@ make O=../out qemu_arm64_defconfig -j16
 
 Se tudo ocorrer bem, a mensagem a seguir deve aparecer:
 
-![qemu](../../../images/u-boot_qemu/make_res_1.png)
+![qemu](../../images/u-boot_qemu/make_res_1.png)
 
 Uma pasta `out` foi criada, adicionando todos os itens necessários para a build.
 
-![qemu](../../../images/u-boot_qemu/tree_res_2.png)
+![qemu](../../images/u-boot_qemu/tree_res_2.png)
 
 ### 3.3 Gerando o Binário
 
@@ -60,7 +60,7 @@ make CROSS_COMPILE=aarch64-linux-gnu- -j16
 
 Se tudo ocorrer corretamente o arquivo `u-boot.bin` será criado.
 
-![qemu](../../../images/u-boot_qemu/bin_res_3.png)
+![qemu](../../images/u-boot_qemu/bin_res_3.png)
 
 ## 4. Carregando o U-boot com QEMU
 
@@ -80,4 +80,4 @@ onde o parâmetro `-bios` é o binario que acabou de ser criado pela nossa build
 
 Após executar o comando, o u-boot deverá iniciar normalmente:
 
-![qemu](../../../images/u-boot_qemu/final_res-4.png)
+![qemu](../../images/u-boot_qemu/final_res-4.png)
