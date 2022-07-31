@@ -5,23 +5,23 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="assets/images/favicon.png" rel="icon"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.3.0, mkdocs-material-8.2.9" name="generator"/>
-<title>Jão's Blog</title>
-<link href="assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
-<link href="assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
+<title>U-boot na VIM3 - Jão's Blog</title>
+<link href="../../../assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="assets/javascripts/glightbox.min.js"></script></head>
+<script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#inicio">
+<a class="md-skip" href="#u-boot-na-vim3">2. 
           Skip to content
         </a>
 </div>
@@ -29,7 +29,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="." title="Jão's Blog">
+<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Inicio
+              U-boot na VIM3
             
           </span>
 </div>
@@ -94,15 +94,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="." title="Jão's Blog">
+<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
 </a>
     Jão's Blog
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href=".">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
         Inicio
       </a>
 </li>
@@ -119,15 +118,15 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="Android/boot.img/">
+<a class="md-nav__link" href="../../../Android/boot.img/">
         Boot.img
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           Bootloader
           <span class="md-nav__icon md-icon"></span>
@@ -138,8 +137,8 @@
           Bootloader
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_1">
           VIM3
           <span class="md-nav__icon md-icon"></span>
@@ -150,10 +149,28 @@
           VIM3
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="Bootloader/VIM3/u-boot/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          U-boot na VIM3
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         U-boot na VIM3
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#main-line">2.1 
+    Main line
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -171,7 +188,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="Bootloader/qemu/U-boot_qemu/">
+<a class="md-nav__link" href="../../qemu/U-boot_qemu/">
         U-boot no QEMU
       </a>
 </li>
@@ -194,7 +211,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="Documenta%C3%A7%C3%A3o/mkdocs/">
+<a class="md-nav__link" href="../../../Documenta%C3%A7%C3%A3o/mkdocs/">
         Documentação com MKDOCS
       </a>
 </li>
@@ -226,7 +243,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="Linguagens/Rust/Cap1/">
+<a class="md-nav__link" href="../../../Linguagens/Rust/Cap1/">
         Introdução
       </a>
 </li>
@@ -261,7 +278,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="RTOS/zephyr/zephyr/">
+<a class="md-nav__link" href="../../../RTOS/zephyr/zephyr/">
         Zephyr + Esp32 + Blinky = ❤️
       </a>
 </li>
@@ -280,25 +297,117 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#main-line">2.1 
+    Main line
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="inicio">Inicio</h1>
-<ul>
-<li><a href="Documenta%C3%A7%C3%A3o/mkdocs/">MKDocs</a></li>
-<li><a href="Bootloader/qemu/U-boot_qemu/">U-boot com QEMU</a></li>
-<li><a href="RTOS/zephyr/zephyr/">Zephyr + ESP32 + Blinky</a></li>
-<li><a href="Linguagens/Rust/Cap1/">Introdução de Rust</a></li>
-</ul>
+<h1 id="u-boot-na-vim3"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> U-boot na VIM3</h1>
+<figure>
+<p><a class="glightbox" href="../images/u-boot_logo.svg"><img alt="imagems" src="../images/u-boot_logo.svg" width="600"/></a>
+</p>
+<figcaption>U-boot logo</figcaption>
+</figure>
+<p>baseado no tutorial do pŕoprio u-boot em <a href="https://u-boot.readthedocs.io/en/latest/board/amlogic/khadas-vim3.html">readthedocs</a></p>
+<hr/>
+<h2 id="main-line"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Main line</h2>
+<p>Baixar o u-boot mainline</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/u-boot/u-boot.git u-boot-mainline
+</code></pre></div>
+<p>baixei o toolchain <a href="https://drive.google.com/file/d/17MRLKZct7XoxGKUvNtmP1-R_l6z83PWw/view?usp=sharing">versao </a>, para versões mais atuais checar em <a href="https://developer.arm.com/downloads/-/gnu-a">toolchain</a></p>
+<p>Precisa adicionar o path do arquivo descompactado ao $PATH do linux</p>
+<p>execute o seguinte comando dentro da pasta descompactada</p>
+<table class="highlighttable"><tr><th class="filename" colspan="2"><div class="highlight"><span class="filename">Buildando o u-boot</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>make khadas-vim3_defconfig <span class="nv">O</span><span class="o">=</span>out/
+make <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-none-elf- <span class="nv">O</span><span class="o">=</span>out/
+</code></pre></div>
+</td></tr></table>
+<p>O parâmetro <code>O</code> define a pasta onde os arquivos gerados serão salvos.</p>
+<hr/>
+<h1 id="uboot-modificado-vim3"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> uboot modificado VIM3</h1>
+<p>Baixar </p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/khadas/u-boot.git -b khadas-vims-v2015.01 u-boot-vim3
+</code></pre></div>
+<p>baixei a toolchain <a href="https://releases.linaro.org/archive/13.11/components/toolchain/binaries/gcc-linaro-aarch64-none-elf-4.8-2013.11_linux.tar.xz">linaro</a> ou no meu backup <a href="https://drive.google.com/file/d/1cbF1GjMcCgsvowHB4tdbLCzDcqRGf4tM/view?usp=sharing">backup</a></p>
+<p>outra toolchain <a href="https://releases.linaro.org/archive/13.11/components/toolchain/binaries/gcc-linaro-arm-none-eabi-4.8-2013.11_linux.tar.xz">linaro</a> ou meu backup <a href="https://drive.google.com/file/d/1gsffeq5i8KmYtZEcpg7jhPz7pLVVV2Wm/view?usp=sharing">backup</a></p>
+<p>Precisa adicionar o path dos arquivos descompactados ao $PATH do linux</p>
+<table class="highlighttable"><tr><th class="filename" colspan="2"><div class="highlight"><span class="filename">Buildando o u-boot VIM3</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>make kvim3_defconfig
+make <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-none-elf-
+</code></pre></div>
+</td></tr></table>
+<p>utilizar o paramametro <code>O</code> acaba gerando um erro (<code>all warnings being treated as errors</code>) na build, por isso ele não é utilizado</p>
+<hr/>
+<p>juntando tudo</p>
+<p>Primeiro é preciso baixar esse <a href="https://github.com/BayLibre/u-boot/releases/download/v2017.11-libretech-cc/blx_fix_g12a.sh">script</a> da <a href="https://github.com/BayLibre/u-boot/"><em>BayLibre</em></a> ou meu <a href="https://drive.google.com/file/d/1bcYf6pl_cHXMGyBidKRMvZm38R-PAe_0/view?usp=sharing">backup</a></p>
+<p>mais informações sobre a <a href="https://u-boot.readthedocs.io/en/latest/board/amlogic/pre-generated-fip.html">FIP</a>
++ <a href="https://github.com/LibreELEC/amlogic-boot-fip/tree/master/khadas-vim3">compilados</a></p>
+<p>agora precisamos copiar os arquivos</p>
+<div class="highlight"><pre><span></span><code>cp u-boot-vim3/build/scp_task/bl301.bin fip 
+cp u-boot-vim3/build/board/khadas/kvim3/firmware/acs.bin fip
+
+cp u-boot-vim3/fip/g12b/bl2.bin fip
+cp u-boot-vim3/fip/g12b/bl30.bin fip
+cp u-boot-vim3/fip/g12b/bl31.bin fip
+cp u-boot-vim3/fip/g12b/ddr3_1d.fw fip
+cp u-boot-vim3/fip/g12b/ddr4_1d.fw fip
+cp u-boot-vim3/fip/g12b/ddr4_2d.fw fip
+cp u-boot-vim3/fip/g12b/diag_lpddr4.fw fip
+cp u-boot-vim3/fip/g12b/lpddr3_1d.fw fip
+cp u-boot-vim3/fip/g12b/lpddr4_1d.fw fip
+cp u-boot-vim3/fip/g12b/lpddr4_2d.fw fip
+cp u-boot-vim3/fip/g12b/piei.fw fip
+cp u-boot-vim3/fip/g12b/aml_ddr.fw fip
+
+cp u-boot-mainline/out/u-boot.bin fip/bl33.bin
+
+cp u-boot-vim3/fip/g12b/aml_encrypt_g12b fip 
+</code></pre></div>
+<p>As pastas ficaram organizadas assim:</p>
+<div class="highlight"><pre><span></span><code>.
+├── fip
+├── toolchains
+├── u-boot-mainline
+└── u-boot-vim3
+</code></pre></div>
+<hr/>
+<p>concatenando os arquivos</p>
+<div class="highlight"><pre><span></span><code>bash blx_fix.sh bl30.bin zero_tmp bl30_zero.bin bl301.bin bl301_zero.bin bl30_new.bin bl30
+bash blx_fix.sh bl2.bin zero_tmp bl2_zero.bin acs.bin bl21_zero.bin bl2_new.bin bl2
+</code></pre></div>
+<p>Encriptando -&gt; mais informações <a href="https://github.com/angerman/meson64-tools">link</a></p>
+<div class="highlight"><pre><span></span><code>./aml_encrypt_g12b --bl30sig --input bl30_new.bin            --output bl30_new.bin.g12a.enc --level v3
+./aml_encrypt_g12b --bl3sig  --input bl30_new.bin.g12a.enc   --output bl30_new.bin.enc      --level v3 --type bl30
+./aml_encrypt_g12b --bl3sig  --input bl31.bin                --output bl31.img.enc          --level v3 --type bl31
+./aml_encrypt_g12b --bl3sig  --input bl33.bin --compress lz4 --output bl33.bin.enc          --level v3 --type bl33 --compress lz4
+./aml_encrypt_g12b --bl2sig  --input bl2_new.bin             --output bl2.n.bin.sig
+
+./aml_encrypt_g12b --bootmk --output u-boot-bin --bl2 bl2.n.bin.sig --bl30 bl30_new.bin.enc --bl31 bl31.img.enc --bl33 bl33.bin.enc --ddrfw1 ddr4_1d.fw --ddrfw2 ddr4_2d.fw --ddrfw3 ddr3_1d.fw --ddrfw4 piei.fw --ddrfw5 lpddr4_1d.fw --ddrfw6 lpddr4_2d.fw --ddrfw7 diag_lpddr4.fw --ddrfw8 aml_ddr.fw --ddrfw9 lpddr3_1d.fw --level v3
+</code></pre></div>
+<hr/>
+<h1 id="escrever-no-sd-card"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.</span> escrever no sd card</h1>
+<div class="highlight"><pre><span></span><code>$ DEV=/dev/your_sd_device
+$ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=512 skip=1 seek=1
+$ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
+</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      2022-07-30
+      2022-07-31
     
   </small>
 </div>
@@ -312,13 +421,26 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Next: Boot.img" class="md-footer__link md-footer__link--next" href="Android/boot.img/" rel="next">
+<a aria-label="Previous: Boot.img" class="md-footer__link md-footer__link--prev" href="../../../Android/boot.img/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Boot.img
+            </div>
+</div>
+</a>
+<a aria-label="Next: U-boot no QEMU" class="md-footer__link md-footer__link--next" href="../../qemu/U-boot_qemu/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Boot.img
+              U-boot no QEMU
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -343,8 +465,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["navigation.top"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="assets/javascripts/bundle.6e54b5cd.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>

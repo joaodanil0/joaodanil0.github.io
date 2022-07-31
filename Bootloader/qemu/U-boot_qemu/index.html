@@ -5,23 +5,23 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="assets/images/favicon.png" rel="icon"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.3.0, mkdocs-material-8.2.9" name="generator"/>
-<title>Jão's Blog</title>
-<link href="assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
-<link href="assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
+<title>U-boot no QEMU - Jão's Blog</title>
+<link href="../../../assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="assets/javascripts/glightbox.min.js"></script></head>
+<script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#inicio">
+<a class="md-skip" href="#u-boot-no-qemu">5. 
           Skip to content
         </a>
 </div>
@@ -29,7 +29,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="." title="Jão's Blog">
+<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Inicio
+              U-boot no QEMU
             
           </span>
 </div>
@@ -94,15 +94,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="." title="Jão's Blog">
+<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
 </a>
     Jão's Blog
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href=".">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
         Inicio
       </a>
 </li>
@@ -119,15 +118,15 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="Android/boot.img/">
+<a class="md-nav__link" href="../../../Android/boot.img/">
         Boot.img
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           Bootloader
           <span class="md-nav__icon md-icon"></span>
@@ -151,15 +150,15 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="Bootloader/VIM3/u-boot/">
+<a class="md-nav__link" href="../../VIM3/u-boot/">
         U-boot na VIM3
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_2">
           Qemu
           <span class="md-nav__icon md-icon"></span>
@@ -170,10 +169,62 @@
           Qemu
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="Bootloader/qemu/U-boot_qemu/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          U-boot no QEMU
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         U-boot no QEMU
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducao">5.1 
+    Introdução
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#baixando-o-u-boot-mainline">5.2 
+    Baixando o U-Boot mainline
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#buildando-o-u-boot">5.3 
+    Buildando o U-boot
+  </a>
+<nav aria-label="Buildando o U-boot" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instalando-dependencias">5.3.1 
+    Instalando Dependências
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#definindo-a-arquitetura">5.3.2 
+    Definindo a Arquitetura
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gerando-o-binario">5.3.3 
+    Gerando o Binário
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#carregando-o-u-boot-com-qemu">5.4 
+    Carregando o U-boot com QEMU
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -194,7 +245,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="Documenta%C3%A7%C3%A3o/mkdocs/">
+<a class="md-nav__link" href="../../../Documenta%C3%A7%C3%A3o/mkdocs/">
         Documentação com MKDOCS
       </a>
 </li>
@@ -226,7 +277,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="Linguagens/Rust/Cap1/">
+<a class="md-nav__link" href="../../../Linguagens/Rust/Cap1/">
         Introdução
       </a>
 </li>
@@ -261,7 +312,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="RTOS/zephyr/zephyr/">
+<a class="md-nav__link" href="../../../RTOS/zephyr/zephyr/">
         Zephyr + Esp32 + Blinky = ❤️
       </a>
 </li>
@@ -280,25 +331,111 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducao">5.1 
+    Introdução
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#baixando-o-u-boot-mainline">5.2 
+    Baixando o U-Boot mainline
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#buildando-o-u-boot">5.3 
+    Buildando o U-boot
+  </a>
+<nav aria-label="Buildando o U-boot" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instalando-dependencias">5.3.1 
+    Instalando Dependências
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#definindo-a-arquitetura">5.3.2 
+    Definindo a Arquitetura
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gerando-o-binario">5.3.3 
+    Gerando o Binário
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#carregando-o-u-boot-com-qemu">5.4 
+    Carregando o U-boot com QEMU
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="inicio">Inicio</h1>
-<ul>
-<li><a href="Documenta%C3%A7%C3%A3o/mkdocs/">MKDocs</a></li>
-<li><a href="Bootloader/qemu/U-boot_qemu/">U-boot com QEMU</a></li>
-<li><a href="RTOS/zephyr/zephyr/">Zephyr + ESP32 + Blinky</a></li>
-<li><a href="Linguagens/Rust/Cap1/">Introdução de Rust</a></li>
-</ul>
+<h1 id="u-boot-no-qemu"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.</span> U-boot no QEMU</h1>
+<figure>
+<p><a class="glightbox" href="../images/u-boot_qemu.jpg"><img alt="qemu" src="../images/u-boot_qemu.jpg" width="600"/></a>
+</p>
+<figcaption>
+  Image by <a href="https://pixabay.com/users/publicdomainpictures-14/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=22098">PublicDomainPictures</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=22098">Pixabay</a>
+</figcaption>
+</figure>
+<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1</span> Introdução</h2>
+<p>A fim de ter um ambiente de testes para aprender sobre o U-Boot, o mais recomendado é criar um ambiente virtual. Para isso, eu escolhi o QEMU, que é altamente configurável.</p>
+<p>Essa postagem tem como base a arquitetura <code>aarch64</code>, devido sua larga utilização em sistemas embarcados.</p>
+<h2 id="baixando-o-u-boot-mainline"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2</span> Baixando o U-Boot mainline</h2>
+<p>Basta copiar e colar o código abaixo: </p>
+<div class="highlight"><pre><span></span><code>git clone https://source.denx.de/u-boot/u-boot.git
+</code></pre></div>
+<h2 id="buildando-o-u-boot"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3</span> Buildando o U-boot</h2>
+<p>A seguir são definidos alguns passos para gerar o binário do U-boot, que será utilizado pelo QEMU.</p>
+<h3 id="instalando-dependencias"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.1</span> Instalando Dependências</h3>
+<p>Dependendo do sistema utilizado, alguns pacotes serão necessários para que o processo de build tenha sucesso. No meu ambiente (<code>ubuntu 22.04</code>), foram necessário os seguintes pacotes:</p>
+<div class="highlight"><pre><span></span><code>sudo apt install \
+    flex \
+    bison \
+    gcc-aarch64-linux-gnu \
+</code></pre></div>
+<h3 id="definindo-a-arquitetura"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.2</span> Definindo a Arquitetura</h3>
+<p>Para criar um sistema de build limpo, o parâmetro <code>O=</code> foi utilizado. Dentro da pasta do U-Boot, cole o código abaixo:</p>
+<div class="highlight"><pre><span></span><code>make O=../out qemu_arm64_defconfig -j16
+</code></pre></div>
+<p>Se tudo ocorrer bem, a mensagem a seguir deve aparecer:</p>
+<p><a class="glightbox" href="../images/make_res_1.png"><img alt="qemu" src="../images/make_res_1.png"/></a></p>
+<p>Uma pasta <code>out</code> foi criada, adicionando todos os itens necessários para a build.</p>
+<p><a class="glightbox" href="../images/tree_res_2.png"><img alt="qemu" src="../images/tree_res_2.png"/></a></p>
+<h3 id="gerando-o-binario"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.3</span> Gerando o Binário</h3>
+<p>Dentro da pasta <code>out</code>, cole o código abaixo:</p>
+<div class="highlight"><pre><span></span><code>make CROSS_COMPILE=aarch64-linux-gnu- -j16
+</code></pre></div>
+<p>Se tudo ocorrer corretamente o arquivo <code>u-boot.bin</code> será criado.</p>
+<p><a class="glightbox" href="../images/bin_res_3.png"><img alt="qemu" src="../images/bin_res_3.png"/></a></p>
+<h2 id="carregando-o-u-boot-com-qemu"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4</span> Carregando o U-boot com QEMU</h2>
+<p>Para utilizar o QEMU para arquiteturas ARM64 é necessário instalar o pacote:</p>
+<div class="highlight"><pre><span></span><code>sudo apt install qemu-system-arm
+</code></pre></div>
+<p>Dentro da pasta <code>out</code>, execute o seguinte comando:</p>
+<div class="highlight"><pre><span></span><code>qemu-system-aarch64 -M virt -nographic -cpu cortex-a57  -bios u-boot.bin
+</code></pre></div>
+<p>onde o parâmetro <code>-bios</code> é o binario que acabou de ser criado pela nossa build.</p>
+<p>Após executar o comando, o u-boot deverá iniciar normalmente:</p>
+<p><a class="glightbox" href="../images/final_res-4.png"><img alt="qemu" src="../images/final_res-4.png"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      2022-07-30
+      2022-07-31
     
   </small>
 </div>
@@ -312,13 +449,26 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Next: Boot.img" class="md-footer__link md-footer__link--next" href="Android/boot.img/" rel="next">
+<a aria-label="Previous: U-boot na VIM3" class="md-footer__link md-footer__link--prev" href="../../VIM3/u-boot/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              U-boot na VIM3
+            </div>
+</div>
+</a>
+<a aria-label="Next: Documentação com MKDOCS" class="md-footer__link md-footer__link--next" href="../../../Documenta%C3%A7%C3%A3o/mkdocs/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Boot.img
+              Documentação com MKDOCS
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -343,8 +493,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["navigation.top"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="assets/javascripts/bundle.6e54b5cd.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>

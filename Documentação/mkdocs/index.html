@@ -1,0 +1,848 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.3.0, mkdocs-material-8.2.9" name="generator"/>
+<title>Documentação com MKDOCS - Jão's Blog</title>
+<link href="../../assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#documentacao-com-mkdocs">6. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Jão's Blog">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jão's Blog
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Documentação com MKDOCS
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Jão's Blog">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
+</a>
+    Jão's Blog
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Inicio
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Android" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Android/boot.img/">
+        Boot.img
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Bootloader" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1">
+          VIM3
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="VIM3" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          VIM3
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Bootloader/VIM3/u-boot/">
+        U-boot na VIM3
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2">
+          Qemu
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Qemu" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Qemu
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Bootloader/qemu/U-boot_qemu/">
+        U-boot no QEMU
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          Documentação
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Documentação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Documentação
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Documentação com MKDOCS
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Documentação com MKDOCS
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducao">6.1 
+    Introdução
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#markdown-basico">6.2 
+    Markdown Básico
+  </a>
+<nav aria-label="Markdown Básico" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#titulo-h1">6.2.1 
+    Título (H1)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subtitulo-h2">6.2.2 
+    Subtitulo (H2)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subsubtitulo-h3">6.2.3 
+    Subsubtitulo (H3)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#negrito">6.2.4 
+    Negrito
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#italico">6.2.5 
+    Itálico
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#citacao">6.2.6 
+    Citação
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lista-ordenada">6.2.7 
+    Lista Ordenada
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lista-nao-ordenada">6.2.8 
+    Lista Não Ordenada
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linha-de-codigo">6.2.9 
+    Linha de Código
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#link">6.2.10 
+    Link
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabela">6.2.11 
+    Tabela
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#markdown-estendido">6.3 
+    Markdown Estendido
+  </a>
+<nav aria-label="Markdown Estendido" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lista-de-tarefas">6.3.1 
+    Lista de Tarefas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#emoji">6.3.2 
+    Emoji
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tachado">6.3.3 
+    Tachado
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#realcado">6.3.4 
+    Realçado
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#super-fences">6.4 
+    Super Fences
+  </a>
+<nav aria-label="Super Fences" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloco-de-codigo">6.4.1 
+    Bloco de código
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#formulas">6.4.2 
+    Fórmulas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#custom-fences">6.4.3 
+    Custom Fences
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          Linguagens
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Linguagens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Linguagens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_1">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Rust" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linguagens/Rust/Cap1/">
+        Introdução
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+          RTOS
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="RTOS" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          RTOS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" id="__nav_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_1">
+          Zephyr
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Zephyr" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_1">
+<span class="md-nav__icon md-icon"></span>
+          Zephyr
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../RTOS/zephyr/zephyr/">
+        Zephyr + Esp32 + Blinky = ❤️
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducao">6.1 
+    Introdução
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#markdown-basico">6.2 
+    Markdown Básico
+  </a>
+<nav aria-label="Markdown Básico" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#titulo-h1">6.2.1 
+    Título (H1)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subtitulo-h2">6.2.2 
+    Subtitulo (H2)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subsubtitulo-h3">6.2.3 
+    Subsubtitulo (H3)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#negrito">6.2.4 
+    Negrito
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#italico">6.2.5 
+    Itálico
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#citacao">6.2.6 
+    Citação
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lista-ordenada">6.2.7 
+    Lista Ordenada
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lista-nao-ordenada">6.2.8 
+    Lista Não Ordenada
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linha-de-codigo">6.2.9 
+    Linha de Código
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#link">6.2.10 
+    Link
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabela">6.2.11 
+    Tabela
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#markdown-estendido">6.3 
+    Markdown Estendido
+  </a>
+<nav aria-label="Markdown Estendido" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lista-de-tarefas">6.3.1 
+    Lista de Tarefas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#emoji">6.3.2 
+    Emoji
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tachado">6.3.3 
+    Tachado
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#realcado">6.3.4 
+    Realçado
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#super-fences">6.4 
+    Super Fences
+  </a>
+<nav aria-label="Super Fences" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloco-de-codigo">6.4.1 
+    Bloco de código
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#formulas">6.4.2 
+    Fórmulas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#custom-fences">6.4.3 
+    Custom Fences
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="documentacao-com-mkdocs"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.</span> Documentação com MKDOCS</h1>
+<figure>
+<p><a class="glightbox" href="../images/mkdocs.jpg"><img alt="imagems" src="../images/mkdocs.jpg" width="600"/></a>
+</p>
+<figcaption>
+  Image by <a href="https://pixabay.com/users/wikiimages-1897/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">WikiImages</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">Pixabay</a>
+</figcaption>
+</figure>
+<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.1</span> Introdução</h2>
+<blockquote>
+<p>Essa postagem foi inspirado na <a href="https://youtu.be/GW6nAJ1NHUQ">live de python #189</a>. Se quiser mais informações sobre MKDocs da uma olhada no vídeo e deixa o like. <img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f44d.png" title=":thumbsup:"/></p>
+</blockquote>
+<p>O <a href="https://www.mkdocs.org/">MKDocs</a> é uma biblioteca focada em documentação, desenvolvida em python. Ela possui várias funcionalidades e algumas delas serão mostradas abaixo.</p>
+<p>Para instalar:</p>
+<div class="highlight"><pre><span></span><code>pip install mkdocs
+</code></pre></div>
+<p>Após a instalação basta digitar:</p>
+<div class="highlight"><pre><span></span><code>mkdocs new TESTE
+</code></pre></div>
+<p>Os arquivos necessários para iniciar a documentação serão criados.</p>
+<h2 id="markdown-basico"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2</span> Markdown Básico</h2>
+<p>Comandos disponíveis por padrão na biblioteca.</p>
+<h3 id="titulo-h1"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.1</span> Título (H1)</h3>
+<div class="highlight"><pre><span></span><code># Exemplo
+</code></pre></div>
+<h3 id="subtitulo-h2"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.2</span> Subtitulo (H2)</h3>
+<div class="highlight"><pre><span></span><code>## Exemplo
+</code></pre></div>
+<h3 id="subsubtitulo-h3"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.3</span> Subsubtitulo (H3)</h3>
+<div class="highlight"><pre><span></span><code>### Exemplo
+</code></pre></div>
+<h3 id="negrito"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.4</span> Negrito</h3>
+<div class="highlight"><pre><span></span><code>**Exemplo**
+</code></pre></div>
+<blockquote>
+<p><strong>Exemplo</strong></p>
+</blockquote>
+<h3 id="italico"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.5</span> Itálico</h3>
+<div class="highlight"><pre><span></span><code>*Exemplo*
+</code></pre></div>
+<blockquote>
+<p><em>Exemplo</em></p>
+</blockquote>
+<h3 id="citacao"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.6</span> Citação</h3>
+<div class="highlight"><pre><span></span><code>&gt; Exemplo
+</code></pre></div>
+<blockquote>
+<p>Exemplo</p>
+</blockquote>
+<h3 id="lista-ordenada"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.7</span> Lista Ordenada</h3>
+<div class="highlight"><pre><span></span><code>1. Exemplo
+2. Exemplo
+3. Exemplo
+</code></pre></div>
+<blockquote>
+<ol>
+<li>Exemplo</li>
+<li>Exemplo</li>
+<li>Exemplo</li>
+</ol>
+</blockquote>
+<h3 id="lista-nao-ordenada"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.8</span> Lista Não Ordenada</h3>
+<div class="highlight"><pre><span></span><code>- Exemplo
+- Exemplo
+- Exemplo
+</code></pre></div>
+<blockquote>
+<ul>
+<li>Exemplo</li>
+<li>Exemplo</li>
+<li>Exemplo</li>
+</ul>
+</blockquote>
+<h3 id="linha-de-codigo"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.9</span> Linha de Código</h3>
+<div class="highlight"><pre><span></span><code>`Código`
+</code></pre></div>
+<blockquote>
+<p><code>Código</code></p>
+</blockquote>
+<h3 id="link"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.10</span> Link</h3>
+<div class="highlight"><pre><span></span><code>[Site do google](https://www.google.com.br)
+</code></pre></div>
+<blockquote>
+<p><a href="https://www.google.com.br">Site do google</a></p>
+</blockquote>
+<h3 id="tabela"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.11</span> Tabela</h3>
+<div class="highlight"><pre><span></span><code>| Nome | Idade |
+| ---- | ----- |
+| João | 28    |
+| Pedro | 34   |
+</code></pre></div>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Idade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>João</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Pedro</td>
+<td>34</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h2 id="markdown-estendido"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.3</span> Markdown Estendido</h2>
+<p>Para ter ainda mais funcionalidades, é necessário instalar a biblioteca <a href="https://facelessuser.github.io/pymdown-extensions/">PyMdown Extensions</a>:</p>
+<div class="highlight"><pre><span></span><code>pip install pymdown-extensions
+</code></pre></div>
+<p>Além disso, é necessário adicionar quais extensões serão usadas dentro do arquivo <code>mkdocs.yml</code>, por exemplo:</p>
+<div class="highlight"><pre><span></span><code>markdown_extensions:
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.tilde
+</code></pre></div>
+<p>Cada uma dessas extensões serão mostradas a seguir.</p>
+<h3 id="lista-de-tarefas"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.3.1</span> Lista de Tarefas</h3>
+<p><code>pymdownx.tasklist</code></p>
+<div class="highlight"><pre><span></span><code>- [ ] Checar.
+- [ ] checar.
+- [X] checado.
+</code></pre></div>
+<blockquote>
+<ul class="task-list">
+<li class="task-list-item"><input disabled="" type="checkbox"/> Checar.</li>
+<li class="task-list-item"><input disabled="" type="checkbox"/> checar.</li>
+<li class="task-list-item"><input checked="" disabled="" type="checkbox"/> checado.</li>
+</ul>
+</blockquote>
+<h3 id="emoji"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.3.2</span> Emoji</h3>
+<p>Para mais emojis: <a href="https://emojipedia.org/twitter/">emojipedia</a>. Escolha um emoji e procure por <code>Shortcodes</code>.</p>
+<p><code>pymdownx.emoji</code></p>
+<div class="highlight"><pre><span></span><code>:snake: :heart: :rocket:
+</code></pre></div>
+<blockquote>
+<p><img alt="🐍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f40d.png" title=":snake:"/> <img alt="❤️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2764.png" title=":heart:"/> <img alt="🚀" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f680.png" title=":rocket:"/></p>
+</blockquote>
+<h3 id="tachado"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.3.3</span> Tachado</h3>
+<p><code>pymdownx.tilde</code>
+<div class="highlight"><pre><span></span><code>~~Exemplo~~
+</code></pre></div></p>
+<blockquote>
+<p><del>Exemplo</del></p>
+</blockquote>
+<h3 id="realcado"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.3.4</span> Realçado</h3>
+<p><code>pymdownx.mark</code></p>
+<div class="highlight"><pre><span></span><code>==Exemplo==
+</code></pre></div>
+<blockquote>
+<p><mark>Exemplo</mark></p>
+</blockquote>
+<h2 id="super-fences"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.4</span> Super Fences</h2>
+<p>Dentro do <code>pymdown-extensions</code> existe uma funcionalidade que merece um tópico a parte, chamado de  <code>superfences</code>. Com ele, o MKDocs fica ainda mais poderoso.</p>
+<p>É necessário informar para o MKDocs que o super fences será utilizado, adicionando as linhas dentro do <code>mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code>markdown_extensions:
+  # ...
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
+</code></pre></div>
+<h3 id="bloco-de-codigo"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.4.1</span> Bloco de código</h3>
+<p><code>pymdownx.superfences</code></p>
+<div class="highlight"><pre><span></span><code>    ```{.py3 linenums="44" title="teste.py" hl_lines="1 3"}
+    def xpto():
+        """Docstring"""
+        return True
+    ```
+</code></pre></div>
+<table class="highlighttable"><tr><th class="filename" colspan="2"><div class="highlight"><span class="filename">teste.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">xpto</span><span class="p">():</span>
+</span>    <span class="sd">"""Docstring"""</span>
+<span class="hll">    <span class="k">return</span> <span class="kc">True</span>
+</span></code></pre></div>
+</td></tr></table>
+<h3 id="formulas"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.4.2</span> Fórmulas</h3>
+<p><code>pymdownx.arithmatex</code></p>
+<div class="highlight"><pre><span></span><code>$$ \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}} $$
+</code></pre></div>
+<blockquote>
+<div class="arithmatex">\[ \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}} \]</div>
+</blockquote>
+<div class="highlight"><pre><span></span><code>The homomorphism $f$ is injective if and only if its kernel is only the 
+singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such 
+that $f(a)=f(b)$.
+</code></pre></div>
+<blockquote>
+<p>The homomorphism <span class="arithmatex">\(f\)</span> is injective if and only if its kernel is only the 
+singleton set <span class="arithmatex">\(e_G\)</span>, because otherwise <span class="arithmatex">\(\exists a,b\in G\)</span> with <span class="arithmatex">\(a\neq b\)</span> such 
+that <span class="arithmatex">\(f(a)=f(b)\)</span>.</p>
+</blockquote>
+<h3 id="custom-fences"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.4.3</span> Custom Fences</h3>
+<p>É possível incorporar outras bibliotecas dentro do MKDocs, por exemplo a <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> que é uma biblioteca para gerar diagramas e gráficos. Para isso, é necessário adicionar no <code>mkdocs.yml</code></p>
+<div class="highlight"><pre><span></span><code>  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>    ```mermaid
+    classDiagram
+        Pessoa &lt;|-- Eduardo
+        class Pessoa{
+            +String nome
+            +metodo(self):bool
+        }
+    ```
+</code></pre></div>
+<div class="mermaid">classDiagram
+    Pessoa &lt;|-- Jao
+    class Pessoa{
+        +String nome
+        +metodo(self):bool
+    }</div>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      2022-07-31
+    
+  </small>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: U-boot no QEMU" class="md-footer__link md-footer__link--prev" href="../../Bootloader/qemu/U-boot_qemu/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              U-boot no QEMU
+            </div>
+</div>
+</a>
+<a aria-label="Next: Introdução" class="md-footer__link md-footer__link--next" href="../../Linguagens/Rust/Cap1/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Introdução
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+</html>
