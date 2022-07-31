@@ -4,7 +4,7 @@
 - [ ] Escrevendo o *Hello World!*
 - [ ] Usando `cargo` (gerenciador de pacotes e sistema de build)
 
-## 1. Instalando o Rust no linux
+## Instalando o Rust no linux
 
 Devemos baixar o `rustup`, que é responspável por baixar o `rust` e fazer a instalação
 
@@ -72,14 +72,14 @@ Cargo's bin directory (/home/jao/Documents/Programs/rust/cargo//bin).
 To configure your current shell, run:
 source /home/jao/Documents/Programs/rust/cargo//env
 
-### 1.1 Alguns comandos úteis
+### Alguns comandos úteis
 
 - rustup update
 - rustup self uninstall
 - rustc --version
 - rustup doc
 
-## 2. Escrevendo o Hello World!
+## Escrevendo o Hello World!
 
 Crie um arquivo chamado `main.rs` e adicione o conteúdo
 
@@ -98,11 +98,11 @@ rustc main.rc
 
 O resultado será o texto ==Hello World!==
 
-### 2.1 Alguns comandos úteis
+### Alguns comandos úteis
 
 - rustfmt (para formatar o código)
 
-## 3. Usando cargo (gerenciador de pacotes e sistema de build)
+## Usando cargo (gerenciador de pacotes e sistema de build)
 
 Para criar um projeto utilizando o `cargo`, basta usar o comando
 
@@ -118,7 +118,7 @@ cargo new hello_cargo
  
  dentro da pasta hello_cargo, a pasta `target/`será criada e o executável está em `hello_cargo/target/debug`, chamado de ==hello_cargo==
 
-### 3.1 Comandos úteis
+### Comandos úteis
  
  - cargo run (para executar o programa)
  - cargo check (para fazer as checagens no código, sem compilar)

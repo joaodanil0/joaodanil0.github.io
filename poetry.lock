@@ -1,4 +1,19 @@
 [[package]]
+name = "beautifulsoup4"
+version = "4.11.1"
+description = "Screen-scraping library"
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.dependencies]
+soupsieve = ">1.2"
+
+[package.extras]
+html5lib = ["html5lib"]
+lxml = ["lxml"]
+
+[[package]]
 name = "click"
 version = "8.1.2"
 description = "Composable command line interface toolkit"
@@ -29,7 +44,7 @@ python-versions = "*"
 python-dateutil = ">=2.8.1"
 
 [package.extras]
-dev = ["twine", "markdown", "flake8", "wheel"]
+dev = ["wheel", "flake8", "markdown", "twine"]
 
 [[package]]
 name = "gitdb"
@@ -134,6 +149,18 @@ watchdog = ">=2.0"
 i18n = ["babel (>=2.9.0)"]
 
 [[package]]
+name = "mkdocs-enumerate-headings-plugin"
+version = "0.5.0"
+description = "MkDocs Plugin to enumerate the headings (h1-h6) across site pages"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+beautifulsoup4 = ">=4.9.0"
+mkdocs = ">=1.0.4"
+
+[[package]]
 name = "mkdocs-git-revision-date-plugin"
 version = "0.3.2"
 description = "MkDocs plugin for setting revision date from git per markdown file."
@@ -145,6 +172,17 @@ python-versions = ">=3.4"
 GitPython = "*"
 jinja2 = "*"
 mkdocs = ">=0.17"
+
+[[package]]
+name = "mkdocs-glightbox"
+version = "0.1.7"
+description = "MkDocs plugin supports image lightbox with GLightbox."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+beautifulsoup4 = ">=4.11.1"
 
 [[package]]
 name = "mkdocs-material"
@@ -258,6 +296,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "soupsieve"
+version = "2.3.2.post1"
+description = "A modern CSS selector implementation for Beautiful Soup."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "watchdog"
 version = "2.1.7"
 description = "Filesystem events monitoring"
@@ -283,9 +329,13 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "cf374615ae249b586b2890bc25be3d1049bac6d468ac32439f8187a5da6ecfa8"
+content-hash = "f22d8afc6fa4944e198e36f499b03bd8dc7bd73b77a4d17201098d11a99363d0"
 
 [metadata.files]
+beautifulsoup4 = [
+    {file = "beautifulsoup4-4.11.1-py3-none-any.whl", hash = "sha256:58d5c3d29f5a36ffeb94f02f0d786cd53014cf9b3b3951d42e0080d8a9498d30"},
+    {file = "beautifulsoup4-4.11.1.tar.gz", hash = "sha256:ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693"},
+]
 click = [
     {file = "click-8.1.2-py3-none-any.whl", hash = "sha256:24e1a4a9ec5bf6299411369b208c1df2188d9eb8d916302fe6bf03faed227f1e"},
     {file = "click-8.1.2.tar.gz", hash = "sha256:479707fe14d9ec9a0757618b7a100a0ae4c4e236fac5b7f80ca68028141a1a72"},
@@ -368,8 +418,15 @@ mkdocs = [
     {file = "mkdocs-1.3.0-py3-none-any.whl", hash = "sha256:26bd2b03d739ac57a3e6eed0b7bcc86168703b719c27b99ad6ca91dc439aacde"},
     {file = "mkdocs-1.3.0.tar.gz", hash = "sha256:b504405b04da38795fec9b2e5e28f6aa3a73bb0960cb6d5d27ead28952bd35ea"},
 ]
+mkdocs-enumerate-headings-plugin = [
+    {file = "mkdocs-enumerate-headings-plugin-0.5.0.tar.gz", hash = "sha256:9c31f52046b03352eca6d9de912ed20dcad54f703cf3f5eff62e06aeeb15ef81"},
+    {file = "mkdocs_enumerate_headings_plugin-0.5.0-py3-none-any.whl", hash = "sha256:6e1dff955ceaf06d0bb3eae26af0e643a9323111ba636cad1901a96f2c83e588"},
+]
 mkdocs-git-revision-date-plugin = [
     {file = "mkdocs_git_revision_date_plugin-0.3.2-py3-none-any.whl", hash = "sha256:2e67956cb01823dd2418e2833f3623dee8604cdf223bddd005fe36226a56f6ef"},
+]
+mkdocs-glightbox = [
+    {file = "mkdocs-glightbox-0.1.7.tar.gz", hash = "sha256:7e86e107349eacfd17a4f25673482bd2f033b21c272beaffae430b2c9c5aead6"},
 ]
 mkdocs-material = [
     {file = "mkdocs-material-8.2.9.tar.gz", hash = "sha256:c177ff180b024bc061714c9483a8d26d36e1b9fdef4be8e70e243770416fe9d7"},
@@ -445,6 +502,10 @@ six = [
 smmap = [
     {file = "smmap-5.0.0-py3-none-any.whl", hash = "sha256:2aba19d6a040e78d8b09de5c57e96207b09ed71d8e55ce0959eeee6c8e190d94"},
     {file = "smmap-5.0.0.tar.gz", hash = "sha256:c840e62059cd3be204b0c9c9f74be2c09d5648eddd4580d9314c3ecde0b30936"},
+]
+soupsieve = [
+    {file = "soupsieve-2.3.2.post1-py3-none-any.whl", hash = "sha256:3b2503d3c7084a42b1ebd08116e5f81aadfaea95863628c80a3b774a11b7c759"},
+    {file = "soupsieve-2.3.2.post1.tar.gz", hash = "sha256:fc53893b3da2c33de295667a0e19f078c14bf86544af307354de5fcf12a3f30d"},
 ]
 watchdog = [
     {file = "watchdog-2.1.7-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:177bae28ca723bc00846466016d34f8c1d6a621383b6caca86745918d55c7383"},

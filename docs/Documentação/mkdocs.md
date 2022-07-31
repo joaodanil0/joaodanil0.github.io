@@ -1,10 +1,16 @@
 # Documentação com MKDOCS
 
-![imagems](../../images/mkdocs.jpg)
+<figure markdown>
+  ![imagems](images/mkdocs.jpg){ width="600" }
+  <figcaption>
+  Image by <a href="https://pixabay.com/users/wikiimages-1897/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">WikiImages</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">Pixabay</a>
+  </figcaption>
+</figure>
 
-Image by <a href="https://pixabay.com/users/wikiimages-1897/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">WikiImages</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">Pixabay</a>
 
-## 1. Introdução
+
+
+## Introdução
 
 > Essa postagem foi inspirado na [live de python #189](https://youtu.be/GW6nAJ1NHUQ). Se quiser mais informações sobre MKDocs da uma olhada no vídeo e deixa o like. :thumbsup:
 
@@ -26,44 +32,44 @@ Os arquivos necessários para iniciar a documentação serão criados.
 
 
 
-## 2. Markdown Básico
+## Markdown Básico
 
 Comandos disponíveis por padrão na biblioteca.
 
-### 2.1. Título (H1)
+### Título (H1)
 ```
 # Exemplo
 ```
 
-### 2.2. Subtitulo (H2)
+### Subtitulo (H2)
 ```
 ## Exemplo
 ```
 
-### 2.3. Subsubtitulo (H3)
+### Subsubtitulo (H3)
 ```
 ### Exemplo
 ```
 
-### 2.4. Negrito
+### Negrito
 ```
 **Exemplo**
 ```
 > **Exemplo**
 
-### 2.5. Itálico
+### Itálico
 ```
 *Exemplo*
 ```
 > *Exemplo*
 
-### 2.6. Citação
+### Citação
 ```
 > Exemplo
 ```
 > Exemplo
 
-### 2.7. Lista Ordenada
+### Lista Ordenada
 ```
 1. Exemplo
 2. Exemplo
@@ -73,7 +79,7 @@ Comandos disponíveis por padrão na biblioteca.
 > 2. Exemplo
 > 3. Exemplo
 
-### 2.8. Lista Não Ordenada
+### Lista Não Ordenada
 ```
 - Exemplo
 - Exemplo
@@ -83,20 +89,20 @@ Comandos disponíveis por padrão na biblioteca.
 > - Exemplo
 > - Exemplo
 
-### 2.9. Linha de Código
+### Linha de Código
 ```
 `Código`
 ```
 
 > `Código`
 
-### 2.10. Link
+### Link
 ```
 [Site do google](https://www.google.com.br)
 ```
 > [Site do google](https://www.google.com.br)
 
-### 2.11. Tabela
+### Tabela
 ```
 | Nome | Idade |
 | ---- | ----- |
@@ -109,7 +115,7 @@ Comandos disponíveis por padrão na biblioteca.
 > | Pedro | 34   |
 
 
-## 3. Markdown Estendido
+## Markdown Estendido
 
 Para ter ainda mais funcionalidades, é necessário instalar a biblioteca [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/):
 
@@ -129,7 +135,7 @@ markdown_extensions:
 
 Cada uma dessas extensões serão mostradas a seguir.
 
-### 3.1. Lista de Tarefas
+### Lista de Tarefas
 `pymdownx.tasklist`
 
 ```
@@ -141,7 +147,7 @@ Cada uma dessas extensões serão mostradas a seguir.
 > - [ ] checar.
 > - [X] checado.
 
-### 3.2. Emoji
+### Emoji
 
 Para mais emojis: [emojipedia](https://emojipedia.org/twitter/). Escolha um emoji e procure por `Shortcodes`.
 
@@ -152,14 +158,14 @@ Para mais emojis: [emojipedia](https://emojipedia.org/twitter/). Escolha um emoj
 ```
 > :snake: :heart: :rocket:
 
-### 3.3. Tachado
+### Tachado
 `pymdownx.tilde`
 ```
 ~~Exemplo~~
 ```
 > ~~Exemplo~~
 
-### 3.4. Realçado
+### Realçado
 `pymdownx.mark`
 
 ```
@@ -167,7 +173,7 @@ Para mais emojis: [emojipedia](https://emojipedia.org/twitter/). Escolha um emoj
 ```
 > ==Exemplo==
 
-## 4. Super Fences
+## Super Fences
 
 Dentro do `pymdown-extensions` existe uma funcionalidade que merece um tópico a parte, chamado de  `superfences`. Com ele, o MKDocs fica ainda mais poderoso.
 
@@ -186,7 +192,7 @@ extra_javascript:
   - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
 ```
 
-### 4.1. Bloco de código
+### Bloco de código
 `pymdownx.superfences`
 
 ```
@@ -203,7 +209,7 @@ def xpto():
     return True
 ```
 
-### 4.2. Fórmulas 
+### Fórmulas 
 `pymdownx.arithmatex`
 
 ```
@@ -222,7 +228,7 @@ that $f(a)=f(b)$.
 singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such 
 that $f(a)=f(b)$.
 
-### 4.3. Custom Fences
+### Custom Fences
 
 É possível incorporar outras bibliotecas dentro do MKDocs, por exemplo a [Mermaid](https://mermaid-js.github.io/mermaid/#/) que é uma biblioteca para gerar diagramas e gráficos. Para isso, é necessário adicionar no `mkdocs.yml`
 

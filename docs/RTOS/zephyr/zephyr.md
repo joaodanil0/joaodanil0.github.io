@@ -1,15 +1,18 @@
 # Zephyr + Esp32 + Blinky = ❤️
 
-![imagems](../../images/Zephyr/Title.jpg)
+<figure markdown>
+  ![imagems](images/Title.jpg){ width="600" }
+  <figcaption>
+  Image by <a href="https://pixabay.com/users/methodshop-1460919/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3404892">methodshop</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3404892">Pixabay</a>
+  </figcaption>
+</figure>
 
-Image by <a href="https://pixabay.com/users/methodshop-1460919/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3404892">methodshop</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3404892">Pixabay</a>
-
-## 1. Introdução
+## Introdução
 
 
 Recentemente voltei a pesquisar sobre *Internet of Things* (IoT) e durante uma conversas no trabalho fiquei sabendo do Zephyr. Por sorte, um [Webnar](https://youtu.be/UtLfhNw0lQg) da [Embarcados](https://www.embarcados.com.br/) aconteceu e pude me interar mais sobre essa plataforma. Só tenho uma palavra para definir: **Sensacional** 🤯
 
-## 2. Instalando dependências
+## Instalando dependências
 
 Estou usando `Ubuntu 22.04`.
 
@@ -55,7 +58,7 @@ pip3 install -r /home/jao/Documents/Workspace/IoT/PASTA_DO_ZEPHYR/zephyr/scripts
 ```
 
 
-## 3. Baixando a toolchain 
+## Baixando a toolchain 
 
 Como vamos utilizar o Esp32, a toolchain pode ser baixada [aqui](https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-guides/tools/idf-tools.html#xtensa-esp32-elf). No meu caso estou usando a plataforma `linux-amd64`
 
@@ -81,7 +84,7 @@ west espressif update
 
 Após esse passo, o ambiente de configuração para o Esp32 estará finalizado.
 
-## 4. Exemplo Blinky
+## Exemplo Blinky
 
 Na versão atual do Zephyr `3.0.0`, é necessário adicionar um módulo no *device driver* para que o led *built-in* sejá reconhecido. Para isso, é necessário criar um arquivo dentro do exemplo do Blincky do próprio Zephyr
 
@@ -170,7 +173,7 @@ For troubleshooting steps visit: https://docs.espressif.com/projects/esptool/en/
 
 > A fatal error occurred: Could not connect to an Espressif device on any of the 2 available serial ports.
 
-Talvel seja necessário ficar segurando o botão `boot` do Esp32.
+Talvez seja necessário ficar segurando o botão `boot` do Esp32.
 
 É isso, até a próxima.
 

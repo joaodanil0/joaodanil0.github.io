@@ -2,34 +2,26 @@ site_name: Jão's Blog
 
 plugins:
   - git-revision-date
-
+  - search
+  - glightbox
+  - enumerate-headings:
+      toc_depth: 3
+      exclude:
+        - index.md
+        
 theme:
   name: material
   icon:
     logo: material/bird
+  features:
+    - navigation.top
   palette:
-    # - scheme: default
-    #   primary: purple
-    #   toggle:
-    #     icon: material/weather-sunny
-    #     name: modo Claro
     - scheme: slate
       primary: deep purple
-      # toggle:
-      #   icon: material/weather-night
-      #   name: Modo Noturno
-    
-
-# extra:
-#   alternate:
-#     - name: English
-#       link: /English/ 
-#       lang: en
-#     - name: Brasil <3
-#       link: /Portugues/
-#       lang: pt-Br
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - pymdownx.tasklist
   - pymdownx.emoji
   - pymdownx.mark

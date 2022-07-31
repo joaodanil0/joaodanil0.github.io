@@ -1,7 +1,5 @@
 # Inicio
-
-## Postagens
-- [MKDocs](postagens/Documentação/mkdocs.md)
-- [U-boot com QEMU](postagens/Bootloader/U-boot_qemu.md)
-- [Zephyr + ESP32 + Blinky](postagens/IoT/zephyr.md)
-- [Introdução de Rust](postagens/Rust/Cap1.md)
+- [MKDocs](Documentação/mkdocs.md)
+- [U-boot com QEMU](Bootloader/qemu/U-boot_qemu.md)
+- [Zephyr + ESP32 + Blinky](RTOS/zephyr/zephyr.md)
+- [Introdução de Rust](Linguagens/Rust/Cap1.md)
