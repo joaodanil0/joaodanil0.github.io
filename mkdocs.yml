@@ -11,6 +11,9 @@ plugins:
         
 theme:
   name: material
+  language: pt-BR
+  font:
+    text: Noto Serif
   icon:
     logo: material/bird
   features:
