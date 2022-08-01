@@ -1,18 +1,18 @@
 
 <!DOCTYPE html>
 
-<html class="no-js" lang="en">
+<html class="no-js" lang="pt">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.3.0, mkdocs-material-8.2.9" name="generator"/>
-<title>U-boot na VIM3 - Jão's Blog</title>
+<title>U-boot na VIM3 (SD Card) - Jão's Blog</title>
 <link href="../../../assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
@@ -21,14 +21,14 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#u-boot-na-vim3">2. 
-          Skip to content
+<a class="md-skip" href="#u-boot-na-vim3-sd-card">2. 
+          Pular para conteúdo
         </a>
 </div>
 <div data-md-component="announce">
 </div>
 <header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
+<nav aria-label="Cabeçalho" class="md-header__inner md-grid">
 <a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
 </a>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              U-boot na VIM3
+              U-boot na VIM3 (SD Card)
             
           </span>
 </div>
@@ -61,13 +61,13 @@
 <label class="md-search__overlay" for="__search"></label>
 <div class="md-search__inner" role="search">
 <form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<input aria-label="Buscar" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Buscar" required="" spellcheck="false" type="text"/>
 <label class="md-search__icon md-icon" for="__search">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<nav aria-label="Pesquisar" class="md-search__options">
+<button aria-label="Limpar" class="md-search__icon md-icon" tabindex="-1" type="reset">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
 </button>
 </nav>
@@ -76,7 +76,7 @@
 <div class="md-search__scrollwrap" data-md-scrollfix="">
 <div class="md-search-result" data-md-component="search-result">
 <div class="md-search-result__meta">
-            Initializing search
+            Inicializando busca
           </div>
 <ol class="md-search-result__list"></ol>
 </div>
@@ -92,7 +92,7 @@
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<nav aria-label="Navegação" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
@@ -152,21 +152,73 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          U-boot na VIM3
+          U-boot na VIM3 (SD Card)
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        U-boot na VIM3
+        U-boot na VIM3 (SD Card)
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
 <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Indice
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#main-line">2.1 
-    Main line
+<a class="md-nav__link" href="#organizando-a-estrutura-de-pastas">2.1 
+    Organizando a estrutura de pastas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#baixando-o-u-boot-mainline">2.2 
+    Baixando o u-boot Mainline
+  </a>
+<nav aria-label="Baixando o u-boot Mainline" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compilando-o-u-boot-mainline">2.2.1 
+    Compilando o u-boot mainline
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#baixando-u-boot-vim3">2.3 
+    Baixando u-boot VIM3
+  </a>
+<nav aria-label="Baixando u-boot VIM3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compilando-o-u-boot-vim3">2.3.1 
+    Compilando o u-boot VIM3
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#juntando-tudo">2.4 
+    Juntando tudo
+  </a>
+<nav aria-label="Juntando tudo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#concatenando-os-arquivos">2.4.1 
+    Concatenando os arquivos
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#encriptando-os-arquivos">2.4.2 
+    Encriptando os arquivos
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passando-o-u-boot-para-o-sd-card">2.5 
+    Passando o u-boot para o SD Card
   </a>
 </li>
 </ul>
@@ -210,10 +262,45 @@
           Documentação
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" id="__nav_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_1">
+          Partições
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Partições" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Partições
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Documenta%C3%A7%C3%A3o/mkdocs/">
+<a class="md-nav__link" href="../../../Documenta%C3%A7%C3%A3o/Parti%C3%A7%C3%B5es/GPT/">
+        Tabela de Partição GUID
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2">
+          Mkdocs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Mkdocs" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+          Mkdocs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Documenta%C3%A7%C3%A3o/mkdocs/mkdocs/">
         Documentação com MKDOCS
       </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -296,15 +383,67 @@
 <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
 <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Indice
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#main-line">2.1 
-    Main line
+<a class="md-nav__link" href="#organizando-a-estrutura-de-pastas">2.1 
+    Organizando a estrutura de pastas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#baixando-o-u-boot-mainline">2.2 
+    Baixando o u-boot Mainline
+  </a>
+<nav aria-label="Baixando o u-boot Mainline" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compilando-o-u-boot-mainline">2.2.1 
+    Compilando o u-boot mainline
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#baixando-u-boot-vim3">2.3 
+    Baixando u-boot VIM3
+  </a>
+<nav aria-label="Baixando u-boot VIM3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compilando-o-u-boot-vim3">2.3.1 
+    Compilando o u-boot VIM3
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#juntando-tudo">2.4 
+    Juntando tudo
+  </a>
+<nav aria-label="Juntando tudo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#concatenando-os-arquivos">2.4.1 
+    Concatenando os arquivos
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#encriptando-os-arquivos">2.4.2 
+    Encriptando os arquivos
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passando-o-u-boot-para-o-sd-card">2.5 
+    Passando o u-boot para o SD Card
   </a>
 </li>
 </ul>
@@ -314,47 +453,130 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="u-boot-na-vim3"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> U-boot na VIM3</h1>
+<h1 id="u-boot-na-vim3-sd-card"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> U-boot na VIM3 (SD Card)</h1>
 <figure>
-<p><a class="glightbox" href="../images/u-boot_logo.svg"><img alt="imagems" src="../images/u-boot_logo.svg" width="600"/></a>
+<p><a class="glightbox" href="../images/u-boot_logo.svg"><img alt="imagems" src="../images/u-boot_logo.svg" width="300"/></a>
 </p>
 <figcaption>U-boot logo</figcaption>
 </figure>
-<p>baseado no tutorial do pŕoprio u-boot em <a href="https://u-boot.readthedocs.io/en/latest/board/amlogic/khadas-vim3.html">readthedocs</a></p>
+<blockquote>
+<p>baseado no tutorial do próprio u-boot no <a href="https://u-boot.readthedocs.io/en/latest/board/amlogic/khadas-vim3.html">readthedocs</a></p>
+</blockquote>
 <hr/>
-<h2 id="main-line"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Main line</h2>
-<p>Baixar o u-boot mainline</p>
+<h2 id="organizando-a-estrutura-de-pastas"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Organizando a estrutura de pastas</h2>
+<p>Serão necessários vários arquivos e pastas durante esse post. Devido isso, iremos usar a seguinte estrutura de pastas</p>
+<div class="highlight"><pre><span></span><code>.
+├── fip
+├── toolchain
+├── u-boot-mainline
+└── u-boot-vim3
+</code></pre></div>
+<p>Elas serão criadas ao longo deste post.</p>
+<h2 id="baixando-o-u-boot-mainline"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Baixando o u-boot Mainline</h2>
+<p>O u-boot possui um repositório no github. Vamos baixa-lo dentro da pasta <mark>u-boot-mainline</mark>:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/u-boot/u-boot.git u-boot-mainline
 </code></pre></div>
-<p>baixei o toolchain <a href="https://drive.google.com/file/d/17MRLKZct7XoxGKUvNtmP1-R_l6z83PWw/view?usp=sharing">versao </a>, para versões mais atuais checar em <a href="https://developer.arm.com/downloads/-/gnu-a">toolchain</a></p>
-<p>Precisa adicionar o path do arquivo descompactado ao $PATH do linux</p>
-<p>execute o seguinte comando dentro da pasta descompactada</p>
-<table class="highlighttable"><tr><th class="filename" colspan="2"><div class="highlight"><span class="filename">Buildando o u-boot</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>make khadas-vim3_defconfig <span class="nv">O</span><span class="o">=</span>out/
+<p>Para fazer o <a href="https://en.wikipedia.org/wiki/Cross_compiler"><em>cross compile</em></a> é necessário baixar as <a href="https://en.wikipedia.org/wiki/Toolchain"><em>toolchain</em></a>. As versões novas do u-boot precisam de versões novas de <em>toolchain</em>, que podem ser encontradas no site da <a href="https://developer.arm.com/downloads/-/gnu-a">ARM</a>. Nesse post estou usando a versão <a href="https://drive.google.com/file/d/17MRLKZct7XoxGKUvNtmP1-R_l6z83PWw/view?usp=sharing">gcc-arm-10.3-2021.07</a> (meu link de backup).</p>
+<h3 id="compilando-o-u-boot-mainline"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.1</span> Compilando o u-boot mainline</h3>
+<p>Uma vez baixado a <em>toolchain</em> (<a href="https://drive.google.com/file/d/17MRLKZct7XoxGKUvNtmP1-R_l6z83PWw/view?usp=sharing">gcc-arm-10.3-2021.07</a>), vamos criar a pasta <mark>toolchain</mark> e mover a <em>toolchain</em> baixada para dentro dela.</p>
+<p>Agora, precisamos descompactar a <em>toochain</em> e adicionar os binários ao <em>path</em> do sistema. Para isso</p>
+<div class="highlight"><pre><span></span><code>export PATH=CAMINHO_ABSOLUTO/toolchain/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin:$PATH
+</code></pre></div>
+<p>Observe que a pasta <code>/bin</code> está sendo adicionada ao <em>path</em>. Nela estão os executáveis que serão utilizados durante o processo de build.</p>
+<p>Volte para a pasta do <mark>u-boot-mainline</mark> e execute os seguintes comandos:</p>
+<div class="highlight"><pre><span></span><code>make khadas-vim3_defconfig <span class="nv">O</span><span class="o">=</span>out/
 make <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-none-elf- <span class="nv">O</span><span class="o">=</span>out/
 </code></pre></div>
-</td></tr></table>
-<p>O parâmetro <code>O</code> define a pasta onde os arquivos gerados serão salvos.</p>
-<hr/>
-<h1 id="uboot-modificado-vim3"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> uboot modificado VIM3</h1>
-<p>Baixar </p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/khadas/u-boot.git -b khadas-vims-v2015.01 u-boot-vim3
+<blockquote>
+<p>O parâmetro <code>O</code> define a pasta onde os arquivos compilados serão salvos.</p>
+</blockquote>
+<p>O argumento <code>CROSS_COMPILE=aarch64-none-elf-</code> informa qual <em>toolchain</em> será utilizada no momento da compilação, essa <em>toolchain</em> precisa estar no <em>path</em> do sistema (como fizemos anteriormente). Dentro os vários compiladores disponíveis, podemos ver que existem alguns bem conhecidos: <code>c++</code>, <code>cpp</code>, <code>g++</code> e muitos outros.</p>
+<div class="highlight"><pre><span></span><code>toolchain/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin
+├── aarch64-none-elf-addr2line
+├── aarch64-none-elf-ar
+├── aarch64-none-elf-as
+├── aarch64-none-elf-c++
+├── aarch64-none-elf-c++filt
+├── aarch64-none-elf-cpp
+├── aarch64-none-elf-elfedit
+├── aarch64-none-elf-g++
+...
 </code></pre></div>
-<p>baixei a toolchain <a href="https://releases.linaro.org/archive/13.11/components/toolchain/binaries/gcc-linaro-aarch64-none-elf-4.8-2013.11_linux.tar.xz">linaro</a> ou no meu backup <a href="https://drive.google.com/file/d/1cbF1GjMcCgsvowHB4tdbLCzDcqRGf4tM/view?usp=sharing">backup</a></p>
-<p>outra toolchain <a href="https://releases.linaro.org/archive/13.11/components/toolchain/binaries/gcc-linaro-arm-none-eabi-4.8-2013.11_linux.tar.xz">linaro</a> ou meu backup <a href="https://drive.google.com/file/d/1gsffeq5i8KmYtZEcpg7jhPz7pLVVV2Wm/view?usp=sharing">backup</a></p>
-<p>Precisa adicionar o path dos arquivos descompactados ao $PATH do linux</p>
-<table class="highlighttable"><tr><th class="filename" colspan="2"><div class="highlight"><span class="filename">Buildando o u-boot VIM3</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>make kvim3_defconfig
-make <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-none-elf-
+<p>Se tudo ocorrer como o esperado, uma mensagem similar a essa:</p>
+<div class="highlight"><pre><span></span><code>aarch64-none-elf-ld.bfd: warning: -z norelro ignored
+OBJCOPY lib/efi_loader/initrddump.efi
+LD      u-boot
+OBJCOPY u-boot.srec
+OBJCOPY u-boot-nodtb.bin
+RELOC   u-boot-nodtb.bin
+CAT     u-boot-dtb.bin
+COPY    u-boot.bin
+SYM     u-boot.sym
+LD      u-boot.elf
+make[1]: Leaving directory 'CAMINHO_ABSOLUTO/u-boot-mainline/out'
 </code></pre></div>
-</td></tr></table>
-<p>utilizar o paramametro <code>O</code> acaba gerando um erro (<code>all warnings being treated as errors</code>) na build, por isso ele não é utilizado</p>
+<p>O arquivo <code>u-boot.bin</code> deve ter sido gerado dentro da pasta <code>out</code>.</p>
 <hr/>
-<p>juntando tudo</p>
-<p>Primeiro é preciso baixar esse <a href="https://github.com/BayLibre/u-boot/releases/download/v2017.11-libretech-cc/blx_fix_g12a.sh">script</a> da <a href="https://github.com/BayLibre/u-boot/"><em>BayLibre</em></a> ou meu <a href="https://drive.google.com/file/d/1bcYf6pl_cHXMGyBidKRMvZm38R-PAe_0/view?usp=sharing">backup</a></p>
-<p>mais informações sobre a <a href="https://u-boot.readthedocs.io/en/latest/board/amlogic/pre-generated-fip.html">FIP</a>
-+ <a href="https://github.com/LibreELEC/amlogic-boot-fip/tree/master/khadas-vim3">compilados</a></p>
-<p>agora precisamos copiar os arquivos</p>
+<h2 id="baixando-u-boot-vim3"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> Baixando u-boot VIM3</h2>
+<p>A <a href="https://www.khadas.com/">Khadas</a> também possui um repositório com as versões do u-boot para as diversas placas que eles produzem. Vamos baixar o <em>brach</em> <code>khadas-vims-v2015.01</code> dentro da pasta <mark>u-boot-vim3</mark></p>
+<p><div class="highlight"><pre><span></span><code>git clone https://github.com/khadas/u-boot.git -b khadas-vims-v2015.01 u-boot-vim3
+</code></pre></div>
+Para fazer o <a href="https://en.wikipedia.org/wiki/Cross_compiler"><em>cross compile</em></a> é necessário baixar as <a href="https://en.wikipedia.org/wiki/Toolchain"><em>toolchain</em></a>.  Seguindo o tutorial <a href="https://u-boot.readthedocs.io/en/latest/board/amlogic/khadas-vim3.html">base</a>, precisaremos de 2 <em>toolchain</em> (<code>none-elf</code> e <a href="https://en.wikipedia.org/wiki/Application_binary_interface"><code>none-eabi</code></a>):</p>
+<ul>
+<li><a href="https://releases.linaro.org/archive/13.11/components/toolchain/binaries/gcc-linaro-aarch64-none-elf-4.8-2013.11_linux.tar.xz">gcc-linaro-aarch64-none-elf-4.8-2013.11 - Linaro</a><ul>
+<li><a href="https://drive.google.com/file/d/1cbF1GjMcCgsvowHB4tdbLCzDcqRGf4tM/view?usp=sharing">gcc-linaro-aarch64-none-elf-4.8-2013.11</a> (backup).</li>
+</ul>
+</li>
+<li><a href="https://releases.linaro.org/archive/13.11/components/toolchain/binaries/gcc-linaro-arm-none-eabi-4.8-2013.11_linux.tar.xz">gcc-linaro-arm-none-eabi-4.8-2013.11 - Linaro</a><ul>
+<li><a href="https://drive.google.com/file/d/1gsffeq5i8KmYtZEcpg7jhPz7pLVVV2Wm/view?usp=sharing">gcc-linaro-arm-none-eabi-4.8-2013.11</a> (backup).</li>
+</ul>
+</li>
+</ul>
+<h3 id="compilando-o-u-boot-vim3"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3.1</span> Compilando o u-boot VIM3</h3>
+<blockquote>
+<p>Antes de adicionar as novas <em>toolchain</em> ao <em>path</em>, limpe o terminal (abra um novo terminal). A versão utilizada no u-boot-mainline não é compatível com a versão da VIM3</p>
+</blockquote>
+<p>Com as 2 <em>toolchain</em> baixadas, mova-as para a pastas <mark>toolchain</mark> e descompacte cada uma em sua respectiva pasta. Por fim, adicionar os binários dos 2 <em>toolchain</em> ao <em>path</em> do sistema</p>
+<div class="highlight"><pre><span></span><code>export PATH=CAMINHO_ABSOLUTO/toolchain/gcc-linaro-aarch64-none-elf-4.8-2013.11_linux/bin:$PATH
+export PATH=CAMINHO_ABSOLUTO/toolchain/gcc-linaro-arm-none-eabi-4.8-2013.11_linux/bin:$PATH 
+</code></pre></div>
+<p>Com os caminhos adicionados, podemos compilar o u-boot-vim3:</p>
+<div class="highlight"><pre><span></span><code>make kvim3_defconfig <span class="nv">O</span><span class="o">=</span>out/
+make <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-none-elf- <span class="nv">O</span><span class="o">=</span>out/
+</code></pre></div>
+<blockquote>
+<p>O parâmetro <code>O</code> define a pasta onde os arquivos compilados serão salvos.</p>
+</blockquote>
+<!-- utilizar o paramametro `O` acaba gerando um erro (`all warnings being treated as errors`) na build, por isso ele não é utilizado -->
+<p>Se tudo ocorrer bem, uma mensagem similar deve aparecer:</p>
+<div class="highlight"><pre><span></span><code>  LD      u-boot
+  OBJCOPY u-boot.srec
+  OBJCOPY u-boot.bin
+  OBJCOPY u-boot.hex
+Building board/khadas/kvim3/acs.bin
+
+    CPP task_entry.s
+    CPP user_task.lds
+    CC task_entry.o
+    CC user_task.o
+    CPP misc.s
+    CC misc.o
+    CC uart.o
+    CC suspend.o
+    CC lib/string.o
+    CC lib/delay.o
+    LD CAMINHO_ABSOLUTO/u-boot-vim3/out/scp_task/bl301.out
+    OBJDUMP CAMINHO_ABSOLUTO/u-boot-vim3/out/scp_task/bl301.dis
+    OBJCOPY CAMINHO_ABSOLUTO/u-boot-vim3/out/scp_task/bl301.bin
+</code></pre></div>
+<hr/>
+<h2 id="juntando-tudo"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Juntando tudo</h2>
+<p>O primeiro passo é criar a pasta <mark>fip</mark>.</p>
+<p>Segundo, é preciso baixar esse <a href="https://github.com/BayLibre/u-boot/releases/download/v2017.11-libretech-cc/blx_fix_g12a.sh">script</a> da <a href="https://github.com/BayLibre/u-boot/"><em>BayLibre</em></a> ou no meu <a href="https://drive.google.com/file/d/1bcYf6pl_cHXMGyBidKRMvZm38R-PAe_0/view?usp=sharing">backup</a> e mover para dentro da pasta <mark>fip</mark></p>
+<blockquote>
+<p>Para mais informações sobre o que é, acesse:  <a href="https://u-boot.readthedocs.io/en/latest/board/amlogic/pre-generated-fip.html">FIP</a> + <a href="https://github.com/LibreELEC/amlogic-boot-fip/tree/master/khadas-vim3">compilados</a></p>
+</blockquote>
+<p>Terceiro, é preciso copiar vários arquivos para dentro da pasta <mark>fip</mark>:</p>
 <div class="highlight"><pre><span></span><code>cp u-boot-vim3/build/scp_task/bl301.bin fip 
 cp u-boot-vim3/build/board/khadas/kvim3/firmware/acs.bin fip
 
@@ -375,19 +597,13 @@ cp u-boot-mainline/out/u-boot.bin fip/bl33.bin
 
 cp u-boot-vim3/fip/g12b/aml_encrypt_g12b fip 
 </code></pre></div>
-<p>As pastas ficaram organizadas assim:</p>
-<div class="highlight"><pre><span></span><code>.
-├── fip
-├── toolchains
-├── u-boot-mainline
-└── u-boot-vim3
-</code></pre></div>
-<hr/>
-<p>concatenando os arquivos</p>
+<h3 id="concatenando-os-arquivos"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.1</span> Concatenando os arquivos</h3>
+<p>Pra concatenar as informações, vamos utilizar o script da <em>baylibre</em> (dentro da pasta <mark>fip</mark>)</p>
 <div class="highlight"><pre><span></span><code>bash blx_fix.sh bl30.bin zero_tmp bl30_zero.bin bl301.bin bl301_zero.bin bl30_new.bin bl30
-bash blx_fix.sh bl2.bin zero_tmp bl2_zero.bin acs.bin bl21_zero.bin bl2_new.bin bl2
+bash blx_fix.sh bl2.bin  zero_tmp bl2_zero.bin  acs.bin   bl21_zero.bin  bl2_new.bin  bl2
 </code></pre></div>
-<p>Encriptando -&gt; mais informações <a href="https://github.com/angerman/meson64-tools">link</a></p>
+<h3 id="encriptando-os-arquivos"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.2</span> Encriptando os arquivos</h3>
+<p>Para mais informações, acesse: <a href="https://github.com/angerman/meson64-tools">link</a></p>
 <div class="highlight"><pre><span></span><code>./aml_encrypt_g12b --bl30sig --input bl30_new.bin            --output bl30_new.bin.g12a.enc --level v3
 ./aml_encrypt_g12b --bl3sig  --input bl30_new.bin.g12a.enc   --output bl30_new.bin.enc      --level v3 --type bl30
 ./aml_encrypt_g12b --bl3sig  --input bl31.bin                --output bl31.img.enc          --level v3 --type bl31
@@ -397,7 +613,7 @@ bash blx_fix.sh bl2.bin zero_tmp bl2_zero.bin acs.bin bl21_zero.bin bl2_new.bin 
 ./aml_encrypt_g12b --bootmk --output u-boot-bin --bl2 bl2.n.bin.sig --bl30 bl30_new.bin.enc --bl31 bl31.img.enc --bl33 bl33.bin.enc --ddrfw1 ddr4_1d.fw --ddrfw2 ddr4_2d.fw --ddrfw3 ddr3_1d.fw --ddrfw4 piei.fw --ddrfw5 lpddr4_1d.fw --ddrfw6 lpddr4_2d.fw --ddrfw7 diag_lpddr4.fw --ddrfw8 aml_ddr.fw --ddrfw9 lpddr3_1d.fw --level v3
 </code></pre></div>
 <hr/>
-<h1 id="escrever-no-sd-card"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.</span> escrever no sd card</h1>
+<h2 id="passando-o-u-boot-para-o-sd-card"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5</span> Passando o u-boot para o SD Card</h2>
 <div class="highlight"><pre><span></span><code>$ DEV=/dev/your_sd_device
 $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=512 skip=1 seek=1
 $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
@@ -406,7 +622,7 @@ $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
 <div class="md-source-file">
 <small>
     
-      Last update:
+      Ultima atualização:
       2022-07-31
     
   </small>
@@ -416,29 +632,29 @@ $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
 </div>
 <a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
-            Back to top
+            Voltar para o topo
           </a>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Boot.img" class="md-footer__link md-footer__link--prev" href="../../../Android/boot.img/" rel="prev">
+<nav aria-label="Rodapé" class="md-footer__inner md-grid">
+<a aria-label="Anterior: Boot.img" class="md-footer__link md-footer__link--prev" href="../../../Android/boot.img/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
-                Previous
+                Anterior
               </span>
               Boot.img
             </div>
 </div>
 </a>
-<a aria-label="Next: U-boot no QEMU" class="md-footer__link md-footer__link--next" href="../../qemu/U-boot_qemu/" rel="next">
+<a aria-label="Próximo: U-boot no QEMU" class="md-footer__link md-footer__link--next" href="../../qemu/U-boot_qemu/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
-                Next
+                Próximo
               </span>
               U-boot no QEMU
             </div>
@@ -465,7 +681,7 @@ $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de Transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de Transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Perdido", "select.version.title": "Selecione a vers\u00e3o"}}</script>
 <script src="../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
