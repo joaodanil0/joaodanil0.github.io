@@ -130,11 +130,12 @@ make CROSS_COMPILE=aarch64-none-elf- O=out/
 Se tudo ocorrer bem, uma mensagem similar deve aparecer:
 
 ```
-  LD      u-boot
-  OBJCOPY u-boot.srec
-  OBJCOPY u-boot.bin
-  OBJCOPY u-boot.hex
-Building board/khadas/kvim3/acs.bin
+  LD      CAMINHO_ABSOLUTO/u-boot-vim3/out/board/khadas/kvim3/firmware/acs.elf
+  OD      CAMINHO_ABSOLUTO/u-boot-vim3/out/board/khadas/kvim3/firmware/acs.dump
+  BIN     CAMINHO_ABSOLUTO/u-boot-vim3/out/board/khadas/kvim3/firmware/acs.bin
+
+Built CAMINHO_ABSOLUTO/u-boot-vim3/out/board/khadas/kvim3/firmware/acs.bin successfully
+
 
 	CPP task_entry.s
 	CPP user_task.lds
@@ -149,6 +150,7 @@ Building board/khadas/kvim3/acs.bin
 	LD CAMINHO_ABSOLUTO/u-boot-vim3/out/scp_task/bl301.out
 	OBJDUMP CAMINHO_ABSOLUTO/u-boot-vim3/out/scp_task/bl301.dis
 	OBJCOPY CAMINHO_ABSOLUTO/u-boot-vim3/out/scp_task/bl301.bin
+
 ```
 
 ---
@@ -163,10 +165,15 @@ Segundo, é preciso baixar esse [script](https://github.com/BayLibre/u-boot/rele
 
 Terceiro, é preciso copiar vários arquivos para dentro da pasta ==fip==:
 
-```
-cp u-boot-vim3/build/scp_task/bl301.bin fip 
-cp u-boot-vim3/build/board/khadas/kvim3/firmware/acs.bin fip
+```{.sh}
+# Arquivos compilados no u-boot-VIM3
+cp u-boot-vim3/out/scp_task/bl301.bin fip 
+cp u-boot-vim3/out/board/khadas/kvim3/firmware/acs.bin fip
 
+# Copia o u-boot.bin (mainline) e renomeia para bl33.bin
+cp u-boot-mainline/out/u-boot.bin fip/bl33.bin
+
+# Arquivos pré-compilados (são fornecidos pela khadas)
 cp u-boot-vim3/fip/g12b/bl2.bin fip
 cp u-boot-vim3/fip/g12b/bl30.bin fip
 cp u-boot-vim3/fip/g12b/bl31.bin fip
@@ -179,9 +186,6 @@ cp u-boot-vim3/fip/g12b/lpddr4_1d.fw fip
 cp u-boot-vim3/fip/g12b/lpddr4_2d.fw fip
 cp u-boot-vim3/fip/g12b/piei.fw fip
 cp u-boot-vim3/fip/g12b/aml_ddr.fw fip
-
-cp u-boot-mainline/out/u-boot.bin fip/bl33.bin
-
 cp u-boot-vim3/fip/g12b/aml_encrypt_g12b fip 
 ```
 
@@ -189,9 +193,14 @@ cp u-boot-vim3/fip/g12b/aml_encrypt_g12b fip
 
 Pra concatenar as informações, vamos utilizar o script da *baylibre* (dentro da pasta ==fip==)
 
-```
-bash blx_fix.sh bl30.bin zero_tmp bl30_zero.bin bl301.bin bl301_zero.bin bl30_new.bin bl30
-bash blx_fix.sh bl2.bin  zero_tmp bl2_zero.bin  acs.bin   bl21_zero.bin  bl2_new.bin  bl2
+```{.sh}
+# Adiciona um padding no bl30.bin e bl301.bin 
+# depois concatena os dois, gerando bl30_new.bin
+bash blx_fix_g12a.sh bl30.bin zero_tmp bl30_zero.bin bl301.bin bl301_zero.bin bl30_new.bin bl30
+
+# Adiciona um padding no bl2.bin e acs.bin 
+# depois concatena os dois, gerando bl2_new.bin
+bash blx_fix_g12a.sh bl2.bin  zero_tmp bl2_zero.bin  acs.bin   bl21_zero.bin  bl2_new.bin  bl2
 ```
 
 ### Encriptando os arquivos
