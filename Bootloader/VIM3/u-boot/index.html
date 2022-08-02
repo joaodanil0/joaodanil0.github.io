@@ -612,13 +612,25 @@ bash blx_fix_g12a.sh bl2.bin  zero_tmp bl2_zero.bin  acs.bin   bl21_zero.bin  bl
 </code></pre></div>
 <h3 id="encriptando-os-arquivos"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.2</span> Encriptando os arquivos</h3>
 <p>Para mais informações, acesse: <a href="https://github.com/angerman/meson64-tools">link</a></p>
-<div class="highlight"><pre><span></span><code>./aml_encrypt_g12b --bl30sig --input bl30_new.bin            --output bl30_new.bin.g12a.enc --level v3
-./aml_encrypt_g12b --bl3sig  --input bl30_new.bin.g12a.enc   --output bl30_new.bin.enc      --level v3 --type bl30
-./aml_encrypt_g12b --bl3sig  --input bl31.bin                --output bl31.img.enc          --level v3 --type bl31
-./aml_encrypt_g12b --bl3sig  --input bl33.bin --compress lz4 --output bl33.bin.enc          --level v3 --type bl33 --compress lz4
+<div class="highlight"><pre><span></span><code><span class="c1"># Adiciona assinatura no cabeçalho do binário</span>
 ./aml_encrypt_g12b --bl2sig  --input bl2_new.bin             --output bl2.n.bin.sig
 
-./aml_encrypt_g12b --bootmk --output u-boot-bin --bl2 bl2.n.bin.sig --bl30 bl30_new.bin.enc --bl31 bl31.img.enc --bl33 bl33.bin.enc --ddrfw1 ddr4_1d.fw --ddrfw2 ddr4_2d.fw --ddrfw3 ddr3_1d.fw --ddrfw4 piei.fw --ddrfw5 lpddr4_1d.fw --ddrfw6 lpddr4_2d.fw --ddrfw7 diag_lpddr4.fw --ddrfw8 aml_ddr.fw --ddrfw9 lpddr3_1d.fw --level v3
+<span class="c1"># Adiciona assinatura no cabeçalho do binário</span>
+./aml_encrypt_g12b --bl3sig  --input bl31.bin                --output bl31.img.enc          --level v3 --type bl3
+
+<span class="c1"># Adiciona e encripta a assinatura no cabeçalho do binário</span>
+./aml_encrypt_g12b --bl30sig --input bl30_new.bin            --output bl30_new.bin.g12a.enc --level v3
+./aml_encrypt_g12b --bl3sig  --input bl30_new.bin.g12a.enc   --output bl30_new.bin.enc      --level v3 --type bl301
+
+<span class="c1"># Adiciona a assinatura no cabeçalho, um padding no final do binário e comprime o binário</span>
+./aml_encrypt_g12b --bl3sig  --input bl33.bin --compress lz4 --output bl33.bin.enc          --level v3 --type bl33 --compress lz4
+
+<span class="c1"># Gera o binário do u-boot com as assinaturas concatenadas</span>
+./aml_encrypt_g12b --bootmk --output u-boot-bin --bl2 bl2.n.bin.sig --bl30 bl30_new.bin.enc --bl31 bl31.img.enc <span class="se">\</span>
+                                                --bl33 bl33.bin.enc --ddrfw1 ddr4_1d.fw --ddrfw2 ddr4_2d.fw <span class="se">\</span>
+                                                --ddrfw3 ddr3_1d.fw --ddrfw4 piei.fw --ddrfw5 lpddr4_1d.fw <span class="se">\</span>
+                                                --ddrfw6 lpddr4_2d.fw --ddrfw7 diag_lpddr4.fw --ddrfw8 aml_ddr.fw <span class="se">\</span>
+                                                --ddrfw9 lpddr3_1d.fw --level v3
 </code></pre></div>
 <hr/>
 <h2 id="passando-o-u-boot-para-o-sd-card"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5</span> Passando o u-boot para o SD Card</h2>
@@ -631,7 +643,7 @@ $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
 <small>
     
       Ultima atualização:
-      2022-07-31
+      2022-08-02
     
   </small>
 </div>
