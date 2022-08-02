@@ -549,11 +549,12 @@ make <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-none-e
 </blockquote>
 <!-- utilizar o paramametro `O` acaba gerando um erro (`all warnings being treated as errors`) na build, por isso ele não é utilizado -->
 <p>Se tudo ocorrer bem, uma mensagem similar deve aparecer:</p>
-<div class="highlight"><pre><span></span><code>  LD      u-boot
-  OBJCOPY u-boot.srec
-  OBJCOPY u-boot.bin
-  OBJCOPY u-boot.hex
-Building board/khadas/kvim3/acs.bin
+<div class="highlight"><pre><span></span><code>  LD      CAMINHO_ABSOLUTO/u-boot-vim3/out/board/khadas/kvim3/firmware/acs.elf
+  OD      CAMINHO_ABSOLUTO/u-boot-vim3/out/board/khadas/kvim3/firmware/acs.dump
+  BIN     CAMINHO_ABSOLUTO/u-boot-vim3/out/board/khadas/kvim3/firmware/acs.bin
+
+Built CAMINHO_ABSOLUTO/u-boot-vim3/out/board/khadas/kvim3/firmware/acs.bin successfully
+
 
     CPP task_entry.s
     CPP user_task.lds
@@ -577,9 +578,14 @@ Building board/khadas/kvim3/acs.bin
 <p>Para mais informações sobre o que é, acesse:  <a href="https://u-boot.readthedocs.io/en/latest/board/amlogic/pre-generated-fip.html">FIP</a> + <a href="https://github.com/LibreELEC/amlogic-boot-fip/tree/master/khadas-vim3">compilados</a></p>
 </blockquote>
 <p>Terceiro, é preciso copiar vários arquivos para dentro da pasta <mark>fip</mark>:</p>
-<div class="highlight"><pre><span></span><code>cp u-boot-vim3/build/scp_task/bl301.bin fip 
-cp u-boot-vim3/build/board/khadas/kvim3/firmware/acs.bin fip
+<div class="highlight"><pre><span></span><code><span class="c1"># Arquivos compilados no u-boot-VIM3</span>
+cp u-boot-vim3/out/scp_task/bl301.bin fip 
+cp u-boot-vim3/out/board/khadas/kvim3/firmware/acs.bin fip
 
+<span class="c1"># Copia o u-boot.bin (mainline) e renomeia para bl33.bin</span>
+cp u-boot-mainline/out/u-boot.bin fip/bl33.bin
+
+<span class="c1"># Arquivos pré-compilados (são fornecidos pela khadas)</span>
 cp u-boot-vim3/fip/g12b/bl2.bin fip
 cp u-boot-vim3/fip/g12b/bl30.bin fip
 cp u-boot-vim3/fip/g12b/bl31.bin fip
@@ -592,15 +598,17 @@ cp u-boot-vim3/fip/g12b/lpddr4_1d.fw fip
 cp u-boot-vim3/fip/g12b/lpddr4_2d.fw fip
 cp u-boot-vim3/fip/g12b/piei.fw fip
 cp u-boot-vim3/fip/g12b/aml_ddr.fw fip
-
-cp u-boot-mainline/out/u-boot.bin fip/bl33.bin
-
 cp u-boot-vim3/fip/g12b/aml_encrypt_g12b fip 
 </code></pre></div>
 <h3 id="concatenando-os-arquivos"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.1</span> Concatenando os arquivos</h3>
 <p>Pra concatenar as informações, vamos utilizar o script da <em>baylibre</em> (dentro da pasta <mark>fip</mark>)</p>
-<div class="highlight"><pre><span></span><code>bash blx_fix.sh bl30.bin zero_tmp bl30_zero.bin bl301.bin bl301_zero.bin bl30_new.bin bl30
-bash blx_fix.sh bl2.bin  zero_tmp bl2_zero.bin  acs.bin   bl21_zero.bin  bl2_new.bin  bl2
+<div class="highlight"><pre><span></span><code><span class="c1"># Adiciona um padding no bl30.bin e bl301.bin </span>
+<span class="c1"># depois concatena os dois, gerando bl30_new.bin</span>
+bash blx_fix_g12a.sh bl30.bin zero_tmp bl30_zero.bin bl301.bin bl301_zero.bin bl30_new.bin bl30
+
+<span class="c1"># Adiciona um padding no bl2.bin e acs.bin </span>
+<span class="c1"># depois concatena os dois, gerando bl2_new.bin</span>
+bash blx_fix_g12a.sh bl2.bin  zero_tmp bl2_zero.bin  acs.bin   bl21_zero.bin  bl2_new.bin  bl2
 </code></pre></div>
 <h3 id="encriptando-os-arquivos"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.2</span> Encriptando os arquivos</h3>
 <p>Para mais informações, acesse: <a href="https://github.com/angerman/meson64-tools">link</a></p>
