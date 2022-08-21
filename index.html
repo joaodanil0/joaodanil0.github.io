@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#inicio">
+<a class="md-skip" href="#duvidas">
           Pular para conteúdo
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Inicio
+              Dúvidas
             
           </span>
 </div>
@@ -102,9 +102,36 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Dúvidas
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href=".">
-        Inicio
+        Dúvidas
       </a>
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gerais">
+    Gerais
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vim3">
+    VIM3
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#raspberry">
+    Raspberry
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
@@ -315,18 +342,44 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gerais">
+    Gerais
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vim3">
+    VIM3
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#raspberry">
+    Raspberry
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="inicio">Inicio</h1>
+<h1 id="duvidas">Dúvidas</h1>
+<h2 id="gerais">Gerais</h2>
 <ul>
-<li><a href="Documenta%C3%A7%C3%A3o/mkdocs/mkdocs/">MKDocs</a></li>
-<li><a href="Bootloader/qemu/U-boot_qemu/">U-boot com QEMU</a></li>
-<li><a href="RTOS/zephyr/zephyr/">Zephyr + ESP32 + Blinky</a></li>
-<li><a href="Linguagens/Rust/Cap1/">Introdução de Rust</a></li>
+<li>Como saber qual o endereço que o SOC vai buscar, após iniciar ? (Datasheet ?)</li>
+<li>Como o u-boot carrega o kernel linux ?</li>
+<li>Como colocar o Android em um SD card ?</li>
+</ul>
+<h2 id="vim3">VIM3</h2>
+<h2 id="raspberry">Raspberry</h2>
+<ul>
+<li>Como foi feito o port do Android ? <a href="https://github.com/lineage-rpi">Git do projeto</a> <a href="https://konstakang.com/devices/rpi3/">site com os arquivos compilados</a></li>
 </ul>
 <hr/>
 <div class="md-source-file">
