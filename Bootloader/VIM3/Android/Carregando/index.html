@@ -1,0 +1,1022 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.3.0, mkdocs-material-8.2.9" name="generator"/>
+<title>Decifrando o BOOTCMD - Jão's Blog</title>
+<link href="../../../../assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#decifrando-o-bootcmd">3. 
+          Pular para conteúdo
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Cabeçalho" class="md-header__inner md-grid">
+<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Jão's Blog">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jão's Blog
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Decifrando o BOOTCMD
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Buscar" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Buscar" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Pesquisar" class="md-search__options">
+<button aria-label="Limpar" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegação" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Jão's Blog">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
+</a>
+    Jão's Blog
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+        Dúvidas
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Android" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../Android/boot.img/">
+        Boot.img
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Bootloader" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1">
+          VIM3
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="VIM3" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          VIM3
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../u-boot/">
+        U-boot na VIM3 (SD Card)
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2" id="__nav_3_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1_2">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Android" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_1_2">
+<span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Decifrando o BOOTCMD
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Decifrando o BOOTCMD
+      </a>
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducao">3.1 
+    Introdução
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-bootcmd">3.2 
+    O bootcmd
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-distro_bootcmd">3.3 
+    O distro_bootcmd
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#as-ramificacoes-do-bootcmd_">3.4 
+    As ramificações do bootcmd_
+  </a>
+<nav aria-label="As ramificações do bootcmd_" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-bootcmd_fastboot">3.4.1 
+    O bootcmd_fastboot
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-bootcmd_recovery">3.4.2 
+    O bootcmd_recovery
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-bootcmd_system">3.4.3 
+    O bootcmd_system
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-bootcmd_panic">3.4.4 
+    O bootcmd_panic
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusao">3.5 
+    Conclusão
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2">
+          Qemu
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Qemu" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Qemu
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../qemu/U-boot_qemu/">
+        U-boot no QEMU
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          Documentação
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Documentação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Documentação
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" id="__nav_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_1">
+          Partições
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Partições" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Partições
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../Documenta%C3%A7%C3%A3o/Parti%C3%A7%C3%B5es/GPT/">
+        Tabela de Partição GUID
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2">
+          Mkdocs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Mkdocs" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+          Mkdocs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../Documenta%C3%A7%C3%A3o/mkdocs/mkdocs/">
+        Documentação com MKDOCS
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          Linguagens
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Linguagens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Linguagens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_1">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Rust" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../Linguagens/Rust/Cap1/">
+        Introdução
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+          RTOS
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="RTOS" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          RTOS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" id="__nav_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_1">
+          Zephyr
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Zephyr" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_1">
+<span class="md-nav__icon md-icon"></span>
+          Zephyr
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../RTOS/zephyr/zephyr/">
+        Zephyr + Esp32 + Blinky = ❤️
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducao">3.1 
+    Introdução
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-bootcmd">3.2 
+    O bootcmd
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-distro_bootcmd">3.3 
+    O distro_bootcmd
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#as-ramificacoes-do-bootcmd_">3.4 
+    As ramificações do bootcmd_
+  </a>
+<nav aria-label="As ramificações do bootcmd_" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-bootcmd_fastboot">3.4.1 
+    O bootcmd_fastboot
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-bootcmd_recovery">3.4.2 
+    O bootcmd_recovery
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-bootcmd_system">3.4.3 
+    O bootcmd_system
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-bootcmd_panic">3.4.4 
+    O bootcmd_panic
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusao">3.5 
+    Conclusão
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="decifrando-o-bootcmd"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Decifrando o BOOTCMD</h1>
+<figure>
+<p><a class="glightbox" href="../images/magnifying-glass-g0cf482bb8_640.jpg"><img alt="qemu" src="../images/magnifying-glass-g0cf482bb8_640.jpg" width="600"/></a>
+</p>
+<figcaption>
+Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1607160">Gerd Altmann</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1607160">Pixabay</a>
+</figcaption>
+</figure>
+<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1</span> Introdução</h2>
+<p>Na minha saga para desvendar o mundo dos sistemas embarcados, nesse post eu pretendo <del>entender</del> explicar como o u-boot <strong>mainline</strong> carrega o kernel Android na <mark>VIM3</mark>.</p>
+<h2 id="o-bootcmd"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> O bootcmd</h2>
+<p>Depois que que o u-boot é carregado, ele executa comandos para encontrar o kernel. Para isso, é gerado um script para checar as possíveis formas de carrega-lo. </p>
+<p>O primeiro passo foi dar o comando <mark>printenv</mark> no console do u-boot, resultando nas seguintes informações:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">arch</span><span class="o">=</span>arm
+<span class="nv">avb_verify</span><span class="o">=</span>avb init <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span><span class="p">;</span> avb verify <span class="nv">$slot_suffix</span><span class="p">;</span>
+<span class="nv">baudrate</span><span class="o">=</span><span class="m">115200</span>
+<span class="nv">board</span><span class="o">=</span>vim3
+<span class="nv">board_name</span><span class="o">=</span>vim3
+<span class="nv">boot_a_script</span><span class="o">=</span>load <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span>:<span class="si">${</span><span class="nv">distro_bootpart</span><span class="si">}</span> <span class="si">${</span><span class="nv">scriptaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">prefix</span><span class="si">}${</span><span class="nv">script</span><span class="si">}</span><span class="p">;</span> <span class="nb">source</span> <span class="si">${</span><span class="nv">scriptaddr</span><span class="si">}</span>
+<span class="nv">boot_efi_binary</span><span class="o">=</span>load <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span>:<span class="si">${</span><span class="nv">distro_bootpart</span><span class="si">}</span> <span class="si">${</span><span class="nv">kernel_addr_r</span><span class="si">}</span> efi/boot/bootaa64.efi<span class="p">;</span> <span class="k">if</span> fdt addr -q <span class="si">${</span><span class="nv">fdt_addr_r</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> bootefi <span class="si">${</span><span class="nv">kernel_addr_r</span><span class="si">}</span> <span class="si">${</span><span class="nv">fdt_addr_r</span><span class="si">}</span><span class="p">;</span><span class="k">else</span> bootefi <span class="si">${</span><span class="nv">kernel_addr_r</span><span class="si">}</span> <span class="si">${</span><span class="nv">fdtcontroladdr</span><span class="si">}</span><span class="p">;</span><span class="k">fi</span>
+<span class="nv">boot_efi_bootmgr</span><span class="o">=</span><span class="k">if</span> fdt addr -q <span class="si">${</span><span class="nv">fdt_addr_r</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> bootefi bootmgr <span class="si">${</span><span class="nv">fdt_addr_r</span><span class="si">}</span><span class="p">;</span><span class="k">else</span> bootefi bootmgr<span class="p">;</span><span class="k">fi</span>
+<span class="nv">boot_extlinux</span><span class="o">=</span>sysboot <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span>:<span class="si">${</span><span class="nv">distro_bootpart</span><span class="si">}</span> any <span class="si">${</span><span class="nv">scriptaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">prefix</span><span class="si">}${</span><span class="nv">boot_syslinux_conf</span><span class="si">}</span>
+<span class="nv">boot_net_usb_start</span><span class="o">=</span>usb start
+<span class="nv">boot_pci_enum</span><span class="o">=</span>pci enum
+<span class="nv">boot_prefixes</span><span class="o">=</span>/ /boot/
+<span class="nv">boot_script_dhcp</span><span class="o">=</span>boot.scr.uimg
+<span class="nv">boot_scripts</span><span class="o">=</span>boot.scr.uimg boot.scr
+<span class="nv">boot_source</span><span class="o">=</span>sd
+<span class="nv">boot_syslinux_conf</span><span class="o">=</span>extlinux/extlinux.conf
+<span class="nv">boot_targets</span><span class="o">=</span>fastboot recovery system panic 
+<span class="hll"><span class="nv">bootcmd</span><span class="o">=</span>run distro_bootcmd
+</span><span class="nv">bootcmd_fastboot</span><span class="o">=</span>setenv run_fastboot <span class="m">0</span><span class="p">;</span><span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">boot_source</span><span class="si">}</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"usb"</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Fastboot forced by usb rom boot<span class="p">;</span>setenv run_fastboot <span class="m">1</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span><span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">run_fastboot</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">0</span><span class="p">;</span> <span class="k">then</span> <span class="k">if</span> gpt verify mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> <span class="si">${</span><span class="nv">partitions</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span><span class="p">;</span> <span class="k">else</span> <span class="nb">echo</span> Broken MMC partition scheme<span class="p">;</span>setenv run_fastboot <span class="m">1</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span> <span class="k">fi</span><span class="p">;</span><span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">run_fastboot</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">0</span><span class="p">;</span> <span class="k">then</span> <span class="k">if</span> bcb load <span class="m">2</span> misc<span class="p">;</span> <span class="k">then</span> <span class="k">if</span> bcb <span class="nb">test</span> <span class="nb">command</span> <span class="o">=</span> bootonce-bootloader<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> BCB: Bootloader boot...<span class="p">;</span> bcb clear command<span class="p">;</span> bcb store<span class="p">;</span> setenv run_fastboot <span class="m">1</span><span class="p">;</span><span class="k">elif</span> bcb <span class="nb">test</span> <span class="nb">command</span> <span class="o">=</span> boot-fastboot<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> BCB: fastboot userspace boot...<span class="p">;</span> setenv force_recovery <span class="m">1</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span> <span class="k">else</span> <span class="nb">echo</span> Warning: BCB is corrupted or does not exist<span class="p">;</span> <span class="k">fi</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span><span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">run_fastboot</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Running Fastboot...<span class="p">;</span>fastboot <span class="m">0</span><span class="p">;</span> <span class="k">fi</span>
+<span class="nv">bootcmd_panic</span><span class="o">=</span>fastboot <span class="m">0</span><span class="p">;</span> reset
+<span class="nv">bootcmd_recovery</span><span class="o">=</span>pinmux dev pinctrl@14<span class="p">;</span>pinmux dev pinctrl@40<span class="p">;</span>setenv run_recovery <span class="m">0</span><span class="p">;</span><span class="k">if</span> run check_button<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Recovery button is pressed<span class="p">;</span>setenv run_recovery <span class="m">1</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span> <span class="k">if</span> bcb load <span class="m">2</span> misc<span class="p">;</span> <span class="k">then</span> <span class="k">if</span> bcb <span class="nb">test</span> <span class="nb">command</span> <span class="o">=</span> boot-recovery<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> BCB: Recovery boot...<span class="p">;</span> setenv run_recovery <span class="m">1</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span><span class="k">else</span> <span class="nb">echo</span> Warning: BCB is corrupted or does not exist<span class="p">;</span> <span class="k">fi</span><span class="p">;</span><span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">skip_recovery</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Recovery skipped by environment<span class="p">;</span>setenv run_recovery <span class="m">0</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span><span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">force_recovery</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Recovery forced by environment<span class="p">;</span>setenv run_recovery <span class="m">1</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span><span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">run_recovery</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Running Recovery...<span class="p">;</span>mmc dev <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span><span class="p">;</span>setenv bootargs <span class="s2">"</span><span class="si">${</span><span class="nv">bootargs</span><span class="si">}</span><span class="s2"> androidboot.serialno=</span><span class="si">${</span><span class="nv">serial</span><span class="p">#</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">force_avb</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> <span class="k">if</span> run avb_verify<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> AVB verification OK.<span class="p">;</span>setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> </span><span class="nv">$avb_bootargs</span><span class="s2">"</span><span class="p">;</span><span class="k">else</span> <span class="nb">echo</span> AVB verification failed.<span class="p">;</span>exit<span class="p">;</span> <span class="k">fi</span><span class="p">;</span><span class="k">else</span> setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> androidboot.verifiedbootstate=orange"</span><span class="p">;</span><span class="nb">echo</span> Running without AVB...<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> recovery<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_start<span class="p">;</span>part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> recovery<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_size<span class="p">;</span><span class="k">if</span> mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_size</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Preparing FDT...<span class="p">;</span> <span class="k">if</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei510<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTB for sei510..."</span><span class="p">;</span> setenv dtb_index <span class="m">0</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei610<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTB for sei610..."</span><span class="p">;</span> setenv dtb_index <span class="m">1</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3l<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTB for vim3l..."</span><span class="p">;</span> setenv dtb_index <span class="m">2</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTB for vim3..."</span><span class="p">;</span> setenv dtb_index <span class="m">3</span><span class="p">;</span><span class="k">else</span> <span class="nb">echo</span> Error: Android boot is not supported <span class="k">for</span> <span class="nv">$board_name</span><span class="p">;</span> exit<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> abootimg get dtb --index<span class="o">=</span><span class="nv">$dtb_index</span> dtb_start dtb_size<span class="p">;</span> cp.b <span class="nv">$dtb_start</span> <span class="nv">$fdt_addr_r</span> <span class="nv">$dtb_size</span><span class="p">;</span> fdt addr <span class="nv">$fdt_addr_r</span>  0x80000<span class="p">;</span> <span class="k">if</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei510<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTBO for sei510..."</span><span class="p">;</span> setenv dtbo_index <span class="m">0</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei610<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTBO for sei610..."</span><span class="p">;</span> setenv dtbo_index <span class="m">1</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3l<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTBO for vim3l..."</span><span class="p">;</span> setenv dtbo_index <span class="m">2</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTBO for vim3..."</span><span class="p">;</span> setenv dtbo_index <span class="m">3</span><span class="p">;</span><span class="k">else</span> <span class="nb">echo</span> Error: Android boot is not supported <span class="k">for</span> <span class="nv">$board_name</span><span class="p">;</span> exit<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> dtbo<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> p_dtbo_start<span class="p">;</span> part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> dtbo<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> p_dtbo_size<span class="p">;</span> mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">dtboaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">p_dtbo_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">p_dtbo_size</span><span class="si">}</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">"  Applying DTBOs..."</span><span class="p">;</span> adtimg addr <span class="nv">$dtboaddr</span><span class="p">;</span> adtimg get dt --index<span class="o">=</span><span class="nv">$dtbo_index</span> dtbo0_addr<span class="p">;</span> fdt apply <span class="nv">$dtbo0_addr</span><span class="p">;</span>setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> androidboot.dtbo_idx=</span><span class="nv">$dtbo_index</span><span class="s2"> "</span><span class="p">;</span><span class="nb">echo</span> Running Android Recovery...<span class="p">;</span>bootm <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">fdt_addr_r</span><span class="si">}</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span><span class="nb">echo</span> Failed to boot Android...<span class="p">;</span>reset<span class="p">;</span><span class="k">fi</span>
+<span class="nv">bootcmd_system</span><span class="o">=</span><span class="nb">echo</span> Loading Android boot partition...<span class="p">;</span>mmc dev <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span><span class="p">;</span>setenv bootargs <span class="si">${</span><span class="nv">bootargs</span><span class="si">}</span> androidboot.serialno<span class="o">=</span><span class="si">${</span><span class="nv">serial</span><span class="p">#</span><span class="si">}</span><span class="p">;</span> <span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">force_avb</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> <span class="k">if</span> run avb_verify<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> AVB verification OK.<span class="p">;</span>setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> </span><span class="nv">$avb_bootargs</span><span class="s2">"</span><span class="p">;</span><span class="k">else</span> <span class="nb">echo</span> AVB verification failed.<span class="p">;</span>exit<span class="p">;</span> <span class="k">fi</span><span class="p">;</span><span class="k">else</span> setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> androidboot.verifiedbootstate=orange"</span><span class="p">;</span><span class="nb">echo</span> Running without AVB...<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> boot<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_start<span class="p">;</span>part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> boot<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_size<span class="p">;</span><span class="k">if</span> mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_size</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Preparing FDT...<span class="p">;</span> <span class="k">if</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei510<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTB for sei510..."</span><span class="p">;</span> setenv dtb_index <span class="m">0</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei610<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTB for sei610..."</span><span class="p">;</span> setenv dtb_index <span class="m">1</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3l<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTB for vim3l..."</span><span class="p">;</span> setenv dtb_index <span class="m">2</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTB for vim3..."</span><span class="p">;</span> setenv dtb_index <span class="m">3</span><span class="p">;</span><span class="k">else</span> <span class="nb">echo</span> Error: Android boot is not supported <span class="k">for</span> <span class="nv">$board_name</span><span class="p">;</span> exit<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> abootimg get dtb --index<span class="o">=</span><span class="nv">$dtb_index</span> dtb_start dtb_size<span class="p">;</span> cp.b <span class="nv">$dtb_start</span> <span class="nv">$fdt_addr_r</span> <span class="nv">$dtb_size</span><span class="p">;</span> fdt addr <span class="nv">$fdt_addr_r</span>  0x80000<span class="p">;</span> <span class="k">if</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei510<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTBO for sei510..."</span><span class="p">;</span> setenv dtbo_index <span class="m">0</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei610<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTBO for sei610..."</span><span class="p">;</span> setenv dtbo_index <span class="m">1</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3l<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTBO for vim3l..."</span><span class="p">;</span> setenv dtbo_index <span class="m">2</span><span class="p">;</span><span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">"  Reading DTBO for vim3..."</span><span class="p">;</span> setenv dtbo_index <span class="m">3</span><span class="p">;</span><span class="k">else</span> <span class="nb">echo</span> Error: Android boot is not supported <span class="k">for</span> <span class="nv">$board_name</span><span class="p">;</span> exit<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> dtbo<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> p_dtbo_start<span class="p">;</span> part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> dtbo<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> p_dtbo_size<span class="p">;</span> mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">dtboaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">p_dtbo_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">p_dtbo_size</span><span class="si">}</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">"  Applying DTBOs..."</span><span class="p">;</span> adtimg addr <span class="nv">$dtboaddr</span><span class="p">;</span> adtimg get dt --index<span class="o">=</span><span class="nv">$dtbo_index</span> dtbo0_addr<span class="p">;</span> fdt apply <span class="nv">$dtbo0_addr</span><span class="p">;</span>setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> androidboot.dtbo_idx=</span><span class="nv">$dtbo_index</span><span class="s2"> "</span><span class="p">;</span>setenv bootargs <span class="s2">"</span><span class="si">${</span><span class="nv">bootargs</span><span class="si">}</span><span class="s2">  "</span>  <span class="p">;</span> <span class="nb">echo</span> Running Android...<span class="p">;</span>bootm <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">fdt_addr_r</span><span class="si">}</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span><span class="nb">echo</span> Failed to boot Android...<span class="p">;</span>
+<span class="nv">bootdelay</span><span class="o">=</span><span class="m">2</span>
+<span class="nv">check_button</span><span class="o">=</span>gpio input <span class="si">${</span><span class="nv">gpio_recovery</span><span class="si">}</span><span class="p">;</span><span class="nb">test</span> <span class="nv">$?</span> -eq <span class="m">0</span><span class="p">;</span>
+<span class="nv">cpu</span><span class="o">=</span>armv8
+<span class="nv">distro_bootcmd</span><span class="o">=</span>setenv nvme_need_init<span class="p">;</span> <span class="k">for</span> target <span class="k">in</span> <span class="si">${</span><span class="nv">boot_targets</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span> run bootcmd_<span class="si">${</span><span class="nv">target</span><span class="si">}</span><span class="p">;</span> <span class="k">done</span>
+<span class="nv">dtboaddr</span><span class="o">=</span>0x08200000
+<span class="nv">efi_dtb_prefixes</span><span class="o">=</span>/ /dtb/ /dtb/current/
+<span class="nv">ethaddr</span><span class="o">=</span>c8:63:14:71:2d:35
+<span class="nv">fastboot_raw_partition_bootenv</span><span class="o">=</span>0x0 0xfff mmcpart <span class="m">2</span>
+<span class="nv">fastboot_raw_partition_bootloader</span><span class="o">=</span>0x1 0xfff mmcpart <span class="m">1</span>
+<span class="nv">fdt_addr_r</span><span class="o">=</span>0x01000000
+<span class="nv">fdtcontroladdr</span><span class="o">=</span>f0efa100
+<span class="nv">fdtfile</span><span class="o">=</span>amlogic/meson-g12b-a311d-khadas-vim3.dtb
+<span class="nv">force_avb</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">gpio_recovery</span><span class="o">=</span><span class="m">88</span>
+<span class="nv">kernel_addr_r</span><span class="o">=</span>0x01080000
+<span class="nv">load_efi_dtb</span><span class="o">=</span>load <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span>:<span class="si">${</span><span class="nv">distro_bootpart</span><span class="si">}</span> <span class="si">${</span><span class="nv">fdt_addr_r</span><span class="si">}</span> <span class="si">${</span><span class="nv">prefix</span><span class="si">}${</span><span class="nv">efi_fdtfile</span><span class="si">}</span>
+<span class="nv">load_logo</span><span class="o">=</span><span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">boot_source</span><span class="si">}</span><span class="s2">"</span> !<span class="o">=</span> <span class="s2">"usb"</span> <span class="o">&amp;&amp;</span> gpt verify mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> <span class="si">${</span><span class="nv">partitions</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span><span class="p">;</span> mmc dev <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span><span class="p">;</span>part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> logo boot_start<span class="p">;</span>part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> logo boot_size<span class="p">;</span><span class="k">if</span> mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_size</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> bmp display <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> m m<span class="p">;</span><span class="k">fi</span><span class="p">;</span><span class="k">fi</span><span class="p">;</span>
+<span class="nv">loadaddr</span><span class="o">=</span>0x01080000
+<span class="nv">mmc_boot</span><span class="o">=</span><span class="k">if</span> mmc dev <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> <span class="nv">devtype</span><span class="o">=</span>mmc<span class="p">;</span> run scan_dev_for_boot_part<span class="p">;</span> <span class="k">fi</span>
+<span class="nv">mmcdev</span><span class="o">=</span><span class="m">2</span>
+<span class="nv">nvme_boot</span><span class="o">=</span>run boot_pci_enum<span class="p">;</span> run nvme_init<span class="p">;</span> <span class="k">if</span> nvme dev <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> <span class="nv">devtype</span><span class="o">=</span>nvme<span class="p">;</span> run scan_dev_for_boot_part<span class="p">;</span> <span class="k">fi</span>
+<span class="nv">nvme_init</span><span class="o">=</span><span class="k">if</span> <span class="si">${</span><span class="nv">nvme_need_init</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> setenv nvme_need_init false<span class="p">;</span> nvme scan<span class="p">;</span> <span class="k">fi</span>
+<span class="nv">partitions</span><span class="o">=</span><span class="nv">uuid_disk</span><span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_disk</span><span class="si">}</span><span class="p">;</span><span class="nv">name</span><span class="o">=</span>logo,start<span class="o">=</span>512K,size<span class="o">=</span>2M,uuid<span class="o">=</span>43a3305d-150f-4cc9-bd3b-38fca8693846<span class="p">;</span><span class="nv">name</span><span class="o">=</span>misc,size<span class="o">=</span>512K,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_misc</span><span class="si">}</span><span class="p">;</span><span class="nv">name</span><span class="o">=</span>dtbo,size<span class="o">=</span>8M,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_dtbo</span><span class="si">}</span><span class="p">;</span><span class="nv">name</span><span class="o">=</span>vbmeta,size<span class="o">=</span>512K,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_vbmeta</span><span class="si">}</span><span class="p">;</span><span class="nv">name</span><span class="o">=</span>boot,size<span class="o">=</span>32M,bootable,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_boot</span><span class="si">}</span><span class="p">;</span><span class="nv">name</span><span class="o">=</span>recovery,size<span class="o">=</span>32M,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_recovery</span><span class="si">}</span><span class="p">;</span><span class="nv">name</span><span class="o">=</span>cache,size<span class="o">=</span>256M,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_cache</span><span class="si">}</span><span class="p">;</span><span class="nv">name</span><span class="o">=</span>super,size<span class="o">=</span>1792M,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_super</span><span class="si">}</span><span class="p">;</span><span class="nv">name</span><span class="o">=</span>userdata,size<span class="o">=</span>12786M,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_userdata</span><span class="si">}</span><span class="p">;</span><span class="nv">name</span><span class="o">=</span>rootfs,size<span class="o">=</span>-,uuid<span class="o">=</span>ddb8c3f6-d94d-4394-b633-3134139cc2e0<span class="p">;</span>
+<span class="nv">pxefile_addr_r</span><span class="o">=</span>0x01080000
+<span class="nv">ramdisk_addr_r</span><span class="o">=</span>0x13000000
+<span class="nv">scan_dev_for_boot</span><span class="o">=</span><span class="nb">echo</span> Scanning <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span>:<span class="si">${</span><span class="nv">distro_bootpart</span><span class="si">}</span>...<span class="p">;</span> <span class="k">for</span> prefix <span class="k">in</span> <span class="si">${</span><span class="nv">boot_prefixes</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span> run scan_dev_for_extlinux<span class="p">;</span> run scan_dev_for_scripts<span class="p">;</span> <span class="k">done</span><span class="p">;</span>run scan_dev_for_efi<span class="p">;</span>
+<span class="nv">scan_dev_for_boot_part</span><span class="o">=</span>part list <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span> -bootable devplist<span class="p">;</span> env exists devplist <span class="o">||</span> setenv devplist <span class="m">1</span><span class="p">;</span> <span class="k">for</span> distro_bootpart <span class="k">in</span> <span class="si">${</span><span class="nv">devplist</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span> <span class="k">if</span> fstype <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span>:<span class="si">${</span><span class="nv">distro_bootpart</span><span class="si">}</span> bootfstype<span class="p">;</span> <span class="k">then</span> run scan_dev_for_boot<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span> setenv devplist
+<span class="nv">scan_dev_for_efi</span><span class="o">=</span>setenv efi_fdtfile <span class="si">${</span><span class="nv">fdtfile</span><span class="si">}</span><span class="p">;</span> <span class="k">for</span> prefix <span class="k">in</span> <span class="si">${</span><span class="nv">efi_dtb_prefixes</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span> <span class="k">if</span> <span class="nb">test</span> -e <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span>:<span class="si">${</span><span class="nv">distro_bootpart</span><span class="si">}</span> <span class="si">${</span><span class="nv">prefix</span><span class="si">}${</span><span class="nv">efi_fdtfile</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> run load_efi_dtb<span class="p">;</span> <span class="k">fi</span><span class="p">;</span><span class="k">done</span><span class="p">;</span>run boot_efi_bootmgr<span class="p">;</span><span class="k">if</span> <span class="nb">test</span> -e <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span>:<span class="si">${</span><span class="nv">distro_bootpart</span><span class="si">}</span> efi/boot/bootaa64.efi<span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Found EFI removable media binary efi/boot/bootaa64.efi<span class="p">;</span> run boot_efi_binary<span class="p">;</span> <span class="nb">echo</span> EFI LOAD FAILED: continuing...<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> setenv efi_fdtfile
+<span class="nv">scan_dev_for_extlinux</span><span class="o">=</span><span class="k">if</span> <span class="nb">test</span> -e <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span>:<span class="si">${</span><span class="nv">distro_bootpart</span><span class="si">}</span> <span class="si">${</span><span class="nv">prefix</span><span class="si">}${</span><span class="nv">boot_syslinux_conf</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Found <span class="si">${</span><span class="nv">prefix</span><span class="si">}${</span><span class="nv">boot_syslinux_conf</span><span class="si">}</span><span class="p">;</span> run boot_extlinux<span class="p">;</span> <span class="nb">echo</span> SCRIPT FAILED: continuing...<span class="p">;</span> <span class="k">fi</span>
+<span class="nv">scan_dev_for_scripts</span><span class="o">=</span><span class="k">for</span> script <span class="k">in</span> <span class="si">${</span><span class="nv">boot_scripts</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span> <span class="k">if</span> <span class="nb">test</span> -e <span class="si">${</span><span class="nv">devtype</span><span class="si">}</span> <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span>:<span class="si">${</span><span class="nv">distro_bootpart</span><span class="si">}</span> <span class="si">${</span><span class="nv">prefix</span><span class="si">}${</span><span class="nv">script</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> Found U-Boot script <span class="si">${</span><span class="nv">prefix</span><span class="si">}${</span><span class="nv">script</span><span class="si">}</span><span class="p">;</span> run boot_a_script<span class="p">;</span> <span class="nb">echo</span> SCRIPT FAILED: continuing...<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> <span class="k">done</span>
+<span class="nv">scriptaddr</span><span class="o">=</span>0x08000000
+serial#<span class="o">=</span>C86314712D35
+<span class="nv">soc</span><span class="o">=</span>meson
+<span class="nv">stderr</span><span class="o">=</span>vidconsole,serial
+<span class="nv">stdin</span><span class="o">=</span>usbkbd,serial
+<span class="nv">stdout</span><span class="o">=</span>vidconsole,serial
+<span class="nv">usb_boot</span><span class="o">=</span>usb start<span class="p">;</span> <span class="k">if</span> usb dev <span class="si">${</span><span class="nv">devnum</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> <span class="nv">devtype</span><span class="o">=</span>usb<span class="p">;</span> run scan_dev_for_boot_part<span class="p">;</span> <span class="k">fi</span>
+<span class="nv">vendor</span><span class="o">=</span>amlogic
+
+Environment size: <span class="m">9785</span>/65532 <span class="nv">bytes</span>
+<span class="o">=</span>&gt; 
+</code></pre></div>
+</td></tr></table>
+<p>Estudaremos inicialmente essa saída, começando pelo <mark>bootcmd</mark> (linha 18). Ele é o ponta pé inicial para o script.</p>
+<p>Podemos observar que ele executa outra função:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">bootcmd</span><span class="o">=</span>run distro_bootcmd
+</code></pre></div>
+<p>Ele executa a <mark>distro_bootcmd</mark> (linha 26).</p>
+<h2 id="o-distro_bootcmd"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3</span> O distro_bootcmd</h2>
+<p>Essa função é um pouco mais elaborada, quebrei em várias linhas. Vamos analizá-las</p>
+<div class="highlight"><pre><span></span><code><span class="nv">distro_bootcmd</span><span class="o">=</span>
+setenv nvme_need_init<span class="p">;</span> 
+<span class="k">for</span> target <span class="k">in</span> <span class="si">${</span><span class="nv">boot_targets</span><span class="si">}</span><span class="p">;</span> 
+    <span class="k">do</span> run bootcmd_<span class="si">${</span><span class="nv">target</span><span class="si">}</span><span class="p">;</span> 
+<span class="k">done</span>
+</code></pre></div>
+<p>A <em>flag</em> <mark>nvme_need_init</mark> não está setada,  mas podemos encontrar alguns detalhes no arquivo:</p>
+<blockquote>
+<p>include/config_distro_bootcmd.h</p>
+</blockquote>
+<p>No diretório do código fonte do u-boot, não vou focar nessa linha pois não é de interesse utilizar o NVME (ainda <img alt="㊙️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/3299.png" title=":secret:"/>).</p>
+<p>Seguindo no código, podemos obsevar que a variável <mark>boot_targets</mark>  (atribuída na linha 17) é iterada com os seguintes valores:</p>
+<div class="highlight"><pre><span></span><code>boot_targets=fastboot recovery system panic 
+</code></pre></div>
+<p>Cada valor é concatenado com a <em>string</em> <mark>bootcmd_</mark>, resultando em:</p>
+<ul>
+<li>bootcmd_fastboot</li>
+<li>bootcmd_recovery</li>
+<li>bootcmd_system</li>
+<li>bootcmd_panic</li>
+</ul>
+<h2 id="as-ramificacoes-do-bootcmd_"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4</span> As ramificações do bootcmd_</h2>
+<p>O <mark>distro_bootcmd</mark> acaba executando outras 4 funções, vamos entender o que elas fazem.</p>
+<h3 id="o-bootcmd_fastboot"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.1</span> O bootcmd_fastboot</h3>
+<p>Atribuída na linha 19, ela possui a seguinte implementação:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">bootcmd_fastboot</span><span class="o">=</span>
+setenv run_fastboot <span class="m">0</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">boot_source</span><span class="si">}</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"usb"</span><span class="p">;</span> <span class="k">then</span> 
+    <span class="nb">echo</span> Fastboot forced by usb rom boot<span class="p">;</span>
+    setenv run_fastboot <span class="m">1</span><span class="p">;</span>
+<span class="k">fi</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">run_fastboot</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">0</span><span class="p">;</span> <span class="k">then</span> 
+    <span class="k">if</span> gpt verify mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> <span class="si">${</span><span class="nv">partitions</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span><span class="p">;</span> 
+    <span class="k">else</span> 
+        <span class="nb">echo</span> Broken MMC partition scheme<span class="p">;</span>
+        setenv run_fastboot <span class="m">1</span><span class="p">;</span>
+    <span class="k">fi</span><span class="p">;</span> 
+<span class="k">fi</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">run_fastboot</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">0</span><span class="p">;</span> <span class="k">then</span> 
+    <span class="k">if</span> bcb load <span class="m">2</span> misc<span class="p">;</span> <span class="k">then</span> 
+        <span class="k">if</span> bcb <span class="nb">test</span> <span class="nb">command</span> <span class="o">=</span> bootonce-bootloader<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> BCB: Bootloader boot...<span class="p">;</span> 
+            bcb clear command<span class="p">;</span> 
+            bcb store<span class="p">;</span> 
+            setenv run_fastboot <span class="m">1</span><span class="p">;</span>
+        <span class="k">elif</span> bcb <span class="nb">test</span> <span class="nb">command</span> <span class="o">=</span> boot-fastboot<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> BCB: fastboot userspace boot...<span class="p">;</span> 
+            setenv force_recovery <span class="m">1</span><span class="p">;</span>
+        <span class="k">fi</span><span class="p">;</span> 
+    <span class="k">else</span> 
+        <span class="nb">echo</span> Warning: BCB is corrupted or does not exist<span class="p">;</span> 
+    <span class="k">fi</span><span class="p">;</span>
+<span class="k">fi</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">run_fastboot</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> 
+    <span class="nb">echo</span> Running Fastboot...<span class="p">;</span>
+    fastboot <span class="m">0</span><span class="p">;</span> 
+<span class="k">fi</span>
+</code></pre></div>
+<p>A <em>flag</em> <mark>run_fastboot</mark> é setada para 0. A variável <mark>boot_source</mark> é atribuída na linha 15:</p>
+<div class="highlight"><pre><span></span><code>boot_source=sd
+</code></pre></div>
+<p>Com isso, o primeiro <code>if</code> não é acionado. No proximo <code>if</code> já sabemos que <code>run_fastboot==0</code>, ao entrar no <code>if</code> é checado a variável <code>mmcdev</code> que é atribuída na linha 42 e a variável <code>partitions</code>, atribuída na linha 45:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">mmcdev</span><span class="o">=</span><span class="m">2</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">partitions</span><span class="o">=</span>
+<span class="nv">uuid_disk</span><span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_disk</span><span class="si">}</span><span class="p">;</span>
+<span class="nv">name</span><span class="o">=</span>logo,start<span class="o">=</span>512K,size<span class="o">=</span>2M,uuid<span class="o">=</span>43a3305d-150f-4cc9-bd3b-38fca8693846<span class="p">;</span>
+<span class="nv">name</span><span class="o">=</span>misc,size<span class="o">=</span>512K,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_misc</span><span class="si">}</span><span class="p">;</span>
+<span class="nv">name</span><span class="o">=</span>dtbo,size<span class="o">=</span>8M,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_dtbo</span><span class="si">}</span><span class="p">;</span>
+<span class="nv">name</span><span class="o">=</span>vbmeta,size<span class="o">=</span>512K,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_vbmeta</span><span class="si">}</span><span class="p">;</span>
+<span class="nv">name</span><span class="o">=</span>boot,size<span class="o">=</span>32M,bootable,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_boot</span><span class="si">}</span><span class="p">;</span>
+<span class="nv">name</span><span class="o">=</span>recovery,size<span class="o">=</span>32M,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_recovery</span><span class="si">}</span><span class="p">;</span>
+<span class="nv">name</span><span class="o">=</span>cache,size<span class="o">=</span>256M,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_cache</span><span class="si">}</span><span class="p">;</span>
+<span class="nv">name</span><span class="o">=</span>super,size<span class="o">=</span>1792M,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_super</span><span class="si">}</span><span class="p">;</span>
+<span class="nv">name</span><span class="o">=</span>userdata,size<span class="o">=</span>12786M,uuid<span class="o">=</span><span class="si">${</span><span class="nv">uuid_gpt_userdata</span><span class="si">}</span><span class="p">;</span>
+<span class="nv">name</span><span class="o">=</span>rootfs,size<span class="o">=</span>-,uuid<span class="o">=</span>ddb8c3f6-d94d-4394-b633-3134139cc2e0<span class="p">;</span>
+</code></pre></div>
+<p>Logo, na linha <code>if gpt verify mmc ${mmcdev} ${partitions}; then;</code> é checado se as partições existem, nesse caso no eMMC da placa (<code>mmcdev=2</code>), caso contrário imprime a mensagem de erro <code>Broken MMC partition scheme;</code> e seta a <em>flag</em> <mark>run_fastboot</mark> para 1.</p>
+<p>Mais adiante, é checado novamente a <em>flag</em> <mark>run_fastboot</mark>. Caso as partições no eMMC estejam corretas, é checado <code>if bcb load 2 misc; then</code>. Essa linha tenta carregar a partição <code>misc</code> do eMMC (mais informações nesse <a href="https://u-boot.readthedocs.io/en/v2021.04/android/bcb.html">link</a>). Se tudo der certo, em seguida é checado o conteúdo da váriável <code>command</code> que foi guardada dentro da partição <code>misc</code>: </p>
+<ul>
+<li><code>if bcb test command = bootonce-bootloader; then</code> </li>
+<li><code>elif bcb test command = boot-fastboot; then</code></li>
+</ul>
+<p>Caso algum problema ocorra ao carregar a partição <code>misc</code>, a seguinte mensagem é impressa na tela <code>Warning: BCB is corrupted or does not exist;</code>. </p>
+<p>O último <code>if</code> checa se a <em>flag</em> <mark>run_fastboot</mark> é 1, caso positivo é impresso na tela a mensagem <code>Running Fastboot...</code> e entra no modo <em>Fastboot</em> com o comando <code>fastboot 0</code>.</p>
+<h3 id="o-bootcmd_recovery"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.2</span> O bootcmd_recovery</h3>
+<p>Atribuído na linha 21 e possui a seguinte implementação:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">bootcmd_recovery</span><span class="o">=</span>
+pinmux dev pinctrl@14<span class="p">;</span>
+pinmux dev pinctrl@40<span class="p">;</span>
+
+setenv run_recovery <span class="m">0</span><span class="p">;</span>
+
+<span class="k">if</span> run check_button<span class="p">;</span> <span class="k">then</span> 
+    <span class="nb">echo</span> Recovery button is pressed<span class="p">;</span>
+    setenv run_recovery <span class="m">1</span><span class="p">;</span>
+<span class="k">fi</span><span class="p">;</span> 
+
+<span class="k">if</span> bcb load <span class="m">2</span> misc<span class="p">;</span> <span class="k">then</span> 
+    <span class="k">if</span> bcb <span class="nb">test</span> <span class="nb">command</span> <span class="o">=</span> boot-recovery<span class="p">;</span> <span class="k">then</span> 
+        <span class="nb">echo</span> BCB: Recovery boot...<span class="p">;</span> 
+        setenv run_recovery <span class="m">1</span><span class="p">;</span>
+    <span class="k">fi</span><span class="p">;</span>
+<span class="k">else</span> 
+    <span class="nb">echo</span> Warning: BCB is corrupted or does not exist<span class="p">;</span> 
+<span class="k">fi</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">skip_recovery</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> 
+    <span class="nb">echo</span> Recovery skipped by environment<span class="p">;</span>
+    setenv run_recovery <span class="m">0</span><span class="p">;</span>
+<span class="k">fi</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">force_recovery</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> 
+    <span class="nb">echo</span> Recovery forced by environment<span class="p">;</span>
+    setenv run_recovery <span class="m">1</span><span class="p">;</span>
+<span class="k">fi</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">run_recovery</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> 
+    <span class="nb">echo</span> Running Recovery...<span class="p">;</span>
+    mmc dev <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span><span class="p">;</span>
+    setenv bootargs <span class="s2">"</span><span class="si">${</span><span class="nv">bootargs</span><span class="si">}</span><span class="s2"> androidboot.serialno=</span><span class="si">${</span><span class="nv">serial</span><span class="p">#</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> 
+    <span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">force_avb</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> 
+        <span class="k">if</span> run avb_verify<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> AVB verification OK.<span class="p">;</span>
+            setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> </span><span class="nv">$avb_bootargs</span><span class="s2">"</span><span class="p">;</span>
+        <span class="k">else</span> 
+            <span class="nb">echo</span> AVB verification failed.<span class="p">;</span>
+            exit<span class="p">;</span> 
+        <span class="k">fi</span><span class="p">;</span>
+    <span class="k">else</span> 
+        setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> androidboot.verifiedbootstate=orange"</span><span class="p">;</span>
+        <span class="nb">echo</span> Running without AVB...<span class="p">;</span> 
+    <span class="k">fi</span><span class="p">;</span>
+
+    part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> recovery<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_start<span class="p">;</span>
+    part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> recovery<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_size<span class="p">;</span>
+
+    <span class="k">if</span> mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_size</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> 
+
+        <span class="nb">echo</span> Preparing FDT...<span class="p">;</span> 
+        <span class="k">if</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei510<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> <span class="s2">"  Reading DTB for sei510..."</span><span class="p">;</span> 
+            setenv dtb_index <span class="m">0</span><span class="p">;</span>
+        <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei610<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> <span class="s2">"  Reading DTB for sei610..."</span><span class="p">;</span> 
+            setenv dtb_index <span class="m">1</span><span class="p">;</span>
+        <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3l<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> <span class="s2">"  Reading DTB for vim3l..."</span><span class="p">;</span> 
+            setenv dtb_index <span class="m">2</span><span class="p">;</span>
+        <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> <span class="s2">"  Reading DTB for vim3..."</span><span class="p">;</span> 
+            setenv dtb_index <span class="m">3</span><span class="p">;</span>
+        <span class="k">else</span> 
+            <span class="nb">echo</span> Error: Android boot is not supported <span class="k">for</span> <span class="nv">$board_name</span><span class="p">;</span> 
+            exit<span class="p">;</span> 
+        <span class="k">fi</span><span class="p">;</span>
+
+        abootimg get dtb --index<span class="o">=</span><span class="nv">$dtb_index</span> dtb_start dtb_size<span class="p">;</span> 
+        cp.b <span class="nv">$dtb_start</span> <span class="nv">$fdt_addr_r</span> <span class="nv">$dtb_size</span><span class="p">;</span> 
+        fdt addr <span class="nv">$fdt_addr_r</span>  0x80000<span class="p">;</span> 
+
+        <span class="k">if</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei510<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> <span class="s2">"  Reading DTBO for sei510..."</span><span class="p">;</span> 
+            setenv dtbo_index <span class="m">0</span><span class="p">;</span>
+        <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei610<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> <span class="s2">"  Reading DTBO for sei610..."</span><span class="p">;</span> 
+            setenv dtbo_index <span class="m">1</span><span class="p">;</span>
+        <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3l<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> <span class="s2">"  Reading DTBO for vim3l..."</span><span class="p">;</span> 
+            setenv dtbo_index <span class="m">2</span><span class="p">;</span>
+        <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3<span class="p">;</span> <span class="k">then</span> 
+            <span class="nb">echo</span> <span class="s2">"  Reading DTBO for vim3..."</span><span class="p">;</span> 
+            setenv dtbo_index <span class="m">3</span><span class="p">;</span>
+        <span class="k">else</span> 
+            <span class="nb">echo</span> Error: Android boot is not supported <span class="k">for</span> <span class="nv">$board_name</span><span class="p">;</span> 
+            exit<span class="p">;</span> 
+        <span class="k">fi</span><span class="p">;</span> 
+
+        part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> dtbo<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> p_dtbo_start<span class="p">;</span> 
+        part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> dtbo<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> p_dtbo_size<span class="p">;</span> 
+        mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">dtboaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">p_dtbo_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">p_dtbo_size</span><span class="si">}</span><span class="p">;</span> 
+        <span class="nb">echo</span> <span class="s2">"  Applying DTBOs..."</span><span class="p">;</span> 
+        adtimg addr <span class="nv">$dtboaddr</span><span class="p">;</span> 
+        adtimg get dt --index<span class="o">=</span><span class="nv">$dtbo_index</span> dtbo0_addr<span class="p">;</span> 
+        fdt apply <span class="nv">$dtbo0_addr</span><span class="p">;</span>
+        setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> androidboot.dtbo_idx=</span><span class="nv">$dtbo_index</span><span class="s2"> "</span><span class="p">;</span>
+        <span class="nb">echo</span> Running Android Recovery...<span class="p">;</span>
+        bootm <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">fdt_addr_r</span><span class="si">}</span><span class="p">;</span>
+    <span class="k">fi</span><span class="p">;</span>
+    <span class="nb">echo</span> Failed to boot Android...<span class="p">;</span>
+    reset<span class="p">;</span>
+<span class="k">fi</span>
+</code></pre></div>
+<p>As duas primeiras linhas:</p>
+<div class="highlight"><pre><span></span><code>pinmux dev pinctrl@14;
+pinmux dev pinctrl@40;
+</code></pre></div>
+<p>A príncipio não funcionam, tentei ver o status desses pinos e retornaram <code>pinctrl@14 not found</code> e <code>pinctrl@40 not found</code>. Talvez esteja faltando alguma implementação.</p>
+<p>Seguindo no código, a <em>flag</em> <mark>run_recovery</mark> é setada para 0 e então a função <code>check_button</code> é checada. Ela foi atribuída na linha 24:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nv">check_button</span><span class="o">=</span>gpio input <span class="si">${</span><span class="nv">gpio_recovery</span><span class="si">}</span><span class="p">;</span><span class="nb">test</span> <span class="nv">$?</span> -eq <span class="m">0</span><span class="p">;</span>
+</code></pre></div>
+Na linha 36 a variável <code>gpio_recovery=88</code> é atribuída. Por padrão, esse <em>GPIO</em> é setado para 1 <code>gpio: pin 88 (gpio 88) value is 1</code>, logo o valor retornado é falso. Dessa forma, a comparação <code>if run check_button; then</code> não é acionada.</p>
+<p>Mais adiante, a partição <code>misc</code> é carregada novamente e é checado se a variável <code>command</code> está setada para <code>boot-recovery</code>. Em seguinda, a váriável <code>skip_recovery</code> não está setada, logo não entra no próximo <code>if</code>.</p>
+<p>Se a variável <code>force_recovery</code> foi setada na etapa do <mark>bootcmd_fastboot</mark>, então a linha <code>if test "${force_recovery}" -eq 1; then</code> é acionada é a variável a <em>flag</em> <mark>run_recovery</mark> é setada para 1. Isso faz com que o próximo <code>if</code> seja acionado (<code>if test "${run_recovery}" -eq 1; then</code>) e começar o processo de entrar no modo <em>Recovery</em>.</p>
+<p>Vimos na seção anterior que <code>mmcdev=2</code>. Com isso, o comando <code>mmc dev ${mmcdev};</code> ativa o eMMC. A próxima linha adiciona a variável <code>bootargs</code> a propriedade <code>androidboot.serialno=${serial#}</code>. A variável <code>serial#</code> é atribuída na linha 54:</p>
+<div class="highlight"><pre><span></span><code>serial#<span class="o">=</span>C86314712D35
+</code></pre></div>
+<p>Seguindo, é checado a váriável <code>force_avb=0</code>, atribuída na linha 35. Como o <em>Android Verified Boot</em> (AVB) não está setado, é adicionado mais uma propriedade ao <code>bootargs</code>:</p>
+<div class="highlight"><pre><span></span><code>setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> androidboot.verifiedbootstate=orange"</span><span class="p">;</span>
+</code></pre></div>
+<p>Mais a frente, temos a linha:</p>
+<div class="highlight"><pre><span></span><code>part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> recovery<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_start<span class="p">;</span>
+</code></pre></div>
+<p>a variável <code>slot_suffix</code> não está setada. Dessa forma, essa linha procura o inicio da partição <em>recovery</em> dentro do eMMC e adiciona o valor na variável <code>boot_start</code>. A linha: </p>
+<div class="highlight"><pre><span></span><code>part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> recovery<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_size<span class="p">;</span>
+</code></pre></div>
+<p>é semelhante, mas nesse caso armazena o tamanho da partição <em>recovery</em> na variável <code>boot_size</code>.</p>
+<p>Na linha seguinte:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_size</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> 
+</code></pre></div>
+<p>a variável <code>loadaddr=0x01080000</code> é atribuída na linha 40. A partição <em>recovery</em> é carregada e se tudo ocorrer corretamente, segue dentro do <code>if</code>. A variável <code>board_name=vim3</code> é atribuída na linha 5, consequentemente, setando a <em>flag</em> <code>setenv dtb_index 3;</code>.</p>
+<p>A próxima linha:</p>
+<div class="highlight"><pre><span></span><code>abootimg get dtb --index<span class="o">=</span><span class="nv">$dtb_index</span> dtb_start dtb_size<span class="p">;</span> 
+</code></pre></div>
+<p>Armazena o endereço e o tamanho do <em>Device Tree Blob</em> (DTB) nas variáveis <code>dtb_start</code> e <code>dtb_size</code>, respectivamente.</p>
+<p>Seguindo, temos:</p>
+<div class="highlight"><pre><span></span><code>cp.b <span class="nv">$dtb_start</span> <span class="nv">$fdt_addr_r</span> <span class="nv">$dtb_size</span><span class="p">;</span>
+</code></pre></div>
+<p>a variável <code>fdt_addr_r=0x01000000</code> é atribuída na linha 32. A linha acima copia o conteúdo do DTB para o endereço da variável <code>fdt_addr_r</code>.</p>
+<p>Após isso, a localização do ftd é setada para o endereço <code>0x80000</code>, pelo comando:</p>
+<div class="highlight"><pre><span></span><code>fdt addr <span class="nv">$fdt_addr_r</span>  0x80000<span class="p">;</span>
+</code></pre></div>
+<p>Agora é necessário carregar o <em>Device Tree Blob Overlay</em> (DTBO). Para isso, é checando novamente a varíavel <code>board_name</code>, consequentemente, a <em>flag</em> <code>setenv dtb_index 3</code> é setada. As seguintes linhas tem função similar as anteriores:</p>
+<div class="highlight"><pre><span></span><code>part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> dtbo<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> p_dtbo_start<span class="p">;</span> 
+part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> dtbo<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> p_dtbo_size<span class="p">;</span> 
+mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">dtboaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">p_dtbo_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">p_dtbo_size</span><span class="si">}</span><span class="p">;</span> 
+</code></pre></div>
+<p>a variável <code>dtboaddr=0x08200000</code> é atribuída na linha 27. </p>
+<p>As linhas:</p>
+<div class="highlight"><pre><span></span><code>adtimg addr <span class="nv">$dtboaddr</span><span class="p">;</span> 
+adtimg get dt --index<span class="o">=</span><span class="nv">$dtbo_index</span> dtbo0_addr<span class="p">;</span> 
+fdt apply <span class="nv">$dtbo0_addr</span><span class="p">;</span>
+</code></pre></div>
+<p>Seta a localização da imagem do DTBO para o endereço da variável <code>dtboaddr</code>, armazena o endereço do DTBO na variável <code>dtbo0_addr</code>. Por fim, aplica o DTBO no DTB.</p>
+<p>Na linha seguinte, é adicionado a propriedade <code>setenv bootargs "$bootargs androidboot.dtbo_idx=$dtbo_index "</code> na variável <code>bootargs</code>.</p>
+<p>Finalmente, na linha:</p>
+<div class="highlight"><pre><span></span><code>bootm <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">fdt_addr_r</span><span class="si">}</span><span class="p">;</span>
+</code></pre></div>
+<p>faz o boot da imagem de <em>recovery</em>.</p>
+<h3 id="o-bootcmd_system"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.3</span> O bootcmd_system</h3>
+<p>Atribuído na linha 22, ele possui a seguinte implementação:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">bootcmd_system</span><span class="o">=</span>
+
+<span class="nb">echo</span> Loading Android boot partition...<span class="p">;</span>
+
+mmc dev <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span><span class="p">;</span>
+setenv bootargs <span class="si">${</span><span class="nv">bootargs</span><span class="si">}</span> androidboot.serialno<span class="o">=</span><span class="si">${</span><span class="nv">serial</span><span class="p">#</span><span class="si">}</span><span class="p">;</span> 
+
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="si">${</span><span class="nv">force_avb</span><span class="si">}</span><span class="s2">"</span> -eq <span class="m">1</span><span class="p">;</span> <span class="k">then</span> 
+    <span class="k">if</span> run avb_verify<span class="p">;</span> <span class="k">then</span> 
+        <span class="nb">echo</span> AVB verification OK.<span class="p">;</span>
+        setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> </span><span class="nv">$avb_bootargs</span><span class="s2">"</span><span class="p">;</span>
+    <span class="k">else</span> 
+        <span class="nb">echo</span> AVB verification failed.<span class="p">;</span>
+        exit<span class="p">;</span> 
+    <span class="k">fi</span><span class="p">;</span>
+<span class="k">else</span> 
+    setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> androidboot.verifiedbootstate=orange"</span><span class="p">;</span>
+    <span class="nb">echo</span> Running without AVB...<span class="p">;</span> 
+<span class="k">fi</span><span class="p">;</span>
+
+part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> boot<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_start<span class="p">;</span>
+part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> boot<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_size<span class="p">;</span>
+
+<span class="k">if</span> mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">boot_size</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span> 
+    <span class="nb">echo</span> Preparing FDT...<span class="p">;</span> 
+    <span class="k">if</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei510<span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">"  Reading DTB for sei510..."</span><span class="p">;</span> 
+        setenv dtb_index <span class="m">0</span><span class="p">;</span>
+    <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei610<span class="p">;</span> <span class="k">then</span> 
+        <span class="nb">echo</span> <span class="s2">"  Reading DTB for sei610..."</span><span class="p">;</span> 
+        setenv dtb_index <span class="m">1</span><span class="p">;</span>
+    <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3l<span class="p">;</span> <span class="k">then</span> 
+        <span class="nb">echo</span> <span class="s2">"  Reading DTB for vim3l..."</span><span class="p">;</span> 
+        setenv dtb_index <span class="m">2</span><span class="p">;</span>
+    <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3<span class="p">;</span> <span class="k">then</span> 
+        <span class="nb">echo</span> <span class="s2">"  Reading DTB for vim3..."</span><span class="p">;</span> 
+        setenv dtb_index <span class="m">3</span><span class="p">;</span>
+    <span class="k">else</span> 
+        <span class="nb">echo</span> Error: Android boot is not supported <span class="k">for</span> <span class="nv">$board_name</span><span class="p">;</span> 
+        exit<span class="p">;</span> 
+    <span class="k">fi</span><span class="p">;</span> 
+
+    abootimg get dtb --index<span class="o">=</span><span class="nv">$dtb_index</span> dtb_start dtb_size<span class="p">;</span> 
+    cp.b <span class="nv">$dtb_start</span> <span class="nv">$fdt_addr_r</span> <span class="nv">$dtb_size</span><span class="p">;</span> 
+    fdt addr <span class="nv">$fdt_addr_r</span>  0x80000<span class="p">;</span> 
+
+    <span class="k">if</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei510<span class="p">;</span> <span class="k">then</span> 
+        <span class="nb">echo</span> <span class="s2">"  Reading DTBO for sei510..."</span><span class="p">;</span> 
+        setenv dtbo_index <span class="m">0</span><span class="p">;</span>
+    <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> sei610<span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">"  Reading DTBO for sei610..."</span><span class="p">;</span>
+        setenv dtbo_index <span class="m">1</span><span class="p">;</span>
+    <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3l<span class="p">;</span> <span class="k">then</span> 
+        <span class="nb">echo</span> <span class="s2">"  Reading DTBO for vim3l..."</span><span class="p">;</span> 
+        setenv dtbo_index <span class="m">2</span><span class="p">;</span>
+    <span class="k">elif</span> <span class="nb">test</span> <span class="nv">$board_name</span> <span class="o">=</span> vim3<span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">"  Reading DTBO for vim3..."</span><span class="p">;</span> 
+        setenv dtbo_index <span class="m">3</span><span class="p">;</span>
+    <span class="k">else</span> 
+        <span class="nb">echo</span> Error: Android boot is not supported <span class="k">for</span> <span class="nv">$board_name</span><span class="p">;</span> 
+        exit<span class="p">;</span> 
+    <span class="k">fi</span><span class="p">;</span> 
+
+    part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> dtbo<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> p_dtbo_start<span class="p">;</span> 
+    part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> dtbo<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> p_dtbo_size<span class="p">;</span> 
+    mmc <span class="nb">read</span> <span class="si">${</span><span class="nv">dtboaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">p_dtbo_start</span><span class="si">}</span> <span class="si">${</span><span class="nv">p_dtbo_size</span><span class="si">}</span><span class="p">;</span> 
+    <span class="nb">echo</span> <span class="s2">"  Applying DTBOs..."</span><span class="p">;</span>
+    adtimg addr <span class="nv">$dtboaddr</span><span class="p">;</span>
+    adtimg get dt --index<span class="o">=</span><span class="nv">$dtbo_index</span> dtbo0_addr<span class="p">;</span> 
+    fdt apply <span class="nv">$dtbo0_addr</span><span class="p">;</span>
+    setenv bootargs <span class="s2">"</span><span class="nv">$bootargs</span><span class="s2"> androidboot.dtbo_idx=</span><span class="nv">$dtbo_index</span><span class="s2"> "</span><span class="p">;</span>
+    setenv bootargs <span class="s2">"</span><span class="si">${</span><span class="nv">bootargs</span><span class="si">}</span><span class="s2">  "</span>  <span class="p">;</span> 
+
+    <span class="nb">echo</span> Running Android...<span class="p">;</span>
+
+    bootm <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">fdt_addr_r</span><span class="si">}</span><span class="p">;</span>
+<span class="k">fi</span><span class="p">;</span>
+
+<span class="nb">echo</span> Failed to boot Android...<span class="p">;</span>
+</code></pre></div>
+<p>Todo o processo é o mesmo do modo <em>recovery</em> a diferença fica nas seguintes linhas:</p>
+<div class="highlight"><pre><span></span><code>part start mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> boot<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_start<span class="p">;</span>
+part size mmc <span class="si">${</span><span class="nv">mmcdev</span><span class="si">}</span> boot<span class="si">${</span><span class="nv">slot_suffix</span><span class="si">}</span> boot_size<span class="p">;</span>
+</code></pre></div>
+<p>Observe que agora o script busca pela partição <code>boot</code>. O resto segue inalterado.</p>
+<h3 id="o-bootcmd_panic"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.4</span> O bootcmd_panic</h3>
+<p>Atribuído na linha 20, ele possui a seguinte implementação:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">bootcmd_panic</span><span class="o">=</span>fastboot <span class="m">0</span><span class="p">;</span> reset
+</code></pre></div>
+<p>Como último recurso, caso não tenha sido possível fazer o boot do Android. O script entra no modo fastboot e ao sair ele reinicia a VIM3.</p>
+<h2 id="conclusao"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.5</span> Conclusão</h2>
+<p>Sem dúvida entender esse processo não é algo trivial, não existe uma padronização e tudo fica na mão do desenvolvedor na hora de criar o script responsável por carregar o kernel do Android. Com certeza, esse passo foi fundamental para um melhor entendimento de como o Android funciona.</p>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Ultima atualização:
+      2022-08-21
+    
+  </small>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Voltar para o topo
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Rodapé" class="md-footer__inner md-grid">
+<a aria-label="Anterior: U-boot na VIM3 (SD Card)" class="md-footer__link md-footer__link--prev" href="../../u-boot/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Anterior
+              </span>
+              U-boot na VIM3 (SD Card)
+            </div>
+</div>
+</a>
+<a aria-label="Próximo: U-boot no QEMU" class="md-footer__link md-footer__link--next" href="../../../qemu/U-boot_qemu/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Próximo
+              </span>
+              U-boot no QEMU
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top"], "search": "../../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de Transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de Transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Perdido", "select.version.title": "Selecione a vers\u00e3o"}}</script>
+<script src="../../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+</html>
