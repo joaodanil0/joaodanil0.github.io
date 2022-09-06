@@ -12,3 +12,8 @@
 ## Raspberry
 
 - Como foi feito o port do Android ? [Git do projeto](https://github.com/lineage-rpi) [site com os arquivos compilados](https://konstakang.com/devices/rpi3/)
+
+
+## Beaglebone
+
+- Fazer o curso da udemy `Embedded Linux Step by Step Using Beaglebone Black`
