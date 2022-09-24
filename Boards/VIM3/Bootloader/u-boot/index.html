@@ -5,23 +5,23 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../../assets/images/favicon.png" rel="icon"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.3.0, mkdocs-material-8.2.9" name="generator"/>
 <title>U-boot na VIM3 (SD Card) - Jão's Blog</title>
-<link href="../../../assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#u-boot-na-vim3-sd-card">5. 
+<a class="md-skip" href="#u-boot-na-vim3-sd-card">7. 
           Pular para conteúdo
         </a>
 </div>
@@ -29,7 +29,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Cabeçalho" class="md-header__inner md-grid">
-<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
+<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -94,14 +94,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navegação" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
+<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
 </a>
     Jão's Blog
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
+<a class="md-nav__link" href="../../../..">
         Dúvidas
       </a>
 </li>
@@ -118,21 +118,33 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Android/boot.img/">
+<a class="md-nav__link" href="../../../../Android/boot.img/">
         Boot.img
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
+          Boards
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Boards" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Boards
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1">
           Beaglebone
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Beaglebone" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
+<nav aria-label="Beaglebone" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
 <span class="md-nav__icon md-icon"></span>
           Beaglebone
         </label>
@@ -155,28 +167,98 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2">
+          Qemu
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Qemu" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Qemu
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_1" id="__nav_3_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_1">
           Bootloader
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Bootloader" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
+<nav aria-label="Bootloader" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_2_1">
 <span class="md-nav__icon md-icon"></span>
           Bootloader
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Qemu/Bootloader/U-boot_qemu/">
+        U-boot no QEMU
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" id="__nav_4_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_1">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3">
           VIM3
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="VIM3" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_1">
+<label class="md-nav__title" for="__nav_3_3">
 <span class="md-nav__icon md-icon"></span>
           VIM3
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_1" id="__nav_3_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_1">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Android" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_3_1">
+<span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_1_1" id="__nav_3_3_1_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_1_1">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Bootloader" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_3_3_1_1">
+<span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Android/Bootloader/Carregando/">
+        Decifrando o BOOTCMD
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_2" id="__nav_3_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_2">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Bootloader" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Bootloader
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
@@ -195,18 +277,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#organizando-a-estrutura-de-pastas">5.1 
+<a class="md-nav__link" href="#organizando-a-estrutura-de-pastas">7.1 
     Organizando a estrutura de pastas
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#baixando-o-u-boot-mainline">5.2 
+<a class="md-nav__link" href="#baixando-o-u-boot-mainline">7.2 
     Baixando o u-boot Mainline
   </a>
 <nav aria-label="Baixando o u-boot Mainline" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compilando-o-u-boot-mainline">5.2.1 
+<a class="md-nav__link" href="#compilando-o-u-boot-mainline">7.2.1 
     Compilando o u-boot mainline
   </a>
 </li>
@@ -214,13 +296,13 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#baixando-u-boot-vim3">5.3 
+<a class="md-nav__link" href="#baixando-u-boot-vim3">7.3 
     Baixando u-boot VIM3
   </a>
 <nav aria-label="Baixando u-boot VIM3" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compilando-o-u-boot-vim3">5.3.1 
+<a class="md-nav__link" href="#compilando-o-u-boot-vim3">7.3.1 
     Compilando o u-boot VIM3
   </a>
 </li>
@@ -228,18 +310,18 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#juntando-tudo">5.4 
+<a class="md-nav__link" href="#juntando-tudo">7.4 
     Juntando tudo
   </a>
 <nav aria-label="Juntando tudo" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#concatenando-os-arquivos">5.4.1 
+<a class="md-nav__link" href="#concatenando-os-arquivos">7.4.1 
     Concatenando os arquivos
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#encriptando-os-arquivos">5.4.2 
+<a class="md-nav__link" href="#encriptando-os-arquivos">7.4.2 
     Encriptando os arquivos
   </a>
 </li>
@@ -247,32 +329,50 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#passando-o-u-boot-para-o-sd-card">5.5 
+<a class="md-nav__link" href="#passando-o-u-boot-para-o-sd-card">7.5 
     Passando o u-boot para o SD Card
   </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_2" id="__nav_4_1_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_1_2">
-          Android
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Android" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_1_2">
-<span class="md-nav__icon md-icon"></span>
-          Android
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Android/Carregando/">
-        Decifrando o BOOTCMD
-      </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          Documentação
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Documentação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Documentação
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" id="__nav_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_1">
+          Partições
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Partições" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Partições
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../Documenta%C3%A7%C3%A3o/Parti%C3%A7%C3%B5es/GPT/">
+        Tabela de Partição GUID
+      </a>
 </li>
 </ul>
 </nav>
@@ -280,18 +380,18 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_2">
-          Qemu
+          Mkdocs
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Qemu" class="md-nav" data-md-level="2">
+<nav aria-label="Mkdocs" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_4_2">
 <span class="md-nav__icon md-icon"></span>
-          Qemu
+          Mkdocs
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../qemu/U-boot_qemu/">
-        U-boot no QEMU
+<a class="md-nav__link" href="../../../../Documenta%C3%A7%C3%A3o/mkdocs/mkdocs/">
+        Documentação com MKDOCS
       </a>
 </li>
 </ul>
@@ -303,50 +403,30 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
-          Documentação
+          Linguagens
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Documentação" class="md-nav" data-md-level="1">
+<nav aria-label="Linguagens" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
-          Documentação
+          Linguagens
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_1">
-          Partições
+          Rust
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Partições" class="md-nav" data-md-level="2">
+<nav aria-label="Rust" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_1">
 <span class="md-nav__icon md-icon"></span>
-          Partições
+          Rust
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Documenta%C3%A7%C3%A3o/Parti%C3%A7%C3%B5es/GPT/">
-        Tabela de Partição GUID
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5_2">
-          Mkdocs
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Mkdocs" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_5_2">
-<span class="md-nav__icon md-icon"></span>
-          Mkdocs
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Documenta%C3%A7%C3%A3o/mkdocs/mkdocs/">
-        Documentação com MKDOCS
+<a class="md-nav__link" href="../../../../Linguagens/Rust/Cap1/">
+        Introdução
       </a>
 </li>
 </ul>
@@ -358,64 +438,29 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6">
-          Linguagens
+          RTOS
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Linguagens" class="md-nav" data-md-level="1">
+<nav aria-label="RTOS" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
-          Linguagens
+          RTOS
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" id="__nav_6_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_1">
-          Rust
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Rust" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_1">
-<span class="md-nav__icon md-icon"></span>
-          Rust
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Linguagens/Rust/Cap1/">
-        Introdução
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7">
-          RTOS
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="RTOS" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
-          RTOS
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" id="__nav_7_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_1">
           Zephyr
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Zephyr" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_7_1">
+<label class="md-nav__title" for="__nav_6_1">
 <span class="md-nav__icon md-icon"></span>
           Zephyr
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../RTOS/zephyr/zephyr/">
+<a class="md-nav__link" href="../../../../RTOS/zephyr/zephyr/">
         Zephyr + Esp32 + Blinky = ❤️
       </a>
 </li>
@@ -440,18 +485,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#organizando-a-estrutura-de-pastas">5.1 
+<a class="md-nav__link" href="#organizando-a-estrutura-de-pastas">7.1 
     Organizando a estrutura de pastas
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#baixando-o-u-boot-mainline">5.2 
+<a class="md-nav__link" href="#baixando-o-u-boot-mainline">7.2 
     Baixando o u-boot Mainline
   </a>
 <nav aria-label="Baixando o u-boot Mainline" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compilando-o-u-boot-mainline">5.2.1 
+<a class="md-nav__link" href="#compilando-o-u-boot-mainline">7.2.1 
     Compilando o u-boot mainline
   </a>
 </li>
@@ -459,13 +504,13 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#baixando-u-boot-vim3">5.3 
+<a class="md-nav__link" href="#baixando-u-boot-vim3">7.3 
     Baixando u-boot VIM3
   </a>
 <nav aria-label="Baixando u-boot VIM3" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compilando-o-u-boot-vim3">5.3.1 
+<a class="md-nav__link" href="#compilando-o-u-boot-vim3">7.3.1 
     Compilando o u-boot VIM3
   </a>
 </li>
@@ -473,18 +518,18 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#juntando-tudo">5.4 
+<a class="md-nav__link" href="#juntando-tudo">7.4 
     Juntando tudo
   </a>
 <nav aria-label="Juntando tudo" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#concatenando-os-arquivos">5.4.1 
+<a class="md-nav__link" href="#concatenando-os-arquivos">7.4.1 
     Concatenando os arquivos
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#encriptando-os-arquivos">5.4.2 
+<a class="md-nav__link" href="#encriptando-os-arquivos">7.4.2 
     Encriptando os arquivos
   </a>
 </li>
@@ -492,7 +537,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#passando-o-u-boot-para-o-sd-card">5.5 
+<a class="md-nav__link" href="#passando-o-u-boot-para-o-sd-card">7.5 
     Passando o u-boot para o SD Card
   </a>
 </li>
@@ -503,7 +548,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="u-boot-na-vim3-sd-card"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.</span> U-boot na VIM3 (SD Card)</h1>
+<h1 id="u-boot-na-vim3-sd-card"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.</span> U-boot na VIM3 (SD Card)</h1>
 <figure>
 <p><a class="glightbox" href="../images/u-boot_logo.svg"><img alt="imagems" src="../images/u-boot_logo.svg" width="300"/></a>
 </p>
@@ -513,7 +558,7 @@
 <p>baseado no tutorial do próprio u-boot no <a href="https://u-boot.readthedocs.io/en/latest/board/amlogic/khadas-vim3.html">readthedocs</a></p>
 </blockquote>
 <hr/>
-<h2 id="organizando-a-estrutura-de-pastas"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1</span> Organizando a estrutura de pastas</h2>
+<h2 id="organizando-a-estrutura-de-pastas"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1</span> Organizando a estrutura de pastas</h2>
 <p>Serão necessários vários arquivos e pastas durante esse post. Devido isso, iremos usar a seguinte estrutura de pastas</p>
 <div class="highlight"><pre><span></span><code>.
 ├── fip
@@ -522,12 +567,12 @@
 └── u-boot-vim3
 </code></pre></div>
 <p>Elas serão criadas ao longo deste post.</p>
-<h2 id="baixando-o-u-boot-mainline"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2</span> Baixando o u-boot Mainline</h2>
+<h2 id="baixando-o-u-boot-mainline"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.2</span> Baixando o u-boot Mainline</h2>
 <p>O u-boot possui um repositório no github. Vamos baixa-lo dentro da pasta <mark>u-boot-mainline</mark>:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/u-boot/u-boot.git u-boot-mainline
 </code></pre></div>
 <p>Para fazer o <a href="https://en.wikipedia.org/wiki/Cross_compiler"><em>cross compile</em></a> é necessário baixar as <a href="https://en.wikipedia.org/wiki/Toolchain"><em>toolchain</em></a>. As versões novas do u-boot precisam de versões novas de <em>toolchain</em>, que podem ser encontradas no site da <a href="https://developer.arm.com/downloads/-/gnu-a">ARM</a>. Nesse post estou usando a versão <a href="https://drive.google.com/file/d/17MRLKZct7XoxGKUvNtmP1-R_l6z83PWw/view?usp=sharing">gcc-arm-10.3-2021.07</a> (meu link de backup).</p>
-<h3 id="compilando-o-u-boot-mainline"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.1</span> Compilando o u-boot mainline</h3>
+<h3 id="compilando-o-u-boot-mainline"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.2.1</span> Compilando o u-boot mainline</h3>
 <p>Uma vez baixado a <em>toolchain</em> (<a href="https://drive.google.com/file/d/17MRLKZct7XoxGKUvNtmP1-R_l6z83PWw/view?usp=sharing">gcc-arm-10.3-2021.07</a>), vamos criar a pasta <mark>toolchain</mark> e mover a <em>toolchain</em> baixada para dentro dela.</p>
 <p>Agora, precisamos descompactar a <em>toochain</em> e adicionar os binários ao <em>path</em> do sistema. Para isso</p>
 <div class="highlight"><pre><span></span><code>export PATH=CAMINHO_ABSOLUTO/toolchain/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin:$PATH
@@ -567,7 +612,7 @@ make[1]: Leaving directory 'CAMINHO_ABSOLUTO/u-boot-mainline/out'
 </code></pre></div>
 <p>O arquivo <code>u-boot.bin</code> deve ter sido gerado dentro da pasta <code>out</code>.</p>
 <hr/>
-<h2 id="baixando-u-boot-vim3"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3</span> Baixando u-boot VIM3</h2>
+<h2 id="baixando-u-boot-vim3"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.3</span> Baixando u-boot VIM3</h2>
 <p>A <a href="https://www.khadas.com/">Khadas</a> também possui um repositório com as versões do u-boot para as diversas placas que eles produzem. Vamos baixar o <em>brach</em> <code>khadas-vims-v2015.01</code> dentro da pasta <mark>u-boot-vim3</mark></p>
 <p><div class="highlight"><pre><span></span><code>git clone https://github.com/khadas/u-boot.git -b khadas-vims-v2015.01 u-boot-vim3
 </code></pre></div>
@@ -582,7 +627,7 @@ Para fazer o <a href="https://en.wikipedia.org/wiki/Cross_compiler"><em>cross co
 </ul>
 </li>
 </ul>
-<h3 id="compilando-o-u-boot-vim3"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.1</span> Compilando o u-boot VIM3</h3>
+<h3 id="compilando-o-u-boot-vim3"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.3.1</span> Compilando o u-boot VIM3</h3>
 <blockquote>
 <p>Antes de adicionar as novas <em>toolchain</em> ao <em>path</em>, limpe o terminal (abra um novo terminal). A versão utilizada no u-boot-mainline não é compatível com a versão da VIM3</p>
 </blockquote>
@@ -621,7 +666,7 @@ Built CAMINHO_ABSOLUTO/u-boot-vim3/out/board/khadas/kvim3/firmware/acs.bin succe
     OBJCOPY CAMINHO_ABSOLUTO/u-boot-vim3/out/scp_task/bl301.bin
 </code></pre></div>
 <hr/>
-<h2 id="juntando-tudo"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4</span> Juntando tudo</h2>
+<h2 id="juntando-tudo"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.4</span> Juntando tudo</h2>
 <p>O primeiro passo é criar a pasta <mark>fip</mark>.</p>
 <p>Segundo, é preciso baixar esse <a href="https://github.com/BayLibre/u-boot/releases/download/v2017.11-libretech-cc/blx_fix_g12a.sh">script</a> da <a href="https://github.com/BayLibre/u-boot/"><em>BayLibre</em></a> ou no meu <a href="https://drive.google.com/file/d/1bcYf6pl_cHXMGyBidKRMvZm38R-PAe_0/view?usp=sharing">backup</a> e mover para dentro da pasta <mark>fip</mark></p>
 <blockquote>
@@ -650,7 +695,7 @@ cp u-boot-vim3/fip/g12b/piei.fw fip
 cp u-boot-vim3/fip/g12b/aml_ddr.fw fip
 cp u-boot-vim3/fip/g12b/aml_encrypt_g12b fip 
 </code></pre></div>
-<h3 id="concatenando-os-arquivos"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4.1</span> Concatenando os arquivos</h3>
+<h3 id="concatenando-os-arquivos"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.4.1</span> Concatenando os arquivos</h3>
 <p>Pra concatenar as informações, vamos utilizar o script da <em>baylibre</em> (dentro da pasta <mark>fip</mark>)</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Adiciona um padding no bl30.bin e bl301.bin </span>
 <span class="c1"># depois concatena os dois, gerando bl30_new.bin</span>
@@ -660,7 +705,7 @@ bash blx_fix_g12a.sh bl30.bin zero_tmp bl30_zero.bin bl301.bin bl301_zero.bin bl
 <span class="c1"># depois concatena os dois, gerando bl2_new.bin</span>
 bash blx_fix_g12a.sh bl2.bin  zero_tmp bl2_zero.bin  acs.bin   bl21_zero.bin  bl2_new.bin  bl2
 </code></pre></div>
-<h3 id="encriptando-os-arquivos"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4.2</span> Encriptando os arquivos</h3>
+<h3 id="encriptando-os-arquivos"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.4.2</span> Encriptando os arquivos</h3>
 <p>Para mais informações, acesse: <a href="https://github.com/angerman/meson64-tools">link</a></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Adiciona assinatura no cabeçalho do binário</span>
 ./aml_encrypt_g12b --bl2sig  --input bl2_new.bin             --output bl2.n.bin.sig
@@ -683,7 +728,7 @@ bash blx_fix_g12a.sh bl2.bin  zero_tmp bl2_zero.bin  acs.bin   bl21_zero.bin  bl
                                                 --ddrfw9 lpddr3_1d.fw --level v3
 </code></pre></div>
 <hr/>
-<h2 id="passando-o-u-boot-para-o-sd-card"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.5</span> Passando o u-boot para o SD Card</h2>
+<h2 id="passando-o-u-boot-para-o-sd-card"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.5</span> Passando o u-boot para o SD Card</h2>
 <div class="highlight"><pre><span></span><code>$ DEV=/dev/your_sd_device
 $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=512 skip=1 seek=1
 $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
@@ -693,7 +738,7 @@ $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
 <small>
     
       Ultima atualização:
-      2022-08-02
+      2022-09-24
     
   </small>
 </div>
@@ -707,7 +752,7 @@ $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
 </main>
 <footer class="md-footer">
 <nav aria-label="Rodapé" class="md-footer__inner md-grid">
-<a aria-label="Anterior: USB Serial na Beaglebone" class="md-footer__link md-footer__link--prev" href="../../../Beaglebone/USB%20Serial/" rel="prev">
+<a aria-label="Anterior: Decifrando o BOOTCMD" class="md-footer__link md-footer__link--prev" href="../../Android/Bootloader/Carregando/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -716,17 +761,17 @@ $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
 <span class="md-footer__direction">
                 Anterior
               </span>
-              USB Serial na Beaglebone
+              Decifrando o BOOTCMD
             </div>
 </div>
 </a>
-<a aria-label="Próximo: Decifrando o BOOTCMD" class="md-footer__link md-footer__link--next" href="../Android/Carregando/" rel="next">
+<a aria-label="Próximo: Tabela de Partição GUID" class="md-footer__link md-footer__link--next" href="../../../../Documenta%C3%A7%C3%A3o/Parti%C3%A7%C3%B5es/GPT/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Próximo
               </span>
-              Decifrando o BOOTCMD
+              Tabela de Partição GUID
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -751,8 +796,8 @@ $ dd if=fip/u-boot.bin.sd.bin of=$DEV conv=fsync,notrunc bs=1 count=444
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de Transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de Transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Perdido", "select.version.title": "Selecione a vers\u00e3o"}}</script>
-<script src="../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top"], "search": "../../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de Transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de Transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Perdido", "select.version.title": "Selecione a vers\u00e3o"}}</script>
+<script src="../../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
