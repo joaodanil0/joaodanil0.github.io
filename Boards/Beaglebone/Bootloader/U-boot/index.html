@@ -5,23 +5,23 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../../assets/images/favicon.png" rel="icon"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.3.0, mkdocs-material-8.2.9" name="generator"/>
 <title>U-Boot na Beaglebone - Jão's Blog</title>
-<link href="../../../assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#u-boot-na-beaglebone">3. 
+<a class="md-skip" href="#u-boot-na-beaglebone">4. 
           Pular para conteúdo
         </a>
 </div>
@@ -29,7 +29,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Cabeçalho" class="md-header__inner md-grid">
-<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
+<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -94,14 +94,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navegação" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
+<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
 </a>
     Jão's Blog
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
+<a class="md-nav__link" href="../../../..">
         Dúvidas
       </a>
 </li>
@@ -118,7 +118,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Android/boot.img/">
+<a class="md-nav__link" href="../../../../Android/boot.img/">
         Boot.img
       </a>
 </li>
@@ -150,10 +150,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Inicio/">
+<a class="md-nav__link" href="../../Inicio/">
         Início - Beaglebone
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../USB%20Serial/">
+        USB Serial na Beaglebone
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_3" id="__nav_3_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1_3">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Bootloader" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_1_3">
+<span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -170,38 +187,38 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#introducao">3.1 
+<a class="md-nav__link" href="#introducao">4.1 
     Introdução
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#baixando">3.2 
+<a class="md-nav__link" href="#baixando">4.2 
     Baixando
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#buildando">3.3 
+<a class="md-nav__link" href="#buildando">4.3 
     Buildando
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#estagios">3.4 
+<a class="md-nav__link" href="#estagios">4.4 
     Estágios
   </a>
 <nav aria-label="Estágios" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#brom">3.4.1 
+<a class="md-nav__link" href="#brom">4.4.1 
     BROM
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mlo">3.4.2 
+<a class="md-nav__link" href="#mlo">4.4.2 
     MLO
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#u-bootimg">3.4.3 
+<a class="md-nav__link" href="#u-bootimg">4.4.3 
     U-boot.img
   </a>
 </li>
@@ -209,17 +226,15 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#proximos-passos">3.5 
+<a class="md-nav__link" href="#proximos-passos">4.5 
     Próximos passos
   </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../USB%20Serial/">
-        USB Serial na Beaglebone
-      </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -249,7 +264,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Qemu/Bootloader/U-boot_qemu/">
+<a class="md-nav__link" href="../../../Qemu/Bootloader/U-boot_qemu/">
         U-boot no QEMU
       </a>
 </li>
@@ -296,7 +311,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../VIM3/Android/Bootloader/Carregando/">
+<a class="md-nav__link" href="../../../VIM3/Android/Bootloader/Carregando/">
         Decifrando o BOOTCMD
       </a>
 </li>
@@ -319,7 +334,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../VIM3/Bootloader/u-boot/">
+<a class="md-nav__link" href="../../../VIM3/Bootloader/u-boot/">
         U-boot na VIM3 (SD Card)
       </a>
 </li>
@@ -357,7 +372,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Documenta%C3%A7%C3%A3o/Parti%C3%A7%C3%B5es/GPT/">
+<a class="md-nav__link" href="../../../../Documenta%C3%A7%C3%A3o/Parti%C3%A7%C3%B5es/GPT/">
         Tabela de Partição GUID
       </a>
 </li>
@@ -377,7 +392,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Documenta%C3%A7%C3%A3o/mkdocs/mkdocs/">
+<a class="md-nav__link" href="../../../../Documenta%C3%A7%C3%A3o/mkdocs/mkdocs/">
         Documentação com MKDOCS
       </a>
 </li>
@@ -412,7 +427,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Linguagens/Rust/Cap1/">
+<a class="md-nav__link" href="../../../../Linguagens/Rust/Cap1/">
         Introdução
       </a>
 </li>
@@ -447,7 +462,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../RTOS/zephyr/zephyr/">
+<a class="md-nav__link" href="../../../../RTOS/zephyr/zephyr/">
         Zephyr + Esp32 + Blinky = ❤️
       </a>
 </li>
@@ -472,38 +487,38 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#introducao">3.1 
+<a class="md-nav__link" href="#introducao">4.1 
     Introdução
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#baixando">3.2 
+<a class="md-nav__link" href="#baixando">4.2 
     Baixando
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#buildando">3.3 
+<a class="md-nav__link" href="#buildando">4.3 
     Buildando
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#estagios">3.4 
+<a class="md-nav__link" href="#estagios">4.4 
     Estágios
   </a>
 <nav aria-label="Estágios" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#brom">3.4.1 
+<a class="md-nav__link" href="#brom">4.4.1 
     BROM
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mlo">3.4.2 
+<a class="md-nav__link" href="#mlo">4.4.2 
     MLO
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#u-bootimg">3.4.3 
+<a class="md-nav__link" href="#u-bootimg">4.4.3 
     U-boot.img
   </a>
 </li>
@@ -511,7 +526,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#proximos-passos">3.5 
+<a class="md-nav__link" href="#proximos-passos">4.5 
     Próximos passos
   </a>
 </li>
@@ -522,20 +537,20 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="u-boot-na-beaglebone"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> U-Boot na Beaglebone</h1>
+<h1 id="u-boot-na-beaglebone"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.</span> U-Boot na Beaglebone</h1>
 <figure>
-<p><a class="glightbox" href="../images/bbb_soc.jpg"><img alt="qemu" src="../images/bbb_soc.jpg" width="600"/></a>
+<p><a class="glightbox" href="../../images/bbb_soc.jpg"><img alt="qemu" src="../../images/bbb_soc.jpg" width="600"/></a>
 </p>
 <figcaption>
   Image by <a href="https://pixabay.com/users/christoph1703-633357/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4753037">christoph1703</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4753037">Pixabay</a>
 </figcaption>
 </figure>
-<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1</span> Introdução</h2>
+<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.1</span> Introdução</h2>
 <p>Dando prosseguimento na minha saga por bootloader para embarcados, vou postar meus passos para usar o U-Boot com SD-Card.</p>
 <blockquote>
 <p>Baseado no curso da <em>Udemy</em> -&gt; <a href="https://www.udemy.com/share/101X4W3@N0l6s9l1hoIcz2r0Zt6A8C0udGIlHPqNhW2BPV-FlD-zHXPTp5xIIMh4rNfdLAFg/"><code>Embedded Linux Step by Step Using Beaglebone Black</code></a></p>
 </blockquote>
-<h2 id="baixando"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Baixando</h2>
+<h2 id="baixando"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.2</span> Baixando</h2>
 <p>O repositório oficial do U-Boot é o da denx:</p>
 <div class="highlight"><pre><span></span><code>git clone https://source.denx.de/u-boot/u-boot.git
 </code></pre></div>
@@ -545,7 +560,7 @@
 <p>Como a maioria das placas, os criadores portaram o U-Boot para a Beaglebone
 <div class="highlight"><pre><span></span><code>git clone https://github.com/beagleboard/u-boot.git
 </code></pre></div></p>
-<h2 id="buildando"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3</span> Buildando</h2>
+<h2 id="buildando"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.3</span> Buildando</h2>
 <p>Primeiro, foi preciso baixar o <em>toolchain</em></p>
 <div class="highlight"><pre><span></span><code>sudo apt install gcc-arm-linux-gnueabihf
 </code></pre></div>
@@ -583,7 +598,7 @@
   COPY    u-boot.bin
 </code></pre></div>
 <p>Mostrando que os binários <code>MLO</code> e <code>u-boot.img</code> foram criados.</p>
-<h2 id="estagios"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4</span> Estágios</h2>
+<h2 id="estagios"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.4</span> Estágios</h2>
 <p>A forma como a <mark>Texas Instruments</mark> desenvolveu o SOC <mark>AM335x</mark> (<a href="https://youtu.be/DV5S_ZSdK0s?t=1357">mais detalhes</a>), se faz necessário que o processo de <em>boot</em> da placa precise de 3 estágios</p>
 <ol>
 <li>BROM - que é definido pela própria <mark>Texas Instruments</mark> (não é possível modifica-lo)</li>
@@ -594,14 +609,14 @@
 <blockquote>
 <p>No TRM também é possível verificar que existe a possibilidade de fazer o boot sem um sistema de arquivos no SD-Card/eMMC, na seção <code>26.1.8.5.5 MMC/SD Read Sector Procedure in Raw Mode</code></p>
 </blockquote>
-<h3 id="brom"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.1</span> BROM</h3>
+<h3 id="brom"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.4.1</span> BROM</h3>
 <p>O <mark>BROM</mark> faz várias checagens no hardware, mas o que nos interessa nesse estágio é o que ele busca após finalizar sua execução. O TRM encontramos a seguinte informação</p>
 <div class="highlight"><pre><span></span><code>The next task for the ROM Code is to find the booting file named “MLO” inside 
 the Root Directory of the FAT12/16/32 file system. The file is not searched 
 in any other location.
 </code></pre></div>
 <p>Ou seja, no nosso SD-Card/eMMC precisamos de uma partição do tipo <mark>FAT12</mark>, <mark>FAT16</mark> ou <mark>FAT32</mark>. Dentro da partição, um arquivo chamado <code>MLO</code>.</p>
-<h3 id="mlo"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.2</span> MLO</h3>
+<h3 id="mlo"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.4.2</span> MLO</h3>
 <p>Resumidamente, o MLO é responsável por "habilitar" a memória ram (DRAM) e carregar a imagem do U-Boot para a mesma.</p>
 <p>Um primeiro teste foi colocar apenas o <code>MLO</code> no SD-Card (sem o <code>u-boot.img</code>) e ver o que aconteceria. E essa foi a mensagem que retornou:</p>
 <div class="highlight"><pre><span></span><code>U-Boot SPL 2022.04-rc3-00052-g6d3c46ed0e (Sep 11 2022 - 11:17:49 -0400)         
@@ -611,11 +626,11 @@ Trying to boot from MMC1
 ### ERROR ### Please RESET the board ### 
 </code></pre></div>
 <blockquote>
-<p>OBS: Para visualizar o logs de boot, cheque esse <a href="../USB%20Serial/">post</a></p>
+<p>OBS: Para visualizar o logs de boot, cheque esse <a href="../../USB%20Serial/">post</a></p>
 </blockquote>
 <p>Uma mensagem dizendo não foi possível carregar o <code>u-boot.img</code>. Vale ressaltar que esses logs são do <code>MLO</code>, podemos observar referências ao <em>SPL</em> nos logs.</p>
 <p>Isso já mostra os primeiros sinais de vida da Beaglebone, mostrando que o SD-Card foi formatado corretamente e a placa está conseguindo detectar o mesmo. Com essas confirmações, podemos seguir em frente.</p>
-<h3 id="u-bootimg"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.3</span> U-boot.img</h3>
+<h3 id="u-bootimg"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.4.3</span> U-boot.img</h3>
 <p>Copiando o binário <code>u-boot.img</code> para o SD-Card é possível ver o u-boot carregado, como podemos ver abaixo:
 <div class="highlight"><pre><span></span><code>U-Boot SPL 2022.04-rc3-00052-g6d3c46ed0e (Sep 11 2022 - 11:17:49 -0400)
 Trying to boot from MMC1
@@ -636,7 +651,7 @@ Net:   eth2: ethernet@4a100000, eth3: usb_ether
 Hit any key to stop autoboot:  0 
 </code></pre></div></p>
 <p>Dessa forma, consegui compilar e rodar o U-Boot na minha Beaglebone.</p>
-<h2 id="proximos-passos"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.5</span> Próximos passos</h2>
+<h2 id="proximos-passos"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.5</span> Próximos passos</h2>
 <p>Para o próximo desafio, fica carregar o kernel Linux. Procurando rapidamente, percebi o u-boot deixou de dar suporte ao arquivo <mark>uEnv.txt</mark>, o que vai dificultar as coisas um pouco mais. Algumas fontes:</p>
 <ul>
 <li>https://forum.beagleboard.org/t/u-boot-ignores-uenv-txt/30549/3</li>
@@ -674,7 +689,7 @@ EOF
 </main>
 <footer class="md-footer">
 <nav aria-label="Rodapé" class="md-footer__inner md-grid">
-<a aria-label="Anterior: Início - Beaglebone" class="md-footer__link md-footer__link--prev" href="../Inicio/" rel="prev">
+<a aria-label="Anterior: USB Serial na Beaglebone" class="md-footer__link md-footer__link--prev" href="../../USB%20Serial/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -683,17 +698,17 @@ EOF
 <span class="md-footer__direction">
                 Anterior
               </span>
-              Início - Beaglebone
+              USB Serial na Beaglebone
             </div>
 </div>
 </a>
-<a aria-label="Próximo: USB Serial na Beaglebone" class="md-footer__link md-footer__link--next" href="../USB%20Serial/" rel="next">
+<a aria-label="Próximo: U-boot no QEMU" class="md-footer__link md-footer__link--next" href="../../../Qemu/Bootloader/U-boot_qemu/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Próximo
               </span>
-              USB Serial na Beaglebone
+              U-boot no QEMU
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -718,8 +733,8 @@ EOF
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de Transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de Transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Perdido", "select.version.title": "Selecione a vers\u00e3o"}}</script>
-<script src="../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top"], "search": "../../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de Transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de Transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Perdido", "select.version.title": "Selecione a vers\u00e3o"}}</script>
+<script src="../../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
