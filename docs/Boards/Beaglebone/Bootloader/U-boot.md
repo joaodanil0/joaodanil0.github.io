@@ -1,7 +1,7 @@
 # U-Boot na Beaglebone
 
 <figure markdown>
-  ![qemu](images/bbb_soc.jpg){ width="600" } 
+  ![qemu](../images/bbb_soc.jpg){ width="600" } 
   <figcaption>
   Image by <a href="https://pixabay.com/users/christoph1703-633357/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4753037">christoph1703</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4753037">Pixabay</a>
   </figcaption>
@@ -124,7 +124,7 @@ SPL: failed to boot from all boot devices
 ### ERROR ### Please RESET the board ### 
 ```
 
-> OBS: Para visualizar o logs de boot, cheque esse [post](USB%20Serial.md)
+> OBS: Para visualizar o logs de boot, cheque esse [post](../USB%20Serial.md)
 
 Uma mensagem dizendo não foi possível carregar o `u-boot.img`. Vale ressaltar que esses logs são do `MLO`, podemos observar referências ao *SPL* nos logs.
 
