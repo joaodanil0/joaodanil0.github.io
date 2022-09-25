@@ -1,4 +1,4 @@
-# U-boot no QEMU
+# U-boot
 
 <figure markdown>
   ![qemu](images/u-boot_qemu.jpg){ width="600" } 
