@@ -1,5 +1,11 @@
 # LittleKernel
 
+<figure markdown>
+  ![qemu](images/littlekernel_qemu.jpg){ width="600" } 
+  <figcaption>
+  Image by <a href="https://pixabay.com/users/startupstockphotos-690514/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=593313">StartupStockPhotos</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=593313">Pixabay</a>
+  </figcaption>
+</figure>
 
 ## Introdução
 
