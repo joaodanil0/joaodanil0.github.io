@@ -659,6 +659,18 @@ cc_binary {
 }
 ```
 
+Agora adicionando o binário ao produto, no arquivo:
+
+```{.mk title="emulator.mk" hl_lines="5-6"}
+...
+PRODUCT_PACKAGES += \
+    mypackage.mysubpackage.foo@1.0
+
+PRODUCT_PACKAGES_DEBUG += \
+    subpackage_foo_tester
+```
+
+
 Re-buildando o AOSP e executando os seguintes comandos:
 
 ```{.sh linenums="1"}
