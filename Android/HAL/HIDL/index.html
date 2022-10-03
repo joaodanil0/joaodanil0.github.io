@@ -1112,6 +1112,14 @@ allow hal_mysubpackage_default default_android_hwservice:hwservice_manager find;
     ],
 }
 </code></pre></div></p>
+<p>Agora adicionando o binário ao produto, no arquivo:</p>
+<div class="highlight"><span class="filename">emulator.mk</span><pre><span></span><code>...
+PRODUCT_PACKAGES += \
+    mypackage.mysubpackage.foo@1.0
+
+<span class="hll">PRODUCT_PACKAGES_DEBUG += \
+</span><span class="hll">    subpackage_foo_tester
+</span></code></pre></div>
 <p>Re-buildando o AOSP e executando os seguintes comandos:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
