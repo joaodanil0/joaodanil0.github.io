@@ -2,7 +2,7 @@
 
 
 <figure markdown>
-  ![imagems](%20images/hild_1.jpg){ width="600" }
+  ![imagems](images/hild_1.jpg){ width="600" }
   <figcaption>
   Image by <a href="https://pixabay.com/users/methodshop-1460919/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3404892">methodshop</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3404892">Pixabay</a>
   </figcaption>
