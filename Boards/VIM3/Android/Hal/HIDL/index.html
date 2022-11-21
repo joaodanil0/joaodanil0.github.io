@@ -1,0 +1,1088 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<title>Blink Led HIDL - Jão's Blog</title>
+<link href="../../../../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#blink-led-hidl">11. 
+          Pular para conteúdo
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Cabeçalho" class="md-header__inner md-grid">
+<a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../../../.." title="Jão's Blog">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jão's Blog
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Blink Led HIDL
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Buscar" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Buscar" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Pesquisar" class="md-search__options">
+<button aria-label="Limpar" class="md-search__icon md-icon" tabindex="-1" title="Limpar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegação" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jão's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../../../.." title="Jão's Blog">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
+</a>
+    Jão's Blog
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../..">
+        Dúvidas
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Android" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Android/boot.img/">
+        Boot.img
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2">
+          HAL
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="HAL" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          HAL
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" id="__nav_2_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_1">
+          AIDL
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="AIDL" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_1">
+<span class="md-nav__icon md-icon"></span>
+          AIDL
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Android/HAL/AIDL/">
+        Implementando a AIDL
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2">
+          HIDL
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="HIDL" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+          HIDL
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Android/HAL/HIDL/">
+        Implementando a HIDL
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          Boards
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Boards" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Boards
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1">
+          Beaglebone
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Beaglebone" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          Beaglebone
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../Beaglebone/Inicio/">
+        Início - Beaglebone
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../Beaglebone/USB%20Serial/">
+        USB Serial na Beaglebone
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_3" id="__nav_3_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1_3">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Bootloader" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_1_3">
+<span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../Beaglebone/Bootloader/U-boot/">
+        U-Boot na Beaglebone
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2">
+          Qemu
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Qemu" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Qemu
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_1" id="__nav_3_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_1">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Bootloader" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_2_1">
+<span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../Qemu/Bootloader/LittleKernel/">
+        LittleKernel
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../Qemu/Bootloader/U-boot_qemu/">
+        U-boot
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3">
+          VIM3
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="VIM3" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          VIM3
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_1" id="__nav_3_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_1">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Android" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_3_1">
+<span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_1_1" id="__nav_3_3_1_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_1_1">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Bootloader" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_3_3_1_1">
+<span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Bootloader/Carregando/">
+        Decifrando o BOOTCMD
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_1_2" id="__nav_3_3_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_1_2">
+          Hal
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Hal" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_3_3_1_2">
+<span class="md-nav__icon md-icon"></span>
+          Hal
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Blink Led AIDL
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Blink Led HIDL
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Blink Led HIDL
+      </a>
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducao">11.1 
+    Introdução
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#informacoes-uteis">11.2 
+    Informações úteis
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementacao">11.3 
+    Implementação
+  </a>
+<nav aria-label="Implementação" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hal">11.3.1 
+    HAL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#servico">11.3.2 
+    Serviço
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permissoes">11.3.3 
+    Permissões
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#testando">11.3.4 
+    Testando
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#jni">11.3.5 
+    JNI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacao">11.3.6 
+    Aplicação
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_2" id="__nav_3_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_2">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Bootloader" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Bootloader/u-boot/">
+        U-boot na VIM3 (SD Card)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          Documentação
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Documentação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Documentação
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" id="__nav_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_1">
+          Partições
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Partições" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Partições
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Documenta%C3%A7%C3%A3o/Parti%C3%A7%C3%B5es/GPT/">
+        Tabela de Partição GUID
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2">
+          Mkdocs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Mkdocs" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+          Mkdocs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Documenta%C3%A7%C3%A3o/mkdocs/mkdocs/">
+        Documentação com MKDOCS
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          Linguagens
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Linguagens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Linguagens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_1">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Rust" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Linguagens/Rust/Cap1/">
+        Introdução
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Linguagens/Rust/Cap2/">
+        Adivinhação
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+          RTOS
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="RTOS" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          RTOS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" id="__nav_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_1">
+          Zephyr
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Zephyr" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_1">
+<span class="md-nav__icon md-icon"></span>
+          Zephyr
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../RTOS/zephyr/zephyr/">
+        Zephyr + Esp32 + Blinky = ❤️
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducao">11.1 
+    Introdução
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#informacoes-uteis">11.2 
+    Informações úteis
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementacao">11.3 
+    Implementação
+  </a>
+<nav aria-label="Implementação" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hal">11.3.1 
+    HAL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#servico">11.3.2 
+    Serviço
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permissoes">11.3.3 
+    Permissões
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#testando">11.3.4 
+    Testando
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#jni">11.3.5 
+    JNI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacao">11.3.6 
+    Aplicação
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="blink-led-hidl"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.</span> Blink Led HIDL</h1>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/hello-world-hidl.jpg"><img alt="imagems" src="../images/hello-world-hidl.jpg" width="600"/></a>
+</p>
+<figcaption>
+  Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5556539">Gerd Altmann</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5556539">Pixabay</a>
+</figcaption>
+</figure>
+<blockquote>
+<p>Vale ressaltar que para esse post é necessário já ter um produto buildado e para o ultimo tópico é preciso do display já em funcionamento.</p>
+</blockquote>
+<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1</span> Introdução</h2>
+<p>Apesar de já estar depreciado, o HIDL ainda pode ser largamente encontrado no código fonte do AOSP. Caso algum código legado apareça, não custa nada ter esse tutorial pra relembrar com é feito um processo completo de implementação da HIDL.</p>
+<h2 id="informacoes-uteis"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.2</span> Informações úteis</h2>
+<ul>
+<li>Versão do AOSP: <code>android-12.0.0_r4</code></li>
+<li>Versão do kernel Android: <code>android-amlogic-bmeson-5.4</code></li>
+<li>Distro para compilaçao: <code>Ubuntu 22.04.1 LTS</code></li>
+<li>Versão do kernel da distro: <code>5.15.0-53-generic</code></li>
+</ul>
+<h2 id="implementacao"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3</span> Implementação</h2>
+<p>Tentarei seguir os mesmos tópicos do post: <code>Implementando a HIDL</code>.</p>
+<h3 id="hal"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.1</span> HAL</h3>
+<p>Na raiz da pasta do AOSP criei o seguinte caminho:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p device/casa/placamae/interfaces/userled
+</code></pre></div>
+<p>Dentro da pasta, criei o seguinte arquivo:</p>
+<div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code><span class="n">hidl_package_root</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"placamae.hal.userled"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="s">"device/casa/emulator/interfaces/userled"</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Agora, criei a pasta: </p>
+<div class="highlight"><pre><span></span><code>mkdir <span class="m">1</span>.0
+</code></pre></div>
+<p>e dentro dela os seguintes arquivos:</p>
+<div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code><span class="n">hidl_interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"placamae.hal.userled@1.0"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">root</span><span class="p">:</span><span class="w"> </span><span class="s">"placamae.hal.userled"</span><span class="p">,</span><span class="w"> </span><span class="c1">//must be a prefix of placamae.hal.userled@1.0</span><span class="w"></span>
+<span class="w">    </span><span class="n">gen_java</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">product_specific</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="w"></span>
+<span class="w">        </span><span class="s">"IUserLed.hal"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">interfaces</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="w"></span>
+<span class="w">        </span><span class="s">"android.hidl.base@1.0"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">IUserLed.hal</span><pre><span></span><code><span class="n">package</span><span class="w"> </span><span class="n">placamae</span><span class="p">.</span><span class="n">hal</span><span class="p">.</span><span class="n">userled</span><span class="err">@</span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
+
+<span class="n">interface</span><span class="w"> </span><span class="n">IUserLed</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">setMode</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="n">generates</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<p>O resultado foi esse:</p>
+<div class="highlight"><pre><span></span><code>device/casa/placamae/interfaces/userled/
+├── 1.0
+│   ├── Android.bp
+│   └── IUserLed.hal
+└── Android.bp
+</code></pre></div>
+<p>Agora é só adicionar ao produto, no meu caso:</p>
+<div class="highlight"><span class="filename">meuproduto.mk</span><pre><span></span><code>...
+PRODUCT_PACKAGES += \
+  placamae.hal.userled@1.0
+</code></pre></div>
+<hr/>
+<p>Agora vamos gerar os arquivos fonte para a HIDL. Para isso, ainda dentro da pasta <code>1.0</code>, digite:</p>
+<div class="highlight"><pre><span></span><code>mm
+</code></pre></div>
+<p>Ele irá gerar as classes necessárias dentro da pasta :</p>
+<div class="highlight"><pre><span></span><code>out/soong/.intermediates/device/casa/placamae/interfaces/userled/1.0/
+├── placamae.hal.userled@1.0
+├── placamae.hal.userled@1.0-adapter
+├── placamae.hal.userled@1.0-adapter_genc++
+├── placamae.hal.userled@1.0-adapter-helper
+├── placamae.hal.userled@1.0-adapter-helper_genc++
+├── placamae.hal.userled@1.0-adapter-helper_genc++_headers
+├── placamae.hal.userled@1.0_genc++
+├── placamae.hal.userled@1.0_genc++_headers
+├── placamae.hal.userled-V1.0-java
+├── placamae.hal.userled-V1.0-java_gen_java
+└── placamae.hal.userled-V1.0-java-shallow
+</code></pre></div>
+<h3 id="servico"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.2</span> Serviço</h3>
+<p>Criei a pasta <code>device/casa/placamae/interfaces/userled/1.0/default/</code>, e dentro dela os arquivos:</p>
+<div class="highlight"><span class="filename">UserLed.h</span><pre><span></span><code><span class="c1">// Mesmo caminho após:</span>
+<span class="c1">// placamae.hal.userled@1.0_genc++_headers/gen/placamae/hal/userled/1.0/</span>
+<span class="c1">// dentro da pasta out/soong/.intermediates/device/casa/placamae/interfaces/userled/1.0/</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;placamae/hal/userled/1.0/IUserled.h&gt;</span><span class="cp"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">placamae</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">hal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">userled</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">V1_0</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">implementation</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">hidl_string</span><span class="p">;</span><span class="w">         </span><span class="c1">// const hidl_string</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span><span class="w">              </span><span class="c1">// Return&lt;void&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Void</span><span class="p">;</span><span class="w">                </span><span class="c1">// return Void();</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">placamae</span><span class="o">::</span><span class="n">hal</span><span class="o">::</span><span class="n">userled</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">IUserled</span><span class="p">;</span><span class="w"> </span><span class="c1">// public IUserled</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserLed</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">IUserled</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">RED_LED</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"/sys/devices/platform/leds/leds/vim3:red/trigger"</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">Return</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">setMode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">writeValue</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">extern</span><span class="w"> </span><span class="s">"C"</span><span class="w"> </span><span class="n">IUserled</span><span class="o">*</span><span class="w"> </span><span class="n">HIDL_FETCH_IUserled</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace implementation</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace V1_0 </span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace userled</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace hal</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace placamae</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">UserLed.cpp</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"UserLed.h"</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;log/log.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/stat.h&gt;</span><span class="c1"> // struct stat info</span><span class="cp"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">placamae</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">hal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">userled</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">V1_0</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">implementation</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">UserLed::writeValue</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">str_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">O_WRONLY</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">str_len</span><span class="p">)){</span><span class="w"></span>
+<span class="w">      </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">  </span>
+
+<span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">Return</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">UserLed</span><span class="o">::</span><span class="n">setMode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"UserLed -&gt; setMode data=(%s)"</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">write_value</span><span class="p">(</span><span class="n">RED_LED</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// Methods from ::android::hidl::base::V1_0::IBase follow.</span>
+<span class="n">IUserled</span><span class="o">*</span><span class="w"> </span><span class="n">HIDL_FETCH_IUserled</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="cm">/* name */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserLed</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return new instance of this class</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace implementation</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace V1_0 </span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace userled</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace hal</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace placamae</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">service.cpp</span><pre><span></span><code><span class="cp">#define LOG_TAG "placamae.hal.userled@1.0-service"</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;placamae/hal/userled/1.0/IUserled.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;log/log.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/HidlTransportSupport.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"UserLed.h"</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">sp</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">status_t</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// libhwbinder:</span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">configureRpcThreadpool</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">joinRpcThreadpool</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// Generated HIDL files</span>
+<span class="k">using</span><span class="w"> </span><span class="n">placamae</span><span class="o">::</span><span class="n">hal</span><span class="o">::</span><span class="n">userled</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">IUserled</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">placamae</span><span class="o">::</span><span class="n">hal</span><span class="o">::</span><span class="n">userled</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">implementation</span><span class="o">::</span><span class="n">UserLed</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">placamae</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="cm">/* argc */</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="cm">/* argv */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"UserLed -&gt; TESSSSSSTE"</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Android Strong Pointer (don't GC until exit)</span>
+<span class="w">    </span><span class="n">sp</span><span class="o">&lt;</span><span class="n">IUserled</span><span class="o">&gt;</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserLed</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">service</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"Can not create an instance of UserLed HAL, exiting."</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// system/libhidl/transport/include/hidl/HidlTransportSupport.h</span>
+<span class="w">    </span><span class="c1">// Configures the threadpool used for handling incoming RPC calls in this process:</span>
+<span class="w">    </span><span class="c1">// @param maxThreads maximum number of threads in this process</span>
+<span class="w">    </span><span class="c1">// @param callerWillJoin whether the caller will join the threadpool later.</span>
+<span class="w">    </span><span class="n">configureRpcThreadpool</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="cm">/*callerWillJoin*/</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// registerAsService calls registerAsServiceInternal in</span>
+<span class="w">    </span><span class="c1">// system/libhidl/transport/ServiceManagement.cpp</span>
+<span class="w">    </span><span class="c1">// registerAsServiceInternal registers with hwservicemanager</span>
+<span class="w">    </span><span class="n">status_t</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">-&gt;</span><span class="n">registerAsService</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"Could not register service for UserLed HAL (%d), exiting."</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"UserLed Service is ready"</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// system/libhidl/transport/include/hidl/HidlTransportSupport.h</span>
+<span class="w">    </span><span class="c1">// Joins a threadpool that you configured earlier</span>
+<span class="w">    </span><span class="n">joinRpcThreadpool</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// In normal operation, we don't expect the thread pool to exit</span>
+<span class="w">    </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"UserLed Service is shutting down"</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code><span class="n">cc_binary</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"placamae.hal.userled@1.0-service"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">init_rc</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"placamae.hal.userled@1.0-service.rc"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"service.cpp"</span><span class="p">,</span><span class="w"> </span><span class="s">"UserLed.cpp"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">vintf_fragments</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"placamae.hal.userled@1.0-service.xml"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">vendor</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">relative_install_path</span><span class="p">:</span><span class="w"> </span><span class="s">"hw"</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">shared_libs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="w"></span>
+<span class="w">        </span><span class="s">"libhidlbase"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"liblog"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"libutils"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"libhardware"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"placamae.hal.userled@1.0"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">placamae.hal.userled@1.0-service.rc</span><pre><span></span><code>service placamae.hal.userled-service /vendor/bin/hw/placamae.hal.userled@1.0-service
+        interface placamae.hal.userled@1.0::IUserled default
+        class hal
+        user system
+        group system
+
+on boot
+    chown system system /sys/devices/platform/leds/leds/vim3:red/trigger
+    chmod 0660 /sys/devices/platform/leds/leds/vim3:red/trigger
+</code></pre></div>
+<div class="highlight"><span class="filename">placamae.hal.userled@1.0-service.xml</span><pre><span></span><code><span class="nt">&lt;manifest</span> <span class="na">version=</span><span class="s">"1.0"</span> <span class="na">type=</span><span class="s">"device"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;hal</span> <span class="na">format=</span><span class="s">"hidl"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;name&gt;</span>placamae.hal.userled<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;transport&gt;</span>hwbinder<span class="nt">&lt;/transport&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;interface&gt;</span>
+            <span class="nt">&lt;name&gt;</span>IUserled<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;instance&gt;</span>default<span class="nt">&lt;/instance&gt;</span>
+        <span class="nt">&lt;/interface&gt;</span>
+        <span class="nt">&lt;fqname&gt;</span>@1.0::IUserled/default<span class="nt">&lt;/fqname&gt;</span>
+    <span class="nt">&lt;/hal&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div>
+<p>O resultado foi esse:</p>
+<div class="highlight"><pre><span></span><code>device/casa/placamae/interfaces/userled/
+├── 1.0
+│   ├── Android.bp
+│   ├── default
+│   │   ├── service.cpp
+│   │   ├── UserLed.cpp
+│   │   └── UserLed.h
+│   └── IUserLed.hal
+└── Android.bp
+</code></pre></div>
+<p>Agora só resta adicionar o serviço ao produto:</p>
+<div class="highlight"><span class="filename">meuproduto.mk</span><pre><span></span><code>...
+PRODUCT_PACKAGES += \
+  placamae.hal.userled@1.0 \
+  placamae.hal.userled@1.0-service
+</code></pre></div>
+<h3 id="permissoes"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.3</span> Permissões</h3>
+<p>Para facilitar a implementação, foi definido a permissão <mark>permissiva</mark>, mas ainda é necessário subir o serviço. Essa etapa é feita via sepolicy.</p>
+<p>Para isso, criei a pasta:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p device/casa/placamae/sepolicy
+</code></pre></div>
+<p>Dentro dela criei os arquivos:</p>
+<div class="highlight"><span class="filename">file_contexts</span><pre><span></span><code>/vendor/bin/hw/placamae\.hal\.userled@1\.0-service      u:object_r:hal_userled_default_exec:s0
+</code></pre></div>
+<div class="highlight"><span class="filename">hal_userled_default.te</span><pre><span></span><code>type hal_userled_default, domain;
+type hal_userled_default_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hal_userled_default);
+</code></pre></div>
+<p>Por fim, adicionei a pasta sepolicy no:</p>
+<div class="highlight"><span class="filename">BoardConfig.mk</span><pre><span></span><code>...
+BOARD_SEPOLICY_DIRS += device/casa/placamae/sepolicy
+</code></pre></div>
+<h3 id="testando"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.4</span> Testando</h3>
+<p>Para testar a HAL, criei a pasta:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p device/casa/placamae/interfaces/userled/1.0/default/LedTest
+</code></pre></div>
+<p>e dentro dela os seguintes arquivos:</p>
+<div class="highlight"><span class="filename">LedTest.cpp</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;placamae/hal/userled/1.0/IUserled.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/Status.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/LegacySupport.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utils/misc.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/HidlSupport.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">sp</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">placamae</span><span class="o">::</span><span class="n">hal</span><span class="o">::</span><span class="n">userled</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">IUserled</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">hidl_string</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">iif</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"USAGE ./LedTest &lt;none|heartbeat|default-on&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">android</span><span class="o">::</span><span class="n">sp</span><span class="o">&lt;</span><span class="n">IUserled</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mHal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IUserled</span><span class="o">::</span><span class="n">getService</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mHal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Failed to get cpu service</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mHal</span><span class="o">-&gt;</span><span class="n">setMode</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"setScalingGovernor: ("</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">") "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code><span class="n">cc_binary</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"LedTest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"LedTest.cpp"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">defaults</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"hidl_defaults"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">vendor</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">relative_install_path</span><span class="p">:</span><span class="w"> </span><span class="s">"hw"</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">shared_libs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="w"></span>
+<span class="w">        </span><span class="s">"liblog"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"libhardware"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"libhidlbase"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"libutils"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"placamae.hal.userled@1.0"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Agora só resta adicionar o serviço ao produto:</p>
+<div class="highlight"><span class="filename">meuproduto.mk</span><pre><span></span><code>...
+PRODUCT_PACKAGES += \
+  placamae.hal.userled \
+  placamae.hal.userled-service \
+  LedTest
+</code></pre></div>
+<p>Na pasta raiz do AOSP:</p>
+<div class="highlight"><pre><span></span><code>m 
+</code></pre></div>
+<p>Depois de terminar a build, flashei os binários e esperei o Android subir para ter acesso ao ADB. Para testar o serviço, utilizei os comandos:</p>
+<div class="highlight"><pre><span></span><code>adb root
+adb shell
+cd /vendor/bin/hw
+./LedTest heartbeat
+</code></pre></div>
+<h3 id="jni"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.5</span> JNI</h3>
+<h3 id="aplicacao"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.6</span> Aplicação</h3>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Ultima atualização:
+      2022-11-20
+    
+  </small>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Voltar para o topo
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Rodapé" class="md-footer__inner md-grid">
+<a aria-label="Anterior: Blink Led AIDL" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Anterior
+              </span>
+              Blink Led AIDL
+            </div>
+</div>
+</a>
+<a aria-label="Próximo: U-boot na VIM3 (SD Card)" class="md-footer__link md-footer__link--next" href="../../../Bootloader/u-boot/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Próximo
+              </span>
+              U-boot na VIM3 (SD Card)
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.top"], "search": "../../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de Transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de Transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Perdido", "select.version.title": "Selecione a vers\u00e3o"}}</script>
+<script src="../../../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+</html>
