@@ -11,7 +11,7 @@
 
 A [Khadas VIM3](https://www.khadas.com/vim3) possui alguns acessórios, dentre eles a [ventoinha](https://www.khadas.com/product-page/3705-cooling-fan). Não tenho certeza se ela já vem habilitada com o sistema que vem por padrão na placa (*Android Pie (9)*), mas na versão do [*kernel Linux*](https://github.com/khadas/khadas-linux-kernel) que eles mantém, a ventoinha já está adicionada. 
 
-Infelizmente na versão do [*kernel Linux Android*](https://android.googlesource.com/kernel/hikey-linaro -b android-amlogic-bmeson-5.4) que estou utilizando nesse momento, a ventoinha ainda não foi adicionada. Dessa forma, nesse *post* vou descrever os passos que segui para conseguir utilizar a mesma.
+Infelizmente na versão do [*kernel Linux Android*](https://android.googlesource.com/kernel/hikey-linaro/+/refs/heads/android-amlogic-bmeson-5.4) que estou utilizando nesse momento, a ventoinha ainda não foi adicionada. Dessa forma, nesse *post* vou descrever os passos que segui para conseguir utilizar a mesma.
 
 
 ## Informações Úteis
