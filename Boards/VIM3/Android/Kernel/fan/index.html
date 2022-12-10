@@ -32,7 +32,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#habilitando-a-fan">12. 
+<a class="md-skip" href="#habilitando-a-fan">13. 
           Pular para conteúdo
         </a>
 </div>
@@ -369,6 +369,11 @@
           Kernel
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../blueled/">
+        Habilitando o Led Azul
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -385,32 +390,32 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#introducao">12.1 
+<a class="md-nav__link" href="#introducao">13.1 
     Introdução
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#informacoes-uteis">12.2 
+<a class="md-nav__link" href="#informacoes-uteis">13.2 
     Informações Úteis
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#a-porta-da-fan">12.3 
+<a class="md-nav__link" href="#a-porta-da-fan">13.3 
     A porta da FAN
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#o-endereco-do-stm8s">12.4 
+<a class="md-nav__link" href="#o-endereco-do-stm8s">13.4 
     O Endereço do STM8S
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#testando-no-kernel-android">12.5 
+<a class="md-nav__link" href="#testando-no-kernel-android">13.5 
     Testando no Kernel Android
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#conclusao">12.6 
+<a class="md-nav__link" href="#conclusao">13.6 
     Conclusão
   </a>
 </li>
@@ -594,32 +599,32 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#introducao">12.1 
+<a class="md-nav__link" href="#introducao">13.1 
     Introdução
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#informacoes-uteis">12.2 
+<a class="md-nav__link" href="#informacoes-uteis">13.2 
     Informações Úteis
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#a-porta-da-fan">12.3 
+<a class="md-nav__link" href="#a-porta-da-fan">13.3 
     A porta da FAN
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#o-endereco-do-stm8s">12.4 
+<a class="md-nav__link" href="#o-endereco-do-stm8s">13.4 
     O Endereço do STM8S
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#testando-no-kernel-android">12.5 
+<a class="md-nav__link" href="#testando-no-kernel-android">13.5 
     Testando no Kernel Android
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#conclusao">12.6 
+<a class="md-nav__link" href="#conclusao">13.6 
     Conclusão
   </a>
 </li>
@@ -630,7 +635,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="habilitando-a-fan"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.</span> Habilitando a FAN</h1>
+<h1 id="habilitando-a-fan"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.</span> Habilitando a FAN</h1>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/ventilator-gb77d84319_640.png"><img alt="imagems" src="../images/ventilator-gb77d84319_640.png" width="600"/></a>
 </p>
@@ -638,17 +643,17 @@
   Image by <a href="https://pixabay.com/users/clker-free-vector-images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=304929">Clker-Free-Vector-Images</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=304929">Pixabay</a>
 </figcaption>
 </figure>
-<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.1</span> Introdução</h2>
+<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.1</span> Introdução</h2>
 <p>A <a href="https://www.khadas.com/vim3">Khadas VIM3</a> possui alguns acessórios, dentre eles a <a href="https://www.khadas.com/product-page/3705-cooling-fan">ventoinha</a>. Não tenho certeza se ela já vem habilitada com o sistema que vem por padrão na placa (<em>Android Pie (9)</em>), mas na versão do <a href="https://github.com/khadas/khadas-linux-kernel"><em>kernel Linux</em></a> que eles mantém, a ventoinha já está adicionada. </p>
-<p>Infelizmente na versão do <a href="https://android.googlesource.com/kernel/hikey-linaro -b android-amlogic-bmeson-5.4"><em>kernel Linux Android</em></a> que estou utilizando nesse momento, a ventoinha ainda não foi adicionada. Dessa forma, nesse <em>post</em> vou descrever os passos que segui para conseguir utilizar a mesma.</p>
-<h2 id="informacoes-uteis"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2</span> Informações Úteis</h2>
+<p>Infelizmente na versão do <a href="https://android.googlesource.com/kernel/hikey-linaro/+/refs/heads/android-amlogic-bmeson-5.4"><em>kernel Linux Android</em></a> que estou utilizando nesse momento, a ventoinha ainda não foi adicionada. Dessa forma, nesse <em>post</em> vou descrever os passos que segui para conseguir utilizar a mesma.</p>
+<h2 id="informacoes-uteis"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.2</span> Informações Úteis</h2>
 <ul>
 <li>Versão do AOSP: <code>android-12.0.0_r4</code></li>
 <li>Versão do Kernel Android: <code>android-amlogic-bmeson-5.4</code></li>
 <li>Distro de Compilação: <code>Linux Mint 21</code></li>
 <li>Versão do Kernel da distro: <code>5.15.0-56-generic</code></li>
 </ul>
-<h2 id="a-porta-da-fan"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.3</span> A porta da FAN</h2>
+<h2 id="a-porta-da-fan"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3</span> A porta da FAN</h2>
 <p>O conector da FAN está no número <code>6</code> da imagem abaixo (<a href="https://docs.khadas.com/products/sbc/vim3/hardware/interfaces">Fonte</a>):</p>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/vim3_top_view.png"><img alt="imagems" src="../images/vim3_top_view.png" width="600"/></a>
@@ -674,7 +679,7 @@
   </figcaption>
 </figure>
 <p>O <a href="https://www.st.com/en/microcontrollers-microprocessors/stm8s-series.html">STM8S</a> é um microcontrolador de 8 bits, ele é responsável por fazer o controle da ventoinha (pino 17). Ainda no esquemático, é possível observar que esse microcontrolador é controlado por <code>i2c</code> (pinos 8 e 9) sendo estes do próprio <code>SOC</code>. O esquemático não fornece o endereço, para controlar esse microcontrolador, ou seja, não temos como ter acesso a esse componente.</p>
-<h2 id="o-endereco-do-stm8s"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.4</span> O Endereço do STM8S</h2>
+<h2 id="o-endereco-do-stm8s"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.4</span> O Endereço do STM8S</h2>
 <p>Como a FAN está adicionado ao <em>Kernel Linux</em> mantido pela Khadas, então a informação do endereço do microcontrolador está em algum lugar do código (<mark>mas onde ?</mark>). Ainda observando as portas do STM8S no esquemático, é possível perceber algumas menções de <code>MCU</code> (sigla para <em>MicroController Unit</em>). A partir disso, é muito provável que qualquer endereço de <code>i2c</code> esteja em algum <em>Device Tree Source</em> (DTS) dentro do <em>Kernel Linux</em> da <em>Khadas</em>. Os DTS da <code>VIM3</code> estão em <code>arch/arm64/boot/dts/amlogic/</code> e nesse caminho busquei por <code>MCU</code>  e retornaram os seguintes arquivos: </p>
 <div class="highlight"><pre><span></span><code>╭─ ~/Doc/b/V/2/linux-vim3/a/arm6/b/d/amlogic on khadas-vim3-p-64bit 
 ╰─❯ grep -r mcu                                                              ─╯
@@ -718,7 +723,7 @@ kvim3l.dts:     <span class="nv">compatible</span> <span class="o">=</span> <spa
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
 Um <em>node</em> chamado <code>khadas-mcu</code> dentro do <em>node</em> <code>i2c_AO</code> (o mesmo que controla o STM8S). Ainda é possível observar que o endereço utilizado é o <mark>0x18</mark> (<code>reg = &lt;0x18&gt;;</code>). Agora resta testar.</p>
-<h2 id="testando-no-kernel-android"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.5</span> Testando no Kernel Android</h2>
+<h2 id="testando-no-kernel-android"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.5</span> Testando no Kernel Android</h2>
 <p>Para testar, adicionei o seguinte conteúdo no final do arquivo:</p>
 <div class="highlight"><span class="filename">arch/arm64/boot/dts/amlogic/meson-g12b-a311d-khadas-vim3.dts</span><pre><span></span><code><span class="p">...</span><span class="w"></span>
 
@@ -781,14 +786,14 @@ Write register 0x88 from chip 0x18 on bus <span class="m">0</span>? <span class=
   Ventoinha funcionando
   </figcaption>
 </figure>
-<h2 id="conclusao"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.6</span> Conclusão</h2>
+<h2 id="conclusao"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.6</span> Conclusão</h2>
 <p>Sem dúvidas, a falta de documentação para as placas em geral é um grande problema e isso dificulta o <em>Bring up</em> das mesmas. Se não tiver uma equipe interna para fazer as implementações, é praticamente impossível fazer alguma coisa funcionar. Como foi possível perceber nesse <em>post</em>, se não fosse alguém da própria khadas para gerar o DTS com o endereço, a ventoinha seria inacessível, uma vez que existe uma interface para controla-la. Mas no fim, deu tudo certo e seguimos na luta para aprender sobre embarcados :).</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Ultima atualização:
-      2022-12-09
+      2022-12-10
     
   </small>
 </div>
@@ -802,7 +807,7 @@ Write register 0x88 from chip 0x18 on bus <span class="m">0</span>? <span class=
 </main>
 <footer class="md-footer">
 <nav aria-label="Rodapé" class="md-footer__inner md-grid">
-<a aria-label="Anterior: Blink Led HIDL" class="md-footer__link md-footer__link--prev" href="../../Hal/HIDL/" rel="prev">
+<a aria-label="Anterior: Habilitando o Led Azul" class="md-footer__link md-footer__link--prev" href="../blueled/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -811,7 +816,7 @@ Write register 0x88 from chip 0x18 on bus <span class="m">0</span>? <span class=
 <span class="md-footer__direction">
                 Anterior
               </span>
-              Blink Led HIDL
+              Habilitando o Led Azul
             </div>
 </div>
 </a>
