@@ -401,9 +401,18 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#jni">11.3.5 
-    JNI
+<a class="md-nav__link" href="#java-native-interface">11.3.5 
+    Java Native Interface
   </a>
+<nav aria-label="Java Native Interface" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#complementando-a-jni">
+    Complementando a JNI
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#aplicacao">11.3.6 
@@ -654,9 +663,18 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#jni">11.3.5 
-    JNI
+<a class="md-nav__link" href="#java-native-interface">11.3.5 
+    Java Native Interface
   </a>
+<nav aria-label="Java Native Interface" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#complementando-a-jni">
+    Complementando a JNI
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#aplicacao">11.3.6 
@@ -702,7 +720,7 @@
 <p>Dentro da pasta, criei o seguinte arquivo:</p>
 <div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code><span class="n">hidl_package_root</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"placamae.hal.userled"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="s">"device/casa/emulator/interfaces/userled"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="s">"device/casa/placamae/interfaces/userled"</span><span class="p">,</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Agora, criei a pasta: </p>
@@ -761,11 +779,14 @@ PRODUCT_PACKAGES += \
 └── placamae.hal.userled-V1.0-java-shallow
 </code></pre></div>
 <h3 id="servico"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.2</span> Serviço</h3>
+<p>Volte para a pasta raiz do AOSP</p>
+<div class="highlight"><pre><span></span><code>croot
+</code></pre></div>
 <p>Criei a pasta <code>device/casa/placamae/interfaces/userled/1.0/default/</code>, e dentro dela os arquivos:</p>
 <div class="highlight"><span class="filename">UserLed.h</span><pre><span></span><code><span class="c1">// Mesmo caminho após:</span>
 <span class="c1">// placamae.hal.userled@1.0_genc++_headers/gen/placamae/hal/userled/1.0/</span>
 <span class="c1">// dentro da pasta out/soong/.intermediates/device/casa/placamae/interfaces/userled/1.0/</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;placamae/hal/userled/1.0/IUserled.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;placamae/hal/userled/1.0/IUserLed.h&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">placamae</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">hal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -777,9 +798,9 @@ PRODUCT_PACKAGES += \
 <span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">hidl_string</span><span class="p">;</span><span class="w">         </span><span class="c1">// const hidl_string</span>
 <span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span><span class="w">              </span><span class="c1">// Return&lt;void&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Void</span><span class="p">;</span><span class="w">                </span><span class="c1">// return Void();</span>
-<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">placamae</span><span class="o">::</span><span class="n">hal</span><span class="o">::</span><span class="n">userled</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">IUserled</span><span class="p">;</span><span class="w"> </span><span class="c1">// public IUserled</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">placamae</span><span class="o">::</span><span class="n">hal</span><span class="o">::</span><span class="n">userled</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">IUserLed</span><span class="p">;</span><span class="w"> </span><span class="c1">// public IUserled</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">UserLed</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">IUserled</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UserLed</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">IUserLed</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">      </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">RED_LED</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"/sys/devices/platform/leds/leds/vim3:red/trigger"</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
@@ -787,7 +808,7 @@ PRODUCT_PACKAGES += \
 <span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">writeValue</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 
-<span class="k">extern</span><span class="w"> </span><span class="s">"C"</span><span class="w"> </span><span class="n">IUserled</span><span class="o">*</span><span class="w"> </span><span class="n">HIDL_FETCH_IUserled</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+<span class="k">extern</span><span class="w"> </span><span class="s">"C"</span><span class="w"> </span><span class="n">IUserLed</span><span class="o">*</span><span class="w"> </span><span class="n">HIDL_FETCH_IUserled</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"></span>
 
 <span class="p">}</span><span class="w"> </span><span class="c1">// namespace implementation</span>
 <span class="p">}</span><span class="w"> </span><span class="c1">// namespace V1_0 </span>
@@ -828,11 +849,11 @@ PRODUCT_PACKAGES += \
 
 <span class="n">Return</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">UserLed</span><span class="o">::</span><span class="n">setMode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"UserLed -&gt; setMode data=(%s)"</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">write_value</span><span class="p">(</span><span class="n">RED_LED</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">writeValue</span><span class="p">(</span><span class="n">RED_LED</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="c1">// Methods from ::android::hidl::base::V1_0::IBase follow.</span>
-<span class="n">IUserled</span><span class="o">*</span><span class="w"> </span><span class="n">HIDL_FETCH_IUserled</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="cm">/* name */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="n">IUserLed</span><span class="o">*</span><span class="w"> </span><span class="n">HIDL_FETCH_IUserled</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="cm">/* name */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserLed</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return new instance of this class</span>
 <span class="p">}</span><span class="w"></span>
 
@@ -844,7 +865,7 @@ PRODUCT_PACKAGES += \
 </code></pre></div>
 <div class="highlight"><span class="filename">service.cpp</span><pre><span></span><code><span class="cp">#define LOG_TAG "placamae.hal.userled@1.0-service"</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;placamae/hal/userled/1.0/IUserled.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;placamae/hal/userled/1.0/IUserLed.h&gt;</span><span class="cp"></span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;log/log.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/HidlTransportSupport.h&gt;</span><span class="cp"></span>
@@ -860,7 +881,7 @@ PRODUCT_PACKAGES += \
 <span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">joinRpcThreadpool</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// Generated HIDL files</span>
-<span class="k">using</span><span class="w"> </span><span class="n">placamae</span><span class="o">::</span><span class="n">hal</span><span class="o">::</span><span class="n">userled</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">IUserled</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">placamae</span><span class="o">::</span><span class="n">hal</span><span class="o">::</span><span class="n">userled</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">IUserLed</span><span class="p">;</span><span class="w"></span>
 <span class="k">using</span><span class="w"> </span><span class="n">placamae</span><span class="o">::</span><span class="n">hal</span><span class="o">::</span><span class="n">userled</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">implementation</span><span class="o">::</span><span class="n">UserLed</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">placamae</span><span class="p">;</span><span class="w"></span>
@@ -869,7 +890,7 @@ PRODUCT_PACKAGES += \
 <span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"UserLed -&gt; TESSSSSSTE"</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// Android Strong Pointer (don't GC until exit)</span>
-<span class="w">    </span><span class="n">sp</span><span class="o">&lt;</span><span class="n">IUserled</span><span class="o">&gt;</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserLed</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">sp</span><span class="o">&lt;</span><span class="n">IUserLed</span><span class="o">&gt;</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserLed</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">service</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"Can not create an instance of UserLed HAL, exiting."</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
@@ -918,7 +939,7 @@ PRODUCT_PACKAGES += \
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><span class="filename">placamae.hal.userled@1.0-service.rc</span><pre><span></span><code>service placamae.hal.userled-service /vendor/bin/hw/placamae.hal.userled@1.0-service
-        interface placamae.hal.userled@1.0::IUserled default
+        interface placamae.hal.userled@1.0::IUserLed default
         class hal
         user system
         group system
@@ -936,7 +957,7 @@ on boot
             <span class="nt">&lt;name&gt;</span>IUserled<span class="nt">&lt;/name&gt;</span>
             <span class="nt">&lt;instance&gt;</span>default<span class="nt">&lt;/instance&gt;</span>
         <span class="nt">&lt;/interface&gt;</span>
-        <span class="nt">&lt;fqname&gt;</span>@1.0::IUserled/default<span class="nt">&lt;/fqname&gt;</span>
+        <span class="nt">&lt;fqname&gt;</span>@1.0::IUserLed/default<span class="nt">&lt;/fqname&gt;</span>
     <span class="nt">&lt;/hal&gt;</span>
 <span class="nt">&lt;/manifest&gt;</span>
 </code></pre></div>
@@ -945,6 +966,9 @@ on boot
 ├── 1.0
 │   ├── Android.bp
 │   ├── default
+│   │   ├── Android.bp
+│   │   ├── placamae.hal.userled@1.0-service.rc
+│   │   ├── placamae.hal.userled@1.0-service.xml
 │   │   ├── service.cpp
 │   │   ├── UserLed.cpp
 │   │   └── UserLed.h
@@ -1043,14 +1067,329 @@ adb shell
 cd /vendor/bin/hw
 ./LedTest heartbeat
 </code></pre></div>
-<h3 id="jni"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.5</span> JNI</h3>
+<h3 id="java-native-interface"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.5</span> Java Native Interface</h3>
+<p>A Java Native Interface (JNI) é responsável por fazer a interface entre o código em JAVA e o código em C/C++. Essa abordagem é largamente usada no mundo JAVA, ou seja, não é uma exclusividade do mundo Android.</p>
+<p>Criei a pasta:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p device/casa/placamae/libs/jni
+</code></pre></div>
+<p>dentro dela os arquivos:</p>
+<div class="highlight"><span class="filename">UserLedJNI.h</span><pre><span></span><code><span class="cp">#ifndef USERLEDJNI_H</span>
+<span class="cp">#define USERLEDJNI_H</span>
+
+<span class="cp">#define LOG_TAG "USERLEDJNI.cpp"</span>
+<span class="cp">#define LOG_NDEBUG 1</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"jni.h"</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;android-base/chrono_utils.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utils/Log.h&gt;</span><span class="cp"></span>
+
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;placamae/hal/userled/1.0/IUserLed.h&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">placamae</span><span class="o">::</span><span class="n">hal</span><span class="o">::</span><span class="n">userled</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">IUserLed</span><span class="p">;</span><span class="w"> </span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Void</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">sp</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserLedJNI</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">sp</span><span class="o">&lt;</span><span class="n">IUserLed</span><span class="o">&gt;</span><span class="w"> </span><span class="n">UserLedHal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">UserLedHalExists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">classPathName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"com/UserLedJNI"</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">getUserLedHal</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">processReturn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Return</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">functionName</span><span class="p">);</span><span class="w">        </span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">registerNativeMethods</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">className</span><span class="p">,</span><span class="w"> </span><span class="n">JNINativeMethod</span><span class="o">*</span><span class="w"> </span><span class="n">gMethods</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numMethods</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">registerJniUserLed</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">nativeInit</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="cm">/* obj */</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="n">jboolean</span><span class="w"> </span><span class="nf">setMode</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span><span class="w">  </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jclass</span><span class="w"> </span><span class="cm">/* clazz */</span><span class="p">,</span><span class="w"> </span><span class="n">jstring</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="cp">#endif</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">UserLedJNI.cpp</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"UserLedJNI.h"</span><span class="cp"></span>
+
+<span class="n">JNINativeMethod</span><span class="w"> </span><span class="n">methods</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">"nativeInit"</span><span class="p">,</span><span class="w"> </span><span class="s">"()V"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">UserLedJNI</span><span class="o">::</span><span class="n">nativeInit</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">"nativeSetMode"</span><span class="p">,</span><span class="w"> </span><span class="s">"(Ljava/lang/String;)Z"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">UserLedJNI</span><span class="o">::</span><span class="n">setMode</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="w"> </span><span class="n">UserLedHalMutex</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">UserLedJNI::getUserLedHal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UserLedHalExists</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">UserLedHal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">UserLedHal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IUserLed</span><span class="o">::</span><span class="n">getService</span><span class="p">();</span><span class="w"> </span><span class="c1">// Proxy to the service</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UserLedHal</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"Loaded foo HAL service"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"Couldn't load foo HAL service"</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">UserLedHalExists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">UserLedHal</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">UserLedJNI::nativeInit</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="cm">/* obj */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">UserLedHalMutex</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">getUserLedHal</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">UserLedHalMutex</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">jboolean</span><span class="w"> </span><span class="nf">UserLedJNI::setMode</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span><span class="w">  </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jclass</span><span class="w"> </span><span class="cm">/* clazz */</span><span class="p">,</span><span class="w"> </span><span class="n">jstring</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">ALOGD</span><span class="p">(</span><span class="s">"nativeSetMode"</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lock</span><span class="p">(</span><span class="n">UserLedHalMutex</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UserLedJNI</span><span class="o">::</span><span class="n">getUserLedHal</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">android</span><span class="o">::</span><span class="n">base</span><span class="o">::</span><span class="n">Timer</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">cMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetStringUTFChars</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UserLedJNI</span><span class="o">::</span><span class="n">UserLedHal</span><span class="o">-&gt;</span><span class="n">setMode</span><span class="p">(</span><span class="n">cMode</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">ReleaseStringUTFChars</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="n">cMode</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">duration</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span><span class="n">ms</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">ALOGW</span><span class="p">(</span><span class="s">"Excessive delay in setScalingGovernor"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">UserLedJNI::registerNativeMethods</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">className</span><span class="p">,</span><span class="w"> </span><span class="n">JNINativeMethod</span><span class="o">*</span><span class="w"> </span><span class="n">gMethods</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numMethods</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">jclass</span><span class="w"> </span><span class="n">clazz</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"registerNativeMethods '%s'"</span><span class="p">,</span><span class="w"> </span><span class="n">className</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">clazz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">FindClass</span><span class="p">(</span><span class="n">className</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clazz</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"Native registration unable to find class '%s'"</span><span class="p">,</span><span class="w"> </span><span class="n">className</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_FALSE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">RegisterNatives</span><span class="p">(</span><span class="n">clazz</span><span class="p">,</span><span class="w"> </span><span class="n">gMethods</span><span class="p">,</span><span class="w"> </span><span class="n">numMethods</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"RegisterNatives failed for '%s'"</span><span class="p">,</span><span class="w"> </span><span class="n">className</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_FALSE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_TRUE</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">UserLedJNI::registerJniUserLed</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">registerNativeMethods</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">UserLedJNI</span><span class="o">::</span><span class="n">classPathName</span><span class="p">,</span><span class="w"> </span><span class="n">methods</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">methods</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">methods</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_FALSE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_TRUE</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">onload.cpp</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"jni.h"</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"utils/Log.h"</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"utils/misc.h"</span><span class="cp"></span>
+
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">UserLedJNI</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="kt">int</span><span class="w"> </span><span class="nf">registerJniUserLed</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">UserLedJNI</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">extern</span><span class="w"> </span><span class="s">"C"</span><span class="w"> </span><span class="n">jint</span><span class="w"> </span><span class="n">JNI_OnLoad</span><span class="p">(</span><span class="n">JavaVM</span><span class="o">*</span><span class="w"> </span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="cm">/* reserved */</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">JNIEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">jint</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">vm</span><span class="o">-&gt;</span><span class="n">GetEnv</span><span class="p">((</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">JNI_VERSION_1_4</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">JNI_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"GetEnv failed!"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">ALOG_ASSERT</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">"Could not retrieve the env!"</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">UserLedJNI</span><span class="o">::</span><span class="n">registerJniUserLed</span><span class="p">(</span><span class="n">env</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_VERSION_1_4</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code>cc_library_shared {
+    name: "UserLedJNI",
+    vendor: true,
+
+    defaults: ["UserLedJNI-libs"],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+    ],
+
+    srcs: [
+        "onload.cpp",
+        "UserLedJNI.cpp"
+    ],
+}
+
+cc_defaults {
+    name: "UserLedJNI-libs",
+
+    shared_libs: [
+        "libbase",
+        "libcutils",
+        "liblog",
+        "libhardware",
+        "libhidlbase",
+        "libutils",
+        "placamae.hal.userled@1.0"
+    ],
+
+    header_libs: [
+        "jni_headers",
+    ],
+}
+</code></pre></div>
+<p>Agora é preciso adicionar o JNI ao produto:</p>
+<div class="highlight"><span class="filename">meuproduto.mk</span><pre><span></span><code>#...
+PRODUCT_PACKAGES += \
+  UserLedJNI
+</code></pre></div>
+<h4 id="complementando-a-jni"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.5.1</span> Complementando a JNI</h4>
+<p>Para que seja possível utilizar essa JNI com outros aplicativos, uma das possibilidades é separar o cliente nativo e criar uma interface para acessar os seus métodos. Para isso, a partir da pasta raiz do AOSP, criei o seguinte diretório:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p device/casa/placamae/libs/java
+</code></pre></div>
+<p>Dentro dessa pasta, criei esse novo caminho:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p com/interfaces
+</code></pre></div>
+<p>Dentro da pasta adicionei o seguinte arquivo:</p>
+<div class="highlight"><span class="filename">UserLedJNI.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.interfaces</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.util.Log</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserLedJNI</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">TAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI"</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">DEBUG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">native</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">nativeInit</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">native</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">nativeSetMode</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">UserLedJNI</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"UserLedJNI onCreate()"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">nativeInit</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">setMode</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">nativeSetMode</span><span class="p">(</span><span class="n">mode</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"UserLedJNI static"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">loadLibrary</span><span class="p">(</span><span class="s">"UserLedJNI"</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Voltando para a pasta <code>device/casa/placamae/libs/java</code>, criei esse arquivo:</p>
+<div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code><span class="n">java_sdk_library</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">vendor</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="w"></span>
+<span class="w">        </span><span class="s">"com/**/*.java"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">sdk_version</span><span class="p">:</span><span class="w"> </span><span class="s">"current"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">compile_dex</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">api_packages</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"com.interfaces.UserLedJNI"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Os arquivos ficam organizados dessa forma:</p>
+<div class="highlight"><pre><span></span><code>device/casa/placamae/libs/java
+├── Android.bp
+└── com
+    └── interfaces
+        └── UserLedJNI.java
+</code></pre></div>
+<p>Agora, na pasta raiz do AOSP, é necessário usar o seguinte comando:</p>
+<div class="highlight"><pre><span></span><code>build/soong/scripts/gen-java-current-api-files.sh "device/casa/placamae/libs/java/api"  system- test- &amp;&amp; m update-api
+</code></pre></div>
+<p>Um erro ocorrerá informando, que é necessário mapear alguns <em>filegroups</em>:</p>
+<div class="highlight"><pre><span></span><code>com.interfaces.UserLedJNI.api.public.latest
+com.interfaces.UserLedJNI-removed.api.public.latest
+com.interfaces.UserLedJNI-incompatibilities.api.public.latest
+com.interfaces.UserLedJNI.api.system.latest
+com.interfaces.UserLedJNI-removed.api.system.latest
+com.interfaces.UserLedJNI-incompatibilities.api.system.latest
+</code></pre></div>
+<blockquote>
+<p>Observe também que uma pasta com o nome <code>api</code> foi criada.</p>
+</blockquote>
+<p>Os <em>filegroups</em> são adicionados em:</p>
+<div class="highlight"><span class="filename">device/casa/placamae/libs/java/libs/java/Android.bp</span><pre><span></span><code><span class="n">java_sdk_library</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">vendor</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="w"></span>
+<span class="w">        </span><span class="s">"com/**/*.java"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">sdk_version</span><span class="p">:</span><span class="w"> </span><span class="s">"current"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">compile_dex</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">api_packages</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"com.interfaces.UserLedJNI"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI.api.public.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/current.txt"</span><span class="o">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI-removed.api.public.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/removed.txt"</span><span class="o">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI-incompatibilities.api.public.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/incompatibilities.txt"</span><span class="o">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI.api.system.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/system-current.txt"</span><span class="o">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI-removed.api.system.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/system-removed.txt"</span><span class="o">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI-incompatibilities.api.system.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/system-incompatibilities.txt"</span><span class="o">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Ainda resta criar 2 arquivos vazios dentro da pasta <code>api</code>:</p>
+<div class="highlight"><pre><span></span><code>touch device/casa/placamae/libs/java/api/incompatibilities.txt
+touch device/casa/placamae/libs/java/api/system-incompatibilities.txt
+</code></pre></div>
+<p>Executando novamente o comando:</p>
+<div class="highlight"><pre><span></span><code>build/soong/scripts/gen-java-current-api-files.sh "device/casa/placamae/libs/java/api"  system- test- &amp;&amp; m update-api
+</code></pre></div>
+<p>A build deve resultar em sucesso.</p>
 <h3 id="aplicacao"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.6</span> Aplicação</h3>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Ultima atualização:
-      2022-11-20
+      2023-01-01
     
   </small>
 </div>
