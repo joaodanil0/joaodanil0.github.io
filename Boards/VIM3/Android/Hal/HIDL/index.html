@@ -1379,7 +1379,23 @@ com.interfaces.UserLedJNI-incompatibilities.api.system.latest
 <div class="highlight"><pre><span></span><code>touch device/casa/placamae/libs/java/api/incompatibilities.txt
 touch device/casa/placamae/libs/java/api/system-incompatibilities.txt
 </code></pre></div>
-<p>Executando novamente o comando:</p>
+<p>A estrutura ficou assim:</p>
+<p><div class="highlight"><pre><span></span><code>device/casa/placamae/libs/java
+├── Android.bp
+├── api
+│   ├── current.txt
+│   ├── incompatibilities.txt
+│   ├── removed.txt
+│   ├── system-current.txt
+│   ├── system-incompatibilities.txt
+│   ├── system-removed.txt
+│   ├── test-current.txt
+│   └── test-removed.txt
+└── com
+    └── interfaces
+        └── UserLedJNI.java
+</code></pre></div>
+Executando novamente o comando:</p>
 <div class="highlight"><pre><span></span><code>build/soong/scripts/gen-java-current-api-files.sh "device/casa/placamae/libs/java/api"  system- test- &amp;&amp; m update-api
 </code></pre></div>
 <p>A build deve resultar em sucesso.</p>
