@@ -819,6 +819,25 @@ touch device/casa/placamae/libs/java/api/incompatibilities.txt
 touch device/casa/placamae/libs/java/api/system-incompatibilities.txt
 ```
 
+A estrutura ficou assim:
+
+```
+device/casa/placamae/libs/java
+├── Android.bp
+├── api
+│   ├── current.txt
+│   ├── incompatibilities.txt
+│   ├── removed.txt
+│   ├── system-current.txt
+│   ├── system-incompatibilities.txt
+│   ├── system-removed.txt
+│   ├── test-current.txt
+│   └── test-removed.txt
+└── com
+    └── interfaces
+        └── UserLedJNI.java
+
+```
 Executando novamente o comando:
 
 ```
