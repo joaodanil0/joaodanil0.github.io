@@ -37,7 +37,7 @@ Dentro da pasta, criei o seguinte arquivo:
 ```{.java title=Android.bp}
 hidl_package_root {
     name: "placamae.hal.userled",
-    path: "device/casa/emulator/interfaces/userled",
+    path: "device/casa/placamae/interfaces/userled",
 }
 ```
 
@@ -119,6 +119,12 @@ out/soong/.intermediates/device/casa/placamae/interfaces/userled/1.0/
 
 ### Serviço
 
+Volte para a pasta raiz do AOSP
+
+```
+croot
+```
+
 Criei a pasta `device/casa/placamae/interfaces/userled/1.0/default/`, e dentro dela os arquivos:
 
 
@@ -126,7 +132,7 @@ Criei a pasta `device/casa/placamae/interfaces/userled/1.0/default/`, e dentro d
 // Mesmo caminho após:
 // placamae.hal.userled@1.0_genc++_headers/gen/placamae/hal/userled/1.0/
 // dentro da pasta out/soong/.intermediates/device/casa/placamae/interfaces/userled/1.0/
-#include <placamae/hal/userled/1.0/IUserled.h>
+#include <placamae/hal/userled/1.0/IUserLed.h>
 
 namespace placamae {
 namespace hal {
@@ -138,9 +144,9 @@ namespace implementation {
 using ::android::hardware::hidl_string;         // const hidl_string
 using ::android::hardware::Return;              // Return<void>
 using ::android::hardware::Void;                // return Void();
-using ::placamae::hal::userled::V1_0::IUserled; // public IUserled
+using ::placamae::hal::userled::V1_0::IUserLed; // public IUserled
 
-class UserLed : public IUserled {
+class UserLed : public IUserLed {
     public:
       static inline const char RED_LED[] = "/sys/devices/platform/leds/leds/vim3:red/trigger";
     public:
@@ -148,7 +154,7 @@ class UserLed : public IUserled {
         static int writeValue(const char *file, const char *value);
 };
 
-extern "C" IUserled* HIDL_FETCH_IUserled(const char* name);
+extern "C" IUserLed* HIDL_FETCH_IUserled(const char* name);
 
 } // namespace implementation
 } // namespace V1_0 
@@ -191,11 +197,11 @@ int UserLed::writeValue(const char *file, const char *value) {
 
 Return<bool> UserLed::setMode(const hidl_string& mode) {
     ALOGI("UserLed -> setMode data=(%s)", mode.c_str());
-    return this->write_value(RED_LED, mode.c_str()) == 0;
+    return this->writeValue(RED_LED, mode.c_str()) == 0;
 }
 
 // Methods from ::android::hidl::base::V1_0::IBase follow.
-IUserled* HIDL_FETCH_IUserled(const char* /* name */) {
+IUserLed* HIDL_FETCH_IUserled(const char* /* name */) {
     return new UserLed(); // Return new instance of this class
 }
 
@@ -209,7 +215,7 @@ IUserled* HIDL_FETCH_IUserled(const char* /* name */) {
 ```{.cpp title=service.cpp}
 #define LOG_TAG "placamae.hal.userled@1.0-service"
 
-#include <placamae/hal/userled/1.0/IUserled.h>
+#include <placamae/hal/userled/1.0/IUserLed.h>
 
 #include <log/log.h>
 #include <hidl/HidlTransportSupport.h>
@@ -225,7 +231,7 @@ using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
 // Generated HIDL files
-using placamae::hal::userled::V1_0::IUserled;
+using placamae::hal::userled::V1_0::IUserLed;
 using placamae::hal::userled::V1_0::implementation::UserLed;
 
 using namespace placamae;
@@ -234,7 +240,7 @@ int main(int /* argc */, char** /* argv */) {
     ALOGI("UserLed -> TESSSSSSTE");
 
     // Android Strong Pointer (don't GC until exit)
-    sp<IUserled> service = new UserLed();
+    sp<IUserLed> service = new UserLed();
     if (service == nullptr) {
         ALOGE("Can not create an instance of UserLed HAL, exiting.");
         return 1;
@@ -287,7 +293,7 @@ cc_binary {
 
 ```{.rc title=placamae.hal.userled@1.0-service.rc}
 service placamae.hal.userled-service /vendor/bin/hw/placamae.hal.userled@1.0-service
-        interface placamae.hal.userled@1.0::IUserled default
+        interface placamae.hal.userled@1.0::IUserLed default
         class hal
         user system
         group system
@@ -307,7 +313,7 @@ on boot
             <name>IUserled</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IUserled/default</fqname>
+        <fqname>@1.0::IUserLed/default</fqname>
     </hal>
 </manifest>
 ```
@@ -319,6 +325,9 @@ device/casa/placamae/interfaces/userled/
 ├── 1.0
 │   ├── Android.bp
 │   ├── default
+│   │   ├── Android.bp
+│   │   ├── placamae.hal.userled@1.0-service.rc
+│   │   ├── placamae.hal.userled@1.0-service.xml
 │   │   ├── service.cpp
 │   │   ├── UserLed.cpp
 │   │   └── UserLed.h
@@ -452,6 +461,369 @@ cd /vendor/bin/hw
 ./LedTest heartbeat
 ```
 
-### JNI
+### Java Native Interface
 
+A Java Native Interface (JNI) é responsável por fazer a interface entre o código em JAVA e o código em C/C++. Essa abordagem é largamente usada no mundo JAVA, ou seja, não é uma exclusividade do mundo Android.
+
+Criei a pasta:
+
+```
+mkdir -p device/casa/placamae/libs/jni
+```
+
+dentro dela os arquivos:
+
+```{.cpp title=UserLedJNI.h}
+#ifndef USERLEDJNI_H
+#define USERLEDJNI_H
+
+#define LOG_TAG "USERLEDJNI.cpp"
+#define LOG_NDEBUG 1
+
+#include "jni.h"
+
+#include <android-base/chrono_utils.h>
+#include <utils/Log.h>
+
+
+#include <placamae/hal/userled/1.0/IUserLed.h>
+
+using ::placamae::hal::userled::V1_0::IUserLed; 
+
+using android::hardware::Return;
+using android::hardware::Void;
+using android::sp;
+
+class UserLedJNI {
+
+    public:
+        inline static sp<IUserLed> UserLedHal = nullptr;
+        inline static bool UserLedHalExists = true;
+        inline static const char *classPathName = "com/UserLedJNI";
+
+    public:
+        static bool getUserLedHal();
+        
+        static void processReturn(const Return<void> &ret, const char* functionName);        
+        static int registerNativeMethods(JNIEnv* env, const char* className, JNINativeMethod* gMethods, int numMethods);
+        static int registerJniUserLed(JNIEnv* env);
+
+        static void nativeInit(JNIEnv* env, jobject /* obj */);
+        static jboolean setMode(JNIEnv*  env, jclass /* clazz */, jstring mode);
+};
+
+#endif
+```
+
+```{.cpp title=UserLedJNI.cpp}
+#include "UserLedJNI.h"
+
+JNINativeMethod methods[] = {
+    { "nativeInit", "()V", (void*) UserLedJNI::nativeInit },
+    { "nativeSetMode", "(Ljava/lang/String;)Z", (void*) UserLedJNI::setMode },
+};
+
+std::mutex UserLedHalMutex;
+
+bool UserLedJNI::getUserLedHal() {
+    
+    if (UserLedHalExists && UserLedHal == nullptr) {
+
+        UserLedHal = IUserLed::getService(); // Proxy to the service
+
+        if (UserLedHal != nullptr) {
+            ALOGI("Loaded foo HAL service");
+        } 
+        else {
+            ALOGI("Couldn't load foo HAL service");
+            UserLedHalExists = false;
+        }
+    }
+    return UserLedHal != nullptr;
+}
+
+void UserLedJNI::nativeInit(JNIEnv* env, jobject /* obj */) {
+    UserLedHalMutex.lock();
+    getUserLedHal();
+    UserLedHalMutex.unlock();
+}
+
+jboolean UserLedJNI::setMode(JNIEnv*  env, jclass /* clazz */, jstring mode) {
+
+    ALOGD("nativeSetMode");
+
+    std::lock_guard<std::mutex> lock(UserLedHalMutex);
+
+    bool ret = false;
+    if (UserLedJNI::getUserLedHal()) {
+        android::base::Timer t;
+
+        const char* cMode = env->GetStringUTFChars(mode, NULL);
+        ret = UserLedJNI::UserLedHal->setMode(cMode);
+        env->ReleaseStringUTFChars(mode, cMode);
+
+        if (t.duration() > 20ms) {
+            ALOGW("Excessive delay in setScalingGovernor");
+        }
+    }
+
+    return ret;
+}
+
+int UserLedJNI::registerNativeMethods(JNIEnv* env, const char* className, JNINativeMethod* gMethods, int numMethods) {
+    
+    jclass clazz;
+
+    ALOGE("registerNativeMethods '%s'", className);
+
+    clazz = env->FindClass(className);
+
+    if (clazz == NULL) {
+        ALOGE("Native registration unable to find class '%s'", className);
+        return JNI_FALSE;
+    }
+
+    if (env->RegisterNatives(clazz, gMethods, numMethods) < 0) {
+        ALOGE("RegisterNatives failed for '%s'", className);
+        return JNI_FALSE;
+    }
+
+    return JNI_TRUE;
+}
+
+int UserLedJNI::registerJniUserLed(JNIEnv* env) {
+    if (!registerNativeMethods(env, UserLedJNI::classPathName, methods, sizeof(methods) / sizeof(methods[0])))
+        return JNI_FALSE;
+    return JNI_TRUE;
+}
+```
+
+```{.cpp title=onload.cpp}
+#include "jni.h"
+#include "utils/Log.h"
+#include "utils/misc.h"
+
+
+namespace UserLedJNI {
+     int registerJniUserLed(JNIEnv* env);
+};
+
+using namespace UserLedJNI;
+
+extern "C" jint JNI_OnLoad(JavaVM* vm, void* /* reserved */)
+{
+    JNIEnv* env = NULL;
+    jint result = -1;
+
+    if (vm->GetEnv((void**) &env, JNI_VERSION_1_4) != JNI_OK) {
+        ALOGE("GetEnv failed!");
+        return result;
+    }
+    ALOG_ASSERT(env, "Could not retrieve the env!");
+
+    UserLedJNI::registerJniUserLed(env);
+    return JNI_VERSION_1_4;
+}
+```
+
+```{title=Android.bp}
+cc_library_shared {
+    name: "UserLedJNI",
+    vendor: true,
+
+    defaults: ["UserLedJNI-libs"],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+    ],
+
+    srcs: [
+        "onload.cpp",
+        "UserLedJNI.cpp"
+    ],
+}
+
+cc_defaults {
+    name: "UserLedJNI-libs",
+
+    shared_libs: [
+        "libbase",
+        "libcutils",
+        "liblog",
+        "libhardware",
+        "libhidlbase",
+        "libutils",
+        "placamae.hal.userled@1.0"
+    ],
+
+    header_libs: [
+        "jni_headers",
+    ],
+}
+```
+
+Agora é preciso adicionar o JNI ao produto:
+
+```{title=meuproduto.mk}
+
+#...
+PRODUCT_PACKAGES += \
+  UserLedJNI
+```
+
+#### Complementando a JNI
+
+Para que seja possível utilizar essa JNI com outros aplicativos, uma das possibilidades é separar o cliente nativo e criar uma interface para acessar os seus métodos. Para isso, a partir da pasta raiz do AOSP, criei o seguinte diretório:
+
+```
+mkdir -p device/casa/placamae/libs/java
+```
+
+Dentro dessa pasta, criei esse novo caminho:
+
+```
+mkdir -p com/interfaces
+```
+
+Dentro da pasta adicionei o seguinte arquivo:
+
+```{.java title=UserLedJNI.java}
+
+package com.interfaces;
+import android.util.Log;
+
+public class UserLedJNI {
+    static final String TAG = "com.interfaces.UserLedJNI";
+    static final boolean DEBUG = false;
+
+    private native void nativeInit();
+    private static native boolean nativeSetMode(String mode);
+
+    public UserLedJNI() {
+        Log.d(TAG, "UserLedJNI onCreate()");
+        synchronized (this) {
+            nativeInit();
+        }
+    }
+
+    public boolean setMode(String mode) {
+        return nativeSetMode(mode);
+    }
+
+    static {
+        Log.d(TAG, "UserLedJNI static");
+        System.loadLibrary("UserLedJNI");
+    }
+}
+```
+
+Voltando para a pasta `device/casa/placamae/libs/java`, criei esse arquivo:
+
+```{.java title=Android.bp}
+java_sdk_library {
+    name: "com.interfaces.UserLedJNI",
+    vendor: true,
+
+    srcs: [
+        "com/**/*.java",
+    ],
+
+    sdk_version: "current",
+    compile_dex: true,
+    api_packages: ["com.interfaces.UserLedJNI"],
+}
+```
+
+Os arquivos ficam organizados dessa forma:
+
+```
+device/casa/placamae/libs/java
+├── Android.bp
+└── com
+    └── interfaces
+        └── UserLedJNI.java
+```
+
+Agora, na pasta raiz do AOSP, é necessário usar o seguinte comando:
+
+```
+build/soong/scripts/gen-java-current-api-files.sh "device/casa/placamae/libs/java/api"  system- test- && m update-api
+```
+
+Um erro ocorrerá informando, que é necessário mapear alguns *filegroups*:
+
+```
+com.interfaces.UserLedJNI.api.public.latest
+com.interfaces.UserLedJNI-removed.api.public.latest
+com.interfaces.UserLedJNI-incompatibilities.api.public.latest
+com.interfaces.UserLedJNI.api.system.latest
+com.interfaces.UserLedJNI-removed.api.system.latest
+com.interfaces.UserLedJNI-incompatibilities.api.system.latest
+```
+
+> Observe também que uma pasta com o nome `api` foi criada.
+
+Os *filegroups* são adicionados em:
+
+```{.java title=device/casa/placamae/libs/java/libs/java/Android.bp}
+java_sdk_library {
+    name: "com.interfaces.UserLedJNI",
+    vendor: true,
+
+    srcs: [
+        "com/**/*.java",
+    ],
+
+    sdk_version: "current",
+    compile_dex: true,
+    api_packages: ["com.interfaces.UserLedJNI"],
+}
+
+filegroup {
+    name: "com.interfaces.UserLedJNI.api.public.latest",
+    srcs: ["api/current.txt"]
+}
+
+filegroup {
+    name: "com.interfaces.UserLedJNI-removed.api.public.latest",
+    srcs: ["api/removed.txt"]
+}
+
+filegroup {
+    name: "com.interfaces.UserLedJNI-incompatibilities.api.public.latest",
+    srcs: ["api/incompatibilities.txt"]
+}
+
+filegroup {
+    name: "com.interfaces.UserLedJNI.api.system.latest",
+    srcs: ["api/system-current.txt"]
+}
+
+filegroup {
+    name: "com.interfaces.UserLedJNI-removed.api.system.latest",
+    srcs: ["api/system-removed.txt"]
+}
+
+filegroup {
+    name: "com.interfaces.UserLedJNI-incompatibilities.api.system.latest",
+    srcs: ["api/system-incompatibilities.txt"]
+}
+```
+
+Ainda resta criar 2 arquivos vazios dentro da pasta `api`:
+
+```
+touch device/casa/placamae/libs/java/api/incompatibilities.txt
+touch device/casa/placamae/libs/java/api/system-incompatibilities.txt
+```
+
+Executando novamente o comando:
+
+```
+build/soong/scripts/gen-java-current-api-files.sh "device/casa/placamae/libs/java/api"  system- test- && m update-api
+```
+
+A build deve resultar em sucesso.
 ### Aplicação
