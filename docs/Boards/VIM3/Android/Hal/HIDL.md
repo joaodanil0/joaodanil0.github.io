@@ -441,8 +441,8 @@ Agora só resta adicionar o serviço ao produto:
 ```{.mk title=meuproduto.mk}
 ...
 PRODUCT_PACKAGES += \
-  placamae.hal.userled \
-  placamae.hal.userled-service \
+  placamae.hal.userled@1.0 \
+  placamae.hal.userled@1.0-service
   LedTest
 ```
 
@@ -499,7 +499,7 @@ class UserLedJNI {
     public:
         inline static sp<IUserLed> UserLedHal = nullptr;
         inline static bool UserLedHalExists = true;
-        inline static const char *classPathName = "com/UserLedJNI";
+        inline static const char *classPathName = "com/interfaces/UserLedJNI"";
 
     public:
         static bool getUserLedHal();
@@ -628,10 +628,10 @@ extern "C" jint JNI_OnLoad(JavaVM* vm, void* /* reserved */)
 
 ```{title=Android.bp}
 cc_library_shared {
-    name: "UserLedJNI",
+    name: "libUserLedJNI", //lib prefix is required
     vendor: true,
 
-    defaults: ["UserLedJNI-libs"],
+    defaults: ["libUserLedJNI-libs"],
 
     cflags: [
         "-Wall",
@@ -646,7 +646,7 @@ cc_library_shared {
 }
 
 cc_defaults {
-    name: "UserLedJNI-libs",
+    name: "libUserLedJNI-libs",
 
     shared_libs: [
         "libbase",
@@ -670,7 +670,7 @@ Agora é preciso adicionar o JNI ao produto:
 
 #...
 PRODUCT_PACKAGES += \
-  UserLedJNI
+  libUserLedJNI
 ```
 
 #### Complementando a JNI
@@ -723,7 +723,7 @@ Voltando para a pasta `device/casa/placamae/libs/java`, criei esse arquivo:
 
 ```{.java title=Android.bp}
 java_sdk_library {
-    name: "com.interfaces.UserLedJNI",
+    name: "com.interfaces",
     vendor: true,
 
     srcs: [
@@ -732,7 +732,7 @@ java_sdk_library {
 
     sdk_version: "current",
     compile_dex: true,
-    api_packages: ["com.interfaces.UserLedJNI"],
+    api_packages: ["com.interfaces"],
 }
 ```
 
@@ -755,12 +755,12 @@ build/soong/scripts/gen-java-current-api-files.sh "device/casa/placamae/libs/jav
 Um erro ocorrerá informando, que é necessário mapear alguns *filegroups*:
 
 ```
-com.interfaces.UserLedJNI.api.public.latest
-com.interfaces.UserLedJNI-removed.api.public.latest
-com.interfaces.UserLedJNI-incompatibilities.api.public.latest
-com.interfaces.UserLedJNI.api.system.latest
-com.interfaces.UserLedJNI-removed.api.system.latest
-com.interfaces.UserLedJNI-incompatibilities.api.system.latest
+com.interfaces.api.public.latest
+com.interfaces-removed.api.public.latest
+com.interfaces-incompatibilities.api.public.latest
+com.interfaces.api.system.latest
+com.interfaces-removed.api.system.latest
+com.interfaces-incompatibilities.api.system.latest
 ```
 
 > Observe também que uma pasta com o nome `api` foi criada.
@@ -769,7 +769,7 @@ Os *filegroups* são adicionados em:
 
 ```{.java title=device/casa/placamae/libs/java/libs/java/Android.bp}
 java_sdk_library {
-    name: "com.interfaces.UserLedJNI",
+    name: "com.interfaces",
     vendor: true,
 
     srcs: [
@@ -778,36 +778,36 @@ java_sdk_library {
 
     sdk_version: "current",
     compile_dex: true,
-    api_packages: ["com.interfaces.UserLedJNI"],
+    api_packages: ["com.interfaces"],
 }
 
 filegroup {
-    name: "com.interfaces.UserLedJNI.api.public.latest",
+    name: "com.interfaces.api.public.latest",
     srcs: ["api/current.txt"]
 }
 
 filegroup {
-    name: "com.interfaces.UserLedJNI-removed.api.public.latest",
+    name: "com.interfaces-removed.api.public.latest",
     srcs: ["api/removed.txt"]
 }
 
 filegroup {
-    name: "com.interfaces.UserLedJNI-incompatibilities.api.public.latest",
+    name: "com.interfaces-incompatibilities.api.public.latest",
     srcs: ["api/incompatibilities.txt"]
 }
 
 filegroup {
-    name: "com.interfaces.UserLedJNI.api.system.latest",
+    name: "com.interfaces.api.system.latest",
     srcs: ["api/system-current.txt"]
 }
 
 filegroup {
-    name: "com.interfaces.UserLedJNI-removed.api.system.latest",
+    name: "com.interfaces-removed.api.system.latest",
     srcs: ["api/system-removed.txt"]
 }
 
 filegroup {
-    name: "com.interfaces.UserLedJNI-incompatibilities.api.system.latest",
+    name: "com.interfaces-incompatibilities.api.system.latest",
     srcs: ["api/system-incompatibilities.txt"]
 }
 ```
@@ -845,4 +845,425 @@ build/soong/scripts/gen-java-current-api-files.sh "device/casa/placamae/libs/jav
 ```
 
 A build deve resultar em sucesso.
+
+
 ### Aplicação
+
+Para ter uma interação melhor com as camadas que foram criadas, criei um app simples em java. Dessa forma, é possível alterar o estado do LED apenas apertando os botões da aplicação.
+
+Primeiro, dentro da pasta raiz do AOSP, criei a pasta:
+
+```
+mkdir -p device/casa/placamae/app/UserLedApp
+```
+
+Dentro dela crie os arquivos:
+
+```{.xml title=AndroidManifest.xml}
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.example.userledapp">
+
+  <application 
+      android:name=".UserLedServiceApp"
+      android:label="UserLedApp"
+      
+      android:requiredForAllUsers="true"
+      android:persistent="true">
+      <uses-library android:name="com.interfaces" />
+
+      <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
+```
+
+```{.c title=Android.bp}
+android_app {
+    name: "UserLedApp",
+    certificate: "platform", // to be a persistent app
+    vendor: true,
+    sdk_version: "current",
+
+    static_libs: [
+        "androidx-constraintlayout_constraintlayout",
+        "androidx-constraintlayout_constraintlayout-solver",
+    ],
+
+    resource_dirs: ["res"],
+
+    srcs: ["java/**/*.java"],
+
+    defaults: ["hidl_defaults"],
+    jni_libs: ["libUserLedJNI"],
+    libs: ["com.interfaces"],
+ }
+```
+
+Depois criei a seguinte pasta:
+
+```
+mkdir -p device/casa/placamae/app/UserLedApp/java/com/example/userledapp/
+```
+
+e dentro delas as seguintes classes:
+
+```{.java title=MainActivity.java}
+package com.example.userledapp;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    public void onClick(View view) {
+        String setValue = ((Button)view).getText().toString();
+        UserLedServiceApp.getLed().setMode(setValue);
+    }
+}
+```
+
+```{.java title=UserLedBroadcastReceiver.java}
+package com.example.userledapp;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+
+public class UserLedBroadcastReceiver extends BroadcastReceiver {
+    private static final String TAG = "userledAppBroadcast";
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        String mode = intent.getStringExtra("setMode");
+        if(mode != null) {
+            if(UserLedServiceApp.getLed().setMode(mode)) {
+                Log.d(TAG, "Succesfuly setMode to (" + mode + ")");
+            }
+            else {
+                Log.e(TAG, "Failed calling setMode to (" + mode + ")");
+            }
+        }
+    }
+}
+```
+
+```{.java title=UserLedServiceApp.java}
+package com.example.userledapp;
+
+import android.app.Application;
+import android.content.IntentFilter;
+import android.util.Log;
+import com.interfaces.UserLedJNI;
+
+
+public class UserLedServiceApp extends Application {
+    private static final String TAG = "userledServiceApp";
+
+    UserLedBroadcastReceiver broadcast = new UserLedBroadcastReceiver();
+    private static UserLedJNI userledjni; // JAVA -> JNI -> HIDL
+
+    public void onCreate() {
+        super.onCreate();
+
+        Log.d(TAG, "onCreate()");
+        userledjni = new UserLedJNI();
+
+        Log.d(TAG, "setMode(default-on) => " + userledjni.setMode("default-on"));
+
+        IntentFilter filter = new IntentFilter("com.fooHIDL.fooHIDL");
+        registerReceiver(broadcast, filter);
+    }
+
+    public void onTerminate() {
+        super.onTerminate();
+        Log.d(TAG, "Terminated");
+    }
+
+    public static UserLedJNI getLed() {
+        return userledjni;
+    }
+}
+```
+
+Agora criei a pasta:
+
+```
+mkdir -p device/casa/placamae/app/UserLedApp/res/layout
+```
+
+com o seguinte arquivo:
+
+```{.xml title=activity_main.xml}
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/onButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="72dp"
+        android:onClick="onClick"
+        android:text="default-on"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/offButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="440dp"
+        android:layout_marginTop="76dp"
+        android:onClick="onClick"
+        android:text="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/blinkButton"
+        android:layout_width="329dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="212dp"
+        android:onClick="onClick"
+        android:text="heartbeat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+
+Por fim, é só adicionar o app ao produto:
+
+```{title=meuproduto.mk}
+PRODUCT_PACKAGES += \
+  libUserLedJNI \
+  com.interfaces \
+  UserLedApp
+```
+
+A estrutura final ficou assim:
+
+```
+device/casa/placamae/app/UserLedApp
+├── Android.bp
+├── AndroidManifest.xml
+├── java
+│   └── com
+│       └── example
+│           └── userledapp
+│               ├── MainActivity.java
+│               ├── UserLedBroadcastReceiver.java
+│               └── UserLedServiceApp.java
+└── res
+    └── layout
+        └── activity_main.xml
+```
+
+Agora é só rebuildar o AOSP, flashar as imagens e procurar pelo app UserLedApp
+
+<figure markdown>
+  ![imagems](images/app_demo.gif){ width="600" }
+</figure>
+
+#### Cliente em Java
+
+Existe a possibilidade de não a JNI e usar a HIDL direto com o próprio JAVA. Para isso basta fazer algumas alteracões nos arquivos já criados:
+
+```{.xml title=AndroidManifest.xml}
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.example.userledapp">
+
+  <application 
+      android:name=".UserLedServiceApp"
+      android:label="UserLedApp"
+      
+      android:requiredForAllUsers="true"
+      android:persistent="true">
+
+      <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
+```
+
+```{.c title=Android.bp}
+android_app {
+    name: "UserLedApp",
+    certificate: "platform", // to be a persistent app
+    system_ext_specific: true, //https://source.android.com/docs/core/architecture/bootloader/partitions/product-interfaces#java-interfaces
+    platform_apis: true,
+
+    resource_dirs: ["res"],
+
+    srcs: ["java/**/*.java"],
+
+    static_libs: [
+        "android.hidl.base-V1.0-java",
+        "placamae.hal.userled-V1.0-java",
+        "androidx-constraintlayout_constraintlayout",
+        "androidx-constraintlayout_constraintlayout-solver",
+    ],
+ }
+```
+
+```{.java title=MainActivity.java}
+package com.example.userledapp;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    public void onClick(View view) {
+        String setValue = ((Button)view).getText().toString();
+
+        try {
+            UserLedServiceApp.getLed().setMode(setValue);
+        } 
+        catch (android.os.RemoteException e) {
+            Log.e("MainActiviry", "user led HIDL Java proxy returned error", e);
+        }
+    }
+}
+```
+
+```{.java title=UserLedBroadcastReceiver.java}
+package com.example.userledapp;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+
+public class UserLedBroadcastReceiver extends BroadcastReceiver {
+    private static final String TAG = "userledAppBroadcast";
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        String mode = intent.getStringExtra("setMode");
+        try {
+            if(mode != null) {
+                if(UserLedServiceApp.getLed().setMode(mode)) {
+                    Log.d(TAG, "Succesfuly setMode to (" + mode + ")");
+                }
+                else {
+                    Log.e(TAG, "Failed calling setMode to (" + mode + ")");
+                }
+            }
+        }
+        catch (android.os.RemoteException e) {
+                Log.e(TAG, "IUserLed error", e);
+        }
+    }
+}
+```
+
+Agora é só rebuildar e testar.
+
+```{.java title=UserLedServiceApp.java}
+package com.example.userledapp;
+
+import android.app.Application;
+import android.content.IntentFilter;
+import android.util.Log;
+import placamae.hal.userled.V1_0.IUserLed;
+
+
+public class UserLedServiceApp extends Application {
+    private static final String TAG = "userledServiceApp";
+
+    UserLedBroadcastReceiver broadcast = new UserLedBroadcastReceiver();
+    private static IUserLed userledJava; // HIDL Java Proxy
+
+    public void onCreate() {
+        super.onCreate();
+
+        Log.d(TAG, "onCreate()");
+        try {
+            userledJava = IUserLed.getService(true);
+            Log.d(TAG, "HIDL-Java setMode(default-on) => " + userledJava.setMode("default-on"));
+        } 
+        catch (android.os.RemoteException e) {
+            Log.e(TAG, "IUserLed error", e);
+        }
+
+
+        IntentFilter filter = new IntentFilter("com.fooHIDL.fooHIDL");
+        registerReceiver(broadcast, filter);
+    }
+
+    public void onTerminate() {
+        super.onTerminate();
+        Log.d(TAG, "Terminated");
+    }
+
+    // HIDL Java Proxy
+    public static IUserLed getLed() {
+        return userledJava;
+    }
+}
+```
+
+
+
+
+
