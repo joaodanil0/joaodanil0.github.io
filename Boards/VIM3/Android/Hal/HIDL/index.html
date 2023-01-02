@@ -418,6 +418,15 @@
 <a class="md-nav__link" href="#aplicacao">11.3.6 
     Aplicação
   </a>
+<nav aria-label="Aplicação" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cliente-em-java">
+    Cliente em Java
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -680,6 +689,15 @@
 <a class="md-nav__link" href="#aplicacao">11.3.6 
     Aplicação
   </a>
+<nav aria-label="Aplicação" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cliente-em-java">
+    Cliente em Java
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1054,8 +1072,8 @@ BOARD_SEPOLICY_DIRS += device/casa/placamae/sepolicy
 <p>Agora só resta adicionar o serviço ao produto:</p>
 <div class="highlight"><span class="filename">meuproduto.mk</span><pre><span></span><code>...
 PRODUCT_PACKAGES += \
-  placamae.hal.userled \
-  placamae.hal.userled-service \
+  placamae.hal.userled@1.0 \
+  placamae.hal.userled@1.0-service
   LedTest
 </code></pre></div>
 <p>Na pasta raiz do AOSP:</p>
@@ -1098,7 +1116,7 @@ cd /vendor/bin/hw
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">sp</span><span class="o">&lt;</span><span class="n">IUserLed</span><span class="o">&gt;</span><span class="w"> </span><span class="n">UserLedHal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">UserLedHalExists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">classPathName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"com/UserLedJNI"</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">classPathName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"com/interfaces/UserLedJNI"";</span>
 
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">getUserLedHal</span><span class="p">();</span><span class="w"></span>
@@ -1221,10 +1239,10 @@ cd /vendor/bin/hw
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code>cc_library_shared {
-    name: "UserLedJNI",
+    name: "libUserLedJNI", //lib prefix is required
     vendor: true,
 
-    defaults: ["UserLedJNI-libs"],
+    defaults: ["libUserLedJNI-libs"],
 
     cflags: [
         "-Wall",
@@ -1239,7 +1257,7 @@ cd /vendor/bin/hw
 }
 
 cc_defaults {
-    name: "UserLedJNI-libs",
+    name: "libUserLedJNI-libs",
 
     shared_libs: [
         "libbase",
@@ -1259,7 +1277,7 @@ cc_defaults {
 <p>Agora é preciso adicionar o JNI ao produto:</p>
 <div class="highlight"><span class="filename">meuproduto.mk</span><pre><span></span><code>#...
 PRODUCT_PACKAGES += \
-  UserLedJNI
+  libUserLedJNI
 </code></pre></div>
 <h4 id="complementando-a-jni"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.5.1</span> Complementando a JNI</h4>
 <p>Para que seja possível utilizar essa JNI com outros aplicativos, uma das possibilidades é separar o cliente nativo e criar uma interface para acessar os seus métodos. Para isso, a partir da pasta raiz do AOSP, criei o seguinte diretório:</p>
@@ -1298,7 +1316,7 @@ PRODUCT_PACKAGES += \
 </code></pre></div>
 <p>Voltando para a pasta <code>device/casa/placamae/libs/java</code>, criei esse arquivo:</p>
 <div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code><span class="n">java_sdk_library</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">vendor</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
 
 <span class="w">    </span><span class="nl">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="w"></span>
@@ -1307,7 +1325,7 @@ PRODUCT_PACKAGES += \
 
 <span class="w">    </span><span class="nl">sdk_version</span><span class="p">:</span><span class="w"> </span><span class="s">"current"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">compile_dex</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">api_packages</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"com.interfaces.UserLedJNI"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">api_packages</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"com.interfaces"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Os arquivos ficam organizados dessa forma:</p>
@@ -1321,19 +1339,19 @@ PRODUCT_PACKAGES += \
 <div class="highlight"><pre><span></span><code>build/soong/scripts/gen-java-current-api-files.sh "device/casa/placamae/libs/java/api"  system- test- &amp;&amp; m update-api
 </code></pre></div>
 <p>Um erro ocorrerá informando, que é necessário mapear alguns <em>filegroups</em>:</p>
-<div class="highlight"><pre><span></span><code>com.interfaces.UserLedJNI.api.public.latest
-com.interfaces.UserLedJNI-removed.api.public.latest
-com.interfaces.UserLedJNI-incompatibilities.api.public.latest
-com.interfaces.UserLedJNI.api.system.latest
-com.interfaces.UserLedJNI-removed.api.system.latest
-com.interfaces.UserLedJNI-incompatibilities.api.system.latest
+<div class="highlight"><pre><span></span><code>com.interfaces.api.public.latest
+com.interfaces-removed.api.public.latest
+com.interfaces-incompatibilities.api.public.latest
+com.interfaces.api.system.latest
+com.interfaces-removed.api.system.latest
+com.interfaces-incompatibilities.api.system.latest
 </code></pre></div>
 <blockquote>
 <p>Observe também que uma pasta com o nome <code>api</code> foi criada.</p>
 </blockquote>
 <p>Os <em>filegroups</em> são adicionados em:</p>
 <div class="highlight"><span class="filename">device/casa/placamae/libs/java/libs/java/Android.bp</span><pre><span></span><code><span class="n">java_sdk_library</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">vendor</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
 
 <span class="w">    </span><span class="nl">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="w"></span>
@@ -1342,36 +1360,36 @@ com.interfaces.UserLedJNI-incompatibilities.api.system.latest
 
 <span class="w">    </span><span class="nl">sdk_version</span><span class="p">:</span><span class="w"> </span><span class="s">"current"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">compile_dex</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">api_packages</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"com.interfaces.UserLedJNI"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">api_packages</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"com.interfaces"</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI.api.public.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.api.public.latest"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/current.txt"</span><span class="o">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI-removed.api.public.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces-removed.api.public.latest"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/removed.txt"</span><span class="o">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI-incompatibilities.api.public.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces-incompatibilities.api.public.latest"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/incompatibilities.txt"</span><span class="o">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI.api.system.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.api.system.latest"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/system-current.txt"</span><span class="o">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI-removed.api.system.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces-removed.api.system.latest"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/system-removed.txt"</span><span class="o">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="n">filegroup</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces.UserLedJNI-incompatibilities.api.system.latest"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"com.interfaces-incompatibilities.api.system.latest"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">srcs</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s">"api/system-incompatibilities.txt"</span><span class="o">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
@@ -1400,12 +1418,380 @@ Executando novamente o comando:</p>
 </code></pre></div>
 <p>A build deve resultar em sucesso.</p>
 <h3 id="aplicacao"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.6</span> Aplicação</h3>
+<p>Para ter uma interação melhor com as camadas que foram criadas, criei um app simples em java. Dessa forma, é possível alterar o estado do LED apenas apertando os botões da aplicação.</p>
+<p>Primeiro, dentro da pasta raiz do AOSP, criei a pasta:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p device/casa/placamae/app/UserLedApp
+</code></pre></div>
+<p>Dentro dela crie os arquivos:</p>
+<div class="highlight"><span class="filename">AndroidManifest.xml</span><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+  <span class="na">package=</span><span class="s">"com.example.userledapp"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;application</span> 
+      <span class="na">android:name=</span><span class="s">".UserLedServiceApp"</span>
+      <span class="na">android:label=</span><span class="s">"UserLedApp"</span>
+
+      <span class="na">android:requiredForAllUsers=</span><span class="s">"true"</span>
+      <span class="na">android:persistent=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;uses-library</span> <span class="na">android:name=</span><span class="s">"com.interfaces"</span> <span class="nt">/&gt;</span>
+
+      <span class="nt">&lt;activity</span>
+            <span class="na">android:name=</span><span class="s">".MainActivity"</span>
+            <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;intent-filter&gt;</span>
+                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/intent-filter&gt;</span>
+        <span class="nt">&lt;/activity&gt;</span>
+    <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code><span class="n">android_app</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="s">"UserLedApp"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nl">certificate</span><span class="p">:</span><span class="w"> </span><span class="s">"platform"</span><span class="p">,</span><span class="w"> </span><span class="c1">// to be a persistent app</span>
+<span class="w">    </span><span class="nl">vendor</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nl">sdk_version</span><span class="p">:</span><span class="w"> </span><span class="s">"current"</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">static_libs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s">"androidx-constraintlayout_constraintlayout"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"androidx-constraintlayout_constraintlayout-solver"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">resource_dirs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">"res"</span><span class="p">],</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">srcs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">"java/**/*.java"</span><span class="p">],</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">defaults</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">"hidl_defaults"</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nl">jni_libs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">"libUserLedJNI"</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nl">libs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">"com.interfaces"</span><span class="p">],</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Depois criei a seguinte pasta:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p device/casa/placamae/app/UserLedApp/java/com/example/userledapp/
+</code></pre></div>
+<p>e dentro delas as seguintes classes:</p>
+<div class="highlight"><span class="filename">MainActivity.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.userledapp</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.app.Activity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.util.Log</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.view.View</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.widget.Button</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.widget.TextView</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainActivity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Activity</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onResume</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onResume</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onClick</span><span class="p">(</span><span class="n">View</span><span class="w"> </span><span class="n">view</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">setValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">Button</span><span class="p">)</span><span class="n">view</span><span class="p">).</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">UserLedServiceApp</span><span class="p">.</span><span class="na">getLed</span><span class="p">().</span><span class="na">setMode</span><span class="p">(</span><span class="n">setValue</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">UserLedBroadcastReceiver.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.userledapp</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.BroadcastReceiver</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.Context</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.Intent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.util.Log</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserLedBroadcastReceiver</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BroadcastReceiver</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">TAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"userledAppBroadcast"</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onReceive</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getStringExtra</span><span class="p">(</span><span class="s">"setMode"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">mode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">UserLedServiceApp</span><span class="p">.</span><span class="na">getLed</span><span class="p">().</span><span class="na">setMode</span><span class="p">(</span><span class="n">mode</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Succesfuly setMode to ("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">")"</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Failed calling setMode to ("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">")"</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">UserLedServiceApp.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.userledapp</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.app.Application</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.IntentFilter</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.util.Log</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.interfaces.UserLedJNI</span><span class="p">;</span><span class="w"></span>
+
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserLedServiceApp</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">TAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"userledServiceApp"</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">UserLedBroadcastReceiver</span><span class="w"> </span><span class="n">broadcast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserLedBroadcastReceiver</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">UserLedJNI</span><span class="w"> </span><span class="n">userledjni</span><span class="p">;</span><span class="w"> </span><span class="c1">// JAVA -&gt; JNI -&gt; HIDL</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"onCreate()"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">userledjni</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserLedJNI</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"setMode(default-on) =&gt; "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userledjni</span><span class="p">.</span><span class="na">setMode</span><span class="p">(</span><span class="s">"default-on"</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">IntentFilter</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IntentFilter</span><span class="p">(</span><span class="s">"com.fooHIDL.fooHIDL"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">registerReceiver</span><span class="p">(</span><span class="n">broadcast</span><span class="p">,</span><span class="w"> </span><span class="n">filter</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onTerminate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onTerminate</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Terminated"</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">UserLedJNI</span><span class="w"> </span><span class="nf">getLed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">userledjni</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Agora criei a pasta:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p device/casa/placamae/app/UserLedApp/res/layout
+</code></pre></div>
+<p>com o seguinte arquivo:</p>
+<div class="highlight"><span class="filename">activity_main.xml</span><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span>
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;androidx.constraintlayout.widget.Guideline</span>
+        <span class="na">android:id=</span><span class="s">"@+id/middleGuideLine"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal"</span>
+        <span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintGuide_percent=</span><span class="s">"1"</span>
+        <span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;Button</span>
+        <span class="na">android:id=</span><span class="s">"@+id/onButton"</span>
+        <span class="na">android:layout_width=</span><span class="s">"0dp"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_marginStart=</span><span class="s">"200dp"</span>
+        <span class="na">android:layout_marginTop=</span><span class="s">"72dp"</span>
+        <span class="na">android:onClick=</span><span class="s">"onClick"</span>
+        <span class="na">android:text=</span><span class="s">"default-on"</span>
+        <span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">"parent"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;Button</span>
+        <span class="na">android:id=</span><span class="s">"@+id/offButton"</span>
+        <span class="na">android:layout_width=</span><span class="s">"0dp"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_marginStart=</span><span class="s">"440dp"</span>
+        <span class="na">android:layout_marginTop=</span><span class="s">"76dp"</span>
+        <span class="na">android:onClick=</span><span class="s">"onClick"</span>
+        <span class="na">android:text=</span><span class="s">"none"</span>
+        <span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">"parent"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;Button</span>
+        <span class="na">android:id=</span><span class="s">"@+id/blinkButton"</span>
+        <span class="na">android:layout_width=</span><span class="s">"329dp"</span>
+        <span class="na">android:layout_height=</span><span class="s">"46dp"</span>
+        <span class="na">android:layout_marginTop=</span><span class="s">"212dp"</span>
+        <span class="na">android:onClick=</span><span class="s">"onClick"</span>
+        <span class="na">android:text=</span><span class="s">"heartbeat"</span>
+        <span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">"parent"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</code></pre></div>
+<p>Por fim, é só adicionar o app ao produto:</p>
+<div class="highlight"><span class="filename">meuproduto.mk</span><pre><span></span><code>PRODUCT_PACKAGES += \
+  libUserLedJNI \
+  com.interfaces \
+  UserLedApp
+</code></pre></div>
+<p>A estrutura final ficou assim:</p>
+<div class="highlight"><pre><span></span><code>device/casa/placamae/app/UserLedApp
+├── Android.bp
+├── AndroidManifest.xml
+├── java
+│   └── com
+│       └── example
+│           └── userledapp
+│               ├── MainActivity.java
+│               ├── UserLedBroadcastReceiver.java
+│               └── UserLedServiceApp.java
+└── res
+    └── layout
+        └── activity_main.xml
+</code></pre></div>
+<p>Agora é só rebuildar o AOSP, flashar as imagens e procurar pelo app UserLedApp</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/app_demo.gif"><img alt="imagems" src="../images/app_demo.gif" width="600"/></a></p>
+</figure>
+<h4 id="cliente-em-java"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.6.1</span> Cliente em Java</h4>
+<p>Existe a possibilidade de não a JNI e usar a HIDL direto com o próprio JAVA. Para isso basta fazer algumas alteracões nos arquivos já criados:</p>
+<div class="highlight"><span class="filename">AndroidManifest.xml</span><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+  <span class="na">package=</span><span class="s">"com.example.userledapp"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;application</span> 
+      <span class="na">android:name=</span><span class="s">".UserLedServiceApp"</span>
+      <span class="na">android:label=</span><span class="s">"UserLedApp"</span>
+
+      <span class="na">android:requiredForAllUsers=</span><span class="s">"true"</span>
+      <span class="na">android:persistent=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;activity</span>
+            <span class="na">android:name=</span><span class="s">".MainActivity"</span>
+            <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;intent-filter&gt;</span>
+                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/intent-filter&gt;</span>
+        <span class="nt">&lt;/activity&gt;</span>
+    <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code><span class="n">android_app</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="s">"UserLedApp"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nl">certificate</span><span class="p">:</span><span class="w"> </span><span class="s">"platform"</span><span class="p">,</span><span class="w"> </span><span class="c1">// to be a persistent app</span>
+<span class="w">    </span><span class="nl">system_ext_specific</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="c1">//https://source.android.com/docs/core/architecture/bootloader/partitions/product-interfaces#java-interfaces</span>
+<span class="w">    </span><span class="nl">platform_apis</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">resource_dirs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">"res"</span><span class="p">],</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">srcs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">"java/**/*.java"</span><span class="p">],</span><span class="w"></span>
+
+<span class="w">    </span><span class="nl">static_libs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s">"android.hidl.base-V1.0-java"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"placamae.hal.userled-V1.0-java"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"androidx-constraintlayout_constraintlayout"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"androidx-constraintlayout_constraintlayout-solver"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">MainActivity.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.userledapp</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.app.Activity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.util.Log</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.view.View</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.widget.Button</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.widget.TextView</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainActivity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Activity</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onResume</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onResume</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onClick</span><span class="p">(</span><span class="n">View</span><span class="w"> </span><span class="n">view</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">setValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">Button</span><span class="p">)</span><span class="n">view</span><span class="p">).</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">UserLedServiceApp</span><span class="p">.</span><span class="na">getLed</span><span class="p">().</span><span class="na">setMode</span><span class="p">(</span><span class="n">setValue</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">android</span><span class="p">.</span><span class="na">os</span><span class="p">.</span><span class="na">RemoteException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="s">"MainActiviry"</span><span class="p">,</span><span class="w"> </span><span class="s">"user led HIDL Java proxy returned error"</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">UserLedBroadcastReceiver.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.userledapp</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.BroadcastReceiver</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.Context</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.Intent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.util.Log</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserLedBroadcastReceiver</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BroadcastReceiver</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">TAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"userledAppBroadcast"</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onReceive</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getStringExtra</span><span class="p">(</span><span class="s">"setMode"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">mode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">UserLedServiceApp</span><span class="p">.</span><span class="na">getLed</span><span class="p">().</span><span class="na">setMode</span><span class="p">(</span><span class="n">mode</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Succesfuly setMode to ("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">")"</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Failed calling setMode to ("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">")"</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">android</span><span class="p">.</span><span class="na">os</span><span class="p">.</span><span class="na">RemoteException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"IUserLed error"</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Agora é só rebuildar e testar.</p>
+<div class="highlight"><span class="filename">UserLedServiceApp.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.userledapp</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.app.Application</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.IntentFilter</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.util.Log</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">placamae.hal.userled.V1_0.IUserLed</span><span class="p">;</span><span class="w"></span>
+
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserLedServiceApp</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">TAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"userledServiceApp"</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">UserLedBroadcastReceiver</span><span class="w"> </span><span class="n">broadcast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserLedBroadcastReceiver</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">IUserLed</span><span class="w"> </span><span class="n">userledJava</span><span class="p">;</span><span class="w"> </span><span class="c1">// HIDL Java Proxy</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"onCreate()"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">userledJava</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IUserLed</span><span class="p">.</span><span class="na">getService</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"HIDL-Java setMode(default-on) =&gt; "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userledJava</span><span class="p">.</span><span class="na">setMode</span><span class="p">(</span><span class="s">"default-on"</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">android</span><span class="p">.</span><span class="na">os</span><span class="p">.</span><span class="na">RemoteException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"IUserLed error"</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+
+<span class="w">        </span><span class="n">IntentFilter</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IntentFilter</span><span class="p">(</span><span class="s">"com.fooHIDL.fooHIDL"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">registerReceiver</span><span class="p">(</span><span class="n">broadcast</span><span class="p">,</span><span class="w"> </span><span class="n">filter</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onTerminate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onTerminate</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Terminated"</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// HIDL Java Proxy</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">IUserLed</span><span class="w"> </span><span class="nf">getLed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">userledJava</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Ultima atualização:
-      2023-01-01
+      2023-01-02
     
   </small>
 </div>
