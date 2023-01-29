@@ -3,7 +3,6 @@
 ## Gerais
 
 - Como saber qual o endereço que o SOC vai buscar, após iniciar ? (Datasheet ?)
-- Como o u-boot carrega o kernel linux ?
 - Como colocar o Android em um SD card ?
 
 ## VIM3
@@ -16,4 +15,3 @@
 
 ## Beaglebone
 
-- Fazer o curso da udemy `Embedded Linux Step by Step Using Beaglebone Black`
