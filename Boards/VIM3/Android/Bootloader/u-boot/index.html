@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../Hal/HIDL/" rel="prev"/>
-<link href="../fan/" rel="next"/>
+<link href="../Carregando/" rel="prev"/>
+<link href="../../Hal/" rel="next"/>
 <link href="../../../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.7" name="generator"/>
-<title>Habilitando o Led Azul - Jão's Blog</title>
+<title>U-boot - Jão's Blog</title>
 <link href="../../../../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#habilitando-o-led-azul">13. 
+<a class="md-skip" href="#u-boot">10. 
           Pular para conteúdo
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Habilitando o Led Azul
+              U-boot
             
           </span>
 </div>
@@ -314,27 +314,75 @@
           Android
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_3_1_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3_1_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3_1_1" id="__nav_3_3_1_1_label" tabindex="0">
           Bootloader
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_3_1_1_label" class="md-nav" data-md-level="4">
+<nav aria-expanded="true" aria-labelledby="__nav_3_3_1_1_label" class="md-nav" data-md-level="4">
 <label class="md-nav__title" for="__nav_3_3_1_1">
 <span class="md-nav__icon md-icon"></span>
           Bootloader
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Bootloader/Carregando/">
+<a class="md-nav__link" href="../Carregando/">
         Decifrando o BOOTCMD
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../Bootloader/u-boot/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          U-boot
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         U-boot
       </a>
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducao">10.1 
+    Introdução
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#baixando-u-boot">10.2 
+    Baixando U-boot
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dependencias">10.3 
+    Dependências
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compilando-o-u-boot">10.4 
+    Compilando o U-boot
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adicionando-assinatura">10.5 
+    Adicionando assinatura
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estrutura-das-pastas">10.6 
+    Estrutura das pastas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flashando-o-u-boot">10.7 
+    Flashando o U-boot
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -364,68 +412,25 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3_1_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3_1_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3_1_3" id="__nav_3_3_1_3_label" tabindex="0">
           Kernel
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_3_1_3_label" class="md-nav" data-md-level="4">
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_1_3_label" class="md-nav" data-md-level="4">
 <label class="md-nav__title" for="__nav_3_3_1_3">
 <span class="md-nav__icon md-icon"></span>
           Kernel
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Habilitando o Led Azul
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kernel/blueled/">
         Habilitando o Led Azul
       </a>
-<nav aria-label="Índice" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#introducao">13.1 
-    Introdução
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#informacoes-uteis">13.2 
-    Informações Úteis
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#o-gpio-do-led-azul">13.3 
-    O GPIO do LED Azul
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#habilitando-o-led">13.4 
-    Habilitando o LED
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#testando">13.5 
-    Testando
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#conclusao">13.6 
-    Conclusão
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../fan/">
+<a class="md-nav__link" href="../../Kernel/fan/">
         Habilitando a FAN
       </a>
 </li>
@@ -606,33 +611,38 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#introducao">13.1 
+<a class="md-nav__link" href="#introducao">10.1 
     Introdução
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#informacoes-uteis">13.2 
-    Informações Úteis
+<a class="md-nav__link" href="#baixando-u-boot">10.2 
+    Baixando U-boot
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#o-gpio-do-led-azul">13.3 
-    O GPIO do LED Azul
+<a class="md-nav__link" href="#dependencias">10.3 
+    Dependências
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#habilitando-o-led">13.4 
-    Habilitando o LED
+<a class="md-nav__link" href="#compilando-o-u-boot">10.4 
+    Compilando o U-boot
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#testando">13.5 
-    Testando
+<a class="md-nav__link" href="#adicionando-assinatura">10.5 
+    Adicionando assinatura
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#conclusao">13.6 
-    Conclusão
+<a class="md-nav__link" href="#estrutura-das-pastas">10.6 
+    Estrutura das pastas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flashando-o-u-boot">10.7 
+    Flashando o U-boot
   </a>
 </li>
 </ul>
@@ -642,138 +652,84 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="habilitando-o-led-azul"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.</span> Habilitando o Led Azul</h1>
+<h1 id="u-boot"><span class="enumerate-headings-plugin enumerate-heading-plugin">10.</span> U-boot</h1>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/electronics-g8165b9045_640.jpg"><img alt="imagems" src="../images/electronics-g8165b9045_640.jpg" width="600"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/eclipse-g564ecd7dc_640.jpg"><img alt="qemu" src="../images/eclipse-g564ecd7dc_640.jpg" width="600"/></a>
 </p>
 <figcaption>
-  Image by <a href="https://pixabay.com/users/jacekabramowicz-1981807/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1202125">Jacek Abramowicz</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1202125">Pixabay</a>
+Image by <a href="https://pixabay.com/users/ipicgr-2249158/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1492818">ipicgr</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1492818">Pixabay</a>
 </figcaption>
 </figure>
-<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.1</span> Introdução</h2>
-<p>A <a href="https://www.khadas.com/vim3">Khadas VIM3</a> possui um conjunto de 3 LEDs soldados na placa, os LEDs <mark>Branco</mark>, <mark>Vermelho</mark>, <mark>Azul</mark>. Na versão do <a href="https://android.googlesource.com/kernel/hikey-linaro/+/refs/heads/android-amlogic-bmeson-5.4"><em>kernel Linux Android amlogic-bmeson-5.4</em></a>, o LED Azul não vem habilitado por padrão. Nesse <em>post</em> vou descrever os passos que utilizei para deixar esse LED acessível ao Android.</p>
-<h2 id="informacoes-uteis"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.2</span> Informações Úteis</h2>
-<ul>
-<li>Versão do AOSP: <code>android-12.0.0_r4</code></li>
-<li>Versão do Kernel Android: <code>android-amlogic-bmeson-5.4</code></li>
-<li>Distro de Compilação: <code>Linux Mint 21</code></li>
-<li>Versão do Kernel da distro: <code>5.15.0-56-generic</code></li>
-</ul>
-<h2 id="o-gpio-do-led-azul"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3</span> O GPIO do LED Azul</h2>
-<p>Os LEDs da placa estão na letra <code>I</code> da imagem abaixo (<a href="https://docs.khadas.com/products/sbc/vim3/hardware/interfaces">Fonte</a>):</p>
-<figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/vim3_top_view.png"><img alt="imagems" src="../images/vim3_top_view.png" width="600"/></a>
-</p>
-<figcaption>
-  Vista de cima da VIM3 
-  </figcaption>
-</figure>
-<p>É preciso saber qual desses LEDs é o azul e a qual GPIO ele está conectado. Para isso, é necessário buscar no esquemático da placa, que pode ser encontrado nesse <a href="https://dl.khadas.com/products/vim3/schematic/">link</a>. Procurando por <code>BLUE</code>, podemos encontrar a porta que ativa o LED.</p>
-<figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/blue_led_schem.png"><img alt="imagems" src="../images/blue_led_schem.png" width="600"/></a>
-</p>
-<figcaption>
-  Esquemático do LED azul
-  </figcaption>
-</figure>
-<p>Ele mostra que o sinal que ativa o LED azul é o <code>PWR_LED</code>. Buscando no esquemático pelo componente que envia esse sinal, temos:</p>
-<figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/stm8s.png"><img alt="imagems" src="../images/stm8s.png" width="600"/></a>
-</p>
-<figcaption>
-  Fonte do sinal PWR_LED
-  </figcaption>
-</figure>
-<p>O <a href="https://www.st.com/en/microcontrollers-microprocessors/stm8s-series.html">STM8S</a> é um microcontrolador de 8 bits, ele é responsável por fazer o controle de outros componentes da placa. Ele é controlado via <code>i2c</code>  pelo endereço <code>0x18</code> e possui alguns comando pré-determinados para que possamos controlar os componentes que estão associados a ele.</p>
+<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">10.1</span> Introdução</h2>
+<p>Com o intuito armazenar a maior quantidade de informação possível aqui no blog, percebi que ainda nao tinha registrado a forma de flashar o u-boot na vim 3. Que a princípio não é uma tarefa trivial, mas vou descrever os passos.</p>
+<h2 id="baixando-u-boot"><span class="enumerate-headings-plugin enumerate-heading-plugin">10.2</span> Baixando U-boot</h2>
+<p>O <a href="https://github.com/u-boot/u-boot">u-boot mainline</a> já possui suporte a VIM3. Devido isso, estou usando ele ao invés do fornecido pela própria <a href="https://github.com/khadas/u-boot">Khadas</a>. Essa escolha possui alguns impactos, pois o u-boot fornecido pela Khadas possui algumas implementações de comandos que facilitam a usabilidade, como os <a href="https://github.com/khadas/u-boot/blob/86dfffbe5bf893544d05a2433382c0ced9991df7/common/cmd_kbi.c">comandos KBI</a>. Em contra partida eles usam uma versão antiga do u-boot e meu foco é trabalhar no mainline.</p>
+<p>O primeiro passo é clonar o repositório:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/u-boot/u-boot.git
+</code></pre></div>
+<h2 id="dependencias"><span class="enumerate-headings-plugin enumerate-heading-plugin">10.3</span> Dependências</h2>
+<p>Como a arquitetura do meu PC é <code>x86_64</code> e a VIM3 usa a <code>aarch64</code>, é necessário utilizar um <code>toolchain</code> para fazer o <mark>cross-compile</mark>. Atualmente estou utilizando o <a href="https://developer.arm.com/-/media/Files/downloads/gnu-a/10.3-2021.07/binrel/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf.tar.xz?rev=9d9808a2d2194b1283d6a74b40d46ada&amp;hash=4E429A41C958483C9DB8ED84B051D010F86BA624">gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf</a>, mas talvez seja melhor baixar a versão mais atual no <a href="https://developer.arm.com/downloads/-/gnu-a">site da arm</a> e procurar por <mark>aarch64-none-elf</mark>.</p>
+<p>Para facilitar, eu adiciono o caminho dos binários da <code>toolchain</code>:</p>
+<div class="highlight"><pre><span></span><code>export PATH=/home/joao/Documents/boards/VIM3/1_bootloader/Android/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin:$PATH
+</code></pre></div>
+<h2 id="compilando-o-u-boot"><span class="enumerate-headings-plugin enumerate-heading-plugin">10.4</span> Compilando o U-boot</h2>
 <blockquote>
-<p>Para mais detalhes sobre o STM8S veja <a href="../fan/">Habilitando a FAN</a>)</p>
+<p>Esses passos são executados dentro da pasta u-boot</p>
 </blockquote>
-<h2 id="habilitando-o-led"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.4</span> Habilitando o LED</h2>
-<p>Para ter acesso ao <code>STM8S</code> eu adicionei o seguinte código ao <a href="https://android.googlesource.com/kernel/hikey-linaro/+/refs/heads/android-amlogic-bmeson-5.4"><em>kernel Linux Android amlogic-bmeson-5.4</em></a>:</p>
-<p><div class="highlight"><span class="filename">arch/arm64/boot/dts/amlogic/meson-g12b-a311d-khadas-vim3.dts</span><pre><span></span><code><span class="p">...</span>
-
-<span class="o">&amp;</span><span class="na">i2c_AO</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">khadas</span><span class="o">-</span><span class="na">mcu</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kr">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"khadas-mcu"</span><span class="p">;</span>
-<span class="w">    </span><span class="kr">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x18</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">50</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">60</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">65</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">70</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">hwver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"VIM3.V11"</span><span class="p">;</span>
-<span class="w">  </span><span class="p">};</span>
-<span class="p">};</span>
+<p>O primeiro passo da compilação é carregar o <code>defconfig</code>. Para o Android o nome do arquivo é <code>khadas-vim3_android_defconfig</code> ele se encontra dentro da pasta <code>configs/</code>. Para carregar o esse arquivo utilizo o comando:</p>
+<div class="highlight"><pre><span></span><code>make CROSS_COMPILE=aarch64-none-elf- O=../out_android/ khadas-vim3_android_defconfig
 </code></pre></div>
-Com isso, é possível acessar o <code>STM8S</code> via <code>adb shell</code>. Agora resta saber como ativar o LED azul. Para isso, é necessário saber qual comando deve ser enviado para o <code>STM8S</code>. Checando a escassa documentação da placa, encontrei o seguinte pdf <a href="https://dl.khadas.com/products/vim3/mcu/vim3_mcu_reg_en.pdf">vim3_mcu_reg_en</a> que possui as seguintes linhas:</p>
-<table>
-<thead>
-<tr>
-<th>Address</th>
-<th>Register name</th>
-<th>Byte</th>
-<th>R/W</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0x28</td>
-<td>LED_MODE_ON</td>
-<td>1</td>
-<td>R/W</td>
-<td>0:LED Off after Power On<br/>1:LED On after Power On<br/>2:LED Breath after Power On<br/>3:LED Heartbeat after Power On</td>
-</tr>
-<tr>
-<td>0x29</td>
-<td>LED_MODE_OFF</td>
-<td>1</td>
-<td>R/W</td>
-<td>0:LED Off after Power Off<br/>1:LED On after Power Off<br/>2:LED Breath after Power Off<br/>3:LED Heartbeat after Power Off</td>
-</tr>
-</tbody>
-</table>
-<p>Com base nessas linhas, o LED azul pode ter um comportamento quando a placa está ligada e outro comportamento quando a placa está desligada.</p>
-<h2 id="testando"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.5</span> Testando</h2>
-<p>Depois de buildar o Kernel e o AOSP e flashar as imagens, utilizei o <code>adb shell</code> para fazer os testes. </p>
-<p>Primeiro chequei para ver se o endereço <code>0x18</code>estava disponível no barramento <code>0</code> (é necessário ter permissão de <mark>super usuário</mark>):</p>
-<div class="highlight"><pre><span></span><code>jaoboard:/<span class="w"> </span><span class="c1"># i2cdetect -y 0 # barramento 0 do i2c</span>
-<span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">5</span><span class="w">  </span><span class="m">6</span><span class="w">  </span><span class="m">7</span><span class="w">  </span><span class="m">8</span><span class="w">  </span><span class="m">9</span><span class="w">  </span>a<span class="w">  </span>b<span class="w">  </span>c<span class="w">  </span>d<span class="w">  </span>e<span class="w">  </span>f
-<span class="m">00</span>:<span class="w">          </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>0e<span class="w"> </span>--
-<span class="m">10</span>:<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span><span class="m">18</span><span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
-<span class="m">20</span>:<span class="w"> </span>UU<span class="w"> </span>--<span class="w"> </span><span class="m">22</span><span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
-<span class="m">30</span>:<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
-<span class="m">40</span>:<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
-<span class="m">50</span>:<span class="w"> </span>--<span class="w"> </span><span class="m">51</span><span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
-<span class="m">60</span>:<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
-<span class="m">70</span>:<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w">   </span>
+<p>Caso seja necessário fazer alguma alteração nas configurações, basta utilizar o seguinte comando: </p>
+<div class="highlight"><pre><span></span><code>make CROSS_COMPILE=aarch64-none-elf- O=../out_android/ menuconfig
 </code></pre></div>
-<p>com o endereço <code>0x18</code> disponível, usei o seguinte comando para deixar o LED azul piscando enquanto a placa estiver ligada:</p>
-<div class="highlight"><pre><span></span><code>i2cset<span class="w"> </span><span class="m">0</span><span class="w"> </span>0x18<span class="w"> </span>0x28<span class="w"> </span><span class="m">3</span><span class="w"> </span>w<span class="w">  </span>-y<span class="w"> </span><span class="c1"># Heartbeat</span>
+<p>Por fim, para compilar basta usar o comando:</p>
+<div class="highlight"><pre><span></span><code>make CROSS_COMPILE=aarch64-none-elf- O=../out_android/
 </code></pre></div>
-<figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/blue_led_work.gif"><img alt="imagems" src="../images/blue_led_work.gif" width="600"/></a>
-</p>
-<figcaption>
-  LED Azul piscando
-  </figcaption>
-</figure>
-<p>Para mudar o comportamento do LED azul para a placa desligada, basta mudar o registrador de <code>0x28</code> para <code>0x29</code>. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code>i2cset<span class="w"> </span><span class="m">0</span><span class="w"> </span>0x18<span class="w"> </span>0x29<span class="w"> </span><span class="m">3</span><span class="w"> </span>w<span class="w">  </span>-y<span class="w"> </span><span class="c1"># Heartbeat</span>
+<p>Os arquivos compilados estarão dentro da pasta out_android.</p>
+<h2 id="adicionando-assinatura"><span class="enumerate-headings-plugin enumerate-heading-plugin">10.5</span> Adicionando assinatura</h2>
+<p>Para que a VIM3 reconheça o u-boot compilado, é necessário adicionar uma assinatura no começo do binário gerado. Para isso, podemos utilizar um script:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/LibreELEC/amlogic-boot-fip.git
 </code></pre></div>
-<h2 id="conclusao"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.6</span> Conclusão</h2>
-<p>Agora os 3 LEDs disponíveis na Khadas VIM3 podem ser utilizados, no futuro a ideia é criar um <em>Device Driver</em> para controlar o LED azul. Os outros (Branco e Vermelho) já pertencem a categoria de <code>UserLed</code> e podem ser encontrados em <code>/sys/class/leds/</code> com os nomes <code>vim3:white:sys</code> e  <code>vim3:red</code>. Devido isso, podem ter seu comportamento alterado de acordo com o arquivo <code>trigger</code>, por exemplo:</p>
-<div class="highlight"><pre><span></span><code>jaoboard:/sys/class/leds/vim3:red<span class="w"> </span>$<span class="w"> </span>cat<span class="w"> </span>trigger<span class="w">                                </span>
-<span class="o">[</span>none<span class="o">]</span><span class="w"> </span>rc-feedback<span class="w"> </span>bluetooth-power<span class="w"> </span>rfkill-any<span class="w"> </span>rfkill-none<span class="w"> </span>mmc0<span class="w"> </span>timer<span class="w"> </span>
-oneshot<span class="w"> </span>disk-activity<span class="w"> </span>disk-read<span class="w"> </span>disk-write<span class="w"> </span>ide-disk<span class="w"> </span>heartbeat<span class="w"> </span>backlight<span class="w"> </span>
-gpio<span class="w"> </span>cpu<span class="w"> </span>cpu0<span class="w"> </span>cpu1<span class="w"> </span>cpu2<span class="w"> </span>cpu3<span class="w"> </span>cpu4<span class="w"> </span>cpu5<span class="w"> </span>default-on<span class="w"> </span>transient<span class="w"> </span>panic<span class="w"> </span>mmc2<span class="w"> </span>mmc1<span class="w"> </span>
-hci0-power<span class="w"> </span>rfkill0<span class="w"> </span>rfkill1<span class="w"> </span>rfkill2<span class="w"> </span>
+<p>Para armazenar o u-boot assinado, criei uma pasta com o nome <code>assinado</code>.</p>
+<p>Agora, para adicionar a assinatura, utilizo o seguinte comando dentro da pasta <code>amlogic-boot-fip</code>:</p>
+<div class="highlight"><pre><span></span><code>./build-fip.sh khadas-vim3 ../out_android/u-boot.bin ../assinado
 </code></pre></div>
+<p>Ele irá buscar o u-boot compilado, adicionar a assinatura e salvar na pasta com o nome assinado.</p>
+<h2 id="estrutura-das-pastas"><span class="enumerate-headings-plugin enumerate-heading-plugin">10.6</span> Estrutura das pastas</h2>
+<p>Para facilitar o entendimento das pastas, essa é a hierarquia final:</p>
+<div class="highlight"><pre><span></span><code>.
+├── amlogic-boot-fip
+├── assinado
+├── gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf
+├── out_android
+└── u-boot
+</code></pre></div>
+<h2 id="flashando-o-u-boot"><span class="enumerate-headings-plugin enumerate-heading-plugin">10.7</span> Flashando o U-boot</h2>
+<p>É necessário um programa extra para flashar o u-boot no mmc da VIM3, que pode ser baixado nesse <a href="https://github.com/khadas/utils/blob/master/aml-flash-tool/tools/linux-x86/update">link</a>. No meu caso, eu coloquei o programa dentro da pasta <code>assinado</code>.</p>
+<p>Agora é necessário colocar a VIM3 em um modo especial, para isso ela precisa estar conectado ao computador pela porta USB-C e depois apertar rapidamente 3 vezes no botão do meio (<a href="https://docs.khadas.com/_media/products/sbc/vim3/hardware/vim3-interface.jpg?cache=">Function Button</a>), entre o botão de <code>power</code> e o de <code>reset</code>. O led azul da placa irá piscar rapidamente durante um espaço de tempo, informando que ele entrou nesse modo especial.</p>
+<p>Agora, para flashar o u-boot podemos seguir os passos desse <a href="https://source.android.com/docs/setup/create/devices#vim3-fastboot">tutorial</a>. Adaptando para o cenário desse post, dentro da pasta <code>assinado</code>, eu utilizo os seguintes comandos:</p>
+<div class="highlight"><pre><span></span><code>./update write u-boot.bin 0xfffa0000 0x10000
+./update run 0xfffa0000
+./update bl2_boot u-boot.bin
+</code></pre></div>
+<blockquote>
+<p>Talvez seja necessário ser super usuário para executar esses comandos</p>
+</blockquote>
+<p>Depois disso, a VIM3 entrará em modo Fastboot, e então podemos executar os seguintes comandos:</p>
+<div class="highlight"><pre><span></span><code>fastboot oem format
+fastboot flash bootloader u-boot.bin
+fastboot erase bootenv
+</code></pre></div>
+<blockquote>
+<p>Para instalar o fastboot: sudo apt install fastboot.</p>
+</blockquote>
+<p>Reset a placa e pronto, o u-boot estará funcionando. Para ver os logs do u-boot é necessário usar a porta UART. </p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Última atualização:
-      2022-12-10
+      2023-01-29
     
   </small>
 </div>

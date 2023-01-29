@@ -5,10 +5,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../AIDL/" rel="prev"/>
+<link href="../../../Boards/Beaglebone/Inicio/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.7" name="generator"/>
 <title>Implementando a HIDL - Jão's Blog</title>
-<link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -89,7 +91,7 @@
 <div class="md-search-result__meta">
             Inicializando busca
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -117,12 +119,12 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Android
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Android" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           Android
@@ -134,24 +136,24 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
           HAL
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="HAL" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
           HAL
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" id="__nav_2_2_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_1">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
           AIDL
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="AIDL" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_1_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_1">
 <span class="md-nav__icon md-icon"></span>
           AIDL
@@ -166,19 +168,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" id="__nav_2_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_2">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
           HIDL
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="HIDL" class="md-nav" data-md-level="3">
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_2">
 <span class="md-nav__icon md-icon"></span>
           HIDL
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           Implementando a HIDL
           <span class="md-nav__icon md-icon"></span>
@@ -186,10 +188,10 @@
 <a class="md-nav__link md-nav__link--active" href="./">
         Implementando a HIDL
       </a>
-<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
 <span class="md-nav__icon md-icon"></span>
-      Indice
+      Índice
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -249,24 +251,24 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           Boards
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Boards" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           Boards
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_1">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
           Beaglebone
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Beaglebone" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_1">
 <span class="md-nav__icon md-icon"></span>
           Beaglebone
@@ -283,12 +285,12 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_3" id="__nav_3_1_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_1_3">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
           Bootloader
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Bootloader" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_3_1_3">
 <span class="md-nav__icon md-icon"></span>
           Bootloader
@@ -306,24 +308,24 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_2">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
           Qemu
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Qemu" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_2">
 <span class="md-nav__icon md-icon"></span>
           Qemu
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_1" id="__nav_3_2_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_2_1">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
           Bootloader
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Bootloader" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_1_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_3_2_1">
 <span class="md-nav__icon md-icon"></span>
           Bootloader
@@ -346,36 +348,36 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_3">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
           VIM3
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="VIM3" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_3">
 <span class="md-nav__icon md-icon"></span>
           VIM3
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_1" id="__nav_3_3_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_3_1">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
           Android
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Android" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_1_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_3_3_1">
 <span class="md-nav__icon md-icon"></span>
           Android
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_1_1" id="__nav_3_3_1_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_3_1_1">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3_1_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_1_1" id="__nav_3_3_1_1_label" tabindex="0">
           Bootloader
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Bootloader" class="md-nav" data-md-level="4">
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_1_1_label" class="md-nav" data-md-level="4">
 <label class="md-nav__title" for="__nav_3_3_1_1">
 <span class="md-nav__icon md-icon"></span>
           Bootloader
@@ -386,16 +388,21 @@
         Decifrando o BOOTCMD
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Boards/VIM3/Android/Bootloader/u-boot/">
+        U-boot
+      </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_1_2" id="__nav_3_3_1_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_3_1_2">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_1_2" id="__nav_3_3_1_2_label" tabindex="0">
           Hal
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Hal" class="md-nav" data-md-level="4">
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_1_2_label" class="md-nav" data-md-level="4">
 <label class="md-nav__title" for="__nav_3_3_1_2">
 <span class="md-nav__icon md-icon"></span>
           Hal
@@ -415,12 +422,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_1_3" id="__nav_3_3_1_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_3_1_3">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_1_3" id="__nav_3_3_1_3_label" tabindex="0">
           Kernel
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Kernel" class="md-nav" data-md-level="4">
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_1_3_label" class="md-nav" data-md-level="4">
 <label class="md-nav__title" for="__nav_3_3_1_3">
 <span class="md-nav__icon md-icon"></span>
           Kernel
@@ -443,12 +450,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_2" id="__nav_3_3_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_3_2">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
           Bootloader
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Bootloader" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_3_3_2">
 <span class="md-nav__icon md-icon"></span>
           Bootloader
@@ -469,24 +476,24 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           Documentação
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Documentação" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           Documentação
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" id="__nav_4_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_1">
+<input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
           Partições
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Partições" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_4_1">
 <span class="md-nav__icon md-icon"></span>
           Partições
@@ -501,12 +508,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_2">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
           Mkdocs
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Mkdocs" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_4_2">
 <span class="md-nav__icon md-icon"></span>
           Mkdocs
@@ -524,24 +531,24 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Linguagens
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Linguagens" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           Linguagens
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5_1">
+<input class="md-nav__toggle md-toggle" id="__nav_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
           Rust
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Rust" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_1">
 <span class="md-nav__icon md-icon"></span>
           Rust
@@ -564,24 +571,24 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           RTOS
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="RTOS" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           RTOS
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" id="__nav_6_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_1">
+<input class="md-nav__toggle md-toggle" id="__nav_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
           Zephyr
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Zephyr" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_6_1_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_6_1">
 <span class="md-nav__icon md-icon"></span>
           Zephyr
@@ -606,10 +613,10 @@
 <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
-<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
 <span class="md-nav__icon md-icon"></span>
-      Indice
+      Índice
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -686,7 +693,7 @@
 <p>Vou tentar dividir em alguns tópicos para facilitar.</p>
 <h3 id="hal"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.1</span> HAL</h3>
 <p>Na pasta raiz do <a href="https://source.android.com/">AOSP</a>, criei o seguinte caminho:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mkdir</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">device</span><span class="o">/</span><span class="n">casa</span><span class="o">/</span><span class="n">emulator</span><span class="o">/</span><span class="n">interfaces</span><span class="o">/</span><span class="n">foo</span><span class="o">/</span><span class="mf">1.0</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">mkdir</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">device</span><span class="o">/</span><span class="n">casa</span><span class="o">/</span><span class="n">emulator</span><span class="o">/</span><span class="n">interfaces</span><span class="o">/</span><span class="n">foo</span><span class="o">/</span><span class="mf">1.0</span>
 </code></pre></div>
 <p>A pasta <code>foo/</code> é o nome da HAL e a pasta <code>1.0/</code> seria a versão dessa HAL. Dentro da pasta <code>1.0/</code> criei os arquivos:</p>
 <div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code>hidl_interface {
@@ -718,7 +725,7 @@ interface ITest {
 </code></pre></div>
 <p>A tag <code>name</code> desse arquivo é igual ao da tag <code>root</code> do outro arquivo <mark>Android.bp</mark>. A tag <code>path</code> é o caminho relativo da pasta raiz do AOSP até a pasta <code>interfaces</code>.</p>
 <p>Finalmente, dentro da pasta <code>device/casa/emulator/interfaces/foo/1.0</code> o seguinte comando foi usado:</p>
-<div class="highlight"><pre><span></span><code>mm -j8
+<div class="highlight"><pre><span></span><code>mm<span class="w"> </span>-j8
 </code></pre></div>
 <p>Ele compila a HAL foo. Ao final do processo uma mensagem similar deve aparecer:</p>
 <blockquote>
@@ -757,11 +764,11 @@ PRODUCT_PACKAGES += \
 <p>Os métodos são:</p>
 <div class="highlight"><span class="filename">ITest.h</span><pre><span></span><code><span class="cm">/**</span>
 <span class="cm">* Return callback for getTest</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">getTest_cb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="cm">*/</span>
+<span class="k">using</span><span class="w"> </span><span class="n">getTest_cb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
 
-<span class="k">virtual</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Return</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getTest</span><span class="p">(</span><span class="n">getTest_cb</span><span class="w"> </span><span class="n">_hidl_cb</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="k">virtual</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Return</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">setTest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="k">virtual</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Return</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getTest</span><span class="p">(</span><span class="n">getTest_cb</span><span class="w"> </span><span class="n">_hidl_cb</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">virtual</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Return</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">setTest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </code></pre></div>
 <p>Para fazer a implementação desses métodos, criei dentro da pasta <code>device/casa/emulator/interfaces/foo/1.0/default</code> os arquivos:</p>
 <div class="highlight"><span class="filename">Test.h</span><pre><span></span><code><span class="cp">#ifndef MYPACKAGE_MYSUBPACKAGE_FOO_V1_0_ITEST_H</span>
@@ -770,13 +777,13 @@ PRODUCT_PACKAGES += \
 <span class="c1">// Mesmo caminho após:</span>
 <span class="c1">// mypackage.mysubpackage.foo@1.0_genc++_headers/gen/</span>
 <span class="c1">// dentro da pasta out/</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mypackage/mysubpackage/foo/1.0/ITest.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mypackage/mysubpackage/foo/1.0/ITest.h&gt;</span>
 
-<span class="k">namespace</span><span class="w"> </span><span class="nn">mypackage</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">mysubpackage</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">V1_0</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">implementation</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">mypackage</span><span class="w"> </span><span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">mysubpackage</span><span class="w"> </span><span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">V1_0</span><span class="w"> </span><span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">implementation</span><span class="w"> </span><span class="p">{</span>
 
 
 <span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">hidl_string</span><span class="p">;</span><span class="w"> </span><span class="c1">// const hidl_string</span>
@@ -784,13 +791,13 @@ PRODUCT_PACKAGES += \
 <span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">Void</span><span class="p">;</span><span class="w"> </span><span class="c1">// return Void();</span>
 <span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">mypackage</span><span class="o">::</span><span class="n">mysubpackage</span><span class="o">::</span><span class="n">foo</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">ITest</span><span class="p">;</span><span class="w"> </span><span class="c1">// public ITest</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ITest</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="n">Return</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">setTest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">Return</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getTest</span><span class="p">(</span><span class="n">getTest_cb</span><span class="w"> </span><span class="n">_hidl_c</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ITest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="n">Return</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">setTest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Return</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getTest</span><span class="p">(</span><span class="n">getTest_cb</span><span class="w"> </span><span class="n">_hidl_c</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
 
-<span class="k">extern</span><span class="w"> </span><span class="s">"C"</span><span class="w"> </span><span class="n">ITest</span><span class="o">*</span><span class="w"> </span><span class="n">HIDL_FETCH_ITest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+<span class="k">extern</span><span class="w"> </span><span class="s">"C"</span><span class="w"> </span><span class="n">ITest</span><span class="o">*</span><span class="w"> </span><span class="n">HIDL_FETCH_ITest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
 
 <span class="p">}</span><span class="w"> </span><span class="c1">// namespace implementation</span>
 <span class="p">}</span><span class="w"> </span><span class="c1">// namespace V1_0 </span>
@@ -800,95 +807,95 @@ PRODUCT_PACKAGES += \
 
 <span class="cp">#endif</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Test.cpp</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"Test.h"</span><span class="cp"></span>
+<div class="highlight"><span class="filename">Test.cpp</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"Test.h"</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utils/Log.h&gt;</span><span class="c1"> //ALOGI e ALOGE</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/stat.h&gt;</span><span class="c1"> // struct stat info</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utils/Log.h&gt;</span><span class="c1"> //ALOGI e ALOGE</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/stat.h&gt;</span><span class="c1"> // struct stat info</span>
 
 
-<span class="k">namespace</span><span class="w"> </span><span class="nn">mypackage</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">mysubpackage</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">V1_0</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">implementation</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">mypackage</span><span class="w"> </span><span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">mysubpackage</span><span class="w"> </span><span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">V1_0</span><span class="w"> </span><span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">implementation</span><span class="w"> </span><span class="p">{</span>
 
 <span class="c1">// conservative|powersave|performance|schedutil</span>
-<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">SCALING_GOVERNOR</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">SCALING_GOVERNOR</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"</span><span class="p">;</span>
 
-<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">write_value</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">to_write</span><span class="p">,</span><span class="w"> </span><span class="n">written</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="n">fd</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">write_value</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">to_write</span><span class="p">,</span><span class="w"> </span><span class="n">written</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="n">fd</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEMP_FAILURE_RETRY</span><span class="p">(</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">O_WRONLY</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"write_value failed to open"</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEMP_FAILURE_RETRY</span><span class="p">(</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">O_WRONLY</span><span class="p">));</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"write_value failed to open"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">to_write</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">written</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEMP_FAILURE_RETRY</span><span class="p">(</span><span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">to_write</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">written</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">written</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">to_write</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-3</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">to_write</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">written</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEMP_FAILURE_RETRY</span><span class="p">(</span><span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">to_write</span><span class="p">));</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">written</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-2</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">written</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">to_write</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-3</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">errno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">errno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">Return</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Test</span><span class="o">::</span><span class="n">setTest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"Test::setTest data=(%s)"</span><span class="p">,</span><span class="w"> </span><span class="n">param</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">write_value</span><span class="p">(</span><span class="n">SCALING_GOVERNOR</span><span class="p">,</span><span class="w"> </span><span class="n">param</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">Return</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Test</span><span class="o">::</span><span class="n">setTest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">hidl_string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"Test::setTest data=(%s)"</span><span class="p">,</span><span class="w"> </span><span class="n">param</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">write_value</span><span class="p">(</span><span class="n">SCALING_GOVERNOR</span><span class="p">,</span><span class="w"> </span><span class="n">param</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">Return</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Test</span><span class="o">::</span><span class="n">getTest</span><span class="p">(</span><span class="n">getTest_cb</span><span class="w"> </span><span class="n">_hidl_cb</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">stat</span><span class="w"> </span><span class="n">info</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"></span>
+<span class="n">Return</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Test</span><span class="o">::</span><span class="n">getTest</span><span class="p">(</span><span class="n">getTest_cb</span><span class="w"> </span><span class="n">_hidl_cb</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">stat</span><span class="w"> </span><span class="n">info</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// If open returns error code EINTR, retry again until error code</span>
 <span class="w">    </span><span class="c1">// is not a temporary failure</span>
-<span class="w">    </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEMP_FAILURE_RETRY</span><span class="p">(</span><span class="n">open</span><span class="p">(</span><span class="n">SCALING_GOVERNOR</span><span class="p">,</span><span class="w"> </span><span class="n">O_RDONLY</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">_hidl_cb</span><span class="p">(</span><span class="s">"error can open fd"</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Void</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEMP_FAILURE_RETRY</span><span class="p">(</span><span class="n">open</span><span class="p">(</span><span class="n">SCALING_GOVERNOR</span><span class="p">,</span><span class="w"> </span><span class="n">O_RDONLY</span><span class="p">));</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_hidl_cb</span><span class="p">(</span><span class="s">"error can open fd"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Void</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">fstat</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">info</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="p">.</span><span class="n">st_size</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">_hidl_cb</span><span class="p">(</span><span class="s">"error can't malloc"</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="n">data</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Void</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">fstat</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">info</span><span class="p">);</span>
+<span class="w">    </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="p">.</span><span class="n">st_size</span><span class="p">;</span>
+<span class="w">    </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_hidl_cb</span><span class="p">(</span><span class="s">"error can't malloc"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+<span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Void</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">_hidl_cb</span><span class="p">(</span><span class="s">"error reading fd"</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="n">data</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Void</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_hidl_cb</span><span class="p">(</span><span class="s">"error reading fd"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+<span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Void</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">snprintf</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">str</span><span class="p">),</span><span class="w"> </span><span class="s">"%s"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"Test:getTest data=(%s)"</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">_hidl_cb</span><span class="p">(</span><span class="n">str</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">snprintf</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">str</span><span class="p">),</span><span class="w"> </span><span class="s">"%s"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"Test:getTest data=(%s)"</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">);</span>
+<span class="w">    </span><span class="n">_hidl_cb</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
 
 <span class="c1">// Methods from ::android::hidl::base::V1_0::IBase follow.</span>
-<span class="n">ITest</span><span class="o">*</span><span class="w"> </span><span class="n">HIDL_FETCH_ITest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="cm">/* name */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Test</span><span class="p">();</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">ITest</span><span class="o">*</span><span class="w"> </span><span class="n">HIDL_FETCH_ITest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="cm">/* name */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Test</span><span class="p">();</span>
+<span class="p">}</span>
 
 <span class="p">}</span><span class="w"> </span><span class="c1">// namespace implementation</span>
 <span class="p">}</span><span class="w"> </span><span class="c1">// namespace V1_0 </span>
@@ -900,61 +907,61 @@ PRODUCT_PACKAGES += \
 <p>Uma vez que o código foi implementado, precisamos criar o serviço que deixará o mesmo disponível. Dentro da mesma pasta foi criado o arquivo:</p>
 <div class="highlight"><span class="filename">service.cpp</span><pre><span></span><code><span class="cp">#define LOG_TAG "mypackage.mysubpackage.foo@1.0-service"</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mypackage/mysubpackage/foo/1.0/ITest.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mypackage/mysubpackage/foo/1.0/ITest.h&gt;</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;log/log.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/HidlTransportSupport.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;log/log.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/HidlTransportSupport.h&gt;</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">"Test.h"</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"Test.h"</span>
 
-<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">sp</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">status_t</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">sp</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">status_t</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span>
 
 <span class="c1">// libhwbinder:</span>
-<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">configureRpcThreadpool</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">joinRpcThreadpool</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">configureRpcThreadpool</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">joinRpcThreadpool</span><span class="p">;</span>
 
 <span class="c1">// Generated HIDL files</span>
-<span class="k">using</span><span class="w"> </span><span class="n">mypackage</span><span class="o">::</span><span class="n">mysubpackage</span><span class="o">::</span><span class="n">foo</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">ITest</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">mypackage</span><span class="o">::</span><span class="n">mysubpackage</span><span class="o">::</span><span class="n">foo</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">implementation</span><span class="o">::</span><span class="n">Test</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">mypackage</span><span class="o">::</span><span class="n">mysubpackage</span><span class="o">::</span><span class="n">foo</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">ITest</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">mypackage</span><span class="o">::</span><span class="n">mysubpackage</span><span class="o">::</span><span class="n">foo</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">implementation</span><span class="o">::</span><span class="n">Test</span><span class="p">;</span>
 
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">mypackage</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">mypackage</span><span class="p">;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="cm">/* argc */</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="cm">/* argv */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"Foo Service 1.0 for test is starting."</span><span class="p">);</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="cm">/* argc */</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="cm">/* argv */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"Foo Service 1.0 for test is starting."</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Android Strong Pointer (don't GC until exit)</span>
-<span class="w">    </span><span class="n">sp</span><span class="o">&lt;</span><span class="n">ITest</span><span class="o">&gt;</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Test</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">service</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"Can not create an instance of ITest HAL, exiting."</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">sp</span><span class="o">&lt;</span><span class="n">ITest</span><span class="o">&gt;</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Test</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">service</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"Can not create an instance of ITest HAL, exiting."</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="c1">// system/libhidl/transport/include/hidl/HidlTransportSupport.h</span>
 <span class="w">    </span><span class="c1">// Configures the threadpool used for handling incoming RPC calls in this process:</span>
 <span class="w">    </span><span class="c1">// @param maxThreads maximum number of threads in this process</span>
 <span class="w">    </span><span class="c1">// @param callerWillJoin whether the caller will join the threadpool later.</span>
-<span class="w">    </span><span class="n">configureRpcThreadpool</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="cm">/*callerWillJoin*/</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">configureRpcThreadpool</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="cm">/*callerWillJoin*/</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// registerAsService calls registerAsServiceInternal in</span>
 <span class="w">    </span><span class="c1">// system/libhidl/transport/ServiceManagement.cpp</span>
 <span class="w">    </span><span class="c1">// registerAsServiceInternal registers with hwservicemanager</span>
-<span class="w">    </span><span class="n">status_t</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">-&gt;</span><span class="n">registerAsService</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"Could not register service for ITest HAL (%d), exiting."</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"Test Service is ready"</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">status_t</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">-&gt;</span><span class="n">registerAsService</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"Could not register service for ITest HAL (%d), exiting."</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">ALOGI</span><span class="p">(</span><span class="s">"Test Service is ready"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// system/libhidl/transport/include/hidl/HidlTransportSupport.h</span>
 <span class="w">    </span><span class="c1">// Joins a threadpool that you configured earlier</span>
-<span class="w">    </span><span class="n">joinRpcThreadpool</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">joinRpcThreadpool</span><span class="p">();</span>
 
 <span class="w">    </span><span class="c1">// In normal operation, we don't expect the thread pool to exit</span>
-<span class="w">    </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"Test Service is shutting down"</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">ALOGE</span><span class="p">(</span><span class="s">"Test Service is shutting down"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>De modo geral, a implementação é a mesma. Só precisa ficar atento ao nome da HAL, nesse caso <code>Test</code>.</p>
 <p>Agora é necessário criar o arquivo:</p>
@@ -983,17 +990,17 @@ PRODUCT_PACKAGES += \
         user system
         group system
 </code></pre></div>
-<div class="highlight"><span class="filename">mypackage.mysubpackage.foo@1.0-service.xml</span><pre><span></span><code><span class="nt">&lt;manifest</span> <span class="na">version=</span><span class="s">"1.0"</span> <span class="na">type=</span><span class="s">"device"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;hal</span> <span class="na">format=</span><span class="s">"hidl"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;name&gt;</span>mypackage.mysubpackage.foo<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;transport&gt;</span>hwbinder<span class="nt">&lt;/transport&gt;</span>
-        <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
-        <span class="nt">&lt;interface&gt;</span>
-            <span class="nt">&lt;name&gt;</span>ITest<span class="nt">&lt;/name&gt;</span>
-            <span class="nt">&lt;instance&gt;</span>default<span class="nt">&lt;/instance&gt;</span>
-        <span class="nt">&lt;/interface&gt;</span>
-        <span class="nt">&lt;fqname&gt;</span>@1.0::ITest/default<span class="nt">&lt;/fqname&gt;</span>
-    <span class="nt">&lt;/hal&gt;</span>
+<div class="highlight"><span class="filename">mypackage.mysubpackage.foo@1.0-service.xml</span><pre><span></span><code><span class="nt">&lt;manifest</span><span class="w"> </span><span class="na">version=</span><span class="s">"1.0"</span><span class="w"> </span><span class="na">type=</span><span class="s">"device"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;hal</span><span class="w"> </span><span class="na">format=</span><span class="s">"hidl"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>mypackage.mysubpackage.foo<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;transport&gt;</span>hwbinder<span class="nt">&lt;/transport&gt;</span>
+<span class="w">        </span><span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">        </span><span class="nt">&lt;interface&gt;</span>
+<span class="w">            </span><span class="nt">&lt;name&gt;</span>ITest<span class="nt">&lt;/name&gt;</span>
+<span class="w">            </span><span class="nt">&lt;instance&gt;</span>default<span class="nt">&lt;/instance&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/interface&gt;</span>
+<span class="w">        </span><span class="nt">&lt;fqname&gt;</span>@1.0::ITest/default<span class="nt">&lt;/fqname&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/hal&gt;</span>
 <span class="nt">&lt;/manifest&gt;</span>
 </code></pre></div>
 <p>Agora é só fazer um rebuild <code>m -j8</code>.</p>
@@ -1014,15 +1021,15 @@ PRODUCT_PACKAGES += \
 </code></pre></div>
 <p>Esse erro é referente a falta de permissão que nosso serviço possui. Vamos fazer as devidas configurações.</p>
 <p>Criei a pasta <mark>Sepolicy</mark> dentro do produto:</p>
-<div class="highlight"><pre><span></span><code>mkdir -p device/casa/emulator/sepolicy
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>device/casa/emulator/sepolicy
 </code></pre></div>
 <p>Dentro da pasta foi criado os arquivos:</p>
-<div class="highlight"><span class="filename">file_contexts</span><pre><span></span><code><span class="o">/</span><span class="n">vendor</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">hw</span><span class="o">/</span><span class="n">mypackage</span><span class="err">\</span><span class="p">.</span><span class="n">mysubpackage</span><span class="err">\</span><span class="p">.</span><span class="n">foo</span><span class="err">@</span><span class="mi">1</span><span class="err">\</span><span class="mf">.0</span><span class="o">-</span><span class="n">service</span><span class="w"> </span><span class="n">u</span><span class="o">:</span><span class="n">object_r</span><span class="o">:</span><span class="n">hal_mysubpackage_default_exec</span><span class="o">:</span><span class="n">s0</span><span class="w"></span>
+<div class="highlight"><span class="filename">file_contexts</span><pre><span></span><code><span class="o">/</span><span class="n">vendor</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">hw</span><span class="o">/</span><span class="n">mypackage</span><span class="err">\</span><span class="p">.</span><span class="n">mysubpackage</span><span class="err">\</span><span class="p">.</span><span class="n">foo</span><span class="err">@</span><span class="mi">1</span><span class="err">\</span><span class="mf">.0</span><span class="o">-</span><span class="n">service</span><span class="w"> </span><span class="n">u</span><span class="o">:</span><span class="n">object_r</span><span class="o">:</span><span class="n">hal_mysubpackage_default_exec</span><span class="o">:</span><span class="n">s0</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">hal_mysubpackage_default.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span><span class="w"></span>
-<span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default_exec</span><span class="p">,</span><span class="w"> </span><span class="n">exec_type</span><span class="p">,</span><span class="w"> </span><span class="n">vendor_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">file_type</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">hal_mysubpackage_default.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span>
+<span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default_exec</span><span class="p">,</span><span class="w"> </span><span class="n">exec_type</span><span class="p">,</span><span class="w"> </span><span class="n">vendor_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">file_type</span><span class="p">;</span>
 
-<span class="n">init_daemon_domain</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span><span class="w"></span>
+<span class="n">init_daemon_domain</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span>
 </code></pre></div>
 <p>Além disso, é necessário adicionar a pasta na compilação do AOSP. Isso é feito dentro do <mark>BoardConfig.mk</mark> do produto, no meu caso <code>device/casa/emulator/BoardConfig.mk</code>:</p>
 <div class="highlight"><span class="filename">BoardConfig.mk</span><pre><span></span><code>...
@@ -1033,13 +1040,13 @@ BOARD_SEPOLICY_DIRS += device/casa/emulator/sepolicy
 <div class="highlight"><pre><span></span><code><span class="mi">10</span><span class="o">-</span><span class="mi">02</span> <span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mf">53.735</span>   <span class="mi">370</span>   <span class="mi">370</span> <span class="n">W</span> <span class="n">mypackage</span><span class="o">.</span><span class="n">mysub</span><span class="p">:</span> <span class="nb">type</span><span class="o">=</span><span class="mi">1400</span> <span class="n">audit</span><span class="p">(</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">1020</span><span class="p">):</span> <span class="n">avc</span><span class="p">:</span> <span class="n">denied</span> <span class="p">{</span> <span class="n">read</span> <span class="p">}</span> <span class="k">for</span> <span class="n">name</span><span class="o">=</span><span class="s2">"u:object_r:hwservicemanager_prop:s0"</span> <span class="n">dev</span><span class="o">=</span><span class="s2">"tmpfs"</span> <span class="n">ino</span><span class="o">=</span><span class="mi">168</span> <span class="n">scontext</span><span class="o">=</span><span class="n">u</span><span class="p">:</span><span class="n">r</span><span class="p">:</span><span class="n">hal_mysubpackage_default</span><span class="p">:</span><span class="n">s0</span> <span class="n">tcontext</span><span class="o">=</span><span class="n">u</span><span class="p">:</span><span class="n">object_r</span><span class="p">:</span><span class="n">hwservicemanager_prop</span><span class="p">:</span><span class="n">s0</span> <span class="n">tclass</span><span class="o">=</span><span class="n">file</span> <span class="n">permissive</span><span class="o">=</span><span class="mi">0</span>
 </code></pre></div>
 <p>Essa mensagem é referente ao <em>SELinux audit messages</em> e para resolve-las é necessario criar as <em>SELinux allow rules</em>. Para isso, pode se usar o <code>policycoreutils</code>, que pode ser instalado com o comando:</p>
-<div class="highlight"><pre><span></span><code>sudo apt install policycoreutils-python-utils
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>policycoreutils-python-utils
 </code></pre></div>
 <p>Agora precisamos baixar o arquivo <mark>policy</mark> do device, para isso é usado o comando:</p>
-<div class="highlight"><pre><span></span><code>adb pull /sys/fs/selinux/policy
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>pull<span class="w"> </span>/sys/fs/selinux/policy
 </code></pre></div>
 <p>Na mesma pasta onde foi baixado o arquivo <mark>policy</mark>, foi usado o seguinte comando:</p>
-<div class="highlight"><pre><span></span><code>adb logcat -b all -d <span class="p">|</span> audit2allow -p policy
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>logcat<span class="w"> </span>-b<span class="w"> </span>all<span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>audit2allow<span class="w"> </span>-p<span class="w"> </span>policy
 </code></pre></div>
 <p>Foi retornado a seguinte mensagem:</p>
 <blockquote>
@@ -1047,10 +1054,10 @@ BOARD_SEPOLICY_DIRS += device/casa/emulator/sepolicy
 allow hal_mysubpackage_default hwservicemanager_prop:file read;</p>
 </blockquote>
 <p>Essa mensagem diz que a HAL precisa de permissão de leitura em <code>hwservicemanager_prop</code>. Para fazer isso, adicionamos a seguinte linha no arquivo:</p>
-<div class="highlight"><span class="filename">hal_mysubpackage_default.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span><span class="w"></span>
-<span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default_exec</span><span class="p">,</span><span class="w"> </span><span class="n">exec_type</span><span class="p">,</span><span class="w"> </span><span class="n">vendor_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">file_type</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">hal_mysubpackage_default.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span>
+<span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default_exec</span><span class="p">,</span><span class="w"> </span><span class="n">exec_type</span><span class="p">,</span><span class="w"> </span><span class="n">vendor_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">file_type</span><span class="p">;</span>
 
-<span class="n">init_daemon_domain</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span><span class="w"></span>
+<span class="n">init_daemon_domain</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span>
 
 <span class="hll"><span class="cp"># allow hal_mysubpackage_default hwservicemanager_prop:file read;</span>
 </span><span class="hll"><span class="n">get_prop</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">hwservicemanager_prop</span><span class="p">);</span><span class="w"> </span>
@@ -1066,8 +1073,8 @@ allow hal_mysubpackage_default hwservicemanager_prop:file read;</p>
 <span class="mi">10</span><span class="o">-</span><span class="mi">02</span> <span class="mi">14</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">10.786</span>     <span class="mi">0</span>     <span class="mi">0</span> <span class="n">E</span> <span class="n">init</span>    <span class="p">:</span> <span class="n">process</span> <span class="k">with</span> <span class="n">updatable</span> <span class="n">components</span> <span class="s1">'mysubpackage_foo_hal_service'</span> <span class="n">exited</span> <span class="mi">4</span> <span class="n">times</span> <span class="ow">in</span> <span class="mi">4</span> <span class="n">minutes</span>
 </code></pre></div>
 <p>Para resolver, vamos novamente usar os seguintes comandos:</p>
-<div class="highlight"><pre><span></span><code>adb pull /sys/fs/selinux/policy
-adb logcat -b all -d <span class="p">|</span> audit2allow -p policy
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>pull<span class="w"> </span>/sys/fs/selinux/policy
+adb<span class="w"> </span>logcat<span class="w"> </span>-b<span class="w"> </span>all<span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>audit2allow<span class="w"> </span>-p<span class="w"> </span>policy
 </code></pre></div>
 <p>Ele retorna a seguinte mensagem:</p>
 <blockquote>
@@ -1075,16 +1082,16 @@ adb logcat -b all -d <span class="p">|</span> audit2allow -p policy
 allow hal_mysubpackage_default hwservicemanager:binder call;</p>
 </blockquote>
 <p>Ela informa que é necessário fazer a chamada do <code>hwservicemanager</code>. Para isso, adicionamos ao arquivo:</p>
-<div class="highlight"><span class="filename">hal_mysubpackage_default.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span><span class="w"></span>
-<span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default_exec</span><span class="p">,</span><span class="w"> </span><span class="n">exec_type</span><span class="p">,</span><span class="w"> </span><span class="n">vendor_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">file_type</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">hal_mysubpackage_default.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span>
+<span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default_exec</span><span class="p">,</span><span class="w"> </span><span class="n">exec_type</span><span class="p">,</span><span class="w"> </span><span class="n">vendor_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">file_type</span><span class="p">;</span>
 
-<span class="n">init_daemon_domain</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span><span class="w"></span>
+<span class="n">init_daemon_domain</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span>
 
 <span class="cp"># allow hal_mysubpackage_default hwservicemanager_prop:file read;</span>
 <span class="n">get_prop</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">hwservicemanager_prop</span><span class="p">);</span><span class="w"> </span>
 
 <span class="hll"><span class="cp"># allow hal_mysubpackage_default hwservicemanager:binder call;</span>
-</span><span class="hll"><span class="n">hwbinder_use</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="n">hwbinder_use</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span>
 </span></code></pre></div>
 <p>Rebuildando e checando o <code>dmesg</code>, temos a seguinte mensagem:</p>
 <div class="highlight"><pre><span></span><code><span class="mi">10</span><span class="o">-</span><span class="mi">02</span> <span class="mi">15</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mf">28.709</span>     <span class="mi">0</span>     <span class="mi">0</span> <span class="n">I</span> <span class="n">init</span>    <span class="p">:</span> <span class="n">starting</span> <span class="n">service</span> <span class="s1">'mysubpackage_foo_hal_service'</span><span class="o">...</span>
@@ -1098,8 +1105,8 @@ allow hal_mysubpackage_default hwservicemanager:binder call;</p>
 </code></pre></div>
 <p>Esse erro ocorre devido ao conflito de regras do <code>domain</code>, definido no arquivo <mark>hal_mysubpackage_default.te</mark>. Para obter mais informações, sugiro checar o curso.</p>
 <p>Para resolver, vamos novamente usar os seguintes comandos:</p>
-<div class="highlight"><pre><span></span><code>adb pull /sys/fs/selinux/policy
-adb logcat -b all -d <span class="p">|</span> audit2allow -p policy
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>pull<span class="w"> </span>/sys/fs/selinux/policy
+adb<span class="w"> </span>logcat<span class="w"> </span>-b<span class="w"> </span>all<span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>audit2allow<span class="w"> </span>-p<span class="w"> </span>policy
 </code></pre></div>
 <p>Ele retorna a seguinte mensagem:</p>
 <blockquote>
@@ -1107,24 +1114,24 @@ adb logcat -b all -d <span class="p">|</span> audit2allow -p policy
 allow hal_mysubpackage_default default_android_hwservice:hwservice_manager find;</p>
 </blockquote>
 <p>Para resolver isso, foi criado dentro da pasta <code>device/casa/emulator/sepolicy</code> os arquivos:</p>
-<div class="highlight"><span class="filename">hwservice.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_hwservice</span><span class="p">,</span><span class="w"> </span><span class="n">hwservice_manager_type</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">hwservice.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_hwservice</span><span class="p">,</span><span class="w"> </span><span class="n">hwservice_manager_type</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">hwservice_contexts</span><pre><span></span><code><span class="n">mypackage</span><span class="p">.</span><span class="n">mysubpackage</span><span class="p">.</span><span class="n">foo</span><span class="o">::</span><span class="n">ITest</span><span class="w">       </span><span class="n">u</span><span class="o">:</span><span class="n">object_r</span><span class="o">:</span><span class="n">hal_mysubpackage_hwservice</span><span class="o">:</span><span class="n">s0</span><span class="w"></span>
+<div class="highlight"><span class="filename">hwservice_contexts</span><pre><span></span><code><span class="n">mypackage</span><span class="p">.</span><span class="n">mysubpackage</span><span class="p">.</span><span class="n">foo</span><span class="o">::</span><span class="n">ITest</span><span class="w">       </span><span class="n">u</span><span class="o">:</span><span class="n">object_r</span><span class="o">:</span><span class="n">hal_mysubpackage_hwservice</span><span class="o">:</span><span class="n">s0</span>
 </code></pre></div>
 <p>E adicionamos as seguintes linhas ao arquivo:</p>
-<div class="highlight"><span class="filename">hal_mysubpackage_default.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span><span class="w"></span>
-<span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default_exec</span><span class="p">,</span><span class="w"> </span><span class="n">exec_type</span><span class="p">,</span><span class="w"> </span><span class="n">vendor_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">file_type</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">hal_mysubpackage_default.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span>
+<span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default_exec</span><span class="p">,</span><span class="w"> </span><span class="n">exec_type</span><span class="p">,</span><span class="w"> </span><span class="n">vendor_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">file_type</span><span class="p">;</span>
 
-<span class="n">init_daemon_domain</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span><span class="w"></span>
+<span class="n">init_daemon_domain</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span>
 
 <span class="cp"># allow hal_mysubpackage_default hwservicemanager_prop:file read;</span>
 <span class="n">get_prop</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">hwservicemanager_prop</span><span class="p">);</span><span class="w"> </span>
 
 <span class="cp"># allow hal_mysubpackage_default hwservicemanager:binder call;</span>
-<span class="n">hwbinder_use</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span><span class="w"></span>
+<span class="n">hwbinder_use</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span>
 
 <span class="hll"><span class="cp"># allow hal_mysubpackage_default default_android_hwservice:hwservice_manager find;</span>
-</span><span class="hll"><span class="n">add_hwservice</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">hal_mysubpackage_hwservice</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="n">add_hwservice</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">hal_mysubpackage_hwservice</span><span class="p">);</span>
 </span></code></pre></div>
 <p>Rebuildando e checando o <code>dmesg</code>, temos a seguinte mensagem:</p>
 <div class="highlight"><pre><span></span><code><span class="mi">10</span><span class="o">-</span><span class="mi">02</span> <span class="mi">15</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mf">27.714</span>     <span class="mi">0</span>     <span class="mi">0</span> <span class="n">I</span> <span class="n">init</span>    <span class="p">:</span> <span class="n">Parsing</span> <span class="n">file</span> <span class="o">/</span><span class="n">vendor</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">/</span><span class="n">mypackage</span><span class="o">.</span><span class="n">mysubpackage</span><span class="o">.</span><span class="n">foo</span><span class="o">@</span><span class="mf">1.0</span><span class="o">-</span><span class="n">service</span><span class="o">.</span><span class="n">rc</span><span class="o">...</span>
@@ -1137,45 +1144,45 @@ allow hal_mysubpackage_default default_android_hwservice:hwservice_manager find;
 <p>Agora nosso serviço está com todas as permissões necessárias. Observe que algumas das mensagens foram implementadas no arquivo <mark>service.cpp</mark></p>
 <h3 id="testando"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.4</span> Testando</h3>
 <p>Para criar um binário para teste, foi criado na pasta <code>device/casa/emulator/interfaces/foo/1.0/default/halTest</code> os seguintes arquivos:</p>
-<p><div class="highlight"><span class="filename">HalTest.cpp</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mypackage/mysubpackage/foo/1.0/ITest.h&gt;</span><span class="cp"></span>
+<p><div class="highlight"><span class="filename">HalTest.cpp</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mypackage/mysubpackage/foo/1.0/ITest.h&gt;</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/Status.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/LegacySupport.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utils/misc.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/HidlSupport.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/Status.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/LegacySupport.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utils/misc.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hidl/HidlSupport.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
-<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">sp</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">mypackage</span><span class="o">::</span><span class="n">mysubpackage</span><span class="o">::</span><span class="n">foo</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">ITest</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">hidl_string</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">android</span><span class="o">::</span><span class="n">sp</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">mypackage</span><span class="o">::</span><span class="n">mysubpackage</span><span class="o">::</span><span class="n">foo</span><span class="o">::</span><span class="n">V1_0</span><span class="o">::</span><span class="n">ITest</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">android</span><span class="o">::</span><span class="n">hardware</span><span class="o">::</span><span class="n">hidl_string</span><span class="p">;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"USAGE ./cpu_client &lt;conservative|powersave|performance|schedutil&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"USAGE ./cpu_client &lt;conservative|powersave|performance|schedutil&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">android</span><span class="o">::</span><span class="n">sp</span><span class="o">&lt;</span><span class="n">ITest</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cpuService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ITest</span><span class="o">::</span><span class="n">getService</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cpuService</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Failed to get cpu service</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">android</span><span class="o">::</span><span class="n">sp</span><span class="o">&lt;</span><span class="n">ITest</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cpuService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ITest</span><span class="o">::</span><span class="n">getService</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cpuService</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Failed to get cpu service</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">cpuService</span><span class="o">-&gt;</span><span class="n">getTest</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">hidl_string</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"getScalingGovernor:"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="n">cpuService</span><span class="o">-&gt;</span><span class="n">getTest</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">hidl_string</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"getScalingGovernor:"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
 
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cpuService</span><span class="o">-&gt;</span><span class="n">setTest</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"setScalingGovernor:"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cpuService</span><span class="o">-&gt;</span><span class="n">setTest</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"setScalingGovernor:"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">cpuService</span><span class="o">-&gt;</span><span class="n">getTest</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">hidl_string</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"getScalingGovernor:"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="n">cpuService</span><span class="o">-&gt;</span><span class="n">getTest</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">hidl_string</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"getScalingGovernor:"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">Android.bp</span><pre><span></span><code>cc_binary {
     relative_install_path: "hw",
@@ -1204,9 +1211,9 @@ PRODUCT_PACKAGES += \
 <p>Re-buildando o AOSP e executando os seguintes comandos:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>adb root
-adb shell
-vendor/bin/hw/subpackage_foo_tester performance
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>adb<span class="w"> </span>root
+adb<span class="w"> </span>shell
+vendor/bin/hw/subpackage_foo_tester<span class="w"> </span>performance
 </code></pre></div></td></tr></table></div>
 <blockquote>
 <p>O caminho do binário é relativo a <code>vendor=true</code> (vendor/), <code>cc_binary</code> (bin/) e <code>relative_install_path</code> (hw/). O resultado do caminho é <code>vendor/bin/hw/</code>.</p>
@@ -1246,8 +1253,8 @@ getScalingGovernor:schedutil</p>
 <span class="mi">10</span><span class="o">-</span><span class="mi">02</span> <span class="mi">21</span><span class="p">:</span><span class="mi">09</span><span class="p">:</span><span class="mf">09.858</span>   <span class="mi">370</span>   <span class="mi">370</span> <span class="n">I</span> <span class="n">mypackage</span><span class="o">.</span><span class="n">mysubpackage</span><span class="o">.</span><span class="n">foo</span><span class="o">@</span><span class="mf">1.0</span><span class="o">-</span><span class="n">service</span><span class="p">:</span> <span class="p">)</span>
 </code></pre></div>
 <p>Como é um problema do <code>audit</code>, repetimos os passos:</p>
-<div class="highlight"><pre><span></span><code>adb pull /sys/fs/selinux/policy
-adb logcat -b all -d <span class="p">|</span> audit2allow -p policy
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>pull<span class="w"> </span>/sys/fs/selinux/policy
+adb<span class="w"> </span>logcat<span class="w"> </span>-b<span class="w"> </span>all<span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>audit2allow<span class="w"> </span>-p<span class="w"> </span>policy
 </code></pre></div>
 <p>retornando a mensagem:</p>
 <blockquote>
@@ -1255,21 +1262,21 @@ adb logcat -b all -d <span class="p">|</span> audit2allow -p policy
 allow hal_mysubpackage_default sysfs_devices_system_cpu:file write;</p>
 </blockquote>
 <p>Foi preciso adicionar ao arquivo:</p>
-<div class="highlight"><span class="filename">hal_mysubpackage_default.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span><span class="w"></span>
-<span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default_exec</span><span class="p">,</span><span class="w"> </span><span class="n">exec_type</span><span class="p">,</span><span class="w"> </span><span class="n">vendor_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">file_type</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">hal_mysubpackage_default.te</span><pre><span></span><code><span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span>
+<span class="n">type</span><span class="w"> </span><span class="n">hal_mysubpackage_default_exec</span><span class="p">,</span><span class="w"> </span><span class="n">exec_type</span><span class="p">,</span><span class="w"> </span><span class="n">vendor_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">file_type</span><span class="p">;</span>
 
-<span class="n">init_daemon_domain</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span><span class="w"></span>
+<span class="n">init_daemon_domain</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span>
 
 <span class="cp"># allow hal_mysubpackage_default hwservicemanager_prop:file read;</span>
 <span class="n">get_prop</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">hwservicemanager_prop</span><span class="p">);</span><span class="w"> </span>
 
 <span class="cp"># allow hal_mysubpackage_default hwservicemanager:binder call;</span>
-<span class="n">hwbinder_use</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span><span class="w"></span>
+<span class="n">hwbinder_use</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">);</span>
 
 <span class="cp"># allow hal_mysubpackage_default default_android_hwservice:hwservice_manager find;</span>
-<span class="n">add_hwservice</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">hal_mysubpackage_hwservice</span><span class="p">);</span><span class="w"></span>
+<span class="n">add_hwservice</span><span class="p">(</span><span class="n">hal_mysubpackage_default</span><span class="p">,</span><span class="w"> </span><span class="n">hal_mysubpackage_hwservice</span><span class="p">);</span>
 
-<span class="hll"><span class="n">allow</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="w"> </span><span class="n">sysfs_devices_system_cpu</span><span class="o">:</span><span class="n">file</span><span class="w"> </span><span class="n">write</span><span class="p">;</span><span class="w"></span>
+<span class="hll"><span class="n">allow</span><span class="w"> </span><span class="n">hal_mysubpackage_default</span><span class="w"> </span><span class="n">sysfs_devices_system_cpu</span><span class="o">:</span><span class="n">file</span><span class="w"> </span><span class="n">write</span><span class="p">;</span>
 </span></code></pre></div>
 <p>Rebuildando e execuntado o binário de teste, temos a seguinte mensagem :</p>
 <blockquote>
@@ -1291,7 +1298,7 @@ getScalingGovernor:performance</p>
 <div class="md-source-file">
 <small>
     
-      Ultima atualização:
+      Última atualização:
       2022-10-04
     
   </small>
@@ -1305,34 +1312,6 @@ getScalingGovernor:performance</p>
           </a>
 </main>
 <footer class="md-footer">
-<nav aria-label="Rodapé" class="md-footer__inner md-grid">
-<a aria-label="Anterior: Implementando a AIDL" class="md-footer__link md-footer__link--prev" href="../AIDL/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Anterior
-              </span>
-              Implementando a AIDL
-            </div>
-</div>
-</a>
-<a aria-label="Próximo: Início - Beaglebone" class="md-footer__link md-footer__link--next" href="../../../Boards/Beaglebone/Inicio/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Próximo
-              </span>
-              Início - Beaglebone
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1350,8 +1329,8 @@ getScalingGovernor:performance</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de Transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de Transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Perdido", "select.version.title": "Selecione a vers\u00e3o"}}</script>
-<script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+<script src="../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
