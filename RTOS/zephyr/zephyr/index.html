@@ -5,12 +5,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../../Linguagens/Rust/Cap2/" rel="prev"/>
+<link href="../../../Linguagens/Rust/Cap3/" rel="prev"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.7" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
 <title>Zephyr + Esp32 + Blinky = ❤️ - Jão's Blog</title>
-<link href="../../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
@@ -33,13 +33,13 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#zephyr-esp32-blinky">20. 
+<a class="md-skip" href="#zephyr-esp32-blinky">21. 
           Pular para conteúdo
         </a>
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Cabeçalho" class="md-header__inner md-grid">
 <a aria-label="Jão's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jão's Blog">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"></path></svg>
@@ -506,6 +506,11 @@
         Adivinhação
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Linguagens/Rust/Cap3/">
+        Conceitos
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -552,22 +557,22 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#introducao">20.1 
+<a class="md-nav__link" href="#introducao">21.1 
     Introdução
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#instalando-dependencias">20.2 
+<a class="md-nav__link" href="#instalando-dependencias">21.2 
     Instalando dependências
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#baixando-a-toolchain">20.3 
+<a class="md-nav__link" href="#baixando-a-toolchain">21.3 
     Baixando a toolchain
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exemplo-blinky">20.4 
+<a class="md-nav__link" href="#exemplo-blinky">21.4 
     Exemplo Blinky
   </a>
 </li>
@@ -595,22 +600,22 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#introducao">20.1 
+<a class="md-nav__link" href="#introducao">21.1 
     Introdução
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#instalando-dependencias">20.2 
+<a class="md-nav__link" href="#instalando-dependencias">21.2 
     Instalando dependências
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#baixando-a-toolchain">20.3 
+<a class="md-nav__link" href="#baixando-a-toolchain">21.3 
     Baixando a toolchain
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exemplo-blinky">20.4 
+<a class="md-nav__link" href="#exemplo-blinky">21.4 
     Exemplo Blinky
   </a>
 </li>
@@ -621,7 +626,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="zephyr-esp32-blinky"><span class="enumerate-headings-plugin enumerate-heading-plugin">20.</span> Zephyr + Esp32 + Blinky = ❤️</h1>
+<h1 id="zephyr-esp32-blinky"><span class="enumerate-headings-plugin enumerate-heading-plugin">21.</span> Zephyr + Esp32 + Blinky = ❤️</h1>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/Title.jpg"><img alt="imagems" src="../images/Title.jpg" width="600"/></a>
 </p>
@@ -629,9 +634,9 @@
   Image by <a href="https://pixabay.com/users/methodshop-1460919/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3404892">methodshop</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3404892">Pixabay</a>
 </figcaption>
 </figure>
-<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">20.1</span> Introdução</h2>
+<h2 id="introducao"><span class="enumerate-headings-plugin enumerate-heading-plugin">21.1</span> Introdução</h2>
 <p>Recentemente voltei a pesquisar sobre <em>Internet of Things</em> (IoT) e durante uma conversas no trabalho fiquei sabendo do Zephyr. Por sorte, um <a href="https://youtu.be/UtLfhNw0lQg">Webnar</a> da <a href="https://www.embarcados.com.br/">Embarcados</a> aconteceu e pude me interar mais sobre essa plataforma. Só tenho uma palavra para definir: <strong>Sensacional</strong> 🤯</p>
-<h2 id="instalando-dependencias"><span class="enumerate-headings-plugin enumerate-heading-plugin">20.2</span> Instalando dependências</h2>
+<h2 id="instalando-dependencias"><span class="enumerate-headings-plugin enumerate-heading-plugin">21.2</span> Instalando dependências</h2>
 <p>Estou usando <code>Ubuntu 22.04</code>.</p>
 <div class="highlight"><pre><span></span><code>sudo apt install --no-install-recommends git cmake ninja-build gperf \
   ccache dfu-util device-tree-compiler wget \
@@ -656,7 +661,7 @@ west update
 <p>e então instalar as depêncencias restantes do python:</p>
 <div class="highlight"><pre><span></span><code>pip3 install -r /home/jao/Documents/Workspace/IoT/PASTA_DO_ZEPHYR/zephyr/scripts/requirements.txt
 </code></pre></div>
-<h2 id="baixando-a-toolchain"><span class="enumerate-headings-plugin enumerate-heading-plugin">20.3</span> Baixando a toolchain</h2>
+<h2 id="baixando-a-toolchain"><span class="enumerate-headings-plugin enumerate-heading-plugin">21.3</span> Baixando a toolchain</h2>
 <p>Como vamos utilizar o Esp32, a toolchain pode ser baixada <a href="https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-guides/tools/idf-tools.html#xtensa-esp32-elf">aqui</a>. No meu caso estou usando a plataforma <code>linux-amd64</code></p>
 <p>Após baixar a toolchain correto, extraia e adicione o caminho da pasta a variável de ambiente <code>ESPRESSIF_TOOLCHAIN_PATH</code></p>
 <div class="highlight"><pre><span></span><code>export ESPRESSIF_TOOLCHAIN_PATH=/home/jao/Documents/Workspace/IoT/xtensa-esp32-elf/xtensa-esp32-elf/
@@ -669,7 +674,7 @@ west update
 <div class="highlight"><pre><span></span><code>west espressif update
 </code></pre></div>
 <p>Após esse passo, o ambiente de configuração para o Esp32 estará finalizado.</p>
-<h2 id="exemplo-blinky"><span class="enumerate-headings-plugin enumerate-heading-plugin">20.4</span> Exemplo Blinky</h2>
+<h2 id="exemplo-blinky"><span class="enumerate-headings-plugin enumerate-heading-plugin">21.4</span> Exemplo Blinky</h2>
 <p>Na versão atual do Zephyr <code>3.0.0</code>, é necessário adicionar um módulo no <em>device driver</em> para que o led <em>built-in</em> sejá reconhecido. Para isso, é necessário criar um arquivo dentro do exemplo do Blincky do próprio Zephyr</p>
 <div class="highlight"><pre><span></span><code>touch /home/jao/Documents/Workspace/IoT/PASTA_DO_ZEPHYR/zephyr/samples/basic/blinky/esp32.overlay
 </code></pre></div>
@@ -774,8 +779,8 @@ For troubleshooting steps visit: https://docs.espressif.com/projects/esptool/en/
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
-<script src="../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+<script src="../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
