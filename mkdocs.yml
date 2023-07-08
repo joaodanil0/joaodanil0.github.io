@@ -1,14 +1,15 @@
+INHERIT: nav.yml
+
+watch:
+  - nav.yml
+
 site_name: Jão's Blog
+repo_url: https://github.com/joaodanil0?tab=repositories
 
 plugins:
-  - git-revision-date
-  - search
   - glightbox
-  - enumerate-headings:
-      toc_depth: 3
-      exclude:
-        - index.md
-        
+  - search
+
 theme:
   name: material
   language: pt-BR

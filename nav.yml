@@ -1,0 +1,50 @@
+nav:
+  - Home: index.md
+  - Android:
+    - Boards:
+      - QEMU:
+        - HAL: 
+          - HILD: android/boards/qemu/hal/hidl/index.md
+          - AIDL: android/boards/qemu/hal/aidl/index.md
+      - VIM 3: 
+        - Bootloader:
+          - U-boot:
+            - Buildando: android/boards/vim3/bootloader/u-boot.md
+            - BOOTCMD: android/boards/vim3/bootloader/Carregando.md
+        - Kernel:
+          - Drivers:
+            - BlueLed: android/boards/vim3/kernel/drivers/blueled.md
+            - Fan: android/boards/vim3/kernel/drivers/fan.md
+        - HAL:
+          - HILD: android/boards/vim3/hal/hidl/index.md
+          - AIDL: android/boards/vim3/hal/aidl/index.md          
+  - Linux:
+    - Boards:
+      - QEMU: 
+        - Bootloader: 
+          - U-boot: 
+            - Buildando: linux/boards/qemu/bootloader/U-boot_qemu.md
+          - LittleKernel:
+            - Buildando: linux/boards/qemu/bootloader/LittleKernel.md
+      - VIM 3:
+        - Bootloader:
+          - U-boot:
+            - Buildando: linux/boards/vim3/bootloader/u-boot.md
+      - BeagleBone:
+        - Bootloader:
+          - U-boot:
+            - Buildando: linux/boards/Beaglebone/Bootloader/U-boot.md
+        - Serial:
+          - FTDI: linux/boards/Beaglebone/USB Serial.md
+  - RTOS:
+    - Zephyr: 
+      - Instalação: rtos/zephyr/zephyr.md
+  - Linguagens:
+    - Rust:
+      - Capítulo 1: linguagens/Rust/Cap1.md
+      - Capítulo 2: linguagens/Rust/Cap2.md
+      - Capítulo 3: linguagens/Rust/Cap3.md
+      - Capítulo 4: linguagens/Rust/Cap4.md
+  - Outros:
+    - Documentação: outros/mkdocs/mkdocs.md
+    - Partição GPT: outros/Partições/GPT.md
