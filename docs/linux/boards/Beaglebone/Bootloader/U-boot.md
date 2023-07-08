@@ -86,6 +86,12 @@ Se tudo ocorrer bem, uma mensagem semelhante a essa deve aparecer:
 
 Mostrando que os binários `MLO` e `u-boot.img` foram criados.
 
+## Utilizando
+
+Com as imagens geradas, precisamos copiá-las para o cartão SD. Para isso, devemos criar, no cartão SD, uma partição `fat 16` que irá abrigar o `MLO`, `u-boot.img` e também a imagem do kernel (200 MB são suficientes). É necessário também marcar a flag `boot` depois da criação da partição, para que a placa carregue o bootloader.
+
+Por fim, é só colocar o cartão SD na beaglebone, segurar o botão `S2` e ligar a placa.
+
 ## Estágios 
 
 A forma como a ==Texas Instruments== desenvolveu o SOC ==AM335x== ([mais detalhes](https://youtu.be/DV5S_ZSdK0s?t=1357)), se faz necessário que o processo de *boot* da placa precise de 3 estágios
