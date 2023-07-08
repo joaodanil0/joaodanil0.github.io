@@ -1187,6 +1187,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#utilizando" class="md-nav__link">
+    Utilizando
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#estagios" class="md-nav__link">
     Estágios
   </a>
@@ -1637,6 +1644,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#utilizando" class="md-nav__link">
+    Utilizando
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#estagios" class="md-nav__link">
     Estágios
   </a>
@@ -1756,6 +1770,9 @@
 <span class="w">  </span>COPY<span class="w">    </span>u-boot.bin
 </code></pre></div>
 <p>Mostrando que os binários <code>MLO</code> e <code>u-boot.img</code> foram criados.</p>
+<h2 id="utilizando">Utilizando</h2>
+<p>Com as imagens geradas, precisamos copiá-las para o cartão SD. Para isso, devemos criar, no cartão SD, uma partição <code>fat 16</code> que irá abrigar o <code>MLO</code>, <code>u-boot.img</code> e também a imagem do kernel (200 MB são suficientes). É necessário também marcar a flag <code>boot</code> depois da criação da partição, para que a placa carregue o bootloader.</p>
+<p>Por fim, é só colocar o cartão SD na beaglebone, segurar o botão <code>S2</code> e ligar a placa.</p>
 <h2 id="estagios">Estágios</h2>
 <p>A forma como a <mark>Texas Instruments</mark> desenvolveu o SOC <mark>AM335x</mark> (<a href="https://youtu.be/DV5S_ZSdK0s?t=1357">mais detalhes</a>), se faz necessário que o processo de <em>boot</em> da placa precise de 3 estágios</p>
 <ol>
