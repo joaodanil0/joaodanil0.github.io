@@ -1,0 +1,2195 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../linguagens/Rust/Cap4/">
+      
+      
+        <link rel="next" href="../../Parti%C3%A7%C3%B5es/GPT/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>Documentação - Jão's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentacao-com-mkdocs" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Jão&#39;s Blog" class="md-header__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jão's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documentação
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/joaodanil0?tab=repositories" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Jão&#39;s Blog" class="md-nav__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"/></svg>
+
+    </a>
+    Jão's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/joaodanil0?tab=repositories" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Boards
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Boards
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+          QEMU
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          QEMU
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_1_1" id="__nav_2_1_1_1_label" tabindex="0">
+          HAL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          HAL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android/boards/qemu/hal/hidl/" class="md-nav__link">
+        HILD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android/boards/qemu/hal/aidl/" class="md-nav__link">
+        AIDL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+          VIM 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          VIM 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2_1" id="__nav_2_1_2_1_label" tabindex="0">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2_1_1" id="__nav_2_1_2_1_1_label" tabindex="0">
+          U-boot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_1_2_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          U-boot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android/boards/vim3/bootloader/u-boot/" class="md-nav__link">
+        Buildando
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android/boards/vim3/bootloader/Carregando/" class="md-nav__link">
+        BOOTCMD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2_2" id="__nav_2_1_2_2_label" tabindex="0">
+          Kernel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Kernel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2_2_1" id="__nav_2_1_2_2_1_label" tabindex="0">
+          Drivers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_1_2_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Drivers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android/boards/vim3/kernel/drivers/blueled/" class="md-nav__link">
+        BlueLed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android/boards/vim3/kernel/drivers/fan/" class="md-nav__link">
+        Fan
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2_3" id="__nav_2_1_2_3_label" tabindex="0">
+          HAL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          HAL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android/boards/vim3/hal/hidl/" class="md-nav__link">
+        HILD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android/boards/vim3/hal/aidl/" class="md-nav__link">
+        AIDL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Boards
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Boards
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          QEMU
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          QEMU
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1_1" id="__nav_3_1_1_1_label" tabindex="0">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1_1_1" id="__nav_3_1_1_1_1_label" tabindex="0">
+          U-boot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_1_1_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          U-boot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/boards/qemu/bootloader/U-boot_qemu/" class="md-nav__link">
+        Buildando
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1_1_2" id="__nav_3_1_1_1_2_label" tabindex="0">
+          LittleKernel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_1_1_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          LittleKernel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/boards/qemu/bootloader/LittleKernel/" class="md-nav__link">
+        Buildando
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+          VIM 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          VIM 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2_1" id="__nav_3_1_2_1_label" tabindex="0">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2_1_1" id="__nav_3_1_2_1_1_label" tabindex="0">
+          U-boot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_1_2_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          U-boot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/boards/vim3/bootloader/u-boot/" class="md-nav__link">
+        Buildando
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+          BeagleBone
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          BeagleBone
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_3_1" id="__nav_3_1_3_1_label" tabindex="0">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_3_1_1" id="__nav_3_1_3_1_1_label" tabindex="0">
+          U-boot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_1_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          U-boot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/boards/Beaglebone/Bootloader/U-boot/" class="md-nav__link">
+        Buildando
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_3_2" id="__nav_3_1_3_2_label" tabindex="0">
+          Serial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Serial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/boards/Beaglebone/USB%20Serial/" class="md-nav__link">
+        FTDI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          RTOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          RTOS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          Zephyr
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Zephyr
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rtos/zephyr/zephyr/" class="md-nav__link">
+        Instalação
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Linguagens
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Linguagens
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linguagens/Rust/Cap1/" class="md-nav__link">
+        Capítulo 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linguagens/Rust/Cap2/" class="md-nav__link">
+        Capítulo 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linguagens/Rust/Cap3/" class="md-nav__link">
+        Capítulo 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linguagens/Rust/Cap4/" class="md-nav__link">
+        Capítulo 4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Outros
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Outros
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Documentação
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Documentação
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown-basico" class="md-nav__link">
+    Markdown Básico
+  </a>
+  
+    <nav class="md-nav" aria-label="Markdown Básico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#titulo-h1" class="md-nav__link">
+    Título (H1)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitulo-h2" class="md-nav__link">
+    Subtitulo (H2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsubtitulo-h3" class="md-nav__link">
+    Subsubtitulo (H3)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negrito" class="md-nav__link">
+    Negrito
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#italico" class="md-nav__link">
+    Itálico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#citacao" class="md-nav__link">
+    Citação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lista-ordenada" class="md-nav__link">
+    Lista Ordenada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lista-nao-ordenada" class="md-nav__link">
+    Lista Não Ordenada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linha-de-codigo" class="md-nav__link">
+    Linha de Código
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link" class="md-nav__link">
+    Link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabela" class="md-nav__link">
+    Tabela
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown-estendido" class="md-nav__link">
+    Markdown Estendido
+  </a>
+  
+    <nav class="md-nav" aria-label="Markdown Estendido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lista-de-tarefas" class="md-nav__link">
+    Lista de Tarefas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emoji" class="md-nav__link">
+    Emoji
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tachado" class="md-nav__link">
+    Tachado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realcado" class="md-nav__link">
+    Realçado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#super-fences" class="md-nav__link">
+    Super Fences
+  </a>
+  
+    <nav class="md-nav" aria-label="Super Fences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bloco-de-codigo" class="md-nav__link">
+    Bloco de código
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formulas" class="md-nav__link">
+    Fórmulas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-fences" class="md-nav__link">
+    Custom Fences
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Parti%C3%A7%C3%B5es/GPT/" class="md-nav__link">
+        Partição GPT
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown-basico" class="md-nav__link">
+    Markdown Básico
+  </a>
+  
+    <nav class="md-nav" aria-label="Markdown Básico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#titulo-h1" class="md-nav__link">
+    Título (H1)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitulo-h2" class="md-nav__link">
+    Subtitulo (H2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsubtitulo-h3" class="md-nav__link">
+    Subsubtitulo (H3)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negrito" class="md-nav__link">
+    Negrito
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#italico" class="md-nav__link">
+    Itálico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#citacao" class="md-nav__link">
+    Citação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lista-ordenada" class="md-nav__link">
+    Lista Ordenada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lista-nao-ordenada" class="md-nav__link">
+    Lista Não Ordenada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linha-de-codigo" class="md-nav__link">
+    Linha de Código
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link" class="md-nav__link">
+    Link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabela" class="md-nav__link">
+    Tabela
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown-estendido" class="md-nav__link">
+    Markdown Estendido
+  </a>
+  
+    <nav class="md-nav" aria-label="Markdown Estendido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lista-de-tarefas" class="md-nav__link">
+    Lista de Tarefas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emoji" class="md-nav__link">
+    Emoji
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tachado" class="md-nav__link">
+    Tachado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realcado" class="md-nav__link">
+    Realçado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#super-fences" class="md-nav__link">
+    Super Fences
+  </a>
+  
+    <nav class="md-nav" aria-label="Super Fences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bloco-de-codigo" class="md-nav__link">
+    Bloco de código
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formulas" class="md-nav__link">
+    Fórmulas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-fences" class="md-nav__link">
+    Custom Fences
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="documentacao-com-mkdocs">Documentação com MKDOCS</h1>
+<figure>
+<p><a class="glightbox" href="../images/mkdocs.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="imagems" src="../images/mkdocs.jpg" width="600" /></a>
+  </p>
+<figcaption>
+  Image by <a href="https://pixabay.com/users/wikiimages-1897/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">WikiImages</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">Pixabay</a>
+  </figcaption>
+</figure>
+<h2 id="introducao">Introdução</h2>
+<blockquote>
+<p>Essa postagem foi inspirado na <a href="https://youtu.be/GW6nAJ1NHUQ">live de python #189</a>. Se quiser mais informações sobre MKDocs da uma olhada no vídeo e deixa o like. <img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f44d.png" title=":thumbsup:" /></p>
+</blockquote>
+<p>O <a href="https://www.mkdocs.org/">MKDocs</a> é uma biblioteca focada em documentação, desenvolvida em python. Ela possui várias funcionalidades e algumas delas serão mostradas abaixo.</p>
+<p>Para instalar:</p>
+<div class="highlight"><pre><span></span><code>pip install mkdocs
+</code></pre></div>
+<p>Após a instalação basta digitar:</p>
+<div class="highlight"><pre><span></span><code>mkdocs new TESTE
+</code></pre></div>
+<p>Os arquivos necessários para iniciar a documentação serão criados.</p>
+<h2 id="markdown-basico">Markdown Básico</h2>
+<p>Comandos disponíveis por padrão na biblioteca.</p>
+<h3 id="titulo-h1">Título (H1)</h3>
+<div class="highlight"><pre><span></span><code># Exemplo
+</code></pre></div>
+<h3 id="subtitulo-h2">Subtitulo (H2)</h3>
+<div class="highlight"><pre><span></span><code>## Exemplo
+</code></pre></div>
+<h3 id="subsubtitulo-h3">Subsubtitulo (H3)</h3>
+<div class="highlight"><pre><span></span><code>### Exemplo
+</code></pre></div>
+<h3 id="negrito">Negrito</h3>
+<div class="highlight"><pre><span></span><code>**Exemplo**
+</code></pre></div>
+<blockquote>
+<p><strong>Exemplo</strong></p>
+</blockquote>
+<h3 id="italico">Itálico</h3>
+<div class="highlight"><pre><span></span><code>*Exemplo*
+</code></pre></div>
+<blockquote>
+<p><em>Exemplo</em></p>
+</blockquote>
+<h3 id="citacao">Citação</h3>
+<div class="highlight"><pre><span></span><code>&gt; Exemplo
+</code></pre></div>
+<blockquote>
+<p>Exemplo</p>
+</blockquote>
+<h3 id="lista-ordenada">Lista Ordenada</h3>
+<div class="highlight"><pre><span></span><code>1. Exemplo
+2. Exemplo
+3. Exemplo
+</code></pre></div>
+<blockquote>
+<ol>
+<li>Exemplo</li>
+<li>Exemplo</li>
+<li>Exemplo</li>
+</ol>
+</blockquote>
+<h3 id="lista-nao-ordenada">Lista Não Ordenada</h3>
+<div class="highlight"><pre><span></span><code>- Exemplo
+- Exemplo
+- Exemplo
+</code></pre></div>
+<blockquote>
+<ul>
+<li>Exemplo</li>
+<li>Exemplo</li>
+<li>Exemplo</li>
+</ul>
+</blockquote>
+<h3 id="linha-de-codigo">Linha de Código</h3>
+<div class="highlight"><pre><span></span><code>`Código`
+</code></pre></div>
+<blockquote>
+<p><code>Código</code></p>
+</blockquote>
+<h3 id="link">Link</h3>
+<div class="highlight"><pre><span></span><code>[Site do google](https://www.google.com.br)
+</code></pre></div>
+<blockquote>
+<p><a href="https://www.google.com.br">Site do google</a></p>
+</blockquote>
+<h3 id="tabela">Tabela</h3>
+<div class="highlight"><pre><span></span><code>| Nome | Idade |
+| ---- | ----- |
+| João | 28    |
+| Pedro | 34   |
+</code></pre></div>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Idade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>João</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Pedro</td>
+<td>34</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h2 id="markdown-estendido">Markdown Estendido</h2>
+<p>Para ter ainda mais funcionalidades, é necessário instalar a biblioteca <a href="https://facelessuser.github.io/pymdown-extensions/">PyMdown Extensions</a>:</p>
+<div class="highlight"><pre><span></span><code>pip install pymdown-extensions
+</code></pre></div>
+<p>Além disso, é necessário adicionar quais extensões serão usadas dentro do arquivo <code>mkdocs.yml</code>, por exemplo:</p>
+<div class="highlight"><pre><span></span><code>markdown_extensions:
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.tilde
+</code></pre></div>
+<p>Cada uma dessas extensões serão mostradas a seguir.</p>
+<h3 id="lista-de-tarefas">Lista de Tarefas</h3>
+<p><code>pymdownx.tasklist</code></p>
+<div class="highlight"><pre><span></span><code>- [ ] Checar.
+- [ ] checar.
+- [X] checado.
+</code></pre></div>
+<blockquote>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Checar.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> checar.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> checado.</li>
+</ul>
+</blockquote>
+<h3 id="emoji">Emoji</h3>
+<p>Para mais emojis: <a href="https://emojipedia.org/twitter/">emojipedia</a>. Escolha um emoji e procure por <code>Shortcodes</code>.</p>
+<p><code>pymdownx.emoji</code></p>
+<div class="highlight"><pre><span></span><code>:snake: :heart: :rocket:
+</code></pre></div>
+<blockquote>
+<p><img alt="🐍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f40d.png" title=":snake:" /> <img alt="❤️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2764.png" title=":heart:" /> <img alt="🚀" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f680.png" title=":rocket:" /></p>
+</blockquote>
+<h3 id="tachado">Tachado</h3>
+<p><code>pymdownx.tilde</code>
+<div class="highlight"><pre><span></span><code>~~Exemplo~~
+</code></pre></div></p>
+<blockquote>
+<p><del>Exemplo</del></p>
+</blockquote>
+<h3 id="realcado">Realçado</h3>
+<p><code>pymdownx.mark</code></p>
+<div class="highlight"><pre><span></span><code>==Exemplo==
+</code></pre></div>
+<blockquote>
+<p><mark>Exemplo</mark></p>
+</blockquote>
+<h2 id="super-fences">Super Fences</h2>
+<p>Dentro do <code>pymdown-extensions</code> existe uma funcionalidade que merece um tópico a parte, chamado de  <code>superfences</code>. Com ele, o MKDocs fica ainda mais poderoso.</p>
+<p>É necessário informar para o MKDocs que o super fences será utilizado, adicionando as linhas dentro do <code>mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code>markdown_extensions:
+  # ...
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
+</code></pre></div>
+<h3 id="bloco-de-codigo">Bloco de código</h3>
+<p><code>pymdownx.superfences</code></p>
+<div class="highlight"><pre><span></span><code>    ```{.py3 linenums=&quot;44&quot; title=&quot;teste.py&quot; hl_lines=&quot;1 3&quot;}
+    def xpto():
+        &quot;&quot;&quot;Docstring&quot;&quot;&quot;
+        return True
+    ```
+</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">teste.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">xpto</span><span class="p">():</span>
+</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Docstring&quot;&quot;&quot;</span>
+<span class="hll">    <span class="k">return</span> <span class="kc">True</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="formulas">Fórmulas</h3>
+<p><code>pymdownx.arithmatex</code></p>
+<div class="highlight"><pre><span></span><code>$$ \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}} $$
+</code></pre></div>
+<blockquote>
+<div class="arithmatex">\[ \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}} \]</div>
+</blockquote>
+<div class="highlight"><pre><span></span><code>The homomorphism $f$ is injective if and only if its kernel is only the 
+singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such 
+that $f(a)=f(b)$.
+</code></pre></div>
+<blockquote>
+<p>The homomorphism <span class="arithmatex">\(f\)</span> is injective if and only if its kernel is only the 
+singleton set <span class="arithmatex">\(e_G\)</span>, because otherwise <span class="arithmatex">\(\exists a,b\in G\)</span> with <span class="arithmatex">\(a\neq b\)</span> such 
+that <span class="arithmatex">\(f(a)=f(b)\)</span>.</p>
+</blockquote>
+<h3 id="custom-fences">Custom Fences</h3>
+<p>É possível incorporar outras bibliotecas dentro do MKDocs, por exemplo a <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> que é uma biblioteca para gerar diagramas e gráficos. Para isso, é necessário adicionar no <code>mkdocs.yml</code></p>
+<div class="highlight"><pre><span></span><code>  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>    ```mermaid
+    classDiagram
+        Pessoa &lt;|-- Eduardo
+        class Pessoa{
+            +String nome
+            +metodo(self):bool
+        }
+    ```
+</code></pre></div>
+<div class="mermaid">classDiagram
+    Pessoa &lt;|-- Jao
+    class Pessoa{
+        +String nome
+        +metodo(self):bool
+    }</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Voltar para o topo
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

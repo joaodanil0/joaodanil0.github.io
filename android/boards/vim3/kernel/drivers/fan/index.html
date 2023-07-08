@@ -1,0 +1,1868 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../blueled/">
+      
+      
+        <link rel="next" href="../../../hal/hidl/">
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>Fan - Jão's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#habilitando-a-fan" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../../../../.." title="Jão&#39;s Blog" class="md-header__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jão's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/joaodanil0?tab=repositories" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Jão&#39;s Blog" class="md-nav__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"/></svg>
+
+    </a>
+    Jão's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/joaodanil0?tab=repositories" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Boards
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Boards
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+          QEMU
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          QEMU
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_1_1" id="__nav_2_1_1_1_label" tabindex="0">
+          HAL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          HAL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../qemu/hal/hidl/" class="md-nav__link">
+        HILD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../qemu/hal/aidl/" class="md-nav__link">
+        AIDL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+          VIM 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          VIM 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2_1" id="__nav_2_1_2_1_label" tabindex="0">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2_1_1" id="__nav_2_1_2_1_1_label" tabindex="0">
+          U-boot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_1_2_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          U-boot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bootloader/u-boot/" class="md-nav__link">
+        Buildando
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bootloader/Carregando/" class="md-nav__link">
+        BOOTCMD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2_2" id="__nav_2_1_2_2_label" tabindex="0">
+          Kernel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_1_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Kernel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_2_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2_2_1" id="__nav_2_1_2_2_1_label" tabindex="0">
+          Drivers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_1_2_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_1_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Drivers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blueled/" class="md-nav__link">
+        BlueLed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fan
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fan
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacoes-uteis" class="md-nav__link">
+    Informações Úteis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-porta-da-fan" class="md-nav__link">
+    A porta da FAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-endereco-do-stm8s" class="md-nav__link">
+    O Endereço do STM8S
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testando-no-kernel-android" class="md-nav__link">
+    Testando no Kernel Android
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    Conclusão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2_3" id="__nav_2_1_2_3_label" tabindex="0">
+          HAL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          HAL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hal/hidl/" class="md-nav__link">
+        HILD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hal/aidl/" class="md-nav__link">
+        AIDL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Boards
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Boards
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          QEMU
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          QEMU
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1_1" id="__nav_3_1_1_1_label" tabindex="0">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1_1_1" id="__nav_3_1_1_1_1_label" tabindex="0">
+          U-boot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_1_1_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          U-boot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../linux/boards/qemu/bootloader/U-boot_qemu/" class="md-nav__link">
+        Buildando
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1_1_2" id="__nav_3_1_1_1_2_label" tabindex="0">
+          LittleKernel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_1_1_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          LittleKernel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../linux/boards/qemu/bootloader/LittleKernel/" class="md-nav__link">
+        Buildando
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+          VIM 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          VIM 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2_1" id="__nav_3_1_2_1_label" tabindex="0">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2_1_1" id="__nav_3_1_2_1_1_label" tabindex="0">
+          U-boot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_1_2_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          U-boot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../linux/boards/vim3/bootloader/u-boot/" class="md-nav__link">
+        Buildando
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+          BeagleBone
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          BeagleBone
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_3_1" id="__nav_3_1_3_1_label" tabindex="0">
+          Bootloader
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Bootloader
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_3_1_1" id="__nav_3_1_3_1_1_label" tabindex="0">
+          U-boot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_1_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          U-boot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../linux/boards/Beaglebone/Bootloader/U-boot/" class="md-nav__link">
+        Buildando
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_3_2" id="__nav_3_1_3_2_label" tabindex="0">
+          Serial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Serial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../linux/boards/Beaglebone/USB%20Serial/" class="md-nav__link">
+        FTDI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          RTOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          RTOS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          Zephyr
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Zephyr
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../rtos/zephyr/zephyr/" class="md-nav__link">
+        Instalação
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Linguagens
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Linguagens
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../linguagens/Rust/Cap1/" class="md-nav__link">
+        Capítulo 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../linguagens/Rust/Cap2/" class="md-nav__link">
+        Capítulo 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../linguagens/Rust/Cap3/" class="md-nav__link">
+        Capítulo 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../linguagens/Rust/Cap4/" class="md-nav__link">
+        Capítulo 4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Outros
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Outros
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../outros/mkdocs/mkdocs/" class="md-nav__link">
+        Documentação
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../outros/Parti%C3%A7%C3%B5es/GPT/" class="md-nav__link">
+        Partição GPT
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacoes-uteis" class="md-nav__link">
+    Informações Úteis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-porta-da-fan" class="md-nav__link">
+    A porta da FAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-endereco-do-stm8s" class="md-nav__link">
+    O Endereço do STM8S
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testando-no-kernel-android" class="md-nav__link">
+    Testando no Kernel Android
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    Conclusão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="habilitando-a-fan">Habilitando a FAN</h1>
+<figure>
+<p><a class="glightbox" href="../images/ventilator-gb77d84319_640.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="imagems" src="../images/ventilator-gb77d84319_640.png" width="600" /></a>
+  </p>
+<figcaption>
+  Image by <a href="https://pixabay.com/users/clker-free-vector-images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=304929">Clker-Free-Vector-Images</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=304929">Pixabay</a>
+  </figcaption>
+</figure>
+<h2 id="introducao">Introdução</h2>
+<p>A <a href="https://www.khadas.com/vim3">Khadas VIM3</a> possui alguns acessórios, dentre eles a <a href="https://www.khadas.com/product-page/3705-cooling-fan">ventoinha</a>. Não tenho certeza se ela já vem habilitada com o sistema que vem por padrão na placa (<em>Android Pie (9)</em>), mas na versão do <a href="https://github.com/khadas/khadas-linux-kernel"><em>kernel Linux</em></a> que eles mantém, a ventoinha já está adicionada. </p>
+<p>Infelizmente na versão do <a href="https://android.googlesource.com/kernel/hikey-linaro/+/refs/heads/android-amlogic-bmeson-5.4"><em>kernel Linux Android</em></a> que estou utilizando nesse momento, a ventoinha ainda não foi adicionada. Dessa forma, nesse <em>post</em> vou descrever os passos que segui para conseguir utilizar a mesma.</p>
+<h2 id="informacoes-uteis">Informações Úteis</h2>
+<ul>
+<li>Versão do AOSP: <code>android-12.0.0_r4</code></li>
+<li>Versão do Kernel Android: <code>android-amlogic-bmeson-5.4</code></li>
+<li>Distro de Compilação: <code>Linux Mint 21</code></li>
+<li>Versão do Kernel da distro: <code>5.15.0-56-generic</code></li>
+</ul>
+<h2 id="a-porta-da-fan">A porta da FAN</h2>
+<p>O conector da FAN está no número <code>6</code> da imagem abaixo (<a href="https://docs.khadas.com/products/sbc/vim3/hardware/interfaces">Fonte</a>):</p>
+<figure>
+<p><a class="glightbox" href="../images/vim3_top_view.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="imagems" src="../images/vim3_top_view.png" width="600" /></a>
+  </p>
+<figcaption>
+  Vista de cima da VIM3 
+  </figcaption>
+</figure>
+<p>Agora é preciso saber onde estas portas estão conectadas internamente. Para isso, é necessário buscar no esquemático da placa, que pode ser encontrado nesse <a href="https://dl.khadas.com/products/vim3/schematic/">link</a>. Procurando por <code>FAN</code>, podemos encontrar a porta mencionada anteriormente no esquemático.</p>
+<figure>
+<p><a class="glightbox" href="../images/connector_fan_schem.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="imagems" src="../images/connector_fan_schem.png" width="600" /></a>
+  </p>
+<figcaption>
+  Esquemático do conector da FAN
+  </figcaption>
+</figure>
+<p>Com isso, é possível observar que existem os seguintes sinais: <code>VCC</code>, <code>GND</code> e <code>FAN_PWM</code>. Dessa forma, o pino de controle da ventoinha é o <code>FAN_PWM</code>, é preciso saber de onde este sinal está vindo. Para isso, basta buscar no esquemático por <code>FAN_PWM</code> e o componente abaixo será encontrado.</p>
+<figure>
+<p><a class="glightbox" href="../images/stm8s.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="imagems" src="../images/stm8s.png" width="600" /></a>
+  </p>
+<figcaption>
+  Fonte do sinal FAN_PWM
+  </figcaption>
+</figure>
+<p>O <a href="https://www.st.com/en/microcontrollers-microprocessors/stm8s-series.html">STM8S</a> é um microcontrolador de 8 bits, ele é responsável por fazer o controle da ventoinha (pino 17). Ainda no esquemático, é possível observar que esse microcontrolador é controlado por <code>i2c</code> (pinos 8 e 9) sendo estes do próprio <code>SOC</code>. O esquemático não fornece o endereço, para controlar esse microcontrolador, ou seja, não temos como ter acesso a esse componente.</p>
+<h2 id="o-endereco-do-stm8s">O Endereço do STM8S</h2>
+<p>Como a FAN está adicionado ao <em>Kernel Linux</em> mantido pela Khadas, então a informação do endereço do microcontrolador está em algum lugar do código (<mark>mas onde ?</mark>). Ainda observando as portas do STM8S no esquemático, é possível perceber algumas menções de <code>MCU</code> (sigla para <em>MicroController Unit</em>). A partir disso, é muito provável que qualquer endereço de <code>i2c</code> esteja em algum <em>Device Tree Source</em> (DTS) dentro do <em>Kernel Linux</em> da <em>Khadas</em>. Os DTS da <code>VIM3</code> estão em <code>arch/arm64/boot/dts/amlogic/</code> e nesse caminho busquei por <code>MCU</code>  e retornaram os seguintes arquivos: </p>
+<div class="highlight"><pre><span></span><code>╭─<span class="w"> </span>~/Doc/b/V/2/linux-vim3/a/arm6/b/d/amlogic<span class="w"> </span>on<span class="w"> </span>khadas-vim3-p-64bit<span class="w"> </span>
+╰─❯<span class="w"> </span>grep<span class="w"> </span>-r<span class="w"> </span>mcu<span class="w">                                                              </span>─╯
+tm2_t962x3_t312.dts:<span class="w">            </span>/*mcu<span class="w"> </span>irq<span class="w"> </span>pin*/
+tm2_t962x3_t312.dts:<span class="w">            </span><span class="nv">mcu_irq_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;<span class="p">&amp;</span>gpio<span class="w"> </span>GPIOH_9<span class="w"> </span>GPIO_ACTIVE_HIGH&gt;<span class="p">;</span>
+kvim3.dts:<span class="w">       </span>khadas-mcu<span class="w"> </span><span class="o">{</span>
+kvim3.dts:<span class="w">               </span><span class="nv">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;khadas-mcu&quot;</span><span class="p">;</span>
+axg_s400_v03sbr.dts:<span class="w">    </span>mcu6350:<span class="w"> </span>mcu6350@40<span class="w"> </span><span class="o">{</span>
+axg_s400_v03gva_sbr.dts:<span class="w">    </span>mcu6350:<span class="w"> </span>mcu6350@40<span class="w"> </span><span class="o">{</span>
+kvim3.dts11:<span class="w">       </span>khadas-mcu<span class="w"> </span><span class="o">{</span>
+kvim3.dts11:<span class="w">               </span><span class="nv">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;khadas-mcu&quot;</span><span class="p">;</span>
+kvim3.dtsbak:<span class="w">       </span>khadas-mcu<span class="w"> </span><span class="o">{</span>
+kvim3.dtsbak:<span class="w">               </span><span class="nv">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;khadas-mcu&quot;</span><span class="p">;</span>
+kvim3.dtspdm:<span class="w">       </span>khadas-mcu<span class="w"> </span><span class="o">{</span>
+kvim3.dtspdm:<span class="w">               </span><span class="nv">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;khadas-mcu&quot;</span><span class="p">;</span>
+kvim3.dts_dai:<span class="w">       </span>khadas-mcu<span class="w"> </span><span class="o">{</span>
+kvim3.dts_dai:<span class="w">               </span><span class="nv">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;khadas-mcu&quot;</span><span class="p">;</span>
+kvim3l.dts:<span class="w"> </span>khadas-mcu<span class="w"> </span><span class="o">{</span>
+kvim3l.dts:<span class="w">     </span><span class="nv">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;khadas-mcu&quot;</span><span class="p">;</span>
+</code></pre></div>
+<blockquote>
+<p>A branch que eu utilizei foi a <em>khadas-vim3-p-64bit</em></p>
+</blockquote>
+<p>O arquivo <code>kvim3.dts</code> pareceu promissor, checando a linha retornada anteriormente:</p>
+<p><div class="highlight"><span class="filename">kvim3.dts</span><pre><span></span><code><span class="o">&amp;</span><span class="na">i2c_AO</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;okay&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">pinctrl-names</span><span class="o">=</span><span class="s">&quot;default&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">pinctrl-0</span><span class="o">=&lt;&amp;</span><span class="na">ao_i2c_master_pins1</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">clock-frequency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">100000</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="cm">/* default 100k */</span>
+
+<span class="w">  </span><span class="nf">khadas-mcu</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;khadas-mcu&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x18</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">50</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">60</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">65</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">70</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">hwver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;VIM3.V11&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div>
+Um <em>node</em> chamado <code>khadas-mcu</code> dentro do <em>node</em> <code>i2c_AO</code> (o mesmo que controla o STM8S). Ainda é possível observar que o endereço utilizado é o <mark>0x18</mark> (<code>reg = &lt;0x18&gt;;</code>). Agora resta testar.</p>
+<h2 id="testando-no-kernel-android">Testando no Kernel Android</h2>
+<p>Para testar, adicionei o seguinte conteúdo no final do arquivo:</p>
+<div class="highlight"><span class="filename">arch/arm64/boot/dts/amlogic/meson-g12b-a311d-khadas-vim3.dts</span><pre><span></span><code><span class="p">...</span>
+
+<span class="o">&amp;</span><span class="na">i2c_AO</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">khadas</span><span class="o">-</span><span class="na">mcu</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;khadas-mcu&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x18</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">50</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">60</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">65</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">fan</span><span class="p">,</span><span class="n">trig_temp_level3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">70</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">hwver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;VIM3.V11&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Dessa forma, é possível ter acesso ao componente que tenha o endereço <code>0x18</code> (ainda não é certeza que seja o <code>STM8S</code>). Buildando o Kernel com essas alterações e adicionando ao AOSP, so resta flashar o <code>boot.img</code> e checar se o endereço <code>0x18</code> está disponível. Para isso, é possível utilizar o comando <code>i2cdetect</code>, por meio do <code>adb shell</code>. O retorno do comando foi o seguinte:</p>
+<p><div class="highlight"><pre><span></span><code>╰─❯<span class="w"> </span>adb<span class="w"> </span>shell
+jaoboard:/<span class="w"> </span><span class="c1"># i2cdetect -y 0                                                    </span>
+<span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">5</span><span class="w">  </span><span class="m">6</span><span class="w">  </span><span class="m">7</span><span class="w">  </span><span class="m">8</span><span class="w">  </span><span class="m">9</span><span class="w">  </span>a<span class="w">  </span>b<span class="w">  </span>c<span class="w">  </span>d<span class="w">  </span>e<span class="w">  </span>f
+<span class="m">00</span>:<span class="w">          </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>0e<span class="w"> </span>--
+<span class="m">10</span>:<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span><span class="m">18</span><span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
+<span class="m">20</span>:<span class="w"> </span>UU<span class="w"> </span>--<span class="w"> </span><span class="m">22</span><span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
+<span class="m">30</span>:<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
+<span class="m">40</span>:<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
+<span class="m">50</span>:<span class="w"> </span>--<span class="w"> </span><span class="m">51</span><span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
+<span class="m">60</span>:<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--
+<span class="m">70</span>:<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>--<span class="w">       </span>
+</code></pre></div>
+Tudo caminhando bem, endereço <code>0x18</code> habilitado. Entretanto, existe um problema, mesmo que o endereço seja o do <code>STM8S</code>, ele é apenas uma interface para controlar a FAN. Dessa forma, existe um <em>firmware</em> gravado nele (na qual não temos acesso) que dado uma entrada ele executa uma saída.</p>
+<p>Checando a escassa documentação da placa, encontrei o seguinte pdf <a href="https://dl.khadas.com/products/vim3/mcu/vim3_mcu_reg_en.pdf">vim3_mcu_reg_en</a> que não faz nenhuma menção ao <code>STM8S</code>, mas possui a seguinte linha:</p>
+<table>
+<thead>
+<tr>
+<th>Address</th>
+<th>Register Name</th>
+<th>Byte</th>
+<th>R/W</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x88</td>
+<td>CMD_FAN_STATUS_CTRL</td>
+<td>0</td>
+<td>W</td>
+<td>0：Disable Fan<br>1：Fan Speed Level 1<br>2：Fan Speed Level 2<br>3：Fan Speed Level 3</td>
+</tr>
+</tbody>
+</table>
+<p>Fiz o seguinte teste no shell do Android:</p>
+<div class="highlight"><pre><span></span><code>jaoboard:/<span class="w"> </span><span class="c1"># i2cset 0 0x18 0x88 1 w                                            </span>
+Write<span class="w"> </span>register<span class="w"> </span>0x88<span class="w"> </span>from<span class="w"> </span>chip<span class="w"> </span>0x18<span class="w"> </span>on<span class="w"> </span>bus<span class="w"> </span><span class="m">0</span>?<span class="w"> </span><span class="o">(</span>Y/n<span class="o">)</span>:
+</code></pre></div>
+<p>e <em>Voilà</em> a ventoinha começou a girar.</p>
+<figure>
+<p><a class="glightbox" href="../images/fan_work.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="imagems" src="../images/fan_work.gif" width="600" /></a>
+  </p>
+<figcaption>
+  Ventoinha funcionando
+  </figcaption>
+</figure>
+<h2 id="conclusao">Conclusão</h2>
+<p>Sem dúvidas, a falta de documentação para as placas em geral é um grande problema e isso dificulta o <em>Bring up</em> das mesmas. Se não tiver uma equipe interna para fazer as implementações, é praticamente impossível fazer alguma coisa funcionar. Como foi possível perceber nesse <em>post</em>, se não fosse alguém da própria khadas para gerar o DTS com o endereço, a ventoinha seria inacessível, uma vez que existe uma interface para controla-la. Mas no fim, deu tudo certo e seguimos na luta para aprender sobre embarcados :).</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Voltar para o topo
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["navigation.top"], "search": "../../../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
