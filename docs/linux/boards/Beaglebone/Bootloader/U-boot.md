@@ -53,14 +53,14 @@ No meu caso, eu utilizei o *U-boot mainline*.
 Dessa forma, para criar o `.config` usei o comando:
 
 ```{.sh}
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- am335x_evm_defconfig
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- am335x_evm_defconfig O=out/
 ```
 > OBS: para limpar o ambiente compilação, basta usar o comando `make distclean`
 
 Por fim, para gerar as imagens, utilizei o comando:
 
 ```{.sh}
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j16
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j16 O=out/
 ```
 > OBS: -j é o parâmetro que define a quantidade de núcleos de processador utilizado no processo de compilação.
 
