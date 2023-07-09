@@ -19,6 +19,7 @@ theme:
     logo: material/bird
   features:
     - navigation.top
+    - content.code.copy
   palette:
     - scheme: slate
       primary: deep purple
@@ -30,6 +31,8 @@ markdown_extensions:
   - pymdownx.emoji
   - pymdownx.mark
   - pymdownx.tilde
+  - admonition
+  - pymdownx.details
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.superfences:

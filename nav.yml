@@ -34,6 +34,7 @@ nav:
         - Bootloader:
           - U-boot:
             - Buildando: linux/boards/Beaglebone/Bootloader/U-boot.md
+            - Env.txt: linux/boards/Beaglebone/Bootloader/env.md
         - Serial:
           - FTDI: linux/boards/Beaglebone/USB Serial.md
   - RTOS:
