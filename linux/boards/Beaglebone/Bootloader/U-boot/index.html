@@ -12,7 +12,7 @@
         <link rel="prev" href="../../../vim3/bootloader/u-boot/">
       
       
-        <link rel="next" href="../../USB%20Serial/">
+        <link rel="next" href="../env/">
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
@@ -1243,6 +1243,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../env/" class="md-nav__link">
+        Env.txt
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1741,13 +1755,13 @@
 </code></pre></div>
 <p>No meu caso, eu utilizei o <em>U-boot mainline</em>.</p>
 <p>Dessa forma, para criar o <code>.config</code> usei o comando:</p>
-<div class="highlight"><pre><span></span><code>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-<span class="w"> </span>am335x_evm_defconfig
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-<span class="w"> </span>am335x_evm_defconfig<span class="w"> </span><span class="nv">O</span><span class="o">=</span>out/
 </code></pre></div>
 <blockquote>
 <p>OBS: para limpar o ambiente compilação, basta usar o comando <code>make distclean</code></p>
 </blockquote>
 <p>Por fim, para gerar as imagens, utilizei o comando:</p>
-<div class="highlight"><pre><span></span><code>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-<span class="w"> </span>-j16
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-<span class="w"> </span>-j16<span class="w"> </span><span class="nv">O</span><span class="o">=</span>out/
 </code></pre></div>
 <blockquote>
 <p>OBS: -j é o parâmetro que define a quantidade de núcleos de processador utilizado no processo de compilação.</p>
@@ -1887,7 +1901,7 @@ EOF
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.top"], "search": "../../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.top", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.220ee61c.min.js"></script>
