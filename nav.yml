@@ -32,6 +32,7 @@ nav:
     - BeagleBone:
       - Buildando: linux/boards/Beaglebone/Buildando.md
       - FTDI: linux/boards/Beaglebone/USB Serial.md
+      - BusyBox: linux/boards/Beaglebone/busybox.md
       - Bootloader:
         - U-boot:
           - Buildando: linux/boards/Beaglebone/Bootloader/U-boot.md
