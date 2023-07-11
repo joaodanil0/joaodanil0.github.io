@@ -19,24 +19,23 @@ nav:
           - HILD: android/boards/vim3/hal/hidl/index.md
           - AIDL: android/boards/vim3/hal/aidl/index.md          
   - Linux:
-    - Boards:
-      - QEMU: 
-        - Bootloader: 
-          - U-boot: 
-            - Buildando: linux/boards/qemu/bootloader/U-boot_qemu.md
-          - LittleKernel:
-            - Buildando: linux/boards/qemu/bootloader/LittleKernel.md
-      - VIM 3:
-        - Bootloader:
-          - U-boot:
-            - Buildando: linux/boards/vim3/bootloader/u-boot.md
-      - BeagleBone:
-        - Bootloader:
-          - U-boot:
-            - Buildando: linux/boards/Beaglebone/Bootloader/U-boot.md
-            - Env.txt: linux/boards/Beaglebone/Bootloader/env.md
-        - Serial:
-          - FTDI: linux/boards/Beaglebone/USB Serial.md
+    - QEMU: 
+      - Bootloader: 
+        - U-boot: 
+          - Buildando: linux/boards/qemu/bootloader/U-boot_qemu.md
+        - LittleKernel:
+          - Buildando: linux/boards/qemu/bootloader/LittleKernel.md
+    - VIM 3:
+      - Bootloader:
+        - U-boot:
+          - Buildando: linux/boards/vim3/bootloader/u-boot.md
+    - BeagleBone:
+      - Buildando: linux/boards/Beaglebone/Buildando.md
+      - FTDI: linux/boards/Beaglebone/USB Serial.md
+      - Bootloader:
+        - U-boot:
+          - Buildando: linux/boards/Beaglebone/Bootloader/U-boot.md
+          - Env.txt: linux/boards/Beaglebone/Bootloader/env.md          
   - RTOS:
     - Zephyr: 
       - Instalação: rtos/zephyr/zephyr.md
