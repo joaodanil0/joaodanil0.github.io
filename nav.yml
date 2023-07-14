@@ -1,7 +1,6 @@
 nav:
   - Home: index.md
   - Android:
-    - Boards:
       - QEMU:
         - HAL: 
           - HILD: android/boards/qemu/hal/hidl/index.md
@@ -47,5 +46,5 @@ nav:
       - Capítulo 3: linguagens/Rust/Cap3.md
       - Capítulo 4: linguagens/Rust/Cap4.md
   - Outros:
-    - Documentação: outros/mkdocs/mkdocs.md
+    # - Documentação: outros/mkdocs/mkdocs.md
     - Partição GPT: outros/Partições/GPT.md
