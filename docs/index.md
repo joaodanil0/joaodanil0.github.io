@@ -1,17 +1,34 @@
-# Dúvidas
 
-## Gerais
+A ideia do blog é reunir os aprendizados relacionados a sistemas embarcados. Com foco em bootloader, kernel e *Root Filesystem*.
 
-- Como saber qual o endereço que o SOC vai buscar, após iniciar ? (Datasheet ?)
-- Como colocar o Android em um SD card ?
+> ps: Mas com algumas coisas de Android embarcado e RTOS :)
 
-## VIM3
+Placas:
+  
+  - Beaglebone
+  - VIM3
+  - QEMU (virtual)
 
+Microcontroladores:
 
-## Raspberry
+  - Pi pico
+  - ESP32
+---
 
-- Como foi feito o port do Android ? [Git do projeto](https://github.com/lineage-rpi) [site com os arquivos compilados](https://konstakang.com/devices/rpi3/)
+This goal of this blog is to gather learnings about embedded systems, focused in:
 
+- **Bootloader**: U-boot, LittleKernel
+- **Kernel Linux**: mainline
+- **Mininal RFS**: Busybox, Dropbear
 
-## Beaglebone
+Boards used in this journey until now:
 
+  - Beaglebone
+  - VIM3
+  - QEMU (virtual)
+
+MCUs:
+  - Pi Pico
+  - ESP32
+
+This blog is written in PT-BR because I want to help to disseminate embedded system in Brazil.
