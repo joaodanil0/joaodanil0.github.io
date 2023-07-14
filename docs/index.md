@@ -15,7 +15,7 @@ Microcontroladores:
   - ESP32
 ---
 
-This goal of this blog is to gather learnings about embedded systems, focused in:
+The goal of this blog is to gather learnings about embedded systems, focused in:
 
 - **Bootloader**: U-boot, LittleKernel
 - **Kernel Linux**: mainline
