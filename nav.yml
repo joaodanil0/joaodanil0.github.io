@@ -38,6 +38,7 @@ nav:
           - Env.txt: linux/boards/Beaglebone/Bootloader/env.md   
     - Outros:
       - Servidor TFPT: linux/outros/tftp_server.md
+      - Servidor NFS: linux/outros/nfs_server.md
   - RTOS:
     - Zephyr: 
       - Instalação: rtos/zephyr/zephyr.md
