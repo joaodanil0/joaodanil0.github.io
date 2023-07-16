@@ -6,10 +6,13 @@ watch:
 site_name: Jão's Blog
 repo_url: https://github.com/joaodanil0?tab=repositories
 
-plugins:
-  - glightbox
-  - search
+# plugins:
+#   - glightbox
+#   - search
 
+extra_css:
+  - style.css
+  
 theme:
   name: material
   language: pt-BR
@@ -33,14 +36,15 @@ markdown_extensions:
   - pymdownx.tilde
   - admonition
   - pymdownx.details
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.superfences
+  # - pymdownx.arithmatex
+  #     generic: true
+#   - pymdownx.superfences:
+#       custom_fences:
+#         - name: mermaid
+#           class: mermaid
+#           format: !!python/name:pymdownx.superfences.fence_div_format
 
-extra_javascript:
-  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+# extra_javascript:
+#   - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
+#   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
