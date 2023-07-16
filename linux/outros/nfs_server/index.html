@@ -9,24 +9,24 @@
       
       
       
-        <link rel="prev" href="../../vim3/bootloader/u-boot/">
+        <link rel="prev" href="../tftp_server/">
       
       
-        <link rel="next" href="../USB%20Serial/">
+        <link rel="next" href="../../../rtos/zephyr/zephyr/">
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>Buildando - Jão's Blog</title>
+        <title>Servidor NFS - Jão's Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -42,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../style.css">
+      <link rel="stylesheet" href="../../../style.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#buildando-o-linux" class="md-skip">
+        <a href="#criando-um-servidor-nfs" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -89,7 +89,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="../../../.." title="Jão&#39;s Blog" class="md-header__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
+    <a href="../../.." title="Jão&#39;s Blog" class="md-header__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"/></svg>
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Buildando
+              Servidor NFS
             
           </span>
         </div>
@@ -199,7 +199,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Jão&#39;s Blog" class="md-nav__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
+    <a href="../../.." title="Jão&#39;s Blog" class="md-nav__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"/></svg>
@@ -230,7 +230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -326,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../android/boards/qemu/hal/hidl/" class="md-nav__link">
+      <a href="../../../android/boards/qemu/hal/hidl/" class="md-nav__link">
         HILD
       </a>
     </li>
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../android/boards/qemu/hal/aidl/" class="md-nav__link">
+      <a href="../../../android/boards/qemu/hal/aidl/" class="md-nav__link">
         AIDL
       </a>
     </li>
@@ -449,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../android/boards/vim3/bootloader/u-boot/" class="md-nav__link">
+      <a href="../../../android/boards/vim3/bootloader/u-boot/" class="md-nav__link">
         Buildando
       </a>
     </li>
@@ -463,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../android/boards/vim3/bootloader/Carregando/" class="md-nav__link">
+      <a href="../../../android/boards/vim3/bootloader/Carregando/" class="md-nav__link">
         BOOTCMD
       </a>
     </li>
@@ -545,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../android/boards/vim3/kernel/drivers/blueled/" class="md-nav__link">
+      <a href="../../../android/boards/vim3/kernel/drivers/blueled/" class="md-nav__link">
         BlueLed
       </a>
     </li>
@@ -559,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../android/boards/vim3/kernel/drivers/fan/" class="md-nav__link">
+      <a href="../../../android/boards/vim3/kernel/drivers/fan/" class="md-nav__link">
         Fan
       </a>
     </li>
@@ -614,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../android/boards/vim3/hal/hidl/" class="md-nav__link">
+      <a href="../../../android/boards/vim3/hal/hidl/" class="md-nav__link">
         HILD
       </a>
     </li>
@@ -628,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../android/boards/vim3/hal/aidl/" class="md-nav__link">
+      <a href="../../../android/boards/vim3/hal/aidl/" class="md-nav__link">
         AIDL
       </a>
     </li>
@@ -774,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qemu/bootloader/U-boot_qemu/" class="md-nav__link">
+      <a href="../../boards/qemu/bootloader/U-boot_qemu/" class="md-nav__link">
         Buildando
       </a>
     </li>
@@ -822,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qemu/bootloader/LittleKernel/" class="md-nav__link">
+      <a href="../../boards/qemu/bootloader/LittleKernel/" class="md-nav__link">
         Buildando
       </a>
     </li>
@@ -938,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vim3/bootloader/u-boot/" class="md-nav__link">
+      <a href="../../boards/vim3/bootloader/u-boot/" class="md-nav__link">
         Buildando
       </a>
     </li>
@@ -971,16 +971,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
       
       
       
@@ -989,7 +987,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           BeagleBone
@@ -1000,87 +998,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Buildando
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../boards/Beaglebone/Buildando/" class="md-nav__link">
         Buildando
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introducao" class="md-nav__link">
-    Introdução
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download" class="md-nav__link">
-    Download
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    Build
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#os-binarios" class="md-nav__link">
-    Os Binários
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
-    Conclusão
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1092,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../USB%20Serial/" class="md-nav__link">
+      <a href="../../boards/Beaglebone/USB%20Serial/" class="md-nav__link">
         FTDI
       </a>
     </li>
@@ -1106,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../busybox/" class="md-nav__link">
+      <a href="../../boards/Beaglebone/busybox/" class="md-nav__link">
         BusyBox
       </a>
     </li>
@@ -1174,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Bootloader/U-boot/" class="md-nav__link">
+      <a href="../../boards/Beaglebone/Bootloader/U-boot/" class="md-nav__link">
         Buildando
       </a>
     </li>
@@ -1188,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Bootloader/env/" class="md-nav__link">
+      <a href="../../boards/Beaglebone/Bootloader/env/" class="md-nav__link">
         Env.txt
       </a>
     </li>
@@ -1221,14 +1143,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
       
       
       
@@ -1237,7 +1161,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_4">
           <span class="md-nav__icon md-icon"></span>
           Outros
@@ -1250,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../outros/tftp_server/" class="md-nav__link">
+      <a href="../tftp_server/" class="md-nav__link">
         Servidor TFPT
       </a>
     </li>
@@ -1262,11 +1186,100 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../outros/nfs_server/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Servidor NFS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Servidor NFS
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-o-servidor" class="md-nav__link">
+    Configurando o Servidor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencias" class="md-nav__link">
+    Dependências
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquivos-de-configuracao" class="md-nav__link">
+    Arquivos de Configuração
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissoes" class="md-nav__link">
+    Permissões
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reiniciando-o-servico" class="md-nav__link">
+    Reiniciando o Serviço
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    Conclusão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1347,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rtos/zephyr/zephyr/" class="md-nav__link">
+      <a href="../../../rtos/zephyr/zephyr/" class="md-nav__link">
         Instalação
       </a>
     </li>
@@ -1430,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../linguagens/Rust/Cap1/" class="md-nav__link">
+      <a href="../../../linguagens/Rust/Cap1/" class="md-nav__link">
         Capítulo 1
       </a>
     </li>
@@ -1444,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../linguagens/Rust/Cap2/" class="md-nav__link">
+      <a href="../../../linguagens/Rust/Cap2/" class="md-nav__link">
         Capítulo 2
       </a>
     </li>
@@ -1458,7 +1471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../linguagens/Rust/Cap3/" class="md-nav__link">
+      <a href="../../../linguagens/Rust/Cap3/" class="md-nav__link">
         Capítulo 3
       </a>
     </li>
@@ -1472,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../linguagens/Rust/Cap4/" class="md-nav__link">
+      <a href="../../../linguagens/Rust/Cap4/" class="md-nav__link">
         Capítulo 4
       </a>
     </li>
@@ -1528,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../outros/mkdocs/mkdocs/" class="md-nav__link">
+      <a href="../../../outros/mkdocs/mkdocs/" class="md-nav__link">
         Documentação
       </a>
     </li>
@@ -1542,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../outros/Parti%C3%A7%C3%B5es/GPT/" class="md-nav__link">
+      <a href="../../../outros/Parti%C3%A7%C3%B5es/GPT/" class="md-nav__link">
         Partição GPT
       </a>
     </li>
@@ -1590,30 +1603,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
+  <a href="#configurando-o-servidor" class="md-nav__link">
+    Configurando o Servidor
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#download" class="md-nav__link">
-    Download
+  <a href="#dependencias" class="md-nav__link">
+    Dependências
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    Build
+  <a href="#arquivos-de-configuracao" class="md-nav__link">
+    Arquivos de Configuração
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#os-binarios" class="md-nav__link">
-    Os Binários
+  <a href="#permissoes" class="md-nav__link">
+    Permissões
   </a>
+  
+    <nav class="md-nav" aria-label="Permissões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reiniciando-o-servico" class="md-nav__link">
+    Reiniciando o Serviço
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1642,52 +1668,58 @@
   
 
 
-<h1 id="buildando-o-linux">Buildando o Linux</h1>
+<h1 id="criando-um-servidor-nfs">Criando um Servidor NFS</h1>
 <figure>
-<p><img alt="qemu" src="../images/linux.png" width="600" /> 
+<p><img alt="imagems" src="../assets/network-cable-g29244a4f1_640.jpg" width="600" />
   </p>
 <figcaption>
-    Image by <a href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=159784">OpenClipart-Vectors</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=159784">Pixabay</a>
+    Image by <a href="https://pixabay.com/users/blickpixel-52945/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=499792">Michael Schwarzenberger</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=499792">Pixabay</a>
   </figcaption>
 </figure>
 <h2 id="introducao">Introdução</h2>
-<p>Com o intuito de dar uma sequência ao post <a href="../Bootloader/env/">Habilitando o env.txt com tfpt</a>, vamos seguindo com a build do kernel Linux para a beaglebone. Atualmente tem suas peculiaridades devido sua arquitetura de 32 bits (64 bits se tornou padrão em SBCs). Muitos outros artigos podem ser encontrados sobre isso, mas sua grande maioria são antigos e de lá pra cá algumas coisas mudaram.</p>
-<h2 id="setup">Setup</h2>
-<p>Para tentar tornar os passos reproduzíveis, segue o setup que eu utilizei para a build:</p>
-<ul>
-<li>Distro: Linux Mint 21.1</li>
-<li>Kernel (<strong>host</strong>): Linux 6.3.7-060307-generic </li>
-<li>Toolchain: <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads/10-3-2021-07">gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf</a></li>
-<li>Kernel (<strong>target</strong>): Linux-mainline-6.1</li>
-</ul>
-<h2 id="download">Download</h2>
-<p>Basta utilizar o comando:</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/torvalds/linux.git -b v6.1
+<p>Uma vez que o Kernel Linux é carregado, ele busca pelo <em>Root Filesystem</em> (RFS). Ele geralmente é flashado no mmc ou cartão SD, mas existem outras formas de disponibiliza-lo. Uma delas é por meio do <em>Network Filesytem</em> (<a href="https://pt.wikipedia.org/wiki/Network_File_System">NFS</a>). Dessa forma, o RFS fica disponível via rede. Com isso, não é necessário re-flashar toda vez que alguma alteração for feita no RFS.</p>
+<h2 id="configurando-o-servidor">Configurando o Servidor</h2>
+<p>São necessários os seguintes passos.</p>
+<h2 id="dependencias">Dependências</h2>
+<p>É preciso instalar o pacote <code>nfs-kernel-server</code>, ele é responsável por levantar no servidor NFS:</p>
+<div class="highlight"><pre><span></span><code>sudo apt install nfs-kernel-server
 </code></pre></div>
-<h2 id="build">Build</h2>
-<div class="admonition warning">
-<p class="admonition-title">Aviso</p>
-<p>Não esqueça de adicionar o caminho dos binários da <em>toolchain</em> nas variáveis de ambiente. No meu caso: <br>
-export PATH=/home/joao/Documents/2.Linux/toolchains/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin:$PATH</p>
+<h2 id="arquivos-de-configuracao">Arquivos de Configuração</h2>
+<p>Devemos informar qual o caminho em que os arquivos serão compartilhados. Para isso, devemos informar no arquivo:</p>
+<div class="highlight"><pre><span></span><code>/etc/exports
+</code></pre></div>
+<p>E na última linha, devemos adicionar:</p>
+<div class="highlight"><pre><span></span><code>/home/joao/Documents/NFS 192.168.0.104(rw,sync,no_subtree_check)
+</code></pre></div>
+<blockquote>
+<p>Perceba que é passado o caminho que será compartilhado, o IP que poderá acessar esse caminho e algumas outras opções.</p>
+</blockquote>
+<h2 id="permissoes">Permissões</h2>
+<p>Se for a caso, crie o caminho que será compartilhado, por exemplo:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p /home/joao/Documents/NFS
+</code></pre></div>
+<p>Como um outro dispositivo irá acessar essa pasta (no nosso exemplo, a beaglebone), a pasta criada precisa ter permissões para isso. Primeiro, vamos configurar os usuários:</p>
+<div class="highlight"><pre><span></span><code>sudo chown nobody:nogroup /home/joao/Documents/NFS
+</code></pre></div>
+<p>Por fim, dando acesso total a pasta:</p>
+<div class="highlight"><pre><span></span><code>sudo chmod 777 /home/joao/Documents/NFS
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Cuidado</p>
+<p>Cuidado ao utilizar o comando acima. Usar o <code>777</code> é altamente desencorajado. Lembre-se que esse é um setup de testes.</p>
 </div>
-<p>O processo de build pode consistir em 3 passos básicos.</p>
-<p>Selecionando o <code>defconfig</code>:</p>
-<div class="highlight"><pre><span></span><code>make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabihf- -j16 O=out/ omap2plus_defconfig
+<h3 id="reiniciando-o-servico">Reiniciando o Serviço</h3>
+<p>Por fim, basta reiniciar o serviço para que ele carregue as novas configurações:</p>
+<div class="highlight"><pre><span></span><code>sudo exportfs -a
+sudo systemctl restart nfs-kernel-server
 </code></pre></div>
-<p>Habilitando drivers com o <code>menuconfig</code>:</p>
-<div class="highlight"><pre><span></span><code>make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabihf- -j16 O=out/ menuconfig
-</code></pre></div>
-<p>Finalmente a build em si:</p>
-<div class="highlight"><pre><span></span><code>make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabihf- -j16 O=out/
-</code></pre></div>
-<h2 id="os-binarios">Os Binários</h2>
-<p>Uma vez que o processo de build finalizar, eles estarão disponíveis dentro dos caminhos:</p>
-<p><div class="highlight"><pre><span></span><code>out/arch/arm/boot
-out/arch/arm/boot/dts
-</code></pre></div>
-Os binários de interesse são <code>out/arch/arm/boot/zImage</code> e <code>out/arch/arm/boot/dts/am335x-boneblack.dtb</code>. Basta copiá-los para dentro da pasta onde fica o arquivo <code>env.txt</code> no servidor de tftp ou na partição <code>boot</code> do cartão SD.</p>
 <h2 id="conclusao">Conclusão</h2>
-<p>Estamos buildando uma das versão mais recentes do Kernel Linux atualmente. Dando uma sobre vida maior a beaglebone, o que torna ela ainda muito útil para o aprendizado de sistemas embarcados (lembrando que ela é <em>open hardware</em>)</p>
+<p>Seguindo esses passos é possível deixar um RFS acessível via rede, o que facilita os testes que vão ocorrendo. Um ponto importante é configurar os argumentos do Kernel Linux, nesse caso:</p>
+<div class="highlight"><pre><span></span><code>boot_args=root=/dev/nfs \
+          ip=192.168.0.104 \
+          nfsroot=192.168.0.203:/home/joao/Documents/NFS,nfsvers=4 rw rootwait
+</code></pre></div>
+<p>Dessa forma, o kernel saberá qual IP utilizar e em qual IP buscar o RFS.</p>
 
 
 
@@ -1730,10 +1762,10 @@ Os binários de interesse são <code>out/arch/arm/boot/zImage</code> e <code>out
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>
