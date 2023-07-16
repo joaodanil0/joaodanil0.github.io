@@ -35,7 +35,9 @@ nav:
       - Bootloader:
         - U-boot:
           - Buildando: linux/boards/Beaglebone/Bootloader/U-boot.md
-          - Env.txt: linux/boards/Beaglebone/Bootloader/env.md          
+          - Env.txt: linux/boards/Beaglebone/Bootloader/env.md   
+    - Outros:
+      - Servidor TFPT: linux/outros/tftp_server.md
   - RTOS:
     - Zephyr: 
       - Instalação: rtos/zephyr/zephyr.md
