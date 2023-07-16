@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../../linguagens/Rust/Cap4/">
+        <link rel="prev" href="../../boards/Beaglebone/Bootloader/env/">
       
       
-        <link rel="next" href="../../Parti%C3%A7%C3%B5es/GPT/">
+        <link rel="next" href="../../../rtos/zephyr/zephyr/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>Documentação - Jão's Blog</title>
+        <title>Servidor TFPT - Jão's Blog</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#documentacao-com-mkdocs" class="md-skip">
+        <a href="#criando-um-servidor-tftp" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documentação
+              Servidor TFPT
             
           </span>
         </div>
@@ -662,14 +662,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -678,7 +680,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -772,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/qemu/bootloader/U-boot_qemu/" class="md-nav__link">
+      <a href="../../boards/qemu/bootloader/U-boot_qemu/" class="md-nav__link">
         Buildando
       </a>
     </li>
@@ -820,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/qemu/bootloader/LittleKernel/" class="md-nav__link">
+      <a href="../../boards/qemu/bootloader/LittleKernel/" class="md-nav__link">
         Buildando
       </a>
     </li>
@@ -936,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/vim3/bootloader/u-boot/" class="md-nav__link">
+      <a href="../../boards/vim3/bootloader/u-boot/" class="md-nav__link">
         Buildando
       </a>
     </li>
@@ -998,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/Beaglebone/Buildando/" class="md-nav__link">
+      <a href="../../boards/Beaglebone/Buildando/" class="md-nav__link">
         Buildando
       </a>
     </li>
@@ -1012,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/Beaglebone/USB%20Serial/" class="md-nav__link">
+      <a href="../../boards/Beaglebone/USB%20Serial/" class="md-nav__link">
         FTDI
       </a>
     </li>
@@ -1026,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/Beaglebone/busybox/" class="md-nav__link">
+      <a href="../../boards/Beaglebone/busybox/" class="md-nav__link">
         BusyBox
       </a>
     </li>
@@ -1094,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/Beaglebone/Bootloader/U-boot/" class="md-nav__link">
+      <a href="../../boards/Beaglebone/Bootloader/U-boot/" class="md-nav__link">
         Buildando
       </a>
     </li>
@@ -1108,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/Beaglebone/Bootloader/env/" class="md-nav__link">
+      <a href="../../boards/Beaglebone/Bootloader/env/" class="md-nav__link">
         Env.txt
       </a>
     </li>
@@ -1141,14 +1143,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
       
       
       
@@ -1157,7 +1161,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_4">
           <span class="md-nav__icon md-icon"></span>
           Outros
@@ -1168,11 +1172,100 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../linux/outros/tftp_server/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Servidor TFPT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Servidor TFPT
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-o-servidor" class="md-nav__link">
+    Configurando o Servidor
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando o Servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencias" class="md-nav__link">
+    Dependências
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arquivo-de-configuracao" class="md-nav__link">
+    Arquivo de Configuração
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissoes" class="md-nav__link">
+    Permissões
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reiniciando-o-servico" class="md-nav__link">
+    Reiniciando o Serviço
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    Conclusão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1405,16 +1498,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
       
@@ -1423,7 +1514,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Outros
@@ -1434,217 +1525,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Documentação
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../outros/mkdocs/mkdocs/" class="md-nav__link">
         Documentação
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introducao" class="md-nav__link">
-    Introdução
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#markdown-basico" class="md-nav__link">
-    Markdown Básico
-  </a>
-  
-    <nav class="md-nav" aria-label="Markdown Básico">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#titulo-h1" class="md-nav__link">
-    Título (H1)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subtitulo-h2" class="md-nav__link">
-    Subtitulo (H2)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subsubtitulo-h3" class="md-nav__link">
-    Subsubtitulo (H3)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#negrito" class="md-nav__link">
-    Negrito
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#italico" class="md-nav__link">
-    Itálico
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#citacao" class="md-nav__link">
-    Citação
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lista-ordenada" class="md-nav__link">
-    Lista Ordenada
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lista-nao-ordenada" class="md-nav__link">
-    Lista Não Ordenada
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linha-de-codigo" class="md-nav__link">
-    Linha de Código
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#link" class="md-nav__link">
-    Link
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tabela" class="md-nav__link">
-    Tabela
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#markdown-estendido" class="md-nav__link">
-    Markdown Estendido
-  </a>
-  
-    <nav class="md-nav" aria-label="Markdown Estendido">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lista-de-tarefas" class="md-nav__link">
-    Lista de Tarefas
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#emoji" class="md-nav__link">
-    Emoji
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tachado" class="md-nav__link">
-    Tachado
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#realcado" class="md-nav__link">
-    Realçado
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#super-fences" class="md-nav__link">
-    Super Fences
-  </a>
-  
-    <nav class="md-nav" aria-label="Super Fences">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bloco-de-codigo" class="md-nav__link">
-    Bloco de código
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#formulas" class="md-nav__link">
-    Fórmulas
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-fences" class="md-nav__link">
-    Custom Fences
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1656,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Parti%C3%A7%C3%B5es/GPT/" class="md-nav__link">
+      <a href="../../../outros/Parti%C3%A7%C3%B5es/GPT/" class="md-nav__link">
         Partição GPT
       </a>
     </li>
@@ -1704,86 +1589,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#markdown-basico" class="md-nav__link">
-    Markdown Básico
+  <a href="#configurando-o-servidor" class="md-nav__link">
+    Configurando o Servidor
   </a>
   
-    <nav class="md-nav" aria-label="Markdown Básico">
+    <nav class="md-nav" aria-label="Configurando o Servidor">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#titulo-h1" class="md-nav__link">
-    Título (H1)
+  <a href="#dependencias" class="md-nav__link">
+    Dependências
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#subtitulo-h2" class="md-nav__link">
-    Subtitulo (H2)
+  <a href="#arquivo-de-configuracao" class="md-nav__link">
+    Arquivo de Configuração
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#subsubtitulo-h3" class="md-nav__link">
-    Subsubtitulo (H3)
+  <a href="#permissoes" class="md-nav__link">
+    Permissões
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#negrito" class="md-nav__link">
-    Negrito
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#italico" class="md-nav__link">
-    Itálico
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#citacao" class="md-nav__link">
-    Citação
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lista-ordenada" class="md-nav__link">
-    Lista Ordenada
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lista-nao-ordenada" class="md-nav__link">
-    Lista Não Ordenada
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linha-de-codigo" class="md-nav__link">
-    Linha de Código
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#link" class="md-nav__link">
-    Link
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tabela" class="md-nav__link">
-    Tabela
+  <a href="#reiniciando-o-servico" class="md-nav__link">
+    Reiniciando o Serviço
   </a>
   
 </li>
@@ -1794,77 +1630,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#markdown-estendido" class="md-nav__link">
-    Markdown Estendido
+  <a href="#conclusao" class="md-nav__link">
+    Conclusão
   </a>
-  
-    <nav class="md-nav" aria-label="Markdown Estendido">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lista-de-tarefas" class="md-nav__link">
-    Lista de Tarefas
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#emoji" class="md-nav__link">
-    Emoji
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tachado" class="md-nav__link">
-    Tachado
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#realcado" class="md-nav__link">
-    Realçado
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#super-fences" class="md-nav__link">
-    Super Fences
-  </a>
-  
-    <nav class="md-nav" aria-label="Super Fences">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bloco-de-codigo" class="md-nav__link">
-    Bloco de código
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#formulas" class="md-nav__link">
-    Fórmulas
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-fences" class="md-nav__link">
-    Custom Fences
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1886,235 +1654,62 @@
   
 
 
-<h1 id="documentacao-com-mkdocs">Documentação com MKDOCS</h1>
+<h1 id="criando-um-servidor-tftp">Criando um Servidor TFTP</h1>
 <figure>
-<p><img alt="imagems" src="../images/mkdocs.jpg" width="600" />
+<p><img alt="imagems" src="../assets/cloud-computing-g7d7af6395_1280.png" width="300" />
   </p>
 <figcaption>
-  Image by <a href="https://pixabay.com/users/wikiimages-1897/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">WikiImages</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11107">Pixabay</a>
+  Image by <a href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2023902">OpenClipart-Vectors</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2023902">Pixabay</a>
   </figcaption>
 </figure>
 <h2 id="introducao">Introdução</h2>
-<blockquote>
-<p>Essa postagem foi inspirado na <a href="https://youtu.be/GW6nAJ1NHUQ">live de python #189</a>. Se quiser mais informações sobre MKDocs da uma olhada no vídeo e deixa o like. <img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f44d.png" title=":thumbsup:" /></p>
-</blockquote>
-<p>O <a href="https://www.mkdocs.org/">MKDocs</a> é uma biblioteca focada em documentação, desenvolvida em python. Ela possui várias funcionalidades e algumas delas serão mostradas abaixo.</p>
-<p>Para instalar:</p>
-<div class="highlight"><pre><span></span><code>pip install mkdocs
+<p>Com a ideia de facilitar o processo de testes do <em>bootloader</em>, Kernel Linux e do <em>Root FS</em> é possível uma rede de computadores para carregar o Kernel e o <em>Root FS</em>, ao invés de flashar no cartão SD. O primeiro passo é saber como configurar o servidor. Para isso, foi utilizado o protocolo <a href="https://pt.wikipedia.org/wiki/Trivial_File_Transfer_Protocol">TFTP</a>. Por fim, configurar o <em>bootloader</em> para buscar a imagem do Kernel Linux e o DTB no servidor, que foi mostrado no post <a href="../../boards/Beaglebone/Bootloader/env/">Habilitando o env.txt com tfpt</a></p>
+<h2 id="configurando-o-servidor">Configurando o Servidor</h2>
+<p>É necessário instalar algumas dependências e configurar alguns arquivos.</p>
+<h3 id="dependencias">Dependências</h3>
+<p>Podemos instalar os pacotes <code>xinetd</code>, <code>tftp</code> e <code>tftpd</code> com o comando:</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install xinetd tftp tftpd
 </code></pre></div>
-<p>Após a instalação basta digitar:</p>
-<div class="highlight"><pre><span></span><code>mkdocs new TESTE
+<h3 id="arquivo-de-configuracao">Arquivo de Configuração</h3>
+<p>O serviço do TFTP busca o arquivo <code>tftp</code>, para isso devemos cria-lo:</p>
+<div class="highlight"><pre><span></span><code>sudo touch /etc/xinetd.d/tftp 
 </code></pre></div>
-<p>Os arquivos necessários para iniciar a documentação serão criados.</p>
-<h2 id="markdown-basico">Markdown Básico</h2>
-<p>Comandos disponíveis por padrão na biblioteca.</p>
-<h3 id="titulo-h1">Título (H1)</h3>
-<div class="highlight"><pre><span></span><code># Exemplo
-</code></pre></div>
-<h3 id="subtitulo-h2">Subtitulo (H2)</h3>
-<div class="highlight"><pre><span></span><code>## Exemplo
-</code></pre></div>
-<h3 id="subsubtitulo-h3">Subsubtitulo (H3)</h3>
-<div class="highlight"><pre><span></span><code>### Exemplo
-</code></pre></div>
-<h3 id="negrito">Negrito</h3>
-<div class="highlight"><pre><span></span><code>**Exemplo**
-</code></pre></div>
-<blockquote>
-<p><strong>Exemplo</strong></p>
-</blockquote>
-<h3 id="italico">Itálico</h3>
-<div class="highlight"><pre><span></span><code>*Exemplo*
+<p>Dentro do arquivo precisamos adicionar algumas informações:</p>
+<div class="highlight"><pre><span></span><code>service tftp
+{
+protocol = udp
+port = 69
+socket_type = dgram
+wait = yes
+user = nobody
+server = /usr/sbin/in.tftpd
+server_args = /home/joao/Documents/TFTP -s
+disable = no
+}
 </code></pre></div>
 <blockquote>
-<p><em>Exemplo</em></p>
+<p>O parâmetro <code>server_args</code> é o local onde ficará os arquivos que serão compartilhados.</p>
 </blockquote>
-<h3 id="citacao">Citação</h3>
-<div class="highlight"><pre><span></span><code>&gt; Exemplo
+<p>Se for o caso, agora crie a pasta configurada no parâmetro <code>server_args</code>:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p /home/joao/Documents/TFTP
 </code></pre></div>
-<blockquote>
-<p>Exemplo</p>
-</blockquote>
-<h3 id="lista-ordenada">Lista Ordenada</h3>
-<div class="highlight"><pre><span></span><code>1. Exemplo
-2. Exemplo
-3. Exemplo
+<h3 id="permissoes">Permissões</h3>
+<p>Como um outro dispositivo irá acessar essa pasta (no nosso exemplo, a beaglebone), a pasta criada precisa ter permissões para isso. Primeiro, vamos configurar os usuários:</p>
+<div class="highlight"><pre><span></span><code>sudo chown nobody:nogroup /home/joao/Documents/TFTP
 </code></pre></div>
-<blockquote>
-<ol>
-<li>Exemplo</li>
-<li>Exemplo</li>
-<li>Exemplo</li>
-</ol>
-</blockquote>
-<h3 id="lista-nao-ordenada">Lista Não Ordenada</h3>
-<div class="highlight"><pre><span></span><code>- Exemplo
-- Exemplo
-- Exemplo
+<p>Por fim, dando acesso total a pasta:</p>
+<div class="highlight"><pre><span></span><code>sudo chmod 777 /home/joao/Documents/TFTP
 </code></pre></div>
-<blockquote>
-<ul>
-<li>Exemplo</li>
-<li>Exemplo</li>
-<li>Exemplo</li>
-</ul>
-</blockquote>
-<h3 id="linha-de-codigo">Linha de Código</h3>
-<div class="highlight"><pre><span></span><code>`Código`
+<div class="admonition danger">
+<p class="admonition-title">Cuidado</p>
+<p>Cuidado ao utilizar o comando acima. Usar o <code>777</code> é altamente desencorajado. Lembre-se que esse é um setup de testes.</p>
+</div>
+<h3 id="reiniciando-o-servico">Reiniciando o Serviço</h3>
+<p>Por fim, basta reiniciar o serviço para que ele carregue as novas configurações:</p>
+<div class="highlight"><pre><span></span><code>sudo /etc/init.d/xinetd restart
 </code></pre></div>
-<blockquote>
-<p><code>Código</code></p>
-</blockquote>
-<h3 id="link">Link</h3>
-<div class="highlight"><pre><span></span><code>[Site do google](https://www.google.com.br)
-</code></pre></div>
-<blockquote>
-<p><a href="https://www.google.com.br">Site do google</a></p>
-</blockquote>
-<h3 id="tabela">Tabela</h3>
-<div class="highlight"><pre><span></span><code>| Nome | Idade |
-| ---- | ----- |
-| João | 28    |
-| Pedro | 34   |
-</code></pre></div>
-<blockquote>
-<table>
-<thead>
-<tr>
-<th>Nome</th>
-<th>Idade</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>João</td>
-<td>28</td>
-</tr>
-<tr>
-<td>Pedro</td>
-<td>34</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<h2 id="markdown-estendido">Markdown Estendido</h2>
-<p>Para ter ainda mais funcionalidades, é necessário instalar a biblioteca <a href="https://facelessuser.github.io/pymdown-extensions/">PyMdown Extensions</a>:</p>
-<div class="highlight"><pre><span></span><code>pip install pymdown-extensions
-</code></pre></div>
-<p>Além disso, é necessário adicionar quais extensões serão usadas dentro do arquivo <code>mkdocs.yml</code>, por exemplo:</p>
-<div class="highlight"><pre><span></span><code>markdown_extensions:
-  - pymdownx.tasklist
-  - pymdownx.emoji
-  - pymdownx.mark
-  - pymdownx.tilde
-</code></pre></div>
-<p>Cada uma dessas extensões serão mostradas a seguir.</p>
-<h3 id="lista-de-tarefas">Lista de Tarefas</h3>
-<p><code>pymdownx.tasklist</code></p>
-<div class="highlight"><pre><span></span><code>- [ ] Checar.
-- [ ] checar.
-- [X] checado.
-</code></pre></div>
-<blockquote>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Checar.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> checar.</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> checado.</li>
-</ul>
-</blockquote>
-<h3 id="emoji">Emoji</h3>
-<p>Para mais emojis: <a href="https://emojipedia.org/twitter/">emojipedia</a>. Escolha um emoji e procure por <code>Shortcodes</code>.</p>
-<p><code>pymdownx.emoji</code></p>
-<div class="highlight"><pre><span></span><code>:snake: :heart: :rocket:
-</code></pre></div>
-<blockquote>
-<p><img alt="🐍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f40d.png" title=":snake:" /> <img alt="❤️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2764.png" title=":heart:" /> <img alt="🚀" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f680.png" title=":rocket:" /></p>
-</blockquote>
-<h3 id="tachado">Tachado</h3>
-<p><code>pymdownx.tilde</code>
-<div class="highlight"><pre><span></span><code>~~Exemplo~~
-</code></pre></div></p>
-<blockquote>
-<p><del>Exemplo</del></p>
-</blockquote>
-<h3 id="realcado">Realçado</h3>
-<p><code>pymdownx.mark</code></p>
-<div class="highlight"><pre><span></span><code>==Exemplo==
-</code></pre></div>
-<blockquote>
-<p><mark>Exemplo</mark></p>
-</blockquote>
-<h2 id="super-fences">Super Fences</h2>
-<p>Dentro do <code>pymdown-extensions</code> existe uma funcionalidade que merece um tópico a parte, chamado de  <code>superfences</code>. Com ele, o MKDocs fica ainda mais poderoso.</p>
-<p>É necessário informar para o MKDocs que o super fences será utilizado, adicionando as linhas dentro do <code>mkdocs.yml</code>:</p>
-<div class="highlight"><pre><span></span><code>markdown_extensions:
-  # ...
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_div_format
-
-extra_javascript:
-  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
-</code></pre></div>
-<h3 id="bloco-de-codigo">Bloco de código</h3>
-<p><code>pymdownx.superfences</code></p>
-<div class="highlight"><pre><span></span><code>    ```{.py3 linenums=&quot;44&quot; title=&quot;teste.py&quot; hl_lines=&quot;1 3&quot;}
-    def xpto():
-        &quot;&quot;&quot;Docstring&quot;&quot;&quot;
-        return True
-    ```
-</code></pre></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">teste.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">xpto</span><span class="p">():</span>
-</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Docstring&quot;&quot;&quot;</span>
-<span class="hll">    <span class="k">return</span> <span class="kc">True</span>
-</span></code></pre></div></td></tr></table></div>
-<h3 id="formulas">Fórmulas</h3>
-<p><code>pymdownx.arithmatex</code></p>
-<div class="highlight"><pre><span></span><code>$$ \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}} $$
-</code></pre></div>
-<blockquote>
-<p>$$ \operatorname{ker} f={g\in G:f(g)=e_{H}}{\mbox{.}} $$</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code>The homomorphism $f$ is injective if and only if its kernel is only the 
-singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such 
-that $f(a)=f(b)$.
-</code></pre></div>
-<blockquote>
-<p>The homomorphism $f$ is injective if and only if its kernel is only the 
-singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such 
-that $f(a)=f(b)$.</p>
-</blockquote>
-<h3 id="custom-fences">Custom Fences</h3>
-<p>É possível incorporar outras bibliotecas dentro do MKDocs, por exemplo a <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> que é uma biblioteca para gerar diagramas e gráficos. Para isso, é necessário adicionar no <code>mkdocs.yml</code></p>
-<div class="highlight"><pre><span></span><code>  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_div_format
-
-extra_javascript:
-  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>    ```mermaid
-    classDiagram
-        Pessoa &lt;|-- Eduardo
-        class Pessoa{
-            +String nome
-            +metodo(self):bool
-        }
-    ```
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>classDiagram
-    Pessoa &lt;|-- Jao
-    class Pessoa{
-        +String nome
-        +metodo(self):bool
-    }
-</code></pre></div>
+<h2 id="conclusao">Conclusão</h2>
+<p>O TFTP pode ser utilizado para compartilhar arquivos de forma geral, mas o propósito desse post é fazer com que o u-boot acesse o servidor criado e possa baixar a imagem do Kernel Linux.</p>
 
 
 
