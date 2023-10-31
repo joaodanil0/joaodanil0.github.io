@@ -1,3 +1,6 @@
+---
+disableComments: true
+---
 
 A ideia do blog é reunir os aprendizados relacionados a sistemas embarcados. Com foco em bootloader, kernel e *Root Filesystem*.
 
