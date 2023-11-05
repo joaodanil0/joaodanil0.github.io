@@ -31,6 +31,7 @@ Boards used in this journey until now:
   - QEMU (virtual)
 
 MCUs:
+
   - Pi Pico
   - ESP32
 
