@@ -28,6 +28,7 @@ nav:
       - Bootloader:
         - U-boot:
           - Buildando: linux/boards/vim3/bootloader/u-boot.md
+      - GPIO: linux/boards/vim3/GPIO.md
     - BeagleBone:
       - Buildando: linux/boards/Beaglebone/Buildando.md
       - FTDI: linux/boards/Beaglebone/USB Serial.md
