@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../Cap1/">
+        <link rel="prev" href="../aidl/">
       
       
-        <link rel="next" href="../Cap3/">
+        <link rel="next" href="../../../../../linux/boards/qemu/bootloader/U-boot_qemu/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>Capítulo 2 - Jão's Blog</title>
+        <title>Hal Manager - Jão's Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../style.css">
+      <link rel="stylesheet" href="../../../../../style.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#adivinhacao" class="md-skip">
+        <a href="#hal-manager" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -93,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="../../.." title="Jão&#39;s Blog" class="md-header__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
+    <a href="../../../../.." title="Jão&#39;s Blog" class="md-header__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"/></svg>
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Capítulo 2
+              Hal Manager
             
           </span>
         </div>
@@ -209,7 +209,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Jão&#39;s Blog" class="md-nav__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
+    <a href="../../../../.." title="Jão&#39;s Blog" class="md-nav__button md-logo" aria-label="Jão's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.189 4.189 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75L23 11.5m-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0 .39.39.39 1.02 0 1.41Z"/></svg>
@@ -238,7 +238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -255,18 +255,20 @@
       
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -280,7 +282,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Android
@@ -365,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../android/boards/qemu/hal/hidl/" class="md-nav__link">
+      <a href="../../../qemu/hal/hidl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -385,7 +387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../android/boards/qemu/hal/aidl/" class="md-nav__link">
+      <a href="../../../qemu/hal/aidl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -419,18 +421,20 @@
                 
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -444,7 +448,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             VIM 3
@@ -529,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../android/boards/vim3/bootloader/u-boot/" class="md-nav__link">
+      <a href="../../bootloader/u-boot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -549,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../android/boards/vim3/bootloader/Carregando/" class="md-nav__link">
+      <a href="../../bootloader/Carregando/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -657,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../android/boards/vim3/kernel/drivers/blueled/" class="md-nav__link">
+      <a href="../../kernel/drivers/blueled/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -677,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../android/boards/vim3/kernel/drivers/fan/" class="md-nav__link">
+      <a href="../../kernel/drivers/fan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -711,18 +715,20 @@
                 
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
@@ -736,7 +742,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_3">
             <span class="md-nav__icon md-icon"></span>
             HAL
@@ -749,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../android/boards/vim3/hal/hidl/" class="md-nav__link">
+      <a href="../hidl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -769,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../android/boards/vim3/hal/aidl/" class="md-nav__link">
+      <a href="../aidl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -787,9 +793,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../android/boards/vim3/hal/halManager/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hal Manager
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -798,6 +824,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-hal" class="md-nav__link">
+    A HAL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hal-manager_1" class="md-nav__link">
+    HAL Manager
+  </a>
+  
+    <nav class="md-nav" aria-label="HAL Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#observacoes" class="md-nav__link">
+    Observações
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-studio" class="md-nav__link">
+    Android Studio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacao" class="md-nav__link">
+    Aplicação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    Conclusão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -976,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/qemu/bootloader/U-boot_qemu/" class="md-nav__link">
+      <a href="../../../../../linux/boards/qemu/bootloader/U-boot_qemu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1040,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/qemu/bootloader/LittleKernel/" class="md-nav__link">
+      <a href="../../../../../linux/boards/qemu/bootloader/LittleKernel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1192,7 +1293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/vim3/bootloader/u-boot/" class="md-nav__link">
+      <a href="../../../../../linux/boards/vim3/bootloader/u-boot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1228,7 +1329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/vim3/GPIO/" class="md-nav__link">
+      <a href="../../../../../linux/boards/vim3/GPIO/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1292,7 +1393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/Beaglebone/Buildando/" class="md-nav__link">
+      <a href="../../../../../linux/boards/Beaglebone/Buildando/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1312,7 +1413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/Beaglebone/USB%20Serial/" class="md-nav__link">
+      <a href="../../../../../linux/boards/Beaglebone/USB%20Serial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1332,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/Beaglebone/busybox/" class="md-nav__link">
+      <a href="../../../../../linux/boards/Beaglebone/busybox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1424,7 +1525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/Beaglebone/Bootloader/U-boot/" class="md-nav__link">
+      <a href="../../../../../linux/boards/Beaglebone/Bootloader/U-boot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1444,7 +1545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/boards/Beaglebone/Bootloader/env/" class="md-nav__link">
+      <a href="../../../../../linux/boards/Beaglebone/Bootloader/env/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/outros/tftp_server/" class="md-nav__link">
+      <a href="../../../../../linux/outros/tftp_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1544,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/outros/nfs_server/" class="md-nav__link">
+      <a href="../../../../../linux/outros/nfs_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1651,7 +1752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rtos/zephyr/zephyr/" class="md-nav__link">
+      <a href="../../../../../rtos/zephyr/zephyr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1684,20 +1785,18 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1711,7 +1810,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Linguagens
@@ -1722,20 +1821,18 @@
                 
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
           <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
@@ -1749,7 +1846,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             Rust
@@ -1762,7 +1859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Cap1/" class="md-nav__link">
+      <a href="../../../../../linguagens/Rust/Cap1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1780,29 +1877,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Capítulo 2
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../../linguagens/Rust/Cap2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1811,102 +1888,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introducao" class="md-nav__link">
-    Introdução
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configurando-o-projeto" class="md-nav__link">
-    Configurando o Projeto
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comecando-o-jogo" class="md-nav__link">
-    Começando o Jogo
-  </a>
-  
-    <nav class="md-nav" aria-label="Começando o Jogo">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input" class="md-nav__link">
-    Input
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#numeros-aleatorios" class="md-nav__link">
-    Números Aleatórios
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comparando" class="md-nav__link">
-    Comparando
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tentando-novamente" class="md-nav__link">
-    Tentando Novamente
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ganhando" class="md-nav__link">
-    Ganhando
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tratando-erros" class="md-nav__link">
-    Tratando Erros
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
-    Conclusão
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1918,7 +1899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Cap3/" class="md-nav__link">
+      <a href="../../../../../linguagens/Rust/Cap3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1938,7 +1919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Cap4/" class="md-nav__link">
+      <a href="../../../../../linguagens/Rust/Cap4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2009,7 +1990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../outros/mkdocs/mkdocs/" class="md-nav__link">
+      <a href="../../../../../outros/mkdocs/mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2029,7 +2010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../outros/Parti%C3%A7%C3%B5es/GPT/" class="md-nav__link">
+      <a href="../../../../../outros/Parti%C3%A7%C3%B5es/GPT/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2084,64 +2065,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configurando-o-projeto" class="md-nav__link">
-    Configurando o Projeto
+  <a href="#a-hal" class="md-nav__link">
+    A HAL
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#comecando-o-jogo" class="md-nav__link">
-    Começando o Jogo
+  <a href="#hal-manager_1" class="md-nav__link">
+    HAL Manager
   </a>
   
-    <nav class="md-nav" aria-label="Começando o Jogo">
+    <nav class="md-nav" aria-label="HAL Manager">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#input" class="md-nav__link">
-    Input
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#numeros-aleatorios" class="md-nav__link">
-    Números Aleatórios
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comparando" class="md-nav__link">
-    Comparando
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tentando-novamente" class="md-nav__link">
-    Tentando Novamente
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ganhando" class="md-nav__link">
-    Ganhando
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tratando-erros" class="md-nav__link">
-    Tratando Erros
+  <a href="#observacoes" class="md-nav__link">
+    Observações
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-studio" class="md-nav__link">
+    Android Studio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacao" class="md-nav__link">
+    Aplicação
+  </a>
   
 </li>
       
@@ -2170,25 +2130,24 @@
   
 
 
-<h1 id="adivinhacao">Adivinhação</h1>
+<h1 id="hal-manager">HAL Manager</h1>
+<figure>
+<p><img alt="image" src="assets/man-1633667_640.jpg" width="600" />
+  </p>
+<figcaption>
+    Image by <a href="https://pixabay.com/users/serenawong-3060442/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1633667">Serena Wong</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1633667">Pixabay</a>
+  </figcaption>
+</figure>
 <h2 id="introducao">Introdução</h2>
-<p>Dando continuidade ao conhecimento do <code>Rust</code>, vamos ao capítulo 2 do livro:</p>
+<p>Quando comecei a aprender sobre a <strong>Hardware Abstration Layer</strong> (HAL), notei que da forma como eu esteva fazendo, era preciso que o código da aplicação que fazia o uso do serviço da HAL tinha que estar junto com o código do meu produto. Essa abordagem não fazia o menor sentido, uma vez que para fazer as aplicações, é bem mais prático utilizar o Android Studio e embarcar a aplicação por meio dele. Isso me incomodou durante um tempo, mas agora vou compartilhar uma possível solução para esse problema 🫠   .</p>
 <blockquote>
-<p>The Rust Programming Language</p>
+<p>Gostaria de agradecer ao <a href="https://www.linkedin.com/in/gabriel-villacrez/">Gabriel Villacrez</a> e ao <a href="https://www.linkedin.com/in/alvenan/">Álison Venâncio</a> que compartilharam seus conhecimentos sobre HAL Manager (<a href="https://stackoverflow.com/questions/76640941/how-can-write-an-app-that-calls-the-service-through-the-hal">Post do Stackoverflow</a>).</p>
 </blockquote>
-<p>Ele propõem introduzir alguns conceitos comuns da linguagem, criando o <mark>jogo da adivinhação</mark></p>
-<h2 id="configurando-o-projeto">Configurando o Projeto</h2>
-<p>Criei um novo projeto utilizando o <code>Cargo</code>:</p>
-<div class="highlight"><pre><span></span><code>cargo<span class="w"> </span>new<span class="w"> </span>adivinhacao
-</code></pre></div>
-<h2 id="comecando-o-jogo">Começando o Jogo</h2>
-<p>Vou dividir em alguns passos para facilitar o passo a passo da criação do jogo.</p>
-<blockquote>
-<p>Para compilar o programa utilizei o <code>cargo build</code> e para executar <code>cargo run</code>.</p>
-</blockquote>
-<h3 id="input">Input</h3>
-<p>O primeiro passo é saber como fazer um <em>input</em> do usuário. Para isso, segue o código abaixo:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/main.rs</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<h2 id="a-hal">A HAL</h2>
+<p>Atualmente estou fazendo um <em>device driver</em> do <a href="https://www.makerhero.com/produto/display-oled-0-96-i2c-azul-amarelo/"><strong>Display OLED 128x64 0.96" I2C</strong></a> e junto com ele uma HAL para escrever mensagens no display e limpar a tela. Por fim, queria fazer uma aplicação que consumisse o serviço dessa HAL. Com essa necessidade, aproveitei para fazer o uso da HAL Manager e gerar minha aplicação direto do Android Studio.</p>
+<h2 id="hal-manager_1">HAL Manager</h2>
+<p>Criei os seguintes arquivos no caminho <code>device/casa/jaodroid/interfaces/interfaces/oled/aidl/oled_manager</code>, a partir da raiz do AOSP:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Android.bp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2203,231 +2162,40 @@
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Baseado no exemplo do próprio livo, com algumas modificações</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">java_library</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;casa.hal.oledmanager&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">srcs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;src/**/*.java&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nl">static_libs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;casa.hal.oled-V1-java&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nl">required</span><span class="p">:[</span><span class="s">&quot;casa.hal.oledmanager.xml&quot;</span><span class="p">],</span>
+<span class="hll"><span class="w">    </span><span class="nl">system_ext_specific</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+</span><span class="w">    </span><span class="nl">platform_apis</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">installable</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+<span class="p">}</span>
 
-<span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para tratar de I/O</span>
-
-<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="c1">// Observe o termo &quot;mut&quot;, pois essa variável </span>
-<span class="w">    </span><span class="c1">// será alterada com a entrada do usuário</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span><span class="w"> </span>
-
-<span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">()</span>
-<span class="w">      </span><span class="p">.</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="p">)</span><span class="w"> </span><span class="c1">// Lê a entrada e atribui a variável &quot;guess&quot;</span>
-<span class="w">      </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Caso algo saia errado, mostra a mensagem</span>
-
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You guessed: {guess}&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//Mostra a entrada do usuário</span>
+<span class="n">prebuilt_etc</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;casa.hal.oledmanager.xml&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">src</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;casa.hal.oledmanager.xml&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">filename_from_src</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">relative_install_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;permissions&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">system_ext_specific</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="numeros-aleatorios">Números Aleatórios</h3>
-<p>O <code>Rust</code> não possui a geração de números aleatórios em sua biblioteca padrão. Com isso, usei o <mark>rand</mark> disponível no <a href="https://crates.io/crates/rand">crate</a>. Para isso, é necessário adicionar a biblioteca no arquivo <mark>Cargo.toml</mark>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[dependencies]</span>
-<span class="hll"><span class="n">rand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.8.3&quot;</span>
-</span></code></pre></div>
-<p>Agora utilize o comando <code>cargo build</code> para instalar a dependência.</p>
-<p>Voltando ao código, vamos adicionar biblioteca e a função que gera os números:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/main.rs</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Baseado no exemplo do próprio livro, com algumas modificações</span>
-
-<span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para tratar de I/O</span>
-<span class="hll"><span class="k">use</span><span class="w"> </span><span class="n">rand</span>::<span class="n">Rng</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para gerar números randômicos</span>
-</span>
-<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="hll"><span class="w">    </span><span class="c1">// Gera um número inteiro de 0 a 100</span>
-</span><span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">secret_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span>::<span class="n">thread_rng</span><span class="p">().</span>
-</span><span class="hll"><span class="w">                            </span><span class="n">gen_range</span><span class="p">(</span><span class="mi">1</span><span class="o">..=</span><span class="mi">100</span><span class="p">);</span>
-</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The secret number is: {secret_number}&quot;</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c1">// Observe o termo &quot;mut&quot;, pois essa variável </span>
-<span class="w">    </span><span class="c1">// será alterada com a entrada do usuário</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span><span class="w"> </span>
-
-<span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">()</span>
-<span class="w">      </span><span class="p">.</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="p">)</span><span class="w"> </span><span class="c1">// Lê a entrada e atribui a variável &quot;guess&quot;</span>
-<span class="w">      </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Caso algo saia errado, mostra a mensagem</span>
-
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You guessed: {guess}&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//Mostra a entrada do usuário</span>
-<span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">casa.hal.oledmanager.xml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;permissions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;library</span><span class="w"> </span>
+<span class="w">        </span><span class="na">name=</span><span class="s">&quot;casa.hal.oledmanager&quot;</span><span class="w"> </span>
+<span class="w">        </span><span class="na">file=</span><span class="s">&quot;/system_ext/framework/casa.hal.oledmanager.jar&quot;</span>
+<span class="w">    </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/permissions&gt;</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="comparando">Comparando</h3>
-<p>Uma vez que a entrada do usuário e o número randômico estão disponíveis, só resta fazer a comparação entre os dois e checar se é menor, maior ou igual.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/main.rs</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Baseado no exemplo do próprio livro, com algumas modificações</span>
-
-<span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para tratar de I/O</span>
-<span class="k">use</span><span class="w"> </span><span class="n">rand</span>::<span class="n">Rng</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para gerar números randômicos</span>
-<span class="hll"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cmp</span>::<span class="n">Ordering</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para fazer comparação</span>
-</span>
-<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="c1">// Gera um número inteiro de 0 a 100</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">secret_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span>::<span class="n">thread_rng</span><span class="p">().</span>
-<span class="w">                            </span><span class="n">gen_range</span><span class="p">(</span><span class="mi">1</span><span class="o">..=</span><span class="mi">100</span><span class="p">);</span>
-
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The secret number is: {secret_number}&quot;</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c1">// Observe o termo &quot;mut&quot;, pois essa variável </span>
-<span class="w">    </span><span class="c1">// será alterada com a entrada do usuário</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span><span class="w"> </span>
-
-<span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">()</span>
-<span class="w">      </span><span class="p">.</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="p">)</span><span class="w"> </span><span class="c1">// Lê a entrada e atribui a variável &quot;guess&quot;</span>
-<span class="w">      </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Caso algo saia errado, mostra a mensagem</span>
-
-<span class="hll"><span class="w">    </span><span class="c1">// Converte a entrada para inteiro</span>
-</span><span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">guess</span>: <span class="kt">u32</span> <span class="o">=</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">().</span>
-</span><span class="hll"><span class="w">                        </span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">&gt;&gt;&gt;&gt; Please type a integer number! &lt;&lt;&lt;&lt;</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You guessed: {guess}&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//Mostra a entrada do usuário</span>
-
-<span class="hll"><span class="w">    </span><span class="c1">// Compara e informa se o número é menor, maior ou igual</span>
-</span><span class="hll"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">secret_number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">        </span><span class="n">Ordering</span>::<span class="n">Less</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Too small!&quot;</span><span class="p">),</span>
-</span><span class="hll"><span class="w">        </span><span class="n">Ordering</span>::<span class="n">Greater</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Too big!&quot;</span><span class="p">),</span>
-</span><span class="hll"><span class="w">        </span><span class="n">Ordering</span>::<span class="n">Equal</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You win!&quot;</span><span class="p">),</span>
-</span><span class="hll"><span class="w">    </span><span class="p">}</span>
-</span><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="tentando-novamente">Tentando Novamente</h3>
-<p>Até agora o jogo só permite apenas uma tentativa (<em>try hard</em> <img alt="💀" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f480.png" title=":skull:" />). Agora vou adicionar o <em>loop</em> para fazer várias tentativas.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/main.rs</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Baseado no exemplo do próprio livro, com algumas modificações</span>
-
-<span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para tratar de I/O</span>
-<span class="k">use</span><span class="w"> </span><span class="n">rand</span>::<span class="n">Rng</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para gerar números randômicos</span>
-<span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cmp</span>::<span class="n">Ordering</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para fazer comparação</span>
-
-<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="c1">// Gera um número inteiro de 0 a 100</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">secret_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span>::<span class="n">thread_rng</span><span class="p">().</span>
-<span class="w">                            </span><span class="n">gen_range</span><span class="p">(</span><span class="mi">1</span><span class="o">..=</span><span class="mi">100</span><span class="p">);</span>
-
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The secret number is: {secret_number}&quot;</span><span class="p">);</span>
-
-<span class="hll"><span class="w">    </span><span class="k">loop</span><span class="w"> </span><span class="p">{</span>
-</span>
-<span class="w">        </span><span class="c1">// Observe o termo &quot;mut&quot;, pois essa variável </span>
-<span class="w">        </span><span class="c1">// será alterada com a entrada do usuário</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span><span class="w"> </span>
-
-
-<span class="w">        </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">()</span>
-<span class="w">        </span><span class="p">.</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="p">)</span><span class="w"> </span><span class="c1">// Lê a entrada e atribui a variável &quot;guess&quot;</span>
-<span class="w">        </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Caso algo saia errado, mostra a mensagem</span>
-
-<span class="w">        </span><span class="c1">// Converte a entrada para inteiro</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">guess</span>: <span class="kt">u32</span> <span class="o">=</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">().</span>
-<span class="w">                            </span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">&gt;&gt;&gt;&gt; Please type a integer number! &lt;&lt;&lt;&lt;</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
-
-<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You guessed: {guess}&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//Mostra a entrada do usuário</span>
-
-<span class="w">        </span><span class="c1">// Compara e informa se o número é menor, maior ou igual</span>
-<span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">secret_number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Ordering</span>::<span class="n">Less</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Too small!&quot;</span><span class="p">),</span>
-<span class="w">            </span><span class="n">Ordering</span>::<span class="n">Greater</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Too big!&quot;</span><span class="p">),</span>
-<span class="w">            </span><span class="n">Ordering</span>::<span class="n">Equal</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You win!&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="hll"><span class="w">    </span><span class="p">}</span>
-</span><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="ganhando">Ganhando</h3>
-<p>Mesmo digitando o número correto, o jogo ainda permite fazer uma nova tentativa. Vou adicionar um <em>break</em> quando o número digitado for o correto.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/main.rs</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/casa/hal/oledmanager/OledManager.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2468,52 +2236,148 @@
 <span class="normal">39</span>
 <span class="normal">40</span>
 <span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Baseado no exemplo do próprio livro, com algumas modificações</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">casa.hal.oledmanager</span><span class="p">;</span>
 
-<span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para tratar de I/O</span>
-<span class="k">use</span><span class="w"> </span><span class="n">rand</span>::<span class="n">Rng</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para gerar números randômicos</span>
-<span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cmp</span>::<span class="n">Ordering</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para fazer comparação</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.util.Log</span><span class="p">;</span>
+<span class="hll"><span class="kn">import</span><span class="w"> </span><span class="nn">android.os.ServiceManager</span><span class="p">;</span>
+</span><span class="kn">import</span><span class="w"> </span><span class="nn">android.os.IBinder</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.os.RemoteException</span><span class="p">;</span>
 
-<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">casa.hal.oled.IOled</span><span class="p">;</span>
 
-<span class="w">    </span><span class="c1">// Gera um número inteiro de 0 a 100</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">secret_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span>::<span class="n">thread_rng</span><span class="p">().</span>
-<span class="w">                            </span><span class="n">gen_range</span><span class="p">(</span><span class="mi">1</span><span class="o">..=</span><span class="mi">100</span><span class="p">);</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OledManager</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">IBinder</span><span class="w"> </span><span class="n">service</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">IOled</span><span class="w"> </span><span class="n">oledInterface</span><span class="p">;</span><span class="w">   </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INTERFACE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;casa.hal.oled.IOled/default&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">OledManager</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
 
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The secret number is: {secret_number}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">OledManager</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ServiceManager</span><span class="p">.</span><span class="na">getService</span><span class="p">(</span><span class="n">INTERFACE</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">loop</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">service</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">            </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="s">&quot;OledManager&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Service not available&quot;</span><span class="p">);</span>
 
-<span class="w">        </span><span class="c1">// Observe o termo &quot;mut&quot;, pois essa variável </span>
-<span class="w">        </span><span class="c1">// será alterada com a entrada do usuário</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span><span class="w"> </span>
+<span class="w">        </span><span class="n">oledInterface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IOled</span><span class="p">.</span><span class="na">Stub</span><span class="p">.</span><span class="na">asInterface</span><span class="p">(</span><span class="n">service</span><span class="p">);</span>
 
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">oledInterface</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">            </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="s">&quot;OledManager&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Oled Interface not available&quot;</span><span class="p">);</span><span class="w">        </span>
 
-<span class="w">        </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">()</span>
-<span class="w">        </span><span class="p">.</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="p">)</span><span class="w"> </span><span class="c1">// Lê a entrada e atribui a variável &quot;guess&quot;</span>
-<span class="w">        </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Caso algo saia errado, mostra a mensagem</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">        </span><span class="c1">// Converte a entrada para inteiro</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">guess</span>: <span class="kt">u32</span> <span class="o">=</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">().</span>
-<span class="w">                            </span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">&gt;&gt;&gt;&gt; Please type a integer number! &lt;&lt;&lt;&lt;</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">OledManager</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">            </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OledManager</span><span class="p">();</span>
 
-<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You guessed: {guess}&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//Mostra a entrada do usuário</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">        </span><span class="c1">// Compara e informa se o número é menor, maior ou igual</span>
-<span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">secret_number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Ordering</span>::<span class="n">Less</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Too small!&quot;</span><span class="p">),</span>
-<span class="w">            </span><span class="n">Ordering</span>::<span class="n">Greater</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Too big!&quot;</span><span class="p">),</span>
-<span class="hll"><span class="w">            </span><span class="n">Ordering</span>::<span class="n">Equal</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">                </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You win!&quot;</span><span class="p">);</span>
-</span><span class="hll"><span class="w">                </span><span class="k">break</span><span class="p">;</span>
-</span><span class="hll"><span class="w">            </span><span class="p">}</span>
-</span><span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">clearDisplay</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">RemoteException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">oledInterface</span><span class="p">.</span><span class="na">clearDisplay</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">writeString</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">RemoteException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">oledInterface</span><span class="p">.</span><span class="na">writeString</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="tratando-erros">Tratando Erros</h3>
-<p>Caso a entrada do usuário não seja exatamente um inteiro, ocorre um <em>crash</em> no jogo. Vou adicionar um tratamento para lidar com esse problema.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/main.rs</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<p>Por fim, precisamos adicionar o <em>OledManger</em> no produto:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">jaodroid.mk</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>PRODUCT_PACKAGES += \
+    testOLED \
+    casa.hal.oled \
+    casa.hal.oled-service \
+    OLedTest \
+<span class="hll">    casa.hal.oledmanager
+</span></code></pre></div></td></tr></table></div>
+<p>A hierarquia de arquivos e pastas ficou dessa forma:</p>
+<div class="highlight"><pre><span></span><code>device/casa/jaodroid/interfaces/oled/aidl/oled_manager
+├──<span class="w"> </span>Android.bp
+├──<span class="w"> </span>casa.hal.oledmanager.xml
+└──<span class="w"> </span>src
+<span class="w">    </span>└──<span class="w"> </span>casa
+<span class="w">        </span>└──<span class="w"> </span>hal
+<span class="w">            </span>└──<span class="w"> </span>oledmanager
+<span class="w">                </span>└──<span class="w"> </span>OledManager.java
+
+<span class="m">4</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
+</code></pre></div>
+<h3 id="observacoes">Observações</h3>
+<p>O HAL Manager fica situado dentro da partição <code>system_ext</code> (linha 6 do <code>Android.bp</code>). Geralmente precisamos fazer o uso dessa partição quando algo em partições distintas. Nesse caso, a HAL está na partição <code>vendor</code>, mas para utilizar o HAL Manager precisamos de coisas que estão na partição <code>system</code>. Como é o caso do <code>android.os.ServiceManager</code> (linha 4 do <code>OledManager.java</code>). O código fonte do <code>ServiceManger</code> está em:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">frameworks/base/core/java/android/os/ServiceManager.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span>
+<span class="cm">/**</span>
+<span class="cm"> * Manage binder services as registered with the binder context manager. These services must be</span>
+<span class="cm"> * declared statically on an Android device (SELinux access_vector service_manager, w/ service</span>
+<span class="cm"> * names in service_contexts files), and they do not follow the activity lifecycle. When</span>
+<span class="cm"> * building applications, android.app.Service should be preferred.</span>
+<span class="cm"> *</span>
+<span class="hll"><span class="cm"> * @hide</span>
+</span><span class="cm"> **/</span>
+<span class="nd">@SystemApi</span><span class="p">(</span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SystemApi</span><span class="p">.</span><span class="na">Client</span><span class="p">.</span><span class="na">MODULE_LIBRARIES</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ServiceManager</span><span class="w"> </span><span class="p">{</span>
+<span class="p">...</span>
+</code></pre></div></td></tr></table></div>
+<p>Observe que a linha 8 possui o comentário <code>@hide</code>. Em resumo, aplicações que estão nas partições <code>vendor</code>, <code>product</code> ou <code>data</code> não podem acessar as <em>hidden APIs</em> (para mais informações acesse o <a href="https://source.android.com/docs/core/architecture/partitions/product-interfaces#java-interfaces">link</a>). Dessa forma, para fazermos a comunicação entre essas essas partições devemos utilizar a partição <code>system_ext</code> (<a href="https://source.android.com/docs/core/architecture/partitions/shared-system-image#ssi-overview">mais informações</a>)</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Consegui essas informações no curso <a href="https://8mantech.thinkific.com/courses/take/android-internals/texts/22836673-android-bp-moving-the-app-from-the-vendor-to-the-system-ext-partition-ssi">Android 12 Internals material, labs and discussion</a></p>
+</div>
+<h2 id="android-studio">Android Studio</h2>
+<p>Com o HAL Manager compilado, são gerados alguns arquivos. Um deles podemos importar dentro do Android Studio, esse arquivo fica em</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>out/target/common/obj/JAVA_LIBRARIES/casa.hal.oledmanager_intermediates/
+├── classes-header.jar
+<span class="hll">├── classes.jar
+</span>└── javalib.jar
+
+0 directories, 3 files
+</code></pre></div></td></tr></table></div>
+<p>Onde <code>casa.hal.oledmanager</code> é o nome do HAL Manager. O arquivo que deve ser importado é o <code>classes.jar</code>.</p>
+<p>Dentro do Android Studio, podemos importar em: <code>Build &gt; Edit Libraries and Dependencies...</code>, a seguinte janela irá aparecer:</p>
+<figure>
+<p><img alt="" src="assets/Add_dependencies.png" width="600" />
+  </p>
+<figcaption>
+    Bibliotecas.
+  </figcaption>
+</figure>
+<p>Agora é so clicar em <code>+ &gt; 2 JAR/AAR Dependency</code> (em <em>Declared Dependecies</em>), a seguinte tela deve aparecer:</p>
+<figure>
+<p><img alt="" src="assets/module_app.png" width="600" />
+  </p>
+<figcaption>
+    Dependências.
+  </figcaption>
+</figure>
+<p>Basta colocar o caminho do arquivo <code>classes.jar</code> e a parte de configuração está completa.</p>
+<h2 id="aplicacao">Aplicação</h2>
+<p>Basicamente criei um projeto e modifiquei esses 2 arquivos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">MainActivity.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2559,56 +2423,175 @@
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
-<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Baseado no exemplo do próprio livro, com algumas modificações</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.oled</span><span class="p">;</span>
 
-<span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para tratar de I/O</span>
-<span class="k">use</span><span class="w"> </span><span class="n">rand</span>::<span class="n">Rng</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para gerar números randômicos</span>
-<span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cmp</span>::<span class="n">Ordering</span><span class="p">;</span><span class="w"> </span><span class="c1">//Lib para fazer comparação</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="p">;</span>
+<span class="hll"><span class="kn">import</span><span class="w"> </span><span class="nn">casa.hal.oledmanager.OledManager</span><span class="p">;</span>
+</span><span class="kn">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.os.RemoteException</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.widget.Button</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.widget.EditText</span><span class="p">;</span>
 
-<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainActivity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="c1">// Gera um número inteiro de 0 a 100</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">secret_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span>::<span class="n">thread_rng</span><span class="p">().</span>
-<span class="w">                            </span><span class="n">gen_range</span><span class="p">(</span><span class="mi">1</span><span class="o">..=</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Button</span><span class="w"> </span><span class="n">sendText</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Button</span><span class="w"> </span><span class="n">clearDisplay</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EditText</span><span class="w"> </span><span class="n">oledText</span><span class="p">;</span>
 
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The secret number is: {secret_number}&quot;</span><span class="p">);</span>
+<span class="hll"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">OledManager</span><span class="w"> </span><span class="n">oledManger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OledManager</span><span class="p">.</span><span class="na">getInstance</span><span class="p">();</span>
+</span><span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+<span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">loop</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">sendTextBt</span><span class="p">);</span>
+<span class="w">        </span><span class="n">clearDisplay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">clearOledBt</span><span class="p">);</span>
+<span class="w">        </span><span class="n">oledText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">oledtext</span><span class="p">);</span>
 
-<span class="w">        </span><span class="c1">// Observe o termo &quot;mut&quot;, pois essa variável </span>
-<span class="w">        </span><span class="c1">// será alterada com a entrada do usuário</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span><span class="w"> </span>
+<span class="w">        </span><span class="n">sendText</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
 
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">oledText</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span>
 
-<span class="w">        </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">()</span>
-<span class="w">        </span><span class="p">.</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="p">)</span><span class="w"> </span><span class="c1">// Lê a entrada e atribui a variável &quot;guess&quot;</span>
-<span class="w">        </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Caso algo saia errado, mostra a mensagem</span>
-
-<span class="w">        </span><span class="c1">// Converte a entrada para inteiro</span>
-<span class="hll"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">guess</span>: <span class="kt">u32</span> <span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">            </span><span class="nb">Ok</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">num</span><span class="p">,</span>
-</span><span class="hll"><span class="w">            </span><span class="nb">Err</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">                </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Entrada Inválido&quot;</span><span class="p">);</span>
-</span><span class="hll"><span class="w">                </span><span class="k">continue</span><span class="p">;</span>
-</span><span class="hll"><span class="w">            </span><span class="p">}</span>
-</span><span class="hll"><span class="w">        </span><span class="p">};</span>
-</span>
-<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You guessed: {guess}&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//Mostra a entrada do usuário</span>
-
-<span class="w">        </span><span class="c1">// Compara e informa se o número é menor, maior ou igual</span>
-<span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">secret_number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Ordering</span>::<span class="n">Less</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Too small!&quot;</span><span class="p">),</span>
-<span class="w">            </span><span class="n">Ordering</span>::<span class="n">Greater</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Too big!&quot;</span><span class="p">),</span>
-<span class="w">            </span><span class="n">Ordering</span>::<span class="n">Equal</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You win!&quot;</span><span class="p">);</span>
-<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">                </span><span class="n">oledManger</span><span class="p">.</span><span class="na">writeString</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+</span><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">RemoteException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
 <span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">});</span>
+
+<span class="w">        </span><span class="n">clearDisplay</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">                </span><span class="n">oledManger</span><span class="p">.</span><span class="na">clearDisplay</span><span class="p">();</span>
+</span><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">RemoteException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">activity_main.xml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+<span class="w">    </span><span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+<span class="w">    </span><span class="na">xmlns:tools=</span><span class="s">&quot;http://schemas.android.com/tools&quot;</span>
+<span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+<span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+<span class="w">    </span><span class="na">tools:context=</span><span class="s">&quot;.MainActivity&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;TextView</span>
+<span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/textView&quot;</span>
+<span class="w">        </span><span class="na">android:layout_width=</span><span class="s">&quot;154dp&quot;</span>
+<span class="w">        </span><span class="na">android:layout_height=</span><span class="s">&quot;34dp&quot;</span>
+<span class="w">        </span><span class="na">android:layout_marginTop=</span><span class="s">&quot;84dp&quot;</span>
+<span class="w">        </span><span class="na">android:text=</span><span class="s">&quot;Oled Manager&quot;</span>
+<span class="w">        </span><span class="na">android:textSize=</span><span class="s">&quot;24sp&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">&quot;parent&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintHorizontal_bias=</span><span class="s">&quot;0.498&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">&quot;parent&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&quot;parent&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;Button</span>
+<span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/sendTextBt&quot;</span>
+<span class="w">        </span><span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+<span class="w">        </span><span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+<span class="w">        </span><span class="na">android:layout_marginTop=</span><span class="s">&quot;124dp&quot;</span>
+<span class="w">        </span><span class="na">android:text=</span><span class="s">&quot;Send Text&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintBottom_toTopOf=</span><span class="s">&quot;@+id/clearOledBt&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">&quot;parent&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintHorizontal_bias=</span><span class="s">&quot;0.498&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">&quot;parent&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&quot;@+id/textView&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintVertical_bias=</span><span class="s">&quot;0.034&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;Button</span>
+<span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/clearOledBt&quot;</span>
+<span class="w">        </span><span class="na">android:layout_width=</span><span class="s">&quot;223dp&quot;</span>
+<span class="w">        </span><span class="na">android:layout_height=</span><span class="s">&quot;53dp&quot;</span>
+<span class="w">        </span><span class="na">android:layout_marginBottom=</span><span class="s">&quot;220dp&quot;</span>
+<span class="w">        </span><span class="na">android:background=</span><span class="s">&quot;#F80707&quot;</span>
+<span class="w">        </span><span class="na">android:backgroundTint=</span><span class="s">&quot;#ED0909&quot;</span>
+<span class="w">        </span><span class="na">android:text=</span><span class="s">&quot;Clear Display&quot;</span>
+<span class="w">        </span><span class="na">android:textSize=</span><span class="s">&quot;24sp&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&quot;parent&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">&quot;parent&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">&quot;parent&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;EditText</span>
+<span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/oledtext&quot;</span>
+<span class="w">        </span><span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+<span class="w">        </span><span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+<span class="w">        </span><span class="na">android:ems=</span><span class="s">&quot;10&quot;</span>
+<span class="w">        </span><span class="na">android:inputType=</span><span class="s">&quot;text&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintBottom_toTopOf=</span><span class="s">&quot;@+id/sendTextBt&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">&quot;parent&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintHorizontal_bias=</span><span class="s">&quot;0.497&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">&quot;parent&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&quot;@+id/textView&quot;</span>
+<span class="w">        </span><span class="na">app:layout_constraintVertical_bias=</span><span class="s">&quot;0.482&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>No arquivo <code>MainActivity.java</code> precisamos importar a nossa biblioteca (linha 4) e então instanciar o <em>manager</em> (linha 16). Até o momento, a HAL só possui os métodos <code>writeString</code> e <code>clearDisplay</code> e esses métodos são utilizados nas linhas 31 e 41, respectivamente.</p>
 <h2 id="conclusao">Conclusão</h2>
-<p>Criar o jogo introduziu o conceito de <code>match</code>, <code>loop</code>, <code>mut</code> e <code>Crate</code>. Que são básicos na linguagem.</p>
+<p>Sem dúvidas criar aplicações direto pelo Android Studio facilita muito a vida do desenvolvedor. O Hal Manager torna possível fazer esse link entre código nativo do AOSP e a aplicação no Android Studio. Existem outras formas de adicionar uma aplicação ao produto, mas não sei se seriam mais eficientes do que a forma que foi aprensentada nesse post. A HAL que eu criei segue a mesma estrutura da apresentada no post sobre AIDL, por isso não achei interessante compartilhar o fonte. Sobre o <em>Device Driver</em> pretendo fazer um post no futuro.</p>
 
 
 
@@ -2707,10 +2690,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.top", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>
