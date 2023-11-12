@@ -16,7 +16,8 @@ nav:
             - Fan: android/boards/vim3/kernel/drivers/fan.md
         - HAL:
           - HILD: android/boards/vim3/hal/hidl/index.md
-          - AIDL: android/boards/vim3/hal/aidl/index.md          
+          - AIDL: android/boards/vim3/hal/aidl/index.md
+          - Hal Manager: android/boards/vim3/hal/halManager/index.md
   - Linux:
     - QEMU: 
       - Bootloader: 
