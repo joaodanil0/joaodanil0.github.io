@@ -314,6 +314,13 @@ public class MainActivity extends AppCompatActivity {
 
 No arquivo `MainActivity.java` precisamos importar a nossa biblioteca (linha 4) e então instanciar o *manager* (linha 16). Até o momento, a HAL só possui os métodos `writeString` e `clearDisplay` e esses métodos são utilizados nas linhas 31 e 41, respectivamente.
 
+<figure markdown>
+  ![](assets/exec.gif){ width="600" }
+  <figcaption>
+    Aplicação sendo executada.
+  </figcaption>
+</figure>
+
 ## Conclusão
 
 Sem dúvidas criar aplicações direto pelo Android Studio facilita muito a vida do desenvolvedor. O Hal Manager torna possível fazer esse link entre código nativo do AOSP e a aplicação no Android Studio. Existem outras formas de adicionar uma aplicação ao produto, mas não sei se seriam mais eficientes do que a forma que foi aprensentada nesse post. A HAL que eu criei segue a mesma estrutura da apresentada no post sobre AIDL, por isso não achei interessante compartilhar o fonte. Sobre o *Device Driver* pretendo fazer um post no futuro.
