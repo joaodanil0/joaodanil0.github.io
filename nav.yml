@@ -53,3 +53,5 @@ nav:
   - Outros:
     - Documentação: outros/mkdocs/mkdocs.md
     - Partição GPT: outros/Partições/GPT.md
+  - Bluetooth:
+    - Topologias: bluetooth/broadcast.md
