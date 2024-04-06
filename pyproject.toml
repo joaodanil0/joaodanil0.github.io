@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "blog"
+version = "1.0"
+description = "My Personal WebPage"
+authors = ["Joao Danilo <joaodanilo1992@gmail.com>"]
+license = "MIT license"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs = "^1.5.3"
+mkdocs-material = "^9.5.17"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
