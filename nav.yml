@@ -47,10 +47,11 @@ nav:
       - Hello World: rtos/zephyr/hello_world.md
   - Linguagens:
     - Rust:
-      - Capítulo 1: linguagens/Rust/Cap1.md
-      - Capítulo 2: linguagens/Rust/Cap2.md
-      - Capítulo 3: linguagens/Rust/Cap3.md
-      - Capítulo 4: linguagens/Rust/Cap4.md
+      - Livro:
+        - Capítulo 1: linguagens/Rust/Livro/Cap1.md
+        - Capítulo 2: linguagens/Rust/Livro/Cap2.md
+        - Capítulo 3: linguagens/Rust/Livro/Cap3.md
+        - Capítulo 4: linguagens/Rust/Livro/Cap4.md
   - Esturura De Dados:
     - Grafos: ed/grafos/grafos.md
   - Bluetooth:
