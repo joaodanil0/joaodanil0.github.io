@@ -1740,27 +1740,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cmakelists" class="md-nav__link">
+  <a href="#cmake" class="md-nav__link">
     <span class="md-ellipsis">
-      CMakeLists
+      CMake
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mainc" class="md-nav__link">
+  <a href="#codigo" class="md-nav__link">
     <span class="md-ellipsis">
-      main.c
+      Código
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#project-configuration" class="md-nav__link">
+  <a href="#configuracoes" class="md-nav__link">
     <span class="md-ellipsis">
-      Project Configuration
+      Configurações
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arvore-dos-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Árvore dos Arquivos
     </span>
   </a>
   
@@ -1768,6 +1777,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
   
 </li>
       
@@ -2157,27 +2175,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cmakelists" class="md-nav__link">
+  <a href="#cmake" class="md-nav__link">
     <span class="md-ellipsis">
-      CMakeLists
+      CMake
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mainc" class="md-nav__link">
+  <a href="#codigo" class="md-nav__link">
     <span class="md-ellipsis">
-      main.c
+      Código
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#project-configuration" class="md-nav__link">
+  <a href="#configuracoes" class="md-nav__link">
     <span class="md-ellipsis">
-      Project Configuration
+      Configurações
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arvore-dos-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Árvore dos Arquivos
     </span>
   </a>
   
@@ -2185,6 +2212,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
   
 </li>
       
@@ -2218,7 +2254,7 @@
 <p>Ultimamente venho usando bastante o <em>Zephyr</em> junto com a placa <code>nRF53nrf52840 dk</code> da <em>nordic</em>. Frequentemente, quando quero criar um projeto do zero (para testar alguma coisa específica), acabo me deparando com a dúvida de quais são os arquivos realmente necessários para criar o projeto mais limpo possível. Por isso, resolvi explicar isso nesse post.</p>
 <h2 id="hello-world">Hello World</h2>
 <p>Nada melhor do que o bom e velho <em>Hello World</em> para mostras esses detalhes.</p>
-<h3 id="cmakelists">CMakeLists</h3>
+<h3 id="cmake">CMake</h3>
 <p>Esse é o arquivo que vai linkar os módulos do <em>zephyr</em> com o seu código. </p>
 <div class="highlight"><span class="filename">CMakeLists.txt</span><pre><span></span><code><span class="c1"># SPDX-License-Identifier: Apache-2.0</span>
 
@@ -2229,8 +2265,11 @@
 
 <span class="n">target_sources</span><span class="p">(</span><span class="n">app</span> <span class="n">PRIVATE</span> <span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">c</span><span class="p">)</span> <span class="c1">#Define quais são os arquivos do seu código</span>
 </code></pre></div>
-<h3 id="mainc">main.c</h3>
-<p>Aqui você deve colocar o seu código.</p>
+<h3 id="codigo">Código</h3>
+<p>Aqui você deve colocar a implementação da sua aplicação.</p>
+<blockquote>
+<p>Observe que o nome do arquivo deve ser o mesmo colocaco no CMakeList.txt.</p>
+</blockquote>
 <div class="highlight"><span class="filename">main.c</span><pre><span></span><code><span class="cm">/*</span>
 <span class="cm"> * Copyright (c) 2012-2014 Wind River Systems, Inc.</span>
 <span class="cm"> *</span>
@@ -2246,8 +2285,22 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="project-configuration">Project Configuration</h3>
-<p>O <em>Zephyr</em> utiliza o arquivo <code>prj.conf</code> para habilitar configurações do projeto. Para esse exemplo, não há necessidade</p>
+<h3 id="configuracoes">Configurações</h3>
+<p>O <em>Zephyr</em> utiliza o arquivo <code>prj.conf</code> para habilitar configurações do projeto. Para esse exemplo, não há necessidade de adicionar nada no arquivo.</p>
+<div class="highlight"><span class="filename">prj.conf</span><pre><span></span><code>
+</code></pre></div>
+<h3 id="arvore-dos-arquivos">Árvore dos Arquivos</h3>
+<p>Para facilitar a organização dos arquivos segue a árvore hierarquica:</p>
+<div class="highlight"><pre><span></span><code>hello_world
+├──<span class="w"> </span>CMakeLists.txt
+├──<span class="w"> </span>prj.conf
+└──<span class="w"> </span>src
+<span class="w">    </span>└──<span class="w"> </span>main.c
+
+<span class="m">1</span><span class="w"> </span>directory,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
+</code></pre></div>
+<h2 id="conclusao">Conclusão</h2>
+<p>Uma explicação rápida dos arquivos necessários foi mostrada. Existem arquivos que são recomendandos, como o <code>README.rst</code> e o <code>sample.yaml</code>, mas eles não são necessários para buildar o projeto. Dessa forma, somenete os arquivos: <code>CMakeLists.txt</code>, <code>main.c</code> e <code>prj.conf</code> são necessários para compilar o projeto com sucesso.</p>
 
 
 
