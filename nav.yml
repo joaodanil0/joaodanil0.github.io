@@ -44,6 +44,7 @@ nav:
   - RTOS:
     - Zephyr: 
       - Instalação: rtos/zephyr/zephyr.md
+      - Hello World: rtos/zephyr/hello_world.md
   - Linguagens:
     - Rust:
       - Capítulo 1: linguagens/Rust/Cap1.md
