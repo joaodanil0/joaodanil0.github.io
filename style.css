@@ -2,3 +2,7 @@
 p {
     text-align: justify;
 }
+
+:root > * {
+    --md-code-hl-comment-color: #0FF1CE;
+}
