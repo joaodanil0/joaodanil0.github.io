@@ -51,8 +51,11 @@ nav:
       - Capítulo 2: linguagens/Rust/Cap2.md
       - Capítulo 3: linguagens/Rust/Cap3.md
       - Capítulo 4: linguagens/Rust/Cap4.md
+  - Esturura De Dados:
+    - Grafos: ed/grafos/grafos.md
+  - Bluetooth:
+    - Topologias: bluetooth/broadcast.md
   - Outros:
     - Documentação: outros/mkdocs/mkdocs.md
     - Partição GPT: outros/Partições/GPT.md
-  - Bluetooth:
-    - Topologias: bluetooth/broadcast.md
+
